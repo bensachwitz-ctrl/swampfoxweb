@@ -552,7 +552,8 @@ footer{box-shadow:0 -6px 24px rgba(0,0,0,.08),0 -1px 0 rgba(0,0,0,.04)}
 .page-bg{position:relative;min-height:100vh;background:var(--forest2);overflow:hidden}
 .page-bg-img{position:absolute;inset:0;background-size:cover;background-position:center 40%;z-index:0}
 .page-bg-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,18,14,.28),rgba(0,60,55,.15));z-index:1}
-.page-bg-content{position:relative;z-index:2;padding:40px 0 60px}
+.page-bg-content{position:relative;z-index:2;padding:40px 0 60px;overflow:hidden}
+.page-bg-content>.wrap{overflow:visible}
 .page-bg .sec{background:transparent!important;padding:24px 0}
 .page-bg .sec::before{display:none}
 .page-bg .sec::after{display:none}
@@ -1299,8 +1300,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <!-- SIDE-BY-SIDE COVERAGE TABS -->
 <section class="sec" style="background:transparent;padding-top:0;margin-top:-20px" x-data="{covTab:'business',openCom:null,openPer:null}">
   <div class="wrap">
-    <div style="text-align:center;margin-bottom:32px">
-      <span class="label">Insurance Coverages</span>
+    <div style="text-align:center;margin-bottom:24px">
       <h2>What We Cover</h2>
       <div class="rule rule-c"></div>
       <p style="max-width:640px;margin:0 auto">From logging crews to family homes — explore our full range of commercial and personal insurance solutions.</p>
@@ -1973,8 +1973,8 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     </div>
 
     <!-- Timeline (condensed) -->
-    <h3 style="text-align:center;margin-bottom:20px">Key Milestones</h3>
-    <div style="max-width:600px;margin:0 auto">
+    <div class="glass-box" style="max-width:680px;margin:0 auto;padding:36px 32px;border-radius:16px">
+      <h3 style="text-align:center;margin-bottom:24px;color:#fff;font-size:1.3rem">Key Milestones</h3>
       <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-content"><h3>1987 — Founded</h3><p>Opens in Moncks Corner, SC, serving local forestry and small business communities.</p></div></div>
       <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-content"><h3>SCTPA Endorsed</h3><p>Becomes the only SCTPA-endorsed insurance agency in South Carolina — a distinction held to this day.</p></div></div>
       <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-content"><h3>7+ States &amp; 4 Offices</h3><p>Expands across the Southeast with offices in Moncks Corner, Summerville, and Waycross, GA.</p></div></div>
