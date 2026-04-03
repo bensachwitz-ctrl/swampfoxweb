@@ -16,6 +16,12 @@
 <meta property="og:description" content="Since 1987, protecting SC loggers, timber operators, truckers & families. The only SCTPA-endorsed insurance agency in South Carolina.">
 <meta property="og:site_name" content="Swamp Fox Insurance Agency">
 <meta name="theme-color" content="#1E392A">
+<meta name="keywords" content="logging insurance, forestry insurance, commercial trucking insurance, SCTPA endorsed, South Carolina insurance, Moncks Corner insurance, loggers broad form, cargo insurance, fleet insurance, homeowners insurance SC">
+<meta property="og:image" content="https://bensachwitz-ctrl.github.io/swampfoxweb/images/hero%20main.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Swamp Fox Insurance Agency | Logging, Forestry & Commercial Insurance">
+<meta name="twitter:description" content="SC's only SCTPA-endorsed forestry and logging insurance agency since 1987. Call (843) 761-3999.">
+<meta name="twitter:image" content="https://bensachwitz-ctrl.github.io/swampfoxweb/images/hero%20main.jpg">
 
 <script type="application/ld+json">
 {
@@ -398,7 +404,8 @@ textarea.form-input{resize:vertical}
 .hero{box-shadow:0 8px 40px rgba(0,0,0,.2)}
 
 /* === GLASSMORPHISM WITH PHOTO BACKGROUNDS === */
-.svc-card::before{content:'';position:absolute;inset:0;background-size:cover;background-position:center;opacity:.28;mix-blend-mode:luminosity;z-index:0;pointer-events:none;border-radius:var(--r-lg)}
+.svc-card::before{content:'';position:absolute;inset:0;background-size:cover;background-position:center;opacity:.28;mix-blend-mode:luminosity;z-index:0;pointer-events:none;border-radius:var(--r-lg);transition:opacity .35s ease,mix-blend-mode .35s ease,filter .35s ease}
+.svc-card:hover::before{opacity:.45;mix-blend-mode:normal;filter:brightness(.85) saturate(1.1)}
 .svc-card::after{z-index:1}
 .svc-card>*{position:relative;z-index:2}
 .svc-card:nth-child(1)::before{background-image:url('images/yusuf-onuk-b-enaI7JBQ0-unsplash.jpg')}
@@ -461,42 +468,57 @@ textarea.form-input{resize:vertical}
 .reveal-scale{opacity:0;transform:scale(.95);transition:opacity var(--t),transform var(--t)}
 .reveal-scale.visible{opacity:1;transform:scale(1)}
 
-/* === DEPTH & DIMENSION === */
+/* === DEPTH & 3D DIMENSION SYSTEM === */
 .depth-card{position:relative;overflow:hidden;transition:all var(--t)}
-.depth-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.1),transparent 60%);pointer-events:none;transition:transform var(--t)}
+.depth-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.12),transparent 60%);pointer-events:none;transition:transform var(--t)}
 .depth-card:hover::before{transform:translate(10%,10%)}
 .depth-card:hover{box-shadow:0 12px 40px rgba(0,99,91,.15)}
 
-/* === SUBTLE SHADING — DEPTH & CONTRAST === */
-/* Inner shadow on cream sections for recessed feel */
-.sec{box-shadow:none}
-/* Subtle vignette on page backgrounds */
-/* page-bg vignette removed — was causing visual artifacts */
-/* Soft top/bottom edge shading between sections */
-.section-hero{box-shadow:0 4px 16px rgba(0,0,0,.08)}
-.trustbar{box-shadow:0 2px 8px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.08)}
-/* Service cards — subtle bottom shadow for grounded feel */
-.svc-card{box-shadow:0 1px 2px rgba(0,0,0,.04),0 4px 12px rgba(0,0,0,.06),0 -1px 0 rgba(255,255,255,.8) inset}
-/* Glass-box inner highlight for frosted depth */
-.glass-box{box-shadow:0 8px 32px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.08),inset 0 -1px 0 rgba(0,0,0,.1)}
-/* Community/accordion cards layered shadow */
-.community-card{box-shadow:0 1px 3px rgba(0,0,0,.06),0 6px 20px rgba(0,0,0,.08)}
-.community-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08),0 16px 40px rgba(0,0,0,.12)}
-/* Testimonial cards depth */
-.testi-card{box-shadow:0 1px 3px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.07),inset 0 1px 0 rgba(255,255,255,.9)}
-/* Footer top edge shadow */
-footer{box-shadow:0 -4px 16px rgba(0,0,0,.06)}
-/* Modal cards lifted feel */
-.modal-box{box-shadow:0 8px 24px rgba(0,0,0,.12),0 32px 80px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.06)}
-/* Nav card overlays subtle depth */
-.nav-card-link{box-shadow:0 4px 16px rgba(0,0,0,.2),inset 0 -2px 8px rgba(0,0,0,.05)}
-/* Accordion items gentle inset */
-.acc-item{box-shadow:0 1px 3px rgba(0,0,0,.04),0 2px 8px rgba(0,0,0,.03)}
-.acc-item:hover{box-shadow:0 2px 6px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.08)}
-/* Buttons depth — subtle pressed/raised effect */
-.btn{box-shadow:0 1px 3px rgba(0,0,0,.1),0 2px 6px rgba(0,0,0,.06),inset 0 1px 0 rgba(255,255,255,.15)}
-.btn:hover{box-shadow:0 2px 6px rgba(0,0,0,.12),0 8px 20px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.2)}
-.btn:active{box-shadow:inset 0 2px 4px rgba(0,0,0,.15),0 1px 2px rgba(0,0,0,.06)}
+/* Section depth — soft inner shadow creates recessed panels */
+.sec{box-shadow:inset 0 8px 20px -8px rgba(0,0,0,.04),inset 0 -8px 20px -8px rgba(0,0,0,.03)}
+/* Hero drops shadow onto content below */
+.section-hero{box-shadow:0 6px 24px rgba(0,0,0,.12)}
+.hero{box-shadow:0 8px 40px rgba(0,0,0,.25)}
+/* Trust bar raised feel */
+.trustbar{box-shadow:0 4px 16px rgba(0,0,0,.12),0 1px 3px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.1)}
+/* Service cards — multi-layer 3D lift */
+.svc-card{box-shadow:0 1px 2px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.08),0 12px 28px rgba(0,0,0,.04)}
+.svc-card:hover{box-shadow:0 4px 8px rgba(0,0,0,.08),0 12px 28px rgba(0,0,0,.12),0 24px 48px rgba(0,0,0,.06)}
+/* Glass-box frosted depth */
+.glass-box{box-shadow:0 8px 32px rgba(0,0,0,.25),0 2px 6px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.1),inset 0 -1px 0 rgba(0,0,0,.15)}
+/* Community cards — float above surface */
+.community-card{box-shadow:0 2px 4px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.08),0 -1px 0 rgba(255,255,255,.5) inset}
+.community-card:hover{box-shadow:0 8px 20px rgba(0,0,0,.1),0 20px 48px rgba(0,0,0,.14);transform:translateY(-6px)}
+/* Testimonial cards — lifted paper effect */
+.testi-card{box-shadow:0 1px 3px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.08),0 -1px 0 rgba(255,255,255,.9) inset}
+/* Footer elevated from page */
+footer{box-shadow:0 -6px 24px rgba(0,0,0,.08),0 -1px 0 rgba(0,0,0,.04)}
+/* Modal — dramatic lift */
+.modal-box{box-shadow:0 8px 24px rgba(0,0,0,.15),0 32px 80px rgba(0,0,0,.25),0 2px 6px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.08)}
+/* Nav card overlays depth */
+.nav-card-link{box-shadow:0 4px 16px rgba(0,0,0,.2),0 1px 3px rgba(0,0,0,.1)}
+/* Accordion items — raised surface */
+.acc-item{box-shadow:0 1px 3px rgba(0,0,0,.05),0 4px 12px rgba(0,0,0,.04)}
+.acc-item:hover{box-shadow:0 4px 12px rgba(0,0,0,.08),0 12px 28px rgba(0,0,0,.1);transform:translateY(-2px)}
+/* Buttons — tactile pressed/raised */
+.btn{box-shadow:0 2px 4px rgba(0,0,0,.12),0 4px 10px rgba(0,0,0,.06),inset 0 1px 0 rgba(255,255,255,.18)}
+.btn:hover{box-shadow:0 4px 10px rgba(0,0,0,.14),0 10px 24px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.22);transform:translateY(-2px)}
+.btn:active{box-shadow:inset 0 2px 6px rgba(0,0,0,.18),0 1px 2px rgba(0,0,0,.08);transform:translateY(0)}
+/* Coverage accordions depth */
+.cov-accordion{box-shadow:0 2px 8px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.08)}
+.cov-accordion:hover{box-shadow:0 6px 20px rgba(0,99,91,.12),0 16px 40px rgba(0,0,0,.1)}
+/* Insure cards depth */
+.insure-card{box-shadow:0 2px 6px rgba(0,0,0,.05),0 8px 20px rgba(0,0,0,.06)}
+.insure-card:hover{box-shadow:0 6px 16px rgba(0,0,0,.08),0 20px 40px rgba(0,0,0,.1);transform:translateY(-6px)}
+/* Photo cards 3D lift */
+.photo-card{box-shadow:0 4px 12px rgba(0,0,0,.1),0 12px 32px rgba(0,0,0,.08)}
+.photo-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.14),0 24px 48px rgba(0,0,0,.12)}
+/* Content images — subtle float above page */
+.content-img{box-shadow:0 4px 16px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.06)}
+/* Page header — layered above background */
+.page-header{text-shadow:0 2px 10px rgba(0,0,0,1),0 6px 32px rgba(0,0,0,.8)}
+/* Carrier bar depth */
+.carrier-bar{box-shadow:0 4px 20px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.05)}
 
 /* === PHOTO CARDS === */
 .photo-card{position:relative;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow)}
@@ -559,9 +581,9 @@ footer{box-shadow:0 -4px 16px rgba(0,0,0,.06)}
 .page-bg .acc-panel p,.page-bg .acc-panel li{color:rgba(255,255,255,.85)}
 .page-bg .form-input{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15);color:#fff}
 .page-bg .form-input::placeholder{color:rgba(255,255,255,.4)}
-.page-bg .form-group label{color:rgba(255,255,255,.7)}
+.page-bg .form-group label{color:rgba(255,255,255,.85)}
 .page-bg .stat-num{color:var(--teal-lt)}
-.page-bg .stat-label{color:rgba(255,255,255,.5)}
+.page-bg .stat-label{color:rgba(255,255,255,.65)}
 .page-bg .insure-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1);backdrop-filter:blur(10px)}
 .page-bg .insure-card::before{display:none}
 .page-bg .insure-card h3{color:#fff}
@@ -655,7 +677,7 @@ footer{box-shadow:0 -4px 16px rgba(0,0,0,.06)}
 .community-card .card-expand{padding:18px 20px;text-align:left;background:linear-gradient(180deg,#f8faf9,#fff);border-top:1px solid var(--border)}
 
 /* === COVERAGE ACCORDION ENHANCEMENT === */
-.cov-accordion{background:rgba(255,255,255,.82)!important;backdrop-filter:blur(16px);border:1px solid rgba(0,99,91,.12)!important;border-radius:12px!important;margin-bottom:14px;overflow:hidden;transition:all .35s cubic-bezier(.34,1.56,.64,1);box-shadow:0 2px 8px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.06);border-left:3px solid transparent}
+.cov-accordion{background:rgba(255,255,255,.88)!important;backdrop-filter:blur(16px);border:1px solid rgba(0,99,91,.12)!important;border-radius:12px!important;margin-bottom:14px;overflow:hidden;transition:all .35s cubic-bezier(.34,1.56,.64,1);box-shadow:0 2px 8px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.06);border-left:3px solid transparent}
 .cov-accordion:has([style*="rotate(180deg)"]){border-left-color:var(--teal)}
 .cov-accordion:hover{box-shadow:0 4px 16px rgba(0,99,91,.1),0 12px 32px rgba(0,0,0,.08);transform:translateY(-2px)}
 .cov-accordion strong{color:var(--forest)!important;text-shadow:none!important}
@@ -1275,7 +1297,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 
 <!-- SIDE-BY-SIDE COVERAGE TABS -->
-<section class="sec" style="background:transparent;padding-top:36px" x-data="{covTab:'business',openCom:null,openPer:null}">
+<section class="sec" style="background:transparent;padding-top:0;margin-top:-20px" x-data="{covTab:'business',openCom:null,openPer:null}">
   <div class="wrap">
     <div style="text-align:center;margin-bottom:32px">
       <span class="label">Insurance Coverages</span>
@@ -2467,7 +2489,8 @@ function swampFox(){
       {id:'home',label:'Homeowners',desc:'Dwelling, contents, liability, flood'},
       {id:'auto',label:'Personal Auto',desc:'Car, truck, motorcycle, boat, ATV'},
       {id:'life',label:'Life / Health',desc:'Term, whole life, individual health plans'},
-      {id:'umbrella',label:'Umbrella / Excess',desc:'Excess liability above primary limits'}
+      {id:'umbrella',label:'Umbrella / Excess',desc:'Excess liability above primary limits'},
+      {id:'other',label:'Other',desc:'Something else — tell us in the details'}
     ],
     toggleCoverage(id){const i=this.selectedCoverage.indexOf(id);if(i===-1)this.selectedCoverage.push(id);else this.selectedCoverage.splice(i,1)},
     go(id){if(id==='quote'){this.showModal=true;this.modalType='quotefull';this.modalSent=false;this.quoteStep=1;this.selectedCoverage=[];this.quoteSent=false;this.menuOpen=false;return}this.page=id;this.menuOpen=false;window.scrollTo({top:0,behavior:'smooth'});if(id==='locations')this.$nextTick(()=>this.initMap())},
@@ -2489,7 +2512,7 @@ function swampFox(){
     initScrollReveal(){
       const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12});
       const observe=()=>{document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,.reveal-header,.reveal-card').forEach(el=>{if(!el.classList.contains('visible'))obs.observe(el)})};
-      observe();this.$watch('page',()=>this.$nextTick(()=>{setTimeout(observe,50);if(this.page==='locations')this.initMap()}));
+      observe();this.$watch('page',()=>this.$nextTick(()=>{setTimeout(observe,50);setTimeout(observe,200);setTimeout(observe,500);if(this.page==='locations')this.initMap()}));
     },
     exitShown:false,
     initExitIntent(){
@@ -2561,5 +2584,22 @@ function swampFox(){
   <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
 </div>
 
+<!-- SEO: Crawlable text for search engines (hidden from JS-enabled browsers) -->
+<noscript>
+<div style="max-width:900px;margin:40px auto;padding:20px;font-family:sans-serif;color:#1C2B2E">
+<h1>Swamp Fox Insurance Agency — Logging, Forestry & Commercial Insurance Since 1987</h1>
+<p>South Carolina's only SCTPA-endorsed forestry and logging insurance agency. We specialize in logger's broad form policies, commercial trucking, cargo insurance, fleet coverage, general liability, homeowners, personal auto, life and health insurance. Serving SC, GA, NC, AL, FL, MS, VA and DC.</p>
+<h2>Our Services</h2>
+<p>Commercial Insurance: Logging and Forestry, Commercial Auto and Trucking, Cargo and Physical Damage, General Liability, Equipment and Inland Marine. Personal Insurance: Homeowners, Auto, Life and Health, Umbrella and Excess Liability.</p>
+<h2>Locations</h2>
+<p>1122 Pinopolis Road, Moncks Corner, SC 29461 — (843) 761-3999. 2822 HWY 52 Ste. 450, Moncks Corner, SC 29461. 1288 Nexton Pkwy Suite 402, Summerville, SC 29483. 960 S City Blvd G, Waycross, GA 31501.</p>
+<h2>About Us</h2>
+<p>Founded in 1987, Swamp Fox Insurance Agency has been protecting Lowcountry families and businesses for nearly four decades. As an independent agency, we shop multiple carriers to find you the best coverage at the right price. Contact us at info@swampfoxagency.com or call (843) 761-3999.</p>
+<h2>Loss Control Program</h2>
+<p>Our loss control program helps logging and trucking operations reduce claims, improve safety, and lower premiums through proactive risk management.</p>
+<h2>4th Annual Loggers Technology Summit</h2>
+<p>August 28-29, 2026 in Birmingham, Alabama. Industry leaders gather to explore cutting-edge forestry technology, safety innovations, and networking opportunities.</p>
+</div>
+</noscript>
 </body>
 </html>
