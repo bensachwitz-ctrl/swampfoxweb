@@ -93,7 +93,7 @@ p{color:var(--mid);line-height:1.75}
 
 /* === FLOATING PARTICLES === */
 .particles-container{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.particle{position:absolute;border-radius:50%;opacity:0;animation:particleFloat linear infinite}
+.particle{position:absolute;border-radius:50%;opacity:0;animation:particleFloat linear infinite;will-change:transform,opacity}
 .particle--teal{background:rgba(45,138,126,.15);box-shadow:0 0 6px rgba(45,138,126,.1)}
 .particle--gold{background:rgba(196,154,60,.12);box-shadow:0 0 6px rgba(196,154,60,.08)}
 .particle--white{background:rgba(255,255,255,.06);box-shadow:0 0 8px rgba(255,255,255,.04)}
@@ -293,7 +293,7 @@ p{color:var(--mid);line-height:1.75}
 .svc-icon svg{color:var(--teal);transition:color var(--t)}
 .svc-card h3{color:var(--forest);margin-bottom:8px;font-size:1.05rem}
 .svc-card p{font-size:.88rem;color:var(--mid);line-height:1.55}
-.svc-card .learn{font-size:.78rem;font-weight:600;color:var(--teal);margin-top:14px;display:flex;align-items:center;gap:5px}
+.svc-card .learn{font-size:.78rem;font-weight:600;color:var(--teal);margin-top:14px;display:inline-flex;align-items:center;gap:5px;border:1.5px solid var(--teal);border-radius:20px;padding:6px 16px;transition:all var(--t)}.svc-card .learn:hover{background:var(--teal);color:#fff}
 
 /* === SECTION HEROES === */
 .section-hero{position:relative;padding:72px 0 56px;background-size:cover;background-position:center 40%;overflow:hidden;min-height:360px;display:flex;align-items:center}
@@ -395,7 +395,7 @@ textarea.form-input{resize:vertical}
 
 /* === FLOATING GALLERY MARQUEE === */
 .gallery-marquee{overflow:hidden;position:relative;width:100%;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
-.gallery-track{display:flex;gap:16px;width:max-content;animation:marqueeScroll 40s linear infinite}
+.gallery-track{display:flex;gap:16px;width:max-content;animation:marqueeScroll 40s linear infinite;will-change:transform}
 .gallery-track.paused{animation-play-state:paused}
 @keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .gallery-float{flex-shrink:0;width:320px;transition:transform var(--t-spring),box-shadow var(--t-spring)}
@@ -600,7 +600,7 @@ footer{box-shadow:0 -6px 24px rgba(0,0,0,.08),0 -1px 0 rgba(0,0,0,.04)}
 .page-bg .svc-card::after{display:none}
 .page-bg .svc-card h3{color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.8),0 4px 16px rgba(0,0,0,.4)}
 .page-bg .svc-card p{color:rgba(255,255,255,.88);text-shadow:0 1px 4px rgba(0,0,0,.6)}
-.page-bg .svc-card .learn{color:var(--teal-lt)}
+.page-bg .svc-card .learn{color:#fff;border-color:rgba(255,255,255,.5)}.page-bg .svc-card .learn:hover{background:rgba(255,255,255,.15);border-color:#fff;color:#fff}
 .page-bg .svc-icon{background:rgba(45,138,126,.2)}
 .page-bg .svc-icon svg{color:var(--teal-lt)}
 /* Blog posts on page-bg */
@@ -1527,9 +1527,9 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <section style="padding:24px 0">
   <div class="wrap">
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
-      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img src="images/trucks.jpg" alt="Swamp Fox trucks" style="width:100%;height:100%;object-fit:cover"></div>
-      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img src="images/logs.png" alt="Logging operations" style="width:100%;height:100%;object-fit:cover"></div>
-      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img src="images/photos.png" alt="Swamp Fox team" style="width:100%;height:100%;object-fit:cover"></div>
+      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img loading="lazy" src="images/trucks.jpg" alt="Swamp Fox trucks" style="width:100%;height:100%;object-fit:cover"></div>
+      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img loading="lazy" src="images/logs.png" alt="Logging operations" style="width:100%;height:100%;object-fit:cover"></div>
+      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img loading="lazy" src="images/photos.png" alt="Swamp Fox team" style="width:100%;height:100%;object-fit:cover"></div>
     </div>
   </div>
 </section>
@@ -1574,7 +1574,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         </div>
       </div>
       <div style="position:relative;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg)">
-        <img src="images/logging%20truck.png" alt="Swamp Fox logging operations" style="width:100%;height:320px;object-fit:cover;object-position:center 40%">
+        <img loading="lazy" src="images/logging%20truck.png" alt="Swamp Fox logging operations" style="width:100%;height:320px;object-fit:cover;object-position:center 40%">
         <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,31,23,.25),rgba(0,99,91,.1))"></div>
         <div style="position:absolute;bottom:16px;left:16px;right:16px;text-align:center;z-index:2">
           <span style="background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);border-radius: 12px;padding:8px 20px;color:#fff;font-size:.82rem;font-weight:600">Protecting Fleets Since 1987</span>
@@ -1630,7 +1630,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <section class="sec" style="background:transparent;padding:20px 0 40px">
   <div class="wrap">
     <div style="border-radius:12px;overflow:hidden;height:500px;box-shadow:0 10px 36px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.1)">
-      <img src="images/picture%20again.jpg" alt="Swamp Fox logging operations" style="width:100%;height:100%;object-fit:cover;object-position:center 85%">
+      <img loading="lazy" src="images/picture%20again.jpg" alt="Swamp Fox logging operations" style="width:100%;height:100%;object-fit:cover;object-position:center 85%">
     </div>
   </div>
 </section>
@@ -1650,7 +1650,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <div class="wrap">
       <!-- Title + Logo side by side -->
       <div style="display:flex;align-items:center;gap:24px;margin-bottom:36px;flex-wrap:wrap">
-        <div style="background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-radius:16px;padding:16px 20px;box-shadow:0 8px 32px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center"><img src="images/summit%20logo.png" alt="Summit Logo" style="width:140px;height:auto;object-fit:contain"></div>
+        <div style="background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-radius:16px;padding:16px 20px;box-shadow:0 8px 32px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center"><img loading="lazy" src="images/summit%20logo.png" alt="Summit Logo" style="width:140px;height:auto;object-fit:contain"></div>
         <div>
           <h2 style="color:#fff;margin-bottom:8px;font-size:clamp(1.8rem,4vw,2.8rem)">4th Annual Loggers Technology Summit</h2>
           <p style="color:rgba(255,255,255,.7);font-size:1rem;margin:0">August 28–29, 2026 &bull; Barber Motorsports Park, Birmingham AL</p>
@@ -1692,7 +1692,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <div>
           <!-- Summit photo -->
           <div style="border-radius:var(--r-lg);overflow:hidden;margin-bottom:16px;box-shadow:var(--shadow-lg)">
-            <img src="images/photo%20to%20put%20on%20sommit%20page%20somewhere%20.png" alt="Equipment expo" style="width:100%;height:auto;max-height:280px;object-fit:cover;object-position:center 50%">
+            <img loading="lazy" src="images/photo%20to%20put%20on%20sommit%20page%20somewhere%20.png" alt="Equipment expo" style="width:100%;height:auto;max-height:280px;object-fit:cover;object-position:center 50%">
           </div>
           <!-- Schedule in transparent box -->
           <div style="background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);padding:24px" x-data="{scheduleOpen:null}">
@@ -1884,13 +1884,13 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     </div><!-- end blog posts column -->
     <!-- Team Photo Column -->
     <div style="position:sticky;top:120px">
-      <img src="images/full%20team%20cropped.png" alt="The Swamp Fox Insurance Agency Team" class="full-photo reveal" style="width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.15);box-shadow:0 12px 40px rgba(0,0,0,.25)">
+      <img loading="lazy" src="images/full%20team%20cropped.png" alt="The Swamp Fox Insurance Agency Team" class="full-photo reveal" style="width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.15);box-shadow:0 12px 40px rgba(0,0,0,.25)">
       <p style="font-size:.82rem;color:rgba(255,255,255,.65);margin-top:10px;font-style:italic;text-align:center;text-shadow:0 1px 4px rgba(0,0,0,.4)">The Swamp Fox Team</p>
       <div style="margin-top:16px;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1)">
-        <img src="images/another%20pic.jpg" alt="Swamp Fox team" style="width:100%;height:240px;object-fit:cover">
+        <img loading="lazy" src="images/another%20pic.jpg" alt="Swamp Fox team" style="width:100%;height:240px;object-fit:cover">
       </div>
       <div style="margin-top:16px;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1)">
-        <img src="images/Gemini_Generated_Image_9nep0s9nep0s9nep.png" alt="Swamp Fox Insurance" style="width:100%;height:240px;object-fit:cover">
+        <img loading="lazy" src="images/Gemini_Generated_Image_9nep0s9nep0s9nep.png" alt="Swamp Fox Insurance" style="width:100%;height:240px;object-fit:cover">
       </div>
     </div>
     </div><!-- end 2-col grid -->
@@ -1909,39 +1909,39 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <!-- Floating auto-scroll marquee for "All" -->
         <div x-show="galleryYear==='all'" class="gallery-marquee" @mouseenter="scrollPaused=true" @mouseleave="scrollPaused=false">
           <div class="gallery-track" :class="{paused:scrollPaused}">
-            <div class="gallery-card gallery-float"><img src="images/photo%20to%20put%20on%20sommit%20page%20somewhere%20.png" alt="2025 Savannah equipment show"><div class="gallery-cap">2025 Savannah — Equipment Expo</div></div>
-            <div class="gallery-card gallery-float"><img src="images/team-photo.jpg" alt="2025 Savannah full team"><div class="gallery-cap">2025 Savannah — Full Team</div></div>
-            <div class="gallery-card gallery-float"><img src="images/summerville%20office%20picture.png" alt="Swamp Fox Summerville Grand Opening"><div class="gallery-cap">Summerville — Grand Opening</div></div>
-            <div class="gallery-card gallery-float"><img src="images/team-photo.jpg" alt="2024 Augusta field demo"><div class="gallery-cap">2024 Augusta — Field Demo</div></div>
-            <div class="gallery-card gallery-float"><img src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Citadel Cadet Partnership"><div class="gallery-cap">Citadel Cadet Partnership</div></div>
-            <div class="gallery-card gallery-float"><img src="images/full%20team%20cropped.png" alt="2024 Augusta team photo"><div class="gallery-cap">2024 Augusta — Team Photo</div></div>
-            <div class="gallery-card gallery-float"><img src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Citadel Partnership"><div class="gallery-cap">Citadel Partnership</div></div>
-            <div class="gallery-card gallery-float"><img src="images/citadel.jpg" alt="Swamp Fox Military Community Support"><div class="gallery-cap">Military Community Support</div></div>
-            <div class="gallery-card gallery-float"><img src="images/logging%20truck.png" alt="2023 Walterboro fleet showcase"><div class="gallery-cap">2023 Walterboro — Fleet Showcase</div></div>
+            <div class="gallery-card gallery-float"><img loading="lazy" src="images/photo%20to%20put%20on%20sommit%20page%20somewhere%20.png" alt="2025 Savannah equipment show"><div class="gallery-cap">2025 Savannah — Equipment Expo</div></div>
+            <div class="gallery-card gallery-float"><img loading="lazy" src="images/team-photo.jpg" alt="2025 Savannah full team"><div class="gallery-cap">2025 Savannah — Full Team</div></div>
+            <div class="gallery-card gallery-float"><img loading="lazy" src="images/summerville%20office%20picture.png" alt="Swamp Fox Summerville Grand Opening"><div class="gallery-cap">Summerville — Grand Opening</div></div>
+            <div class="gallery-card gallery-float"><img loading="lazy" src="images/team-photo.jpg" alt="2024 Augusta field demo"><div class="gallery-cap">2024 Augusta — Field Demo</div></div>
+            <div class="gallery-card gallery-float"><img loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Citadel Cadet Partnership"><div class="gallery-cap">Citadel Cadet Partnership</div></div>
+            <div class="gallery-card gallery-float"><img loading="lazy" src="images/full%20team%20cropped.png" alt="2024 Augusta team photo"><div class="gallery-cap">2024 Augusta — Team Photo</div></div>
+            <div class="gallery-card gallery-float"><img loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Citadel Partnership"><div class="gallery-cap">Citadel Partnership</div></div>
+            <div class="gallery-card gallery-float"><img loading="lazy" src="images/citadel.jpg" alt="Swamp Fox Military Community Support"><div class="gallery-cap">Military Community Support</div></div>
+            <div class="gallery-card gallery-float"><img loading="lazy" src="images/logging%20truck.png" alt="2023 Walterboro fleet showcase"><div class="gallery-cap">2023 Walterboro — Fleet Showcase</div></div>
             <!-- duplicate set for seamless loop -->
-            <div class="gallery-card gallery-float"><img src="images/photo%20to%20put%20on%20sommit%20page%20somewhere%20.png" alt="2025 Savannah equipment show"><div class="gallery-cap">2025 Savannah — Equipment Expo</div></div>
-            <div class="gallery-card gallery-float"><img src="images/team-photo.jpg" alt="2025 Savannah full team"><div class="gallery-cap">2025 Savannah — Full Team</div></div>
-            <div class="gallery-card gallery-float"><img src="images/summerville%20office%20picture.png" alt="Swamp Fox Summerville Grand Opening"><div class="gallery-cap">Summerville — Grand Opening</div></div>
-            <div class="gallery-card gallery-float"><img src="images/team-photo.jpg" alt="2024 Augusta field demo"><div class="gallery-cap">2024 Augusta — Field Demo</div></div>
-            <div class="gallery-card gallery-float"><img src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Citadel Cadet Partnership"><div class="gallery-cap">Citadel Cadet Partnership</div></div>
-            <div class="gallery-card gallery-float"><img src="images/full%20team%20cropped.png" alt="2024 Augusta team photo"><div class="gallery-cap">2024 Augusta — Team Photo</div></div>
-            <div class="gallery-card gallery-float"><img src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Citadel Partnership"><div class="gallery-cap">Citadel Partnership</div></div>
-            <div class="gallery-card gallery-float"><img src="images/citadel.jpg" alt="Swamp Fox Military Community Support"><div class="gallery-cap">Military Community Support</div></div>
-            <div class="gallery-card gallery-float"><img src="images/logging%20truck.png" alt="2023 Walterboro fleet showcase"><div class="gallery-cap">2023 Walterboro — Fleet Showcase</div></div>
+            <div class="gallery-card gallery-float"><img loading="lazy" src="images/photo%20to%20put%20on%20sommit%20page%20somewhere%20.png" alt="2025 Savannah equipment show"><div class="gallery-cap">2025 Savannah — Equipment Expo</div></div>
+            <div class="gallery-card gallery-float"><img loading="lazy" src="images/team-photo.jpg" alt="2025 Savannah full team"><div class="gallery-cap">2025 Savannah — Full Team</div></div>
+            <div class="gallery-card gallery-float"><img loading="lazy" src="images/summerville%20office%20picture.png" alt="Swamp Fox Summerville Grand Opening"><div class="gallery-cap">Summerville — Grand Opening</div></div>
+            <div class="gallery-card gallery-float"><img loading="lazy" src="images/team-photo.jpg" alt="2024 Augusta field demo"><div class="gallery-cap">2024 Augusta — Field Demo</div></div>
+            <div class="gallery-card gallery-float"><img loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Citadel Cadet Partnership"><div class="gallery-cap">Citadel Cadet Partnership</div></div>
+            <div class="gallery-card gallery-float"><img loading="lazy" src="images/full%20team%20cropped.png" alt="2024 Augusta team photo"><div class="gallery-cap">2024 Augusta — Team Photo</div></div>
+            <div class="gallery-card gallery-float"><img loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Citadel Partnership"><div class="gallery-cap">Citadel Partnership</div></div>
+            <div class="gallery-card gallery-float"><img loading="lazy" src="images/citadel.jpg" alt="Swamp Fox Military Community Support"><div class="gallery-cap">Military Community Support</div></div>
+            <div class="gallery-card gallery-float"><img loading="lazy" src="images/logging%20truck.png" alt="2023 Walterboro fleet showcase"><div class="gallery-cap">2023 Walterboro — Fleet Showcase</div></div>
           </div>
         </div>
 
         <!-- Static grid for year-specific tabs -->
         <div x-show="galleryYear!=='all'" class="grid-3">
-          <div class="gallery-card" x-show="galleryYear==='2025'"><img src="images/photo%20to%20put%20on%20sommit%20page%20somewhere%20.png" alt="2025 Savannah equipment show"><div class="gallery-cap">2025 Savannah — Equipment Expo</div></div>
-          <div class="gallery-card" x-show="galleryYear==='2025'"><img src="images/team-photo.jpg" alt="2025 Savannah full team"><div class="gallery-cap">2025 Savannah — Full Team</div></div>
-          <div class="gallery-card" x-show="galleryYear==='2025'"><img src="images/summerville%20office%20picture.png" alt="Swamp Fox Summerville Grand Opening"><div class="gallery-cap">Summerville — Grand Opening</div></div>
-          <div class="gallery-card" x-show="galleryYear==='2024'"><img src="images/team-photo.jpg" alt="2024 Augusta field demo"><div class="gallery-cap">2024 Augusta — Field Demo</div></div>
-          <div class="gallery-card" x-show="galleryYear==='2024'"><img src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Citadel Cadet Partnership"><div class="gallery-cap">Citadel Cadet Partnership</div></div>
-          <div class="gallery-card" x-show="galleryYear==='2024'"><img src="images/full%20team%20cropped.png" alt="2024 Augusta team photo"><div class="gallery-cap">2024 Augusta — Team Photo</div></div>
-          <div class="gallery-card" x-show="galleryYear==='2023'"><img src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Citadel Partnership"><div class="gallery-cap">Citadel Partnership</div></div>
-          <div class="gallery-card" x-show="galleryYear==='2023'"><img src="images/citadel.jpg" alt="Swamp Fox Military Community Support"><div class="gallery-cap">Military Community Support</div></div>
-          <div class="gallery-card" x-show="galleryYear==='2023'"><img src="images/logging%20truck.png" alt="2023 Walterboro fleet showcase"><div class="gallery-cap">2023 Walterboro — Fleet Showcase</div></div>
+          <div class="gallery-card" x-show="galleryYear==='2025'"><img loading="lazy" src="images/photo%20to%20put%20on%20sommit%20page%20somewhere%20.png" alt="2025 Savannah equipment show"><div class="gallery-cap">2025 Savannah — Equipment Expo</div></div>
+          <div class="gallery-card" x-show="galleryYear==='2025'"><img loading="lazy" src="images/team-photo.jpg" alt="2025 Savannah full team"><div class="gallery-cap">2025 Savannah — Full Team</div></div>
+          <div class="gallery-card" x-show="galleryYear==='2025'"><img loading="lazy" src="images/summerville%20office%20picture.png" alt="Swamp Fox Summerville Grand Opening"><div class="gallery-cap">Summerville — Grand Opening</div></div>
+          <div class="gallery-card" x-show="galleryYear==='2024'"><img loading="lazy" src="images/team-photo.jpg" alt="2024 Augusta field demo"><div class="gallery-cap">2024 Augusta — Field Demo</div></div>
+          <div class="gallery-card" x-show="galleryYear==='2024'"><img loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Citadel Cadet Partnership"><div class="gallery-cap">Citadel Cadet Partnership</div></div>
+          <div class="gallery-card" x-show="galleryYear==='2024'"><img loading="lazy" src="images/full%20team%20cropped.png" alt="2024 Augusta team photo"><div class="gallery-cap">2024 Augusta — Team Photo</div></div>
+          <div class="gallery-card" x-show="galleryYear==='2023'"><img loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Citadel Partnership"><div class="gallery-cap">Citadel Partnership</div></div>
+          <div class="gallery-card" x-show="galleryYear==='2023'"><img loading="lazy" src="images/citadel.jpg" alt="Swamp Fox Military Community Support"><div class="gallery-cap">Military Community Support</div></div>
+          <div class="gallery-card" x-show="galleryYear==='2023'"><img loading="lazy" src="images/logging%20truck.png" alt="2023 Walterboro fleet showcase"><div class="gallery-cap">2023 Walterboro — Fleet Showcase</div></div>
         </div>
       </div>
     </div>
@@ -1972,7 +1972,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   <div class="wrap">
     <div class="grid-2" style="margin-bottom:36px;align-items:center">
       <div class="reveal-left">
-        <img src="images/full%20team%20cropped.png" alt="Swamp Fox team" class="full-photo" style="width:100%">
+        <img loading="lazy" src="images/full%20team%20cropped.png" alt="Swamp Fox team" class="full-photo" style="width:100%">
       </div>
       <div class="reveal-right glass-box" style="padding:32px">
         <span class="label">Since 1987</span>
@@ -1986,7 +1986,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <!-- Photo banner + Mission & Pledge SIDE BY SIDE -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:40px;align-items:stretch">
       <div style="border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.3);min-height:280px" class="reveal-left">
-        <img src="images/about%20us%20backgroujnd.jpg" alt="Swamp Fox Agency" style="width:100%;height:100%;object-fit:cover;object-position:center 40%">
+        <img loading="lazy" src="images/about%20us%20backgroujnd.jpg" alt="Swamp Fox Agency" style="width:100%;height:100%;object-fit:cover;object-position:center 40%">
       </div>
       <div class="glass-box reveal-right" style="padding:32px;margin-bottom:0;display:flex;flex-direction:column;justify-content:center">
         <span class="label">Our Mission &amp; Pledge</span>
@@ -2013,7 +2013,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <div class="grid-3" style="align-items:start" x-data="{openCard:null}">
         <div class="community-card reveal gradient-border" :style="openCard==='pinnacle'?'box-shadow:0 8px 24px rgba(0,99,91,.15);transform:translateY(-3px)':''" @click="openCard=openCard==='pinnacle'?null:'pinnacle'">
           <div style="position:relative;background:var(--forest2);display:flex;align-items:center;justify-content:center;height:200px">
-            <img src="images/pinnacle%20award.png" alt="The Pinnacle Award 2026" style="height:160px;width:auto;object-fit:contain;filter:invert(1)">
+            <img loading="lazy" src="images/pinnacle%20award.png" alt="The Pinnacle Award 2026" style="height:160px;width:auto;object-fit:contain;filter:invert(1)">
             <div style="position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:.85rem;font-weight:600;display:flex;justify-content:space-between;align-items:center">The Pinnacle Award <svg :style="openCard==='pinnacle'?'transform:rotate(180deg)':''" style="transition:transform var(--t)" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
           </div>
           <div x-show="openCard==='pinnacle'" x-collapse class="card-expand">
@@ -2022,7 +2022,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         </div>
         <div class="community-card reveal gradient-border" :style="openCard==='scholarship'?'box-shadow:0 8px 24px rgba(0,99,91,.15);transform:translateY(-3px)':''" @click="openCard=openCard==='scholarship'?null:'scholarship'">
           <div style="position:relative">
-            <img src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Scholarship - Citadel cadets visiting Swamp Fox Agency" style="width:100%;height:200px;object-fit:cover;object-position:center 20%">
+            <img loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Scholarship - Citadel cadets visiting Swamp Fox Agency" style="width:100%;height:200px;object-fit:cover;object-position:center 20%">
             <div style="position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:.85rem;font-weight:600;display:flex;justify-content:space-between;align-items:center">Swamp Fox Scholarship <svg :style="openCard==='scholarship'?'transform:rotate(180deg)':''" style="transition:transform var(--t)" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
           </div>
           <div x-show="openCard==='scholarship'" x-collapse class="card-expand">
@@ -2031,7 +2031,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         </div>
         <div class="community-card reveal gradient-border" :style="openCard==='citadel'?'box-shadow:0 8px 24px rgba(0,99,91,.15);transform:translateY(-3px)':''" @click="openCard=openCard==='citadel'?null:'citadel'">
           <div style="position:relative">
-            <img src="images/citadel.jpg" alt="Swamp Fox Citadel Program - Military community partnership" style="width:100%;height:200px;object-fit:cover">
+            <img loading="lazy" src="images/citadel.jpg" alt="Swamp Fox Citadel Program - Military community partnership" style="width:100%;height:200px;object-fit:cover">
             <div style="position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:.85rem;font-weight:600;display:flex;justify-content:space-between;align-items:center">Citadel Program <svg :style="openCard==='citadel'?'transform:rotate(180deg)':''" style="transition:transform var(--t)" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
           </div>
           <div x-show="openCard==='citadel'" x-collapse class="card-expand">
@@ -2064,7 +2064,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:28px;margin-bottom:40px;align-items:start">
       <!-- LEFT: Photo + Map stacked -->
       <div>
-        <img src="images/summerville%20office%20picture.png" alt="Summerville Grand Opening" class="full-photo reveal-left" style="width:100%;height:260px;object-fit:cover;border-radius:12px;margin-bottom:20px;box-shadow:0 8px 32px rgba(0,0,0,.3)">
+        <img loading="lazy" src="images/summerville%20office%20picture.png" alt="Summerville Grand Opening" class="full-photo reveal-left" style="width:100%;height:260px;object-fit:cover;border-radius:12px;margin-bottom:20px;box-shadow:0 8px 32px rgba(0,0,0,.3)">
         <div id="sf-map" style="background:url('images/static-map.png') center/cover no-repeat;height:320px;border-radius:12px;border:1px solid rgba(255,255,255,.15);box-shadow:0 8px 32px rgba(0,0,0,.3)" class="reveal-left"></div>
       </div>
       <!-- RIGHT: 4 Location cards -->
@@ -2196,23 +2196,23 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <section x-show="!['home','services','losscontrol','about','locations','events'].includes(page)" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" style="padding:24px 0 8px;background:transparent;position:relative;z-index:10">
   <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;padding:0 24px">
     <a href="#" @click.prevent="go('services')" class="nav-card-link" style="position:relative;flex:0 0 220px;height:140px;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.3);cursor:pointer;display:block;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.4)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(0,0,0,.3)'">
-      <img src="images/trucks.jpg" alt="Coverage" style="width:100%;height:100%;object-fit:cover">
+      <img loading="lazy" src="images/trucks.jpg" alt="Coverage" style="width:100%;height:100%;object-fit:cover">
       <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.75));display:flex;align-items:flex-end;padding:12px 14px"><span style="color:#fff;font-size:.82rem;font-weight:700;text-shadow:0 2px 8px rgba(0,0,0,.8)">Coverage &rarr;</span></div>
     </a>
     <a href="#" @click.prevent="go('losscontrol')" class="nav-card-link" style="position:relative;flex:0 0 220px;height:140px;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.3);cursor:pointer;display:block;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.4)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(0,0,0,.3)'">
-      <img src="images/loss%20control%20background.avif" alt="Loss Control" style="width:100%;height:100%;object-fit:cover">
+      <img loading="lazy" src="images/loss%20control%20background.avif" alt="Loss Control" style="width:100%;height:100%;object-fit:cover">
       <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.75));display:flex;align-items:flex-end;padding:12px 14px"><span style="color:#fff;font-size:.82rem;font-weight:700;text-shadow:0 2px 8px rgba(0,0,0,.8)">Loss Control &rarr;</span></div>
     </a>
     <a href="#" @click.prevent="go('summit')" class="nav-card-link" style="position:relative;flex:0 0 220px;height:140px;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.3);cursor:pointer;display:block;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.4)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(0,0,0,.3)'">
-      <img src="images/log%20picture.jpg" alt="Summit" style="width:100%;height:100%;object-fit:cover">
+      <img loading="lazy" src="images/log%20picture.jpg" alt="Summit" style="width:100%;height:100%;object-fit:cover">
       <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.75));display:flex;align-items:flex-end;padding:12px 14px"><span style="color:#fff;font-size:.82rem;font-weight:700;text-shadow:0 2px 8px rgba(0,0,0,.8)">Loggers Summit &rarr;</span></div>
     </a>
     <a href="#" @click.prevent="go('about')" class="nav-card-link" style="position:relative;flex:0 0 220px;height:140px;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.3);cursor:pointer;display:block;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.4)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(0,0,0,.3)'">
-      <img src="images/full%20team%20cropped.png" alt="About" style="width:100%;height:100%;object-fit:cover">
+      <img loading="lazy" src="images/full%20team%20cropped.png" alt="About" style="width:100%;height:100%;object-fit:cover">
       <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.75));display:flex;align-items:flex-end;padding:12px 14px"><span style="color:#fff;font-size:.82rem;font-weight:700;text-shadow:0 2px 8px rgba(0,0,0,.8)">Our Story &rarr;</span></div>
     </a>
     <a href="#" @click.prevent="go('locations')" class="nav-card-link" style="position:relative;flex:0 0 220px;height:140px;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.3);cursor:pointer;display:block;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.4)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(0,0,0,.3)'">
-      <img src="images/summerville%20office%20picture.png" alt="Locations" style="width:100%;height:100%;object-fit:cover">
+      <img loading="lazy" src="images/summerville%20office%20picture.png" alt="Locations" style="width:100%;height:100%;object-fit:cover">
       <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.75));display:flex;align-items:flex-end;padding:12px 14px"><span style="color:#fff;font-size:.82rem;font-weight:700;text-shadow:0 2px 8px rgba(0,0,0,.8)">Locations &rarr;</span></div>
     </a>
   </div>
@@ -2224,7 +2224,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap">
       <!-- Logo + tagline -->
       <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
-        <img src="images/swamp%20fox%20green%20logo%20.png" alt="Swamp Fox" style="height:36px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3));border-radius:3px">
+        <img loading="lazy" src="images/swamp%20fox%20green%20logo%20.png" alt="Swamp Fox" style="height:36px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3));border-radius:3px">
         <div style="font-family:'Playfair Display',Georgia,serif;font-size:.82rem;font-weight:700;color:#fff;line-height:1.2">Swamp Fox Insurance<span style="display:block;font-size:.6rem;font-weight:400;color:rgba(255,255,255,.4);letter-spacing:.08em;text-transform:uppercase;margin-top:2px;font-family:'Inter',sans-serif">Est. 1987 &bull; SC's Only SCTPA-Endorsed Agency</span></div>
       </div>
       <!-- Quick links -->
@@ -2460,36 +2460,10 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 </div>
 
-<!-- Preload all image assets -->
-<div style="display:none" aria-hidden="true">
-  <img src="images/full%20team%20cropped.png" alt="">
-  <img src="images/swamp%20fox%20green%20logo%20.png" alt="">
-  <img src="images/swamp%20fox%20green%20logo%20.png" alt="">
-  <img src="images/another%20background.png" alt="">
-  <img src="images/photos.png" alt="">
-  <img src="images/logging%20truck.png" alt="">
-  <img src="images/logs.png" alt="">
-  <img src="images/trucks.jpg" alt="">
-  <img src="images/static-map.png" alt="">
-  <img src="images/yusuf-onuk-b-enaI7JBQ0-unsplash.jpg" alt="">
-  <img src="images/Swamp-Fox.jpg" alt="">
-  <img src="images/another%20background.png" alt="">
-  <img src="images/picture%20again.jpg" alt="">
-  <img src="images/another%20pic.jpg" alt="">
-  <img src="images/Gemini_Generated_Image_9nep0s9nep0s9nep.png" alt="">
-  <img src="images/background%20maybe.jpg" alt="">
-  <img src="images/another%20background.png" alt="">
-  <img src="images/premium_photo-1661963106864-40a0b6eddc80.avif" alt="">
-  <img src="images/premium_photo-1661963106864-40a0b6eddc80.avif" alt="">
-  <img src="images/photo-1728586397166-d4273177b7f6.avif" alt="">
-  <img src="images/photo-1571035089306-e40c9289fe78.avif" alt="">
-  <img src="images/premium_photo-1661917244769-a2f97a82ca22.avif" alt="">
-  <img src="images/photo-1571035089306-e40c9289fe78.avif" alt="">
-  <img src="images/photo-1596628930480-540b65f6f0a6.avif" alt="">
-  <img src="images/premium_photo-1661940407330-18d3d0b3d1d9.avif" alt="">
-  <img src="images/Screenshot%202026-03-31%20161914.png" alt="">
-  <img src="images/Screenshot%202026-03-31%20162158.png" alt="">
-</div>
+<!-- Preload critical images only — others load on demand via SPA navigation -->
+<link rel="preload" as="image" href="images/hero%20main.jpg">
+<link rel="preload" as="image" href="images/swamp%20fox%20top%20logo.webp">
+<link rel="preload" as="image" href="images/swamp%20fox%20green%20logo%20.png">
 
 <script>
 function swampFox(){
@@ -2551,7 +2525,7 @@ function swampFox(){
     initParticles(){
       const container=document.getElementById('particles');if(!container)return;
       const types=['teal','gold','white'];
-      for(let i=0;i<24;i++){
+      for(let i=0;i<12;i++){
         const p=document.createElement('div');
         const type=types[i%3];
         const size=Math.random()*6+3;
@@ -2561,12 +2535,15 @@ function swampFox(){
       }
     },
     initParallax(){
+      const slowEls=document.querySelectorAll('.parallax-slow');
+      const fastEls=document.querySelectorAll('.parallax-fast');
+      if(!slowEls.length&&!fastEls.length)return;
       let ticking=false;
       window.addEventListener('scroll',()=>{
         if(!ticking){requestAnimationFrame(()=>{
           const y=window.scrollY;
-          document.querySelectorAll('.parallax-slow').forEach(el=>{el.style.transform='translateY('+y*.03+'px)'});
-          document.querySelectorAll('.parallax-fast').forEach(el=>{el.style.transform='translateY('+y*.07+'px)'});
+          slowEls.forEach(el=>{el.style.transform='translateY('+y*.03+'px)'});
+          fastEls.forEach(el=>{el.style.transform='translateY('+y*.07+'px)'});
           ticking=false;
         });ticking=true;}
       },{passive:true});
