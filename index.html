@@ -434,8 +434,7 @@ textarea.form-input{resize:vertical}
 .section-hero+.sec{background:linear-gradient(175deg,var(--cream) 0%,#f0f5f2 40%,var(--sage-lt) 100%) !important}
 .sec:nth-child(even){background:linear-gradient(175deg,#f7faf8 0%,var(--sage-lt) 50%,#e8f0ec 100%)}
 .sec:nth-child(odd){background:linear-gradient(175deg,var(--cream) 0%,#faf8f3 50%,#f0ede5 100%)}
-/* Decorative accent line at top of sections */
-.sec::after{content:'';position:absolute;top:0;left:8%;right:8%;height:1px;background:linear-gradient(90deg,transparent,rgba(0,99,91,.15),transparent);pointer-events:none;z-index:1}
+/* Decorative accent line removed — was causing white lines */
 
 /* === CARD HOVER ACCENT LINE === */
 .svc-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--teal);transform:scaleX(0);transform-origin:left;transition:transform var(--t);z-index:2;pointer-events:none}
@@ -452,7 +451,7 @@ textarea.form-input{resize:vertical}
 @keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
 /* === SECTION DIVIDERS === */
-.sec-divider{height:4px;background:linear-gradient(90deg,var(--teal),var(--gold),var(--teal));opacity:.15}
+/* sec-divider removed */
 
 /* === ANIMATIONS (fast & snappy) === */
 .reveal-left{opacity:0;transform:translateX(-16px);transition:opacity var(--t),transform var(--t)}
@@ -470,9 +469,9 @@ textarea.form-input{resize:vertical}
 
 /* === SUBTLE SHADING — DEPTH & CONTRAST === */
 /* Inner shadow on cream sections for recessed feel */
-.sec{box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(0,0,0,.03)}
+.sec{box-shadow:none}
 /* Subtle vignette on page backgrounds */
-.page-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 60%,rgba(0,0,0,.08) 100%);pointer-events:none;z-index:0}
+/* page-bg vignette removed — was causing visual artifacts */
 /* Soft top/bottom edge shading between sections */
 .section-hero{box-shadow:0 4px 16px rgba(0,0,0,.08)}
 .trustbar{box-shadow:0 2px 8px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.08)}
@@ -1056,9 +1055,6 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 </section>
 
-<!-- SECTION DIVIDER -->
-<div style="height:2px;background:linear-gradient(90deg,transparent,var(--teal),transparent);opacity:.15"></div>
-
 <!-- ABOUT SECTION -->
 <section class="sec bg-diagonal" style="position:relative;overflow:hidden">
   <div style="position:absolute;inset:0;background:url('images/background%20maybe.jpg') center/cover;opacity:.04;pointer-events:none"></div>
@@ -1231,38 +1227,33 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 </section>
 
-<!-- CTA BANNER -->
-<section style="padding:80px 0;position:relative;overflow:hidden;min-height:320px;display:flex;align-items:center">
+<!-- CTA + NEWSLETTER COMBINED -->
+<section style="padding:80px 0;position:relative;overflow:hidden;display:flex;align-items:center">
   <div style="position:absolute;inset:0;background:url('images/premium_photo-1661963106864-40a0b6eddc80.avif') center/cover"></div>
   <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,99,91,.68),rgba(15,31,23,.60))"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(circle,rgba(0,99,91,.03) 1px,transparent 1px);background-size:20px 20px;pointer-events:none"></div>
   <div class="wrap" style="position:relative;z-index:2;text-align:center">
     <h2 style="color:#fff;margin-bottom:12px">Ready to Protect What Matters?</h2>
-    <p style="color:rgba(255,255,255,.75);max-width:500px;margin:0 auto 24px">Whether you're a logger running a crew or a homeowner in the Lowcountry, we'll find the right coverage at the right price.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <p style="color:rgba(255,255,255,.8);max-width:520px;margin:0 auto 28px">Whether you're a logger running a crew or a homeowner in the Lowcountry, we'll find the right coverage at the right price.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:40px">
       <button class="btn btn-white btn-lg" @click="go('quote')">Get a Free Quote</button>
       <a href="tel:8437613999" class="btn btn-lg" style="background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.3)">(843) 761-3999</a>
     </div>
-  </div>
-</section>
-
-<!-- NEWSLETTER -->
-<section class="newsletter-section">
-  <div class="wrap" style="text-align:center">
-    <h2 style="color:#fff;margin-bottom:8px;font-size:clamp(1.5rem,3vw,2rem)">Stay Protected, Stay Informed</h2>
-    <p style="color:rgba(255,255,255,.6);max-width:440px;margin:0 auto 28px;font-size:.95rem">Get seasonal risk tips, policy updates, and safety insights delivered to your inbox.</p>
-    <div class="newsletter-input-wrap" x-data="{nlEmail:'',nlSent:false}">
-      <template x-if="!nlSent">
-        <input type="email" class="newsletter-input" placeholder="Enter your email address" x-model="nlEmail">
-      </template>
-      <template x-if="!nlSent">
-        <button class="newsletter-btn" @click="if(nlEmail){nlSent=true}">Subscribe</button>
-      </template>
-      <template x-if="nlSent">
-        <div style="padding:16px 24px;background:rgba(255,255,255,.95);color:var(--forest);font-weight:600;width:100%;text-align:center;font-size:.92rem">Thank you for subscribing!</div>
-      </template>
+    <div style="max-width:520px;margin:0 auto;padding-top:32px;border-top:1px solid rgba(255,255,255,.15)">
+      <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-bottom:16px">Stay informed — get seasonal risk tips, policy updates & safety insights.</p>
+      <div class="newsletter-input-wrap" x-data="{nlEmail:'',nlSent:false}">
+        <template x-if="!nlSent">
+          <input type="email" class="newsletter-input" placeholder="Enter your email address" x-model="nlEmail">
+        </template>
+        <template x-if="!nlSent">
+          <button class="newsletter-btn" @click="if(nlEmail){nlSent=true}">Subscribe</button>
+        </template>
+        <template x-if="nlSent">
+          <div style="padding:16px 24px;background:rgba(255,255,255,.95);color:var(--forest);font-weight:600;width:100%;text-align:center;font-size:.92rem">Thank you for subscribing!</div>
+        </template>
+      </div>
+      <p style="color:rgba(255,255,255,.25);font-size:.7rem;margin-top:10px">No spam. Unsubscribe anytime.</p>
     </div>
-    <p style="color:rgba(255,255,255,.3);font-size:.72rem;margin-top:12px">No spam. Unsubscribe anytime.</p>
   </div>
 </section>
 
