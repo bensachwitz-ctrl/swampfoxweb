@@ -214,11 +214,11 @@ p{color:var(--mid);line-height:1.75}
 @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
 @keyframes breathe{0%,100%{box-shadow:0 0 0 0 rgba(0,99,91,.08)}50%{box-shadow:0 0 0 8px rgba(0,99,91,0)}}
 
-.reveal-left{opacity:0;transform:translateX(-20px);transition:opacity .5s ease,transform .5s ease;animation:revealFallback 0s .8s forwards}
+.reveal-left{opacity:0;transform:translateX(-20px);transition:opacity .5s ease,transform .5s ease;animation:revealFallback 0s .1s forwards}
 .reveal-left.visible{opacity:1;transform:translateX(0);animation:none}
-.reveal-right{opacity:0;transform:translateX(20px);transition:opacity .5s ease,transform .5s ease;animation:revealFallback 0s .8s forwards}
+.reveal-right{opacity:0;transform:translateX(20px);transition:opacity .5s ease,transform .5s ease;animation:revealFallback 0s .1s forwards}
 .reveal-right.visible{opacity:1;transform:translateX(0);animation:none}
-.reveal-scale{opacity:0;transform:scale(.95);transition:opacity .5s ease,transform .5s ease;animation:revealFallback 0s .8s forwards}
+.reveal-scale{opacity:0;transform:scale(.95);transition:opacity .5s ease,transform .5s ease;animation:revealFallback 0s .1s forwards}
 .reveal-scale.visible{opacity:1;transform:scale(1);animation:none}
 
 /* Staggered card entrance */
@@ -247,7 +247,7 @@ p{color:var(--mid);line-height:1.75}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s cubic-bezier(.25,1,.5,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 /* Fallback: ensure content is never permanently hidden */
-.reveal{animation:revealFallback 0s .8s forwards}
+.reveal{animation:revealFallback 0s .1s forwards}
 .reveal.visible{animation:none}
 @keyframes revealFallback{to{opacity:1;transform:translateY(0)}}
 @keyframes pgIn{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
@@ -472,11 +472,11 @@ textarea.form-input{resize:vertical}
 /* sec-divider removed */
 
 /* === ANIMATIONS (fast & snappy) === */
-.reveal-left{opacity:0;transform:translateX(-16px);transition:opacity var(--t),transform var(--t);animation:revealFallback 0s .8s forwards}
+.reveal-left{opacity:0;transform:translateX(-16px);transition:opacity var(--t),transform var(--t);animation:revealFallback 0s .1s forwards}
 .reveal-left.visible{opacity:1;transform:translateX(0);animation:none}
-.reveal-right{opacity:0;transform:translateX(16px);transition:opacity var(--t),transform var(--t);animation:revealFallback 0s .8s forwards}
+.reveal-right{opacity:0;transform:translateX(16px);transition:opacity var(--t),transform var(--t);animation:revealFallback 0s .1s forwards}
 .reveal-right.visible{opacity:1;transform:translateX(0);animation:none}
-.reveal-scale{opacity:0;transform:scale(.95);transition:opacity var(--t),transform var(--t);animation:revealFallback 0s .8s forwards}
+.reveal-scale{opacity:0;transform:scale(.95);transition:opacity var(--t),transform var(--t);animation:revealFallback 0s .1s forwards}
 .reveal-scale.visible{opacity:1;transform:scale(1);animation:none}
 
 /* === DEPTH & 3D DIMENSION SYSTEM === */
@@ -642,9 +642,9 @@ footer{box-shadow:0 -6px 24px rgba(0,0,0,.08),0 -1px 0 rgba(0,0,0,.04)}
 @keyframes floatSlow{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-8px) rotate(.5deg)}}
 @keyframes glowPulse{0%,100%{box-shadow:0 0 0 0 rgba(0,99,91,.3),0 4px 16px rgba(0,99,91,.12)}50%{box-shadow:0 0 0 8px rgba(0,99,91,0),0 8px 32px rgba(0,99,91,.2)}}
 /* Enhanced staggered reveals with Y-axis headers */
-.reveal-header{opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease-out-expo),transform .6s var(--ease-out-expo);animation:revealFallback 0s .8s forwards}
+.reveal-header{opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease-out-expo),transform .6s var(--ease-out-expo);animation:revealFallback 0s .1s forwards}
 .reveal-header.visible{opacity:1;transform:translateY(0);animation:none}
-.reveal-card{opacity:0;transform:translateY(20px) scale(.97);transition:opacity .5s ease,transform .5s var(--spring-soft);animation:revealFallback 0s .8s forwards}
+.reveal-card{opacity:0;transform:translateY(20px) scale(.97);transition:opacity .5s ease,transform .5s var(--spring-soft);animation:revealFallback 0s .1s forwards}
 .reveal-card.visible{opacity:1;transform:translateY(0) scale(1);animation:none}
 /* Stagger with 0.1s delay per card */
 .reveal-card:nth-child(1){transition-delay:0s}
@@ -2519,9 +2519,13 @@ function swampFox(){
       tick();setInterval(tick,1000);
     },
     initScrollReveal(){
-      const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12});
-      const observe=()=>{document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,.reveal-header,.reveal-card').forEach(el=>{if(!el.classList.contains('visible'))obs.observe(el)})};
-      observe();this.$watch('page',()=>this.$nextTick(()=>{setTimeout(observe,50);setTimeout(observe,200);setTimeout(observe,500);if(this.page==='locations')this.initMap()}));
+      const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0,rootMargin:'0px 0px 200px 0px'});
+      const revealSel='.reveal,.reveal-left,.reveal-right,.reveal-scale,.reveal-header,.reveal-card';
+      const observe=()=>{document.querySelectorAll(revealSel).forEach(el=>{if(!el.classList.contains('visible'))obs.observe(el)})};
+      observe();
+      /* Safety net: force all reveals visible after 1.5s in case observer misses */
+      setTimeout(()=>{document.querySelectorAll(revealSel).forEach(el=>el.classList.add('visible'))},1500);
+      this.$watch('page',()=>this.$nextTick(()=>{setTimeout(observe,50);setTimeout(observe,200);setTimeout(()=>{observe();document.querySelectorAll(revealSel).forEach(el=>el.classList.add('visible'))},800);if(this.page==='locations')this.initMap()}));
     },
     exitShown:false,
     initExitIntent(){
