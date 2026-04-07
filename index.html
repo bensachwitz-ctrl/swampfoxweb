@@ -159,13 +159,13 @@ p{color:var(--mid);line-height:1.75}
 .nav-logo{display:flex;align-items:center;flex-shrink:0}
 .nav-logo img{height:56px;width:auto;object-fit:contain;transition:transform .3s ease,opacity .3s ease}
 .nav-logo:hover img{transform:scale(1.02);opacity:.85}
-.nav-links{display:flex;align-items:center;gap:1px}
+.nav-links{display:flex;align-items:center;gap:1px;flex:1 1 0;min-width:0;overflow:hidden}
 .nav-link{padding:8px 10px;font-size:.8rem;font-weight:500;color:var(--mid);border-radius:6px;transition:all var(--t);white-space:nowrap;cursor:pointer;letter-spacing:.01em;border-bottom:2px solid transparent;position:relative}
 .nav-link::after{content:'';position:absolute;bottom:0;left:50%;width:0;height:2px;background:var(--teal);transition:all .3s ease;transform:translateX(-50%)}
 .nav-link:hover,.nav-link.active{color:var(--forest)}
 .nav-link:hover::after,.nav-link.active::after{width:60%}
 .nav-link.active{font-weight:700}
-.nav-right{display:flex;align-items:center;gap:8px}
+.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .nav-social{display:flex;align-items:center;gap:4px}
 .nav-social a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;color:var(--mid);transition:all var(--t)}
 .nav-social a:hover{color:var(--teal);background:rgba(0,99,91,.06)}
@@ -909,7 +909,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         </template>
       </div>
       <div class="nav-info">
-        <span class="nav-info-item"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> <a href="tel:8437613999" style="font-weight:600;color:var(--forest)">(843) 761-3999</a></span>
+        <span class="nav-info-item"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> <a href="tel:8437613999" style="font-weight:600;color:var(--forest);white-space:nowrap;display:inline-block">(843)&nbsp;761-3999</a></span>
         <span class="nav-info-div"></span>
         <span class="nav-info-item"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <a href="mailto:info@swampfoxagency.com">info@swampfoxagency.com</a></span>
       </div>
