@@ -607,6 +607,24 @@ textarea.form-input{resize:vertical}
 /* Min touch target */
 .btn{min-height:38px}
 
+/* === SUMMIT VIDEO MODULE === */
+@keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.85)}}
+.summit-video-wrap{position:relative;width:100%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;cursor:pointer;box-shadow:0 16px 48px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08);transition:transform .35s cubic-bezier(.2,.85,.3,1.05),box-shadow .35s ease;background:#0a120e}
+.summit-video-wrap:hover{transform:translateY(-3px);box-shadow:0 24px 64px rgba(0,0,0,.55),0 0 0 1px rgba(45,138,126,.4)}
+.summit-video-poster{position:absolute;inset:0;overflow:hidden}
+.summit-video-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,31,23,.92) 0%,rgba(15,31,23,.45) 45%,rgba(15,31,23,.15) 100%);transition:opacity .35s ease}
+.summit-video-wrap:hover .summit-video-shade{opacity:.75}
+.summit-video-meta{position:absolute;left:0;right:0;bottom:0;padding:32px 36px;z-index:2}
+.summit-video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);z-index:3;border:none;box-shadow:0 8px 32px rgba(0,0,0,.4);padding-left:6px}
+.summit-video-play svg{color:var(--forest);transition:color .3s ease}
+.summit-video-wrap:hover .summit-video-play{transform:translate(-50%,-50%) scale(1.12);background:#ff3030;box-shadow:0 12px 48px rgba(255,48,48,.5)}
+.summit-video-wrap:hover .summit-video-play svg{fill:#fff}
+.summit-video-play::before{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px solid rgba(255,255,255,.4);animation:videoRing 2.4s ease-out infinite}
+@keyframes videoRing{0%{transform:scale(.95);opacity:.9}100%{transform:scale(1.4);opacity:0}}
+.summit-video-yt-badge{position:absolute;top:18px;right:18px;display:flex;align-items:center;gap:8px;background:rgba(0,0,0,.65);backdrop-filter:blur(8px);padding:8px 14px;border-radius:999px;color:#fff;font-size:.78rem;font-weight:600;z-index:2;border:1px solid rgba(255,255,255,.1)}
+.summit-video-yt-badge svg{flex-shrink:0}
+@media(max-width:640px){.summit-video-meta{padding:18px 20px}.summit-video-play{width:64px;height:64px}.summit-video-play svg{width:28px;height:28px}.summit-video-yt-badge span{display:none}}
+
 /* === BLOG SECTION === */
 .blog-pill{padding:7px 14px;border-radius:999px;font-size:.78rem;font-weight:600;background:rgba(255,255,255,.08);color:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.12);cursor:pointer;transition:all .25s ease;backdrop-filter:blur(8px);font-family:inherit}
 .blog-pill:hover{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.25)}
@@ -1903,11 +1921,50 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   <div style="position:relative;z-index:2;padding:48px 0">
     <div class="wrap">
       <!-- Title + Logo side by side -->
-      <div style="display:flex;align-items:center;gap:24px;margin-bottom:36px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:24px;margin-bottom:24px;flex-wrap:wrap">
         <div style="background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-radius:16px;padding:16px 20px;box-shadow:0 8px 32px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center"><img loading="lazy" src="images/summit%20logo.png" alt="Summit Logo" style="width:140px;height:auto;object-fit:contain"></div>
         <div>
           <h2 style="color:#fff;margin-bottom:8px;font-size:clamp(1.8rem,4vw,2.8rem)">4th Annual Loggers Technology Summit</h2>
           <p style="color:rgba(255,255,255,.7);font-size:1rem;margin:0">August 28–29, 2026 &bull; Barber Motorsports Park, Birmingham AL</p>
+        </div>
+      </div>
+
+      <!-- ══ FEATURED VIDEO — 2026 Summit ══
+           To embed a specific YouTube video, set summitVideoId='YOUR_VIDEO_ID' below.
+           Without an ID, the module links to the YouTube channel as a fallback. -->
+      <div x-data="{summitVideoId:'',videoPlaying:false}" style="margin-bottom:32px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,68,68,.18);border:1px solid rgba(255,80,80,.35);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:999px;backdrop-filter:blur(8px)">
+            <span style="width:8px;height:8px;border-radius:50%;background:#ff3030;box-shadow:0 0 8px rgba(255,48,48,.8);animation:livePulse 1.6s ease-in-out infinite"></span>
+            2026 Summit Video
+          </span>
+          <span style="color:rgba(255,255,255,.55);font-size:.78rem">Watch the announcement &amp; what to expect this year</span>
+        </div>
+        <div class="summit-video-wrap" @click="summitVideoId?videoPlaying=true:window.open('https://www.youtube.com/@swampfoxagency','_blank')">
+          <!-- Lite embed: only loads YouTube iframe AFTER click -->
+          <template x-if="!videoPlaying">
+            <div class="summit-video-poster">
+              <img loading="lazy" src="images/photo%20to%20put%20on%20sommit%20page%20somewhere%20.png" alt="2026 Loggers Technology Summit — watch the video" style="width:100%;height:100%;object-fit:cover;object-position:center 40%">
+              <div class="summit-video-shade"></div>
+              <div class="summit-video-meta">
+                <div style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-lt);margin-bottom:8px">4th Annual &bull; Birmingham, AL &bull; Aug 28–29</div>
+                <h3 style="color:#fff;font-size:clamp(1.4rem,3vw,2.1rem);margin-bottom:6px;text-shadow:0 2px 12px rgba(0,0,0,.9)">Built for Loggers. Powered by Innovation.</h3>
+                <p style="color:rgba(255,255,255,.85);font-size:.92rem;max-width:620px;margin:0;text-shadow:0 2px 8px rgba(0,0,0,.85)">Two days of field demos, telematics workshops, and the Pinnacle Award ceremony — at Barber Motorsports Park.</p>
+              </div>
+              <button class="summit-video-play" aria-label="Play 2026 Summit video">
+                <svg width="40" height="40" fill="#fff" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <div class="summit-video-yt-badge">
+                <svg width="16" height="16" fill="#fff" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <span x-text="summitVideoId?'Click to play':'Watch on YouTube'"></span>
+              </div>
+            </div>
+          </template>
+          <template x-if="videoPlaying">
+            <div style="position:absolute;inset:0;background:#000">
+              <iframe :src="'https://www.youtube.com/embed/'+summitVideoId+'?autoplay=1&rel=0&modestbranding=1'" style="width:100%;height:100%;border:0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </template>
         </div>
       </div>
 
