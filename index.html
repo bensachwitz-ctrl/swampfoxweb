@@ -607,6 +607,15 @@ textarea.form-input{resize:vertical}
 /* Min touch target */
 .btn{min-height:38px}
 
+/* === BLOG SECTION === */
+.blog-pill{padding:7px 14px;border-radius:999px;font-size:.78rem;font-weight:600;background:rgba(255,255,255,.08);color:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.12);cursor:pointer;transition:all .25s ease;backdrop-filter:blur(8px);font-family:inherit}
+.blog-pill:hover{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.25)}
+.blog-pill-active{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important;box-shadow:0 4px 12px rgba(0,99,91,.35)}
+.blog-cat-tag{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);background:rgba(0,99,91,.08);padding:4px 10px;border-radius:999px;border:1px solid rgba(0,99,91,.15)}
+.blog-card{background:rgba(255,255,255,.96);border:1px solid var(--border);border-radius:14px;margin-bottom:14px;cursor:pointer;transition:transform .25s cubic-bezier(.2,.85,.3,1.05),box-shadow .25s ease,border-color .25s ease;backdrop-filter:blur(10px);box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.blog-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.12);border-color:rgba(0,99,91,.25)}
+@media(max-width:900px){.page-section[data-page="events"] .wrap div[style*="grid-template-columns:1fr 340px"]{grid-template-columns:1fr!important}.page-section[data-page="events"] div[style*="position:sticky"]{position:static!important}}
+
 /* === MODAL — make it always fit on screen === */
 .modal-box{max-height:92vh;overflow-y:auto}
 .modal-body{padding:18px 28px 24px!important}
@@ -2090,72 +2099,51 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 
 <section class="sec" style="background:transparent">
-  <div class="wrap" x-data="{openPost:null}">
+  <div class="wrap" x-data="blogState()">
     <div style="display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start">
     <div>
-      <div class="blog-card reveal" @click="openPost=openPost===1?null:1" :style="openPost===1?'box-shadow:0 8px 32px rgba(0,99,91,.12)':''">
-        <div style="padding:24px">
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
-            <div>
-              <span style="font-size:.72rem;color:var(--teal);font-weight:700;text-transform:uppercase;letter-spacing:.06em">Auto Insurance</span>
-              <h3 style="margin:6px 0 6px;font-size:1.12rem;color:var(--forest)">Black Ice Accidents: What Auto Insurance Really Covers</h3>
-              <p style="font-size:.88rem;color:#3a4f5a;margin:0;line-height:1.5">Learn what your auto policy actually covers when black ice sends your vehicle sliding.</p>
-              <div style="font-size:.75rem;color:var(--teal);font-weight:500;margin-top:8px">March 26, 2026</div>
+      <!-- Category Filter Pills -->
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px">
+        <template x-for="cat in categories" :key="cat">
+          <button @click="activeCat=cat" :class="activeCat===cat?'blog-pill-active':''" class="blog-pill" x-text="cat"></button>
+        </template>
+      </div>
+      <!-- Search -->
+      <div style="position:relative;margin-bottom:18px">
+        <svg width="14" height="14" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" viewBox="0 0 24 24" style="position:absolute;left:14px;top:50%;transform:translateY(-50%)"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" x-model="search" placeholder="Search articles…" style="width:100%;padding:12px 16px 12px 38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;color:#fff;font-size:.9rem;backdrop-filter:blur(8px)">
+      </div>
+      <!-- Result count -->
+      <p style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:14px"><span x-text="filtered.length"></span> article<span x-show="filtered.length!==1">s</span> <span x-show="activeCat!=='All'">in <strong x-text="activeCat" style="color:var(--teal-lt)"></strong></span></p>
+      <!-- Articles -->
+      <template x-for="(p,idx) in filtered" :key="p.id">
+        <div class="blog-card reveal" @click="openPost=openPost===p.id?null:p.id" :style="openPost===p.id?'box-shadow:0 8px 32px rgba(0,99,91,.18)':''">
+          <div style="padding:22px">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+              <div style="flex:1">
+                <span class="blog-cat-tag" x-text="p.category"></span>
+                <h3 style="margin:8px 0 6px;font-size:1.1rem;color:var(--forest);line-height:1.3" x-text="p.title"></h3>
+                <p style="font-size:.86rem;color:#3a4f5a;margin:0;line-height:1.5" x-text="p.excerpt"></p>
+                <div style="font-size:.74rem;color:var(--teal);font-weight:500;margin-top:8px;display:flex;align-items:center;gap:6px">
+                  <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                  <span x-text="p.date"></span>
+                </div>
+              </div>
+              <svg :style="openPost===p.id?'transform:rotate(180deg)':''" style="flex-shrink:0;transition:transform var(--t);margin-top:4px" width="20" height="20" fill="none" stroke="var(--teal)" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
             </div>
-            <svg :style="openPost===1?'transform:rotate(180deg)':''" style="flex-shrink:0;transition:transform var(--t)" width="20" height="20" fill="none" stroke="var(--teal)" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div x-show="openPost===1" x-collapse style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">
-            <p style="font-size:.9rem;color:#2c3e44;margin-bottom:12px;line-height:1.65">Black ice is one of the most dangerous driving hazards in the Lowcountry during winter months. Invisible ice on bridges and overpasses can send your vehicle into a guardrail, ditch, or another car before you even realize what happened.</p>
-            <p style="font-size:.9rem;color:#2c3e44;margin-bottom:12px;line-height:1.65"><strong>What your auto policy covers:</strong> Collision coverage pays for damage to your own vehicle, minus your deductible. Liability covers damages to others. Comprehensive does NOT apply — black ice is classified as a collision event.</p>
-            <p style="font-size:.9rem;color:#2c3e44;margin-bottom:12px;line-height:1.65"><strong>Uninsured motorist coverage</strong> is critical when the OTHER driver on black ice hits you and has no insurance.</p>
-            <p style="font-size:.9rem;color:#2c3e44;line-height:1.65"><strong>Swamp Fox recommends:</strong> Review your collision deductible, confirm UM/UIM coverage, and consider gap coverage. Call us at <a href="tel:8437613999" style="color:var(--teal);font-weight:600">(843) 761-3999</a> for a free policy review.</p>
-            <a href="https://swampfoxagency.com/auto-insurance/black-ice-accidents-what-auto-insurance-really-covers-summerville-sc/" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:.85rem;font-weight:600;color:var(--teal)">Read Full Article <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+            <div x-show="openPost===p.id" x-collapse style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border)">
+              <p style="font-size:.9rem;color:#2c3e44;line-height:1.65;margin-bottom:14px" x-text="p.body"></p>
+              <p style="font-size:.88rem;color:#2c3e44;line-height:1.6;margin-bottom:14px"><strong>Talk to Swamp Fox:</strong> Call <a href="tel:8437613999" style="color:var(--teal);font-weight:600">(843) 761-3999</a> or <a href="tel:8436280280" style="color:var(--teal);font-weight:600">(843) 628-0280</a> for personal lines, or get a <a href="#" @click.prevent="$root.go('quote')" style="color:var(--teal);font-weight:600">free quote</a>.</p>
+              <a :href="p.url" target="_blank" rel="noopener" class="btn" style="font-size:.85rem;padding:10px 20px">Read Full Article <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:6px"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+            </div>
           </div>
         </div>
+      </template>
+      <div x-show="filtered.length===0" style="text-align:center;padding:40px;color:rgba(255,255,255,.5);font-size:.95rem">
+        No articles match your filter. <a href="#" @click.prevent="search='';activeCat='All'" style="color:var(--teal-lt);text-decoration:underline">Clear filter</a>
       </div>
-      <div class="blog-card reveal" @click="openPost=openPost===2?null:2" :style="openPost===2?'box-shadow:0 8px 32px rgba(0,99,91,.12)':''">
-        <div style="padding:24px">
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
-            <div>
-              <span style="font-size:.72rem;color:var(--teal);font-weight:700;text-transform:uppercase;letter-spacing:.06em">Auto Insurance</span>
-              <h3 style="margin:6px 0 6px;font-size:1.12rem;color:var(--forest)">Common Auto Insurance Mistakes That Cost Drivers Money</h3>
-              <p style="font-size:.88rem;color:#3a4f5a;margin:0;line-height:1.5">Minor insurance errors can quietly drain your wallet. Learn how to avoid the most common ones.</p>
-              <div style="font-size:.75rem;color:var(--teal);font-weight:500;margin-top:8px">January 13, 2026</div>
-            </div>
-            <svg :style="openPost===2?'transform:rotate(180deg)':''" style="flex-shrink:0;transition:transform var(--t)" width="20" height="20" fill="none" stroke="var(--teal)" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div x-show="openPost===2" x-collapse style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">
-            <p style="font-size:.9rem;color:#2c3e44;margin-bottom:12px;line-height:1.65">Common mistakes can leave you underinsured or overpaying. Here are the most expensive errors we see at Swamp Fox Agency.</p>
-            <p style="font-size:.9rem;color:#2c3e44;margin-bottom:12px;line-height:1.65"><strong>1. Minimum liability only.</strong> SC requires just 25/50/25. We recommend at least 100/300/100.</p>
-            <p style="font-size:.9rem;color:#2c3e44;margin-bottom:12px;line-height:1.65"><strong>2. Skipping uninsured motorist coverage.</strong> About 1 in 8 SC drivers are uninsured.</p>
-            <p style="font-size:.9rem;color:#2c3e44;margin-bottom:12px;line-height:1.65"><strong>3. Not reviewing annually.</strong> Life changes — new car, new driver, paid-off loan — each could save or cost you hundreds.</p>
-            <p style="font-size:.9rem;color:#2c3e44;line-height:1.65"><strong>Fix it today:</strong> Call Swamp Fox at <a href="tel:8437613999" style="color:var(--teal);font-weight:600">(843) 761-3999</a> for a free coverage review.</p>
-            <a href="https://swampfoxagency.com/blog/" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:.85rem;font-weight:600;color:var(--teal)">Read Full Article <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
-          </div>
-        </div>
-      </div>
-      <div class="blog-card reveal" @click="openPost=openPost===3?null:3" :style="openPost===3?'box-shadow:0 8px 32px rgba(0,99,91,.12)':''">
-        <div style="padding:24px">
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
-            <div>
-              <span style="font-size:.72rem;color:var(--teal);font-weight:700;text-transform:uppercase;letter-spacing:.06em">Auto Insurance</span>
-              <h3 style="margin:6px 0 6px;font-size:1.12rem;color:var(--forest)">Understanding Uninsured &amp; Underinsured Motorist Coverage</h3>
-              <p style="font-size:.88rem;color:#3a4f5a;margin:0;line-height:1.5">What happens when the other driver doesn't have enough insurance? Here's how to protect yourself.</p>
-              <div style="font-size:.75rem;color:var(--teal);font-weight:500;margin-top:8px">October 21, 2025</div>
-            </div>
-            <svg :style="openPost===3?'transform:rotate(180deg)':''" style="flex-shrink:0;transition:transform var(--t)" width="20" height="20" fill="none" stroke="var(--teal)" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div x-show="openPost===3" x-collapse style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">
-            <p style="font-size:.9rem;color:#2c3e44;margin-bottom:12px;line-height:1.65">UM/UIM coverage is one of the most important — and most overlooked — parts of your auto policy. In SC, roughly 12% of drivers carry no insurance at all.</p>
-            <p style="font-size:.9rem;color:#2c3e44;margin-bottom:12px;line-height:1.65"><strong>Uninsured Motorist (UM)</strong> covers your medical bills, lost wages, and pain/suffering when the at-fault driver has zero insurance.</p>
-            <p style="font-size:.9rem;color:#2c3e44;margin-bottom:12px;line-height:1.65"><strong>Underinsured Motorist (UIM)</strong> fills the gap when the at-fault driver's limits aren't enough to cover your damages.</p>
-            <p style="font-size:.9rem;color:#2c3e44;line-height:1.65"><strong>Talk to Swamp Fox:</strong> We'll match your UM/UIM limits for maximum protection. Call <a href="tel:8437613999" style="color:var(--teal);font-weight:600">(843) 761-3999</a>.</p>
-            <a href="https://swampfoxagency.com/auto-insurance/understanding-uninsured-and-underinsured-motorist-coverage-auto-insurance-in-charleston-sc/" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:.85rem;font-weight:600;color:var(--teal)">Read Full Article <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
-          </div>
-        </div>
-      </div>
-      <div style="text-align:left;margin-top:20px">
-        <a href="https://swampfoxagency.com/blog/" target="_blank" class="btn btn-outline" style="font-size:.88rem;border-color:rgba(255,255,255,.35);color:#fff;backdrop-filter:blur(8px)">View All Blog Posts <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+      <div style="text-align:left;margin-top:24px">
+        <a href="https://swampfoxagency.com/blog/" target="_blank" class="btn btn-outline" style="font-size:.88rem;border-color:rgba(255,255,255,.45);color:#fff;backdrop-filter:blur(8px)">Visit Full Blog on swampfoxagency.com <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:6px"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
       </div>
     </div><!-- end blog posts column -->
     <!-- Team Photo Column -->
@@ -2701,6 +2689,34 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <link rel="preload" as="image" href="images/swamp%20fox%20green%20logo%20.png">
 
 <script>
+function blogState(){
+  return {
+    activeCat:'All', search:'', openPost:null,
+    posts:[
+      {id:1,category:'General Liability',title:'Could One Customer Accident Put Your Business at Risk?',excerpt:'A single customer slip-and-fall can drain reserves and shut down operations. Here\'s why general liability is non-negotiable.',body:'One customer accident — a slip in the parking lot, a falling display, a defective product — can trigger a six-figure claim that wipes out a small business. General liability protects against bodily injury, property damage, personal injury (libel/slander), and the legal defense costs that follow. Without it, you pay out of pocket for medical bills, lost-wage claims, and attorney fees that often exceed the original injury cost.',date:'April 9, 2026',url:'https://swampfoxagency.com/general-liability-insurance/could-one-customer-accident-put-your-business-at-risk-general-liability-insurance-in-goose-creek-sc/'},
+      {id:2,category:'Commercial Auto',title:'How to Insure Service Vans Without Costly Coverage Gaps',excerpt:'Service vans need more than personal auto. Here\'s how to structure commercial auto so a single claim doesn\'t shut you down.',body:'Service vans carry tools, equipment, and customer property — none of which a personal auto policy fully covers. A proper commercial auto policy covers the vehicle, hired/non-owned auto for employees driving their own cars on business, and inland marine for tools inside the van. Skip any one of these and you\'re self-insuring exposure that could easily exceed $50K.',date:'April 2, 2026',url:'https://swampfoxagency.com/commercial-auto-insurance/how-to-insure-service-vans-without-costly-coverage-gaps-commercial-auto-insurance-in-goose-creek-sc/'},
+      {id:3,category:'Auto',title:'Black Ice Accidents: What Auto Insurance Really Covers',excerpt:'Invisible ice on Lowcountry bridges sends drivers into ditches every winter. Here\'s exactly what your policy pays for.',body:'Black ice is one of the most dangerous driving hazards in the Lowcountry during winter months. Collision pays for damage to your own vehicle minus the deductible, liability covers damages to others, and comprehensive does NOT apply (black ice = collision event). Uninsured motorist coverage is critical when the OTHER driver on black ice hits you and has no insurance.',date:'March 26, 2026',url:'https://swampfoxagency.com/auto-insurance/black-ice-accidents-what-auto-insurance-really-covers-summerville-sc/'},
+      {id:4,category:'Homeowners',title:'Ice, Wind, & Leaks: Will Your Home Insurance Pay Out?',excerpt:'Lowcountry storms hit hard. Know exactly which damage your homeowners policy pays — and where the gaps are.',body:'Standard homeowners covers wind damage to roofs, fallen-tree damage to structures, and water damage from a sudden burst pipe. It does NOT cover gradual leaks, mold from poor maintenance, or flood damage (separate policy). After a storm, document everything photographically before any cleanup, and call us immediately to start the claim.',date:'March 19, 2026',url:'https://swampfoxagency.com/homeowners-insurance/ice-wind-leaks-will-your-home-insurance-pay-out-homeowners-insurance-in-summerville-sc/'},
+      {id:5,category:'Camper / RV',title:'Full-Time RVing: Coverage Gaps to Watch For',excerpt:'Standard camper policies are written for weekend use. Full-timers need a different policy structure entirely.',body:'A standard recreational policy assumes occasional weekend use. If you\'re living in your RV full-time, you need full-timer coverage that mirrors a homeowners policy: personal liability when parked, contents coverage at replacement cost, emergency expenses, and vacation-liability when stationary. Without these, you\'re uninsured for the most likely loss scenarios.',date:'February 19, 2026',url:'https://swampfoxagency.com/camper-insurance/full-time-rving-coverage-gaps-to-watch-for-camper-insurance-in-moncks-corner-sc/'},
+      {id:6,category:'Commercial Auto',title:'Fleet vs. Single Work Truck: Coverage Differences',excerpt:'One truck or twenty — the policy structure changes everything. Here\'s what fleet coverage gets you that single-vehicle doesn\'t.',body:'A single work truck typically goes on a commercial auto policy with named-driver schedules. Fleets (5+ vehicles) qualify for blanket coverage, automatic any-driver authorization, fleet safety discounts, and consolidated claims handling. Above 10 vehicles, fleet symbol coverage simplifies adding/removing vehicles mid-term without policy endorsements.',date:'February 12, 2026',url:'https://swampfoxagency.com/commercial-auto-insurance/fleet-vs-single-work-truck-coverage-differences-commercial-auto-insurance-in-summerville-sc/'},
+      {id:7,category:'Camper / RV',title:'Top Reasons You Need Camper Insurance Today',excerpt:'A camper isn\'t covered by your auto policy or homeowners. Here\'s why a dedicated policy is worth the cost.',body:'Travel trailers and fifth wheels need their own physical damage coverage, contents coverage, personal liability when set up at a campsite, and roadside assistance. Most owners assume their auto liability extends — it doesn\'t once the trailer is detached or set up. A dedicated camper policy runs $200–$500/year and prevents tens of thousands in uncovered loss.',date:'January 20, 2026',url:'https://swampfoxagency.com/camper-insurance/top-reasons-you-need-camper-insurance-today-summerville-sc/'},
+      {id:8,category:'Auto',title:'Common Auto Insurance Mistakes That Cost Drivers Money',excerpt:'Three common policy errors quietly cost SC drivers thousands. Fix them in one phone call.',body:'1) Minimum liability only — SC requires just 25/50/25, but a single serious crash blows past that easily. We recommend at least 100/300/100. 2) Skipping uninsured motorist coverage when about 1 in 8 SC drivers carry none. 3) Not reviewing annually — every life change (new car, new driver, paid-off loan) is a chance to save or close a coverage gap.',date:'January 13, 2026',url:'https://swampfoxagency.com/auto-insurance/common-auto-insurance-mistakes-that-cost-drivers-money-auto-insurance-in-goose-creek-sc/'},
+      {id:9,category:'Commercial',title:'Protect Your Bar with Liquor Liability and More',excerpt:'Serving alcohol means specialized liability exposure. Standard general liability won\'t cut it.',body:'Any establishment serving alcohol — bars, restaurants, even one-time event hosts — faces dram shop liability for serving an intoxicated patron who later causes harm. Liquor liability coverage handles the legal defense and settlement costs that general liability specifically excludes. Pair it with assault & battery coverage and host liquor for full protection.',date:'December 17, 2025',url:'https://swampfoxagency.com/commercial-insurance/protect-your-bar-with-liquor-liability-and-more-commercial-insurance-in-charleston-sc/'},
+      {id:10,category:'Forestry Equipment',title:'Claim Lessons from Storm Season in the Timber Belt',excerpt:'Real claims from real storms — what loggers learned, what their policies paid, and where coverage came up short.',body:'After Hurricane season every year, we sit down with operators who filed equipment claims. The pattern: skidders and loaders parked under tree cover sustain crushing damage, transport trailers blow over when not lowered, and tools left in service trucks get water-damaged. Comprehensive on the equipment, transit coverage on lowboys, and contractor\'s tools coverage close the most common gaps.',date:'December 10, 2025',url:'https://swampfoxagency.com/forestry-insurance/forestry-equipment-insurance/claim-lessons-from-storm-season-in-the-timber-belt-forestry-equipment-insurance/'},
+      {id:11,category:'Auto',title:'Understanding Uninsured & Underinsured Motorist Coverage',excerpt:'When the other driver doesn\'t have enough insurance, your UM/UIM is what stands between you and financial ruin.',body:'In SC, roughly 12% of drivers carry no insurance at all. Uninsured Motorist (UM) covers your medical bills, lost wages, and pain/suffering when the at-fault driver has zero insurance. Underinsured Motorist (UIM) fills the gap when the at-fault driver\'s limits aren\'t enough. We recommend matching your UM/UIM limits to your liability limits so you\'re never out-protected by another driver\'s minimum.',date:'October 21, 2025',url:'https://swampfoxagency.com/auto-insurance/understanding-uninsured-and-underinsured-motorist-coverage-auto-insurance-in-charleston-sc/'}
+    ],
+    get categories(){const set=new Set(['All']);this.posts.forEach(p=>set.add(p.category));return [...set]},
+    get filtered(){
+      const q=this.search.trim().toLowerCase();
+      return this.posts.filter(p=>{
+        if(this.activeCat!=='All'&&p.category!==this.activeCat)return false;
+        if(!q)return true;
+        return p.title.toLowerCase().includes(q)||p.excerpt.toLowerCase().includes(q)||p.body.toLowerCase().includes(q)||p.category.toLowerCase().includes(q);
+      });
+    }
+  };
+}
+
 function swampFox(){
   return {
     page:'home', scrolled:false, menuOpen:false, quoteSent:false, quoteStep:1, navDrop:null, mobileSubOpen:false,
