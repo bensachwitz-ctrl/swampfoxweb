@@ -586,11 +586,25 @@ textarea.form-input{resize:vertical}
 .nav-link-wrap .nav-link[aria-expanded="true"]{color:var(--forest)}
 @media(max-width:1024px){.nav-dropdown{display:none!important}}
 
-/* === BUTTON CONTRAST FIX (Learn More always visible) === */
-.btn-outline{background:#fff;color:var(--teal);border:1.5px solid var(--teal);font-weight:600}
-.btn-outline:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
-.acc-panel .btn-outline,.svc-card .btn-outline,.insure-card .btn-outline{background:#fff!important;color:var(--teal)!important;border-color:var(--teal)!important}
-.acc-panel .btn-outline:hover,.svc-card .btn-outline:hover,.insure-card .btn-outline:hover{background:var(--teal)!important;color:#fff!important}
+/* === BUTTON CONTRAST FIX (scoped — don't break dark-context buttons) ===
+   Default .btn-outline stays transparent so hero/summit/blog buttons (which
+   set color:#fff inline) remain readable on dark backgrounds.
+   Only force teal-on-white inside light-context wrappers. */
+.btn-outline{font-weight:600}
+.acc-panel .btn-outline,.acc-panel .btn-outline:link,.acc-panel .btn-outline:visited,
+.svc-card .btn-outline,
+.insure-card .btn-outline,
+.sec[style*="cream"] .btn-outline,
+.sec[style*="sage"] .btn-outline{background:#fff!important;color:var(--teal)!important;border-color:var(--teal)!important}
+.acc-panel .btn-outline:hover,.svc-card .btn-outline:hover,.insure-card .btn-outline:hover,
+.sec[style*="cream"] .btn-outline:hover,.sec[style*="sage"] .btn-outline:hover{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important}
+
+/* Helper class for dark-context outlined buttons (use instead of inline color:#fff) */
+.btn-outline-light{background:transparent!important;color:#fff!important;border-color:rgba(255,255,255,.4)!important}
+.btn-outline-light:hover{background:rgba(255,255,255,.12)!important;color:#fff!important;border-color:#fff!important}
+
+/* Min touch target */
+.btn{min-height:38px}
 
 /* === MODAL — make it always fit on screen === */
 .modal-box{max-height:92vh;overflow-y:auto}
