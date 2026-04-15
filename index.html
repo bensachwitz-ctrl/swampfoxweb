@@ -556,6 +556,58 @@ textarea.form-input{resize:vertical}
 .page-section.active-page{animation:pgIn .55s cubic-bezier(.16,1,.3,1) both}
 @keyframes pgIn{from{opacity:0;transform:translateY(24px) scale(.985);filter:blur(4px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
 
+/* === TOP INFO BAR === */
+.nav-topbar{background:linear-gradient(90deg,var(--forest2),var(--forest));color:rgba(255,255,255,.78);font-size:.72rem;border-bottom:1px solid rgba(255,255,255,.06);position:sticky;top:0;z-index:201}
+.nav-topbar-inner{display:flex;align-items:center;height:34px;gap:0;flex-wrap:nowrap;overflow:hidden}
+.nav-topbar a{color:rgba(255,255,255,.85);transition:color .2s ease}
+.nav-topbar a:hover{color:#fff}
+.nav-topbar .nav-info-item{padding:0 14px;display:flex;align-items:center;gap:6px;white-space:nowrap;flex-shrink:0}
+.nav-topbar .nav-info-item svg{opacity:.65;flex-shrink:0}
+.nav-topbar-div{width:1px;height:14px;background:rgba(255,255,255,.12);flex-shrink:0}
+.nav-topbar-spacer{flex:1;background:transparent}
+@media(max-width:1100px){.nav-topbar .nav-info-item:nth-child(n+5){display:none}.nav-topbar-div:nth-child(n+5){display:none}}
+@media(max-width:768px){.nav-topbar{display:none}}
+
+/* Promote .nav to sit BELOW the topbar (it's also sticky) */
+.nav{top:34px}
+@media(max-width:768px){.nav{top:0}}
+
+/* === COVERAGE DROPDOWN === */
+.nav-link-wrap{position:relative;display:flex;align-items:center}
+.nav-link-wrap .nav-link{display:flex;align-items:center}
+.nav-dropdown{position:absolute;top:100%;left:0;margin-top:8px;min-width:340px;background:#fff;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.12),0 2px 8px rgba(0,0,0,.06),0 0 0 1px rgba(0,99,91,.06);padding:10px;z-index:250;display:grid;grid-template-columns:1fr;gap:2px}
+.nav-dropdown::before{content:'';position:absolute;top:-6px;left:24px;width:12px;height:12px;background:#fff;transform:rotate(45deg);box-shadow:-1px -1px 0 rgba(0,99,91,.06)}
+.nav-dropdown-item{display:flex;gap:12px;padding:10px 12px;border-radius:9px;cursor:pointer;transition:background .2s ease,transform .2s ease;align-items:flex-start}
+.nav-dropdown-item:hover{background:var(--sage-lt);transform:translateX(2px)}
+.nav-dd-icon{width:34px;height:34px;border-radius:8px;background:var(--teal-bg);color:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s ease,color .2s ease}
+.nav-dropdown-item:hover .nav-dd-icon{background:var(--teal);color:#fff}
+.nav-dd-label{font-size:.86rem;font-weight:700;color:var(--forest);line-height:1.2}
+.nav-dd-desc{font-size:.7rem;color:var(--mid);margin-top:2px;line-height:1.35}
+.nav-link-wrap .nav-link[aria-expanded="true"]{color:var(--forest)}
+@media(max-width:1024px){.nav-dropdown{display:none!important}}
+
+/* === BUTTON CONTRAST FIX (Learn More always visible) === */
+.btn-outline{background:#fff;color:var(--teal);border:1.5px solid var(--teal);font-weight:600}
+.btn-outline:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+.acc-panel .btn-outline,.svc-card .btn-outline,.insure-card .btn-outline{background:#fff!important;color:var(--teal)!important;border-color:var(--teal)!important}
+.acc-panel .btn-outline:hover,.svc-card .btn-outline:hover,.insure-card .btn-outline:hover{background:var(--teal)!important;color:#fff!important}
+
+/* === MODAL — make it always fit on screen === */
+.modal-box{max-height:92vh;overflow-y:auto}
+.modal-body{padding:18px 28px 24px!important}
+.modal-header{padding:20px 28px!important}
+.cov-btn{padding:11px 14px!important}
+.cov-btn .nav-dd-label,.cov-btn>div>div>div:first-child{font-size:.86rem!important}
+.cov-btn>div>div>div:last-child{font-size:.7rem!important}
+.step-bar{margin-bottom:18px!important}
+
+/* Restore softer modal header (was dark green block) */
+.modal-header{background:linear-gradient(135deg,#fff 0%,var(--sage-lt) 100%)!important;color:var(--forest)!important;padding:24px 32px!important;border-bottom:1px solid rgba(0,99,91,.08)}
+.modal-header h3{color:var(--forest)!important;font-size:1.3rem}
+.modal-header p{color:var(--mid)!important;font-size:.85rem}
+.modal-close{position:absolute;top:18px;right:18px;background:rgba(0,99,91,.08)!important;color:var(--forest)!important}
+.modal-close:hover{background:var(--teal)!important;color:#fff!important}
+
 /* === ACCESSIBILITY: prefers-reduced-motion === */
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after{
@@ -1020,26 +1072,52 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <!-- Floating Particles -->
 <div class="particles-container" id="particles"></div>
 
-<!-- ══════════ COMBINED NAV (single white bar) ══════════ -->
+<!-- ══════════ TOP INFO BAR ══════════ -->
+<div class="nav-topbar">
+  <div class="wrap nav-topbar-inner">
+    <span class="nav-info-item"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> <a href="tel:8437613999"><strong>Forestry:</strong>&nbsp;(843)&nbsp;761-3999</a></span>
+    <span class="nav-topbar-div"></span>
+    <span class="nav-info-item"><a href="tel:8436280280"><strong>Personal:</strong>&nbsp;(843)&nbsp;628-0280</a></span>
+    <span class="nav-topbar-div"></span>
+    <span class="nav-info-item"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Mon–Fri 8am–5pm</span>
+    <span class="nav-topbar-div"></span>
+    <span class="nav-info-item"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <a href="mailto:info@swampfoxagency.com">info@swampfoxagency.com</a></span>
+    <span class="nav-topbar-div nav-topbar-spacer"></span>
+    <span class="nav-info-item"><a href="https://portal.csr24.com/mvc/7613999" target="_blank" rel="noopener"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg> Client&nbsp;Portal</a></span>
+    <span class="nav-topbar-div"></span>
+    <span class="nav-info-item"><a href="https://swampfoxagency.com/faq/" target="_blank" rel="noopener"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/></svg> FAQ</a></span>
+    <span class="nav-topbar-div"></span>
+    <span class="nav-info-item"><a href="https://www.linkedin.com/company/swamp-fox-agency/jobs/" target="_blank" rel="noopener"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11h-6M19 8v6"/></svg> Careers</a></span>
+  </div>
+</div>
+
+<!-- ══════════ MAIN NAV ══════════ -->
 <nav class="nav" :class="{scrolled:scrolled}">
   <div class="wrap">
     <div class="nav-inner">
       <a class="nav-logo" @click.prevent="go('home')" href="#" style="cursor:pointer">
         <img src="images/swamp%20fox%20top%20logo.webp" alt="Swamp Fox Insurance Agency">
       </a>
-      <div class="nav-links">
+      <div class="nav-links" @mouseleave="navDrop=null">
         <template x-for="item in nav.filter(n=>n.id!=='quote')" :key="item.id">
-          <a class="nav-link" :class="{'active':page===item.id}" @click.prevent="go(item.id)" x-text="item.label" href="#"></a>
+          <div class="nav-link-wrap" @mouseenter="item.children?navDrop=item.id:navDrop=null">
+            <a class="nav-link" :class="{'active':page===item.id||(item.children&&item.children.some(c=>c.id===page))}" @click.prevent="item.children?(navDrop=navDrop===item.id?null:item.id):go(item.id)" href="#">
+              <span x-text="item.label"></span>
+              <svg x-show="item.children" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="margin-left:4px;transition:transform .25s ease" :style="navDrop===item.id?'transform:rotate(180deg)':''"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="nav-dropdown" x-show="item.children&&navDrop===item.id" x-transition x-cloak>
+              <template x-for="child in item.children||[]" :key="child.id">
+                <a class="nav-dropdown-item" @click.prevent="go(child.target||'services');navDrop=null" href="#">
+                  <div class="nav-dd-icon" x-html="child.icon"></div>
+                  <div>
+                    <div class="nav-dd-label" x-text="child.label"></div>
+                    <div class="nav-dd-desc" x-text="child.desc"></div>
+                  </div>
+                </a>
+              </template>
+            </div>
+          </div>
         </template>
-      </div>
-      <div class="nav-info">
-        <span class="nav-info-item" title="Forestry / Commercial"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> <a href="tel:8437613999" style="font-weight:600;color:var(--forest);white-space:nowrap;display:inline-block">Forestry: (843)&nbsp;761-3999</a></span>
-        <span class="nav-info-div"></span>
-        <span class="nav-info-item" title="Personal &amp; Small Commercial"><a href="tel:8436280280" style="font-weight:600;color:var(--forest);white-space:nowrap;display:inline-block">Personal: (843)&nbsp;628-0280</a></span>
-        <span class="nav-info-div"></span>
-        <span class="nav-info-item"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Mon–Fri 8am–5pm</span>
-        <span class="nav-info-div"></span>
-        <span class="nav-info-item"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <a href="mailto:info@swampfoxagency.com">info@swampfoxagency.com</a></span>
       </div>
       <div class="nav-right">
         <div class="nav-social">
@@ -1065,11 +1143,28 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <button @click="menuOpen=false" style="color:#fff;font-size:2rem;width:44px;height:44px;display:flex;align-items:center;justify-content:center">&times;</button>
     </div>
     <template x-for="item in nav" :key="item.id">
-      <a class="mob-link" @click.prevent="go(item.id)" x-text="item.label" href="#"></a>
+      <div>
+        <a class="mob-link" @click.prevent="item.children?(mobileSubOpen=mobileSubOpen===item.id?null:item.id):go(item.id)" href="#" style="display:flex;justify-content:space-between;align-items:center">
+          <span x-text="item.label"></span>
+          <svg x-show="item.children" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" :style="mobileSubOpen===item.id?'transform:rotate(180deg);transition:transform .25s':'transition:transform .25s'"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div x-show="item.children&&mobileSubOpen===item.id" x-collapse style="padding-left:16px;border-left:2px solid rgba(45,138,126,.4);margin-left:4px">
+          <template x-for="child in item.children||[]" :key="child.id">
+            <a class="mob-link" @click.prevent="go(child.target||'services');mobileSubOpen=null;menuOpen=false" href="#" style="font-size:.95rem;padding:12px 0;color:rgba(255,255,255,.6)" x-text="child.label"></a>
+          </template>
+        </div>
+      </div>
     </template>
     <div style="margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08)">
-      <a href="tel:8437613999" style="color:var(--teal-lt);font-weight:600;display:block;margin-bottom:12px">(843) 761-3999</a>
-      <a href="mailto:info@swampfoxagency.com" style="color:var(--teal-lt);font-weight:500;font-size:.95rem;display:block;margin-bottom:20px">info@swampfoxagency.com</a>
+      <div style="margin-bottom:8px"><span style="font-size:.65rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em">Forestry / Commercial</span><a href="tel:8437613999" style="color:var(--teal-lt);font-weight:600;display:block;font-size:1.05rem">(843) 761-3999</a></div>
+      <div style="margin-bottom:14px"><span style="font-size:.65rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em">Personal / Small Commercial</span><a href="tel:8436280280" style="color:var(--teal-lt);font-weight:600;display:block;font-size:1.05rem">(843) 628-0280</a></div>
+      <a href="mailto:info@swampfoxagency.com" style="color:rgba(255,255,255,.65);font-weight:500;font-size:.85rem;display:block;margin-bottom:6px">info@swampfoxagency.com</a>
+      <p style="color:rgba(255,255,255,.5);font-size:.78rem;margin-bottom:16px">Mon–Fri 8am–5pm</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
+        <a href="https://portal.csr24.com/mvc/7613999" target="_blank" style="background:rgba(255,255,255,.06);padding:10px 12px;border-radius:8px;color:rgba(255,255,255,.85);font-size:.78rem;font-weight:600;text-align:center;border:1px solid rgba(255,255,255,.08)">Client Portal</a>
+        <a href="https://swampfoxagency.com/faq/" target="_blank" style="background:rgba(255,255,255,.06);padding:10px 12px;border-radius:8px;color:rgba(255,255,255,.85);font-size:.78rem;font-weight:600;text-align:center;border:1px solid rgba(255,255,255,.08)">FAQ</a>
+        <a href="https://www.linkedin.com/company/swamp-fox-agency/jobs/" target="_blank" style="grid-column:span 2;background:rgba(255,255,255,.06);padding:10px 12px;border-radius:8px;color:rgba(255,255,255,.85);font-size:.78rem;font-weight:600;text-align:center;border:1px solid rgba(255,255,255,.08)">Careers</a>
+      </div>
       <button @click="go('quote');menuOpen=false" style="background:var(--teal);color:#fff;padding:14px 20px;border-radius:var(--r-lg);font-weight:600;width:100%;text-align:center;border:none;cursor:pointer">Get a Free Quote</button>
     </div>
   </div>
@@ -1914,19 +2009,19 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     </div>
     <div class="grid-3">
       <div style="background:var(--sage-lt);border-radius:var(--r-lg);padding:28px" class="reveal">
-        <div style="font-size:.68rem;font-weight:700;letter-spacing:.12em;color:var(--teal);text-transform:uppercase;margin-bottom:6px">1st Annual — 2023</div>
-        <h3>Walterboro, SC</h3>
-        <p style="font-size:.85rem">The inaugural Loggers Technology Summit launched at the Lowcountry Conference Center, introducing safety and technology sessions for SC logging professionals.</p>
+        <div style="font-size:.68rem;font-weight:700;letter-spacing:.12em;color:var(--teal);text-transform:uppercase;margin-bottom:6px">What to Expect</div>
+        <h3>Field Demos &amp; Tech Sessions</h3>
+        <p style="font-size:.85rem">Hands-on demonstrations of the latest forestry equipment, telematics platforms, and safety technology — built for working loggers and fleet managers.</p>
       </div>
       <div style="background:var(--sage-lt);border-radius:var(--r-lg);padding:28px" class="reveal">
-        <div style="font-size:.68rem;font-weight:700;letter-spacing:.12em;color:var(--teal);text-transform:uppercase;margin-bottom:6px">2nd Annual — 2024</div>
-        <h3>Augusta, GA &amp; Montgomery, AL</h3>
-        <p style="font-size:.85rem">The summit expanded with dual-city field demonstrations, vendor exhibitions, and sessions focused on fleet management and driver performance.</p>
+        <div style="font-size:.68rem;font-weight:700;letter-spacing:.12em;color:var(--teal);text-transform:uppercase;margin-bottom:6px">Industry Recognition</div>
+        <h3>The Pinnacle Award</h3>
+        <p style="font-size:.85rem">Honoring outstanding loggers and forestry professionals across the Southeast for safety leadership, operational excellence, and community impact.</p>
       </div>
       <div style="background:var(--sage-lt);border-radius:var(--r-lg);padding:28px" class="reveal">
-        <div style="font-size:.68rem;font-weight:700;letter-spacing:.12em;color:var(--teal);text-transform:uppercase;margin-bottom:6px">3rd Annual — 2025</div>
-        <h3>Savannah, GA</h3>
-        <p style="font-size:.85rem">Record attendance at the Savannah Convention Center. Featured telematics workshops, the Pinnacle Award ceremony, and expanded carrier participation.</p>
+        <div style="font-size:.68rem;font-weight:700;letter-spacing:.12em;color:var(--teal);text-transform:uppercase;margin-bottom:6px">Networking</div>
+        <h3>Carriers, Vendors &amp; Loggers</h3>
+        <p style="font-size:.85rem">Connect with insurance carriers, equipment vendors, and forestry professionals from across the Southeast — all in one place over two full days.</p>
       </div>
     </div>
   </div>
@@ -2030,54 +2125,13 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     </div>
     </div><!-- end 2-col grid -->
 
-    <!-- Photo Gallery -->
+    <!-- Photo Strip — honest, no fake event names -->
     <div style="margin-top:40px">
-      <h3 style="text-align:center;margin-bottom:24px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,1),0 6px 28px rgba(0,0,0,.8),0 0 48px rgba(0,0,0,.4);font-size:1.4rem">Summit &amp; Community Gallery</h3>
-      <div x-data="{galleryYear:'all',scrollPaused:false}">
-        <div style="display:flex;gap:8px;justify-content:center;margin-bottom:20px;flex-wrap:wrap">
-          <button class="tab-btn" :class="{active:galleryYear==='all'}" @click="galleryYear='all';scrollPaused=false" style="padding:6px 16px;font-size:.8rem">All</button>
-          <button class="tab-btn" :class="{active:galleryYear==='2025'}" @click="galleryYear='2025';scrollPaused=true" style="padding:6px 16px;font-size:.8rem">2025 — Savannah</button>
-          <button class="tab-btn" :class="{active:galleryYear==='2024'}" @click="galleryYear='2024';scrollPaused=true" style="padding:6px 16px;font-size:.8rem">2024 — Augusta &amp; Montgomery</button>
-          <button class="tab-btn" :class="{active:galleryYear==='2023'}" @click="galleryYear='2023';scrollPaused=true" style="padding:6px 16px;font-size:.8rem">2023 — Walterboro</button>
-        </div>
-
-        <!-- Floating auto-scroll marquee for "All" -->
-        <div x-show="galleryYear==='all'" class="gallery-marquee" @mouseenter="scrollPaused=true" @mouseleave="scrollPaused=false">
-          <div class="gallery-track" :class="{paused:scrollPaused}">
-            <div class="gallery-card gallery-float"><img loading="lazy" src="images/photo%20to%20put%20on%20sommit%20page%20somewhere%20.png" alt="2025 Savannah equipment show"><div class="gallery-cap">2025 Savannah — Equipment Expo</div></div>
-            <div class="gallery-card gallery-float"><img loading="lazy" src="images/team-photo.jpg" alt="2025 Savannah full team"><div class="gallery-cap">2025 Savannah — Full Team</div></div>
-            <div class="gallery-card gallery-float"><img loading="lazy" src="images/summerville%20office%20picture.png" alt="Swamp Fox Summerville Grand Opening"><div class="gallery-cap">Summerville — Grand Opening</div></div>
-            <div class="gallery-card gallery-float"><img loading="lazy" src="images/team-photo.jpg" alt="2024 Augusta field demo"><div class="gallery-cap">2024 Augusta — Field Demo</div></div>
-            <div class="gallery-card gallery-float"><img loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Citadel Cadet Partnership"><div class="gallery-cap">Citadel Cadet Partnership</div></div>
-            <div class="gallery-card gallery-float"><img loading="lazy" src="images/full%20team%20cropped.png" alt="2024 Augusta team photo"><div class="gallery-cap">2024 Augusta — Team Photo</div></div>
-            <div class="gallery-card gallery-float"><img loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Citadel Partnership"><div class="gallery-cap">Citadel Partnership</div></div>
-            <div class="gallery-card gallery-float"><img loading="lazy" src="images/citadel.jpg" alt="Swamp Fox Military Community Support"><div class="gallery-cap">Military Community Support</div></div>
-            <div class="gallery-card gallery-float"><img loading="lazy" src="images/logging%20truck.png" alt="2023 Walterboro fleet showcase"><div class="gallery-cap">2023 Walterboro — Fleet Showcase</div></div>
-            <!-- duplicate set for seamless loop -->
-            <div class="gallery-card gallery-float"><img loading="lazy" src="images/photo%20to%20put%20on%20sommit%20page%20somewhere%20.png" alt="2025 Savannah equipment show"><div class="gallery-cap">2025 Savannah — Equipment Expo</div></div>
-            <div class="gallery-card gallery-float"><img loading="lazy" src="images/team-photo.jpg" alt="2025 Savannah full team"><div class="gallery-cap">2025 Savannah — Full Team</div></div>
-            <div class="gallery-card gallery-float"><img loading="lazy" src="images/summerville%20office%20picture.png" alt="Swamp Fox Summerville Grand Opening"><div class="gallery-cap">Summerville — Grand Opening</div></div>
-            <div class="gallery-card gallery-float"><img loading="lazy" src="images/team-photo.jpg" alt="2024 Augusta field demo"><div class="gallery-cap">2024 Augusta — Field Demo</div></div>
-            <div class="gallery-card gallery-float"><img loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Citadel Cadet Partnership"><div class="gallery-cap">Citadel Cadet Partnership</div></div>
-            <div class="gallery-card gallery-float"><img loading="lazy" src="images/full%20team%20cropped.png" alt="2024 Augusta team photo"><div class="gallery-cap">2024 Augusta — Team Photo</div></div>
-            <div class="gallery-card gallery-float"><img loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Citadel Partnership"><div class="gallery-cap">Citadel Partnership</div></div>
-            <div class="gallery-card gallery-float"><img loading="lazy" src="images/citadel.jpg" alt="Swamp Fox Military Community Support"><div class="gallery-cap">Military Community Support</div></div>
-            <div class="gallery-card gallery-float"><img loading="lazy" src="images/logging%20truck.png" alt="2023 Walterboro fleet showcase"><div class="gallery-cap">2023 Walterboro — Fleet Showcase</div></div>
-          </div>
-        </div>
-
-        <!-- Static grid for year-specific tabs -->
-        <div x-show="galleryYear!=='all'" class="grid-3">
-          <div class="gallery-card" x-show="galleryYear==='2025'"><img loading="lazy" src="images/photo%20to%20put%20on%20sommit%20page%20somewhere%20.png" alt="2025 Savannah equipment show"><div class="gallery-cap">2025 Savannah — Equipment Expo</div></div>
-          <div class="gallery-card" x-show="galleryYear==='2025'"><img loading="lazy" src="images/team-photo.jpg" alt="2025 Savannah full team"><div class="gallery-cap">2025 Savannah — Full Team</div></div>
-          <div class="gallery-card" x-show="galleryYear==='2025'"><img loading="lazy" src="images/summerville%20office%20picture.png" alt="Swamp Fox Summerville Grand Opening"><div class="gallery-cap">Summerville — Grand Opening</div></div>
-          <div class="gallery-card" x-show="galleryYear==='2024'"><img loading="lazy" src="images/team-photo.jpg" alt="2024 Augusta field demo"><div class="gallery-cap">2024 Augusta — Field Demo</div></div>
-          <div class="gallery-card" x-show="galleryYear==='2024'"><img loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Citadel Cadet Partnership"><div class="gallery-cap">Citadel Cadet Partnership</div></div>
-          <div class="gallery-card" x-show="galleryYear==='2024'"><img loading="lazy" src="images/full%20team%20cropped.png" alt="2024 Augusta team photo"><div class="gallery-cap">2024 Augusta — Team Photo</div></div>
-          <div class="gallery-card" x-show="galleryYear==='2023'"><img loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Citadel Partnership"><div class="gallery-cap">Citadel Partnership</div></div>
-          <div class="gallery-card" x-show="galleryYear==='2023'"><img loading="lazy" src="images/citadel.jpg" alt="Swamp Fox Military Community Support"><div class="gallery-cap">Military Community Support</div></div>
-          <div class="gallery-card" x-show="galleryYear==='2023'"><img loading="lazy" src="images/logging%20truck.png" alt="2023 Walterboro fleet showcase"><div class="gallery-cap">2023 Walterboro — Fleet Showcase</div></div>
-        </div>
+      <h3 style="text-align:center;margin-bottom:24px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,1),0 6px 28px rgba(0,0,0,.8),0 0 48px rgba(0,0,0,.4);font-size:1.4rem">Around Swamp Fox</h3>
+      <div class="grid-3" style="gap:18px">
+        <div class="gallery-card"><img loading="lazy" src="images/full%20team%20cropped.png" alt="The Swamp Fox team"><div class="gallery-cap">The Swamp Fox Team</div></div>
+        <div class="gallery-card"><img loading="lazy" src="images/summerville%20office%20picture.png" alt="Summerville office"><div class="gallery-cap">Summerville Office</div></div>
+        <div class="gallery-card"><img loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Citadel scholarship program"><div class="gallery-cap">Citadel Scholarship</div></div>
       </div>
     </div>
   </div>
@@ -2199,7 +2253,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:28px;margin-bottom:40px;align-items:start">
       <!-- LEFT: Photo + Map stacked -->
       <div>
-        <img loading="lazy" src="images/summerville%20office%20picture.png" alt="Summerville Grand Opening" class="full-photo reveal-left" style="width:100%;height:260px;object-fit:cover;border-radius:12px;margin-bottom:20px;box-shadow:0 8px 32px rgba(0,0,0,.3)">
+        <img loading="lazy" src="images/summerville%20office%20picture.png" alt="Summerville office" class="full-photo reveal-left" style="width:100%;height:260px;object-fit:cover;border-radius:12px;margin-bottom:20px;box-shadow:0 8px 32px rgba(0,0,0,.3)">
         <div id="sf-map" style="background:url('images/static-map.png') center/cover no-repeat;height:320px;border-radius:12px;border:1px solid rgba(255,255,255,.15);box-shadow:0 8px 32px rgba(0,0,0,.3)" class="reveal-left"></div>
       </div>
       <!-- RIGHT: 4 Location cards -->
@@ -2474,11 +2528,11 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
                 </button>
               </template>
             </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
-              <p style="font-size:.78rem;color:var(--mid)" x-show="selectedCoverage.length>0"><strong x-text="selectedCoverage.length"></strong> coverage type<span x-show="selectedCoverage.length>1">s</span> selected</p>
-              <p style="font-size:.78rem;color:var(--mid)" x-show="selectedCoverage.length===0">Select at least one to continue</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+              <p style="font-size:.78rem;color:var(--mid);margin:0" x-show="selectedCoverage.length>0"><strong x-text="selectedCoverage.length"></strong> coverage type<span x-show="selectedCoverage.length>1">s</span> selected</p>
+              <p style="font-size:.78rem;color:var(--mid);margin:0" x-show="selectedCoverage.length===0">Select at least one to continue</p>
             </div>
-            <button class="btn btn-lg btn-pulse" style="width:100%;justify-content:center;border-radius:10px;font-size:1rem;padding:16px 28px" @click="quoteStep=2" :disabled="selectedCoverage.length===0" :style="selectedCoverage.length===0?'opacity:.5;cursor:not-allowed':''">Continue <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            <button class="btn btn-lg btn-pulse" style="width:100%;justify-content:center;border-radius:10px;font-size:1rem;padding:14px 28px" @click="quoteStep=2" :disabled="selectedCoverage.length===0" :style="selectedCoverage.length===0?'opacity:.5;cursor:not-allowed':''">Continue <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
           </div>
           <!-- Step 2 -->
           <div x-show="quoteStep===2">
@@ -2603,15 +2657,29 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <script>
 function swampFox(){
   return {
-    page:'home', scrolled:false, menuOpen:false, quoteSent:false, quoteStep:1,
+    page:'home', scrolled:false, menuOpen:false, quoteSent:false, quoteStep:1, navDrop:null, mobileSubOpen:false,
     selectedCoverage:[], showModal:false, modalType:'', modalSent:false,
     qForm:{firstName:'',lastName:'',phone:'',email:'',business:'',state:'',employees:'',details:'',source:''},
     mForm:{name:'',company:'',phone:'',email:'',coverage:'',message:''},
     cd:{d:'--',h:'--',m:'--',s:'--'},
     nav:[
-      {id:'home',label:'Home'},{id:'services',label:'Coverage'},{id:'homeins',label:'Homeowners'},{id:'autoins',label:'Auto'},
-      {id:'losscontrol',label:'Loss Control'},{id:'summit',label:'Summit'},{id:'about',label:'About'},
-      {id:'locations',label:'Locations'},{id:'quote',label:'Get a Quote'}
+      {id:'home',label:'Home'},
+      {id:'services',label:'Coverage',children:[
+        {id:'forestry',label:'Forestry / Logging',desc:"Logger's broad form, equipment, liability",target:'services',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 3L4 14h4l-3 7h14l-3-7h4L12 3z\"/></svg>'},
+        {id:'trucking',label:'Commercial Trucking',desc:'Auto, cargo, FMCSA filings, fleets',target:'services',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><rect x=\"1\" y=\"3\" width=\"15\" height=\"13\" rx=\"2\"/><path d=\"M16 8h4l3 3.5V16h-7V8z\"/><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"/><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"/></svg>'},
+        {id:'cargo',label:'Cargo & Physical Damage',desc:'Motor truck cargo, trailer interchange',target:'services',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z\"/></svg>'},
+        {id:'gl',label:'General Liability',desc:'Business liability & commercial property',target:'services',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>'},
+        {id:'home',label:'Homeowners',desc:'Dwelling, contents, liability, flood',target:'homeins',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z\"/><path d=\"M9 22V12h6v10\"/></svg>'},
+        {id:'auto',label:'Auto Insurance',desc:'Car, truck, motorcycle, boat, ATV',target:'autoins',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M5 17h14M5 17a2 2 0 01-2-2V9a2 2 0 012-2h1l2-3h8l2 3h1a2 2 0 012 2v6a2 2 0 01-2 2M5 17a2 2 0 100 4 2 2 0 000-4zM19 17a2 2 0 100 4 2 2 0 000-4z\"/></svg>'},
+        {id:'life',label:'Life & Health',desc:'Term, whole life, individual health',target:'services',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z\"/></svg>'},
+        {id:'umbrella',label:'Umbrella & Excess',desc:'Excess liability above primary limits',target:'services',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 2v2M12 22v-6M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M22 12h-2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41\"/><path d=\"M22 12a10 10 0 00-20 0h20z\"/></svg>'}
+      ]},
+      {id:'losscontrol',label:'Loss Control'},
+      {id:'summit',label:'Summit'},
+      {id:'events',label:'Blog'},
+      {id:'about',label:'About'},
+      {id:'locations',label:'Locations'},
+      {id:'quote',label:'Get a Quote'}
     ],
     coverageOptions:[
       {id:'logging',label:'Logging / Forestry',desc:"Logger's broad form, equipment, liability"},
