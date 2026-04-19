@@ -41,6 +41,8 @@
 </script>
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%231E392A'/><path d='M16 5L10 14h3l-2 6h10l-2-6h3L16 5z' fill='%232D8A7E'/><path d='M16 24v3' stroke='%232D8A7E' stroke-width='2' stroke-linecap='round'/></svg>">
+<link rel="apple-touch-icon" href="images/swamp%20fox%20top%20logo.webp">
+<meta name="apple-mobile-web-app-title" content="Swamp Fox">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -2146,7 +2148,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
           <input type="email" class="newsletter-input" placeholder="Enter your email address" x-model="nlEmail">
         </template>
         <template x-if="!nlSent">
-          <button class="newsletter-btn" @click="if(nlEmail){nlSent=true}">Subscribe</button>
+          <button class="newsletter-btn" @click="if($root.submitNewsletter(nlEmail)){nlSent=true}">Subscribe</button>
         </template>
         <template x-if="nlSent">
           <div style="padding:16px 24px;background:rgba(255,255,255,.95);color:var(--forest);font-weight:600;width:100%;text-align:center;font-size:.92rem">Thank you for subscribing!</div>
@@ -3269,7 +3271,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
       <div>
         <div class="modal-header"><div><h3>Register for the 2026 Summit</h3><p>August 28–29, 2026 &bull; Barber Motorsports Park, Birmingham AL</p></div><button @click="showModal=false" class="modal-close"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
         <div class="modal-body" x-show="!modalSent">
-          <form @submit.prevent="modalSent=true">
+          <form @submit.prevent="submitModal('register')">
             <div class="grid-2" style="gap:14px;margin-bottom:14px">
               <div class="form-group" style="margin-bottom:0"><label>Name *</label><input class="form-input" x-model="mForm.name" required placeholder="Randy Thompson"></div>
               <div class="form-group" style="margin-bottom:0"><label>Company</label><input class="form-input" x-model="mForm.company" placeholder="Thompson Timber LLC"></div>
@@ -3293,7 +3295,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
       <div>
         <div class="modal-header"><div><h3>Schedule a Loss Control Review</h3><p>No cost, no commitment — just real conversation about your risk.</p></div><button @click="showModal=false" class="modal-close"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
         <div class="modal-body" x-show="!modalSent">
-          <form @submit.prevent="modalSent=true">
+          <form @submit.prevent="submitModal('losscontrol')">
             <div class="grid-2" style="gap:14px;margin-bottom:14px">
               <div class="form-group" style="margin-bottom:0"><label>Name *</label><input class="form-input" x-model="mForm.name" required placeholder="Mike Lawson"></div>
               <div class="form-group" style="margin-bottom:0"><label>Company *</label><input class="form-input" x-model="mForm.company" required placeholder="Lawson Logging Inc."></div>
@@ -3421,7 +3423,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
           <button @click="exitChoice=null" style="display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--teal);font-weight:600;margin-bottom:16px;padding:0"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
           <h3 style="margin-bottom:4px">Schedule a Loss Control Review</h3>
           <p style="font-size:.85rem;margin-bottom:16px">No cost, no commitment — just real conversation about your risk.</p>
-          <form @submit.prevent="modalSent=true">
+          <form @submit.prevent="submitModal('exitLC')">
             <div class="grid-2" style="gap:14px;margin-bottom:14px">
               <div class="form-group" style="margin-bottom:0"><label>Name *</label><input class="form-input" x-model="mForm.name" required placeholder="Your Name"></div>
               <div class="form-group" style="margin-bottom:0"><label>Company *</label><input class="form-input" x-model="mForm.company" required placeholder="Your Company"></div>
@@ -3439,7 +3441,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
           <button @click="exitChoice=null" style="display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--teal);font-weight:600;margin-bottom:16px;padding:0"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
           <h3 style="margin-bottom:4px">Request a Free Quote</h3>
           <p style="font-size:.85rem;margin-bottom:16px">Tell us a little about what you need and we'll get back to you within one business day.</p>
-          <form @submit.prevent="modalSent=true">
+          <form @submit.prevent="submitModal('exitQ')">
             <div class="grid-2" style="gap:14px;margin-bottom:14px">
               <div class="form-group" style="margin-bottom:0"><label>Name *</label><input class="form-input" x-model="mForm.name" required placeholder="Your Name"></div>
               <div class="form-group" style="margin-bottom:0"><label>Company</label><input class="form-input" x-model="mForm.company" placeholder="Your Company (if applicable)"></div>
@@ -3537,7 +3539,10 @@ function swampFox(){
     ],
     toggleCoverage(id){const i=this.selectedCoverage.indexOf(id);if(i===-1)this.selectedCoverage.push(id);else this.selectedCoverage.splice(i,1)},
     go(id){if(id==='quote'){this.showModal=true;this.modalType='quotefull';this.modalSent=false;this.quoteStep=1;this.selectedCoverage=[];this.quoteSent=false;this.menuOpen=false;return}this.page=id;this.menuOpen=false;window.scrollTo({top:0,behavior:'smooth'});if(id==='locations')this.$nextTick(()=>this.initMap())},
-    submitQuote(){this.quoteSent=true},
+    sendLead(subject,body){try{const a=document.createElement('a');a.href='mailto:info@swampfoxagency.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}catch(e){}},
+    submitModal(kind){const f=this.mForm;const subj={register:'Summit 2026 Registration',losscontrol:'Loss Control Review Request',exitLC:'Loss Control Review (Exit Intent)',exitQ:'Quote Request (Exit Intent)'}[kind]||'New Lead — Swamp Fox';let body='Name: '+(f.name||'')+'\nCompany: '+(f.company||'')+'\nPhone: '+(f.phone||'')+'\nEmail: '+(f.email||'');if(f.coverage)body+='\nCoverage: '+f.coverage;if(f.message)body+='\n\nDetails:\n'+f.message;this.sendLead(subj,body);this.modalSent=true},
+    submitNewsletter(email){if(!email)return false;this.sendLead('Newsletter Signup — Swamp Fox','Please add this address to the Swamp Fox newsletter.\n\nEmail: '+email);return true},
+    submitQuote(){const q=this.qForm;const cov=this.selectedCoverage.join(', ')||'(none selected)';let body='Name: '+(q.firstName||'')+' '+(q.lastName||'')+'\nPhone: '+(q.phone||'')+'\nEmail: '+(q.email||'')+'\nBusiness: '+(q.business||'')+'\nState: '+(q.state||'')+'\nEmployees: '+(q.employees||'')+'\nCoverage: '+cov+'\nSource: '+(q.source||'');if(q.details)body+='\n\nDetails:\n'+q.details;this.sendLead('Quote Request — Swamp Fox',body);this.quoteSent=true},
     initMap(){
       const el=document.getElementById('sf-map');if(!el)return;
       if(el._leaflet_id){try{el._leaflet_map&&el._leaflet_map.invalidateSize()}catch(e){}return}
