@@ -415,12 +415,13 @@ textarea.form-input{resize:vertical}
 .svc-card:hover::before{opacity:.38;filter:saturate(1.1) brightness(.9)}
 .svc-card::after{z-index:1}
 .svc-card>*{position:relative;z-index:2}
-.svc-card:nth-child(1)::before{background-image:url('images/yusuf-onuk-b-enaI7JBQ0-unsplash.jpg')}
-.svc-card:nth-child(2)::before{background-image:url('images/Swamp-Fox.jpg')}
-.svc-card:nth-child(3)::before{background-image:url('images/trucks.jpg')}
-.svc-card:nth-child(4)::before{background-image:url('images/logging%20truck.png')}
-.svc-card:nth-child(5)::before{background-image:url('images/premium_photo-1661917244769-a2f97a82ca22.avif')}
-.svc-card:nth-child(6)::before{background-image:url('images/photo-1571035089306-e40c9289fe78.avif')}
+/* Service card backgrounds — each matches its card title */
+.svc-card:nth-child(1)::before{background-image:url('images/yusuf-onuk-b-enaI7JBQ0-unsplash.jpg')} /* Forestry — grapple loader on logs */
+.svc-card:nth-child(2)::before{background-image:url('images/Screenshot%202026-03-31%20162158.png')} /* Commercial Trucking — log truck */
+.svc-card:nth-child(3)::before{background-image:url('images/trucks.jpg')} /* Cargo — loaded log truck */
+.svc-card:nth-child(4)::before{background-image:url('images/another%20photo.png')} /* General Liability — office/business */
+.svc-card:nth-child(5)::before{display:none} /* Homeowners — no matching photo; keep card clean */
+.svc-card:nth-child(6)::before{background-image:url('images/section-premium.jpg')} /* Auto — driver behind wheel */
 .svc-card>*{position:relative;z-index:1}
 .insure-card::before{content:'';position:absolute;inset:0;background:url('images/background%20maybe.jpg') center/cover;opacity:.04;z-index:0;pointer-events:none;border-radius:var(--r-lg)}
 .insure-card>*{position:relative;z-index:1}
@@ -2053,7 +2054,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
       <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img loading="lazy" src="images/trucks.jpg" alt="Swamp Fox trucks" style="width:100%;height:100%;object-fit:cover"></div>
       <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img loading="lazy" src="images/logs.png" alt="Logging operations" style="width:100%;height:100%;object-fit:cover"></div>
-      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img loading="lazy" src="images/photos.png" alt="Swamp Fox team" style="width:100%;height:100%;object-fit:cover"></div>
+      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img loading="lazy" src="images/full%20team%20cropped.png" alt="Swamp Fox team" style="width:100%;height:100%;object-fit:cover;object-position:center 30%"></div>
     </div>
   </div>
 </section>
@@ -2460,10 +2461,10 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <img loading="lazy" src="images/full%20team%20cropped.png" alt="The Swamp Fox Insurance Agency Team" class="full-photo reveal" style="width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.15);box-shadow:0 12px 40px rgba(0,0,0,.25)">
       <p style="font-size:.82rem;color:rgba(255,255,255,.65);margin-top:10px;font-style:italic;text-align:center;text-shadow:0 1px 4px rgba(0,0,0,.4)">The Swamp Fox Team</p>
       <div style="margin-top:16px;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1)">
-        <img loading="lazy" src="images/another%20pic.jpg" alt="Swamp Fox team" style="width:100%;height:240px;object-fit:cover">
+        <img loading="lazy" src="images/summerville%20office%20picture.png" alt="Swamp Fox Summerville office grand opening" style="width:100%;height:240px;object-fit:cover">
       </div>
       <div style="margin-top:16px;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1)">
-        <img loading="lazy" src="images/Gemini_Generated_Image_9nep0s9nep0s9nep.png" alt="Swamp Fox Insurance" style="width:100%;height:240px;object-fit:cover">
+        <img loading="lazy" src="images/Gemini_Generated_Image_9nep0s9nep0s9nep.png" alt="Swamp Fox logging truck" style="width:100%;height:240px;object-fit:cover">
       </div>
     </div>
     </div><!-- end 2-col grid -->
@@ -2668,7 +2669,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <!-- PAGE: HOME INSURANCE -->
 <!-- ══════════════════════════════════════════════════════════════════ -->
 <div class="page-section page-bg" data-page="homeins" x-show="page==='homeins'">
-<div class="page-bg-img" style="background-image:url('images/section-premium.jpg')"></div>
+<div class="page-bg-img" style="background-image:url('images/hero%20main.jpg')"></div>
 <div class="page-bg-overlay"></div>
 <div class="page-bg-content">
   <div class="wrap">
@@ -2695,7 +2696,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <!-- PAGE: AUTO INSURANCE -->
 <!-- ══════════════════════════════════════════════════════════════════ -->
 <div class="page-section page-bg" data-page="autoins" x-show="page==='autoins'">
-<div class="page-bg-img" style="background-image:url('images/premium_photo-1661963106864-40a0b6eddc80.avif')"></div>
+<div class="page-bg-img" style="background-image:url('images/section-premium.jpg')"></div>
 <div class="page-bg-overlay"></div>
 <div class="page-bg-content">
   <div class="wrap">
