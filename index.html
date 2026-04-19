@@ -188,7 +188,11 @@ p{color:var(--mid);line-height:1.75}
 /* === MOBILE PHONE BAR === */
 .mobile-phone-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:linear-gradient(90deg,var(--teal),var(--teal-lt));box-shadow:0 -4px 20px rgba(0,0,0,.2)}
 .mobile-phone-bar a{display:flex;align-items:center;justify-content:center;gap:10px;color:#fff;font-weight:700;font-size:1rem;padding:16px;text-decoration:none;width:100%;letter-spacing:.02em}
-@media(max-width:768px){.mobile-phone-bar{display:block}}
+@media(max-width:768px){
+  .mobile-phone-bar{display:block}
+  body{padding-bottom:62px} /* phone bar is ~56px + 6px safe gap */
+  .back-to-top{bottom:74px !important}
+}
 
 /* === BUTTONS === */
 .btn{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;font-weight:600;font-size:.9rem;padding:13px 28px;border-radius: 12px;transition:background var(--t),transform var(--t),box-shadow var(--t);border:none;cursor:pointer;position:relative;overflow:hidden}
@@ -1376,13 +1380,15 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 .bg-tile:hover img{transform:scale(1.06);filter:saturate(1.1) contrast(1.05)}
 .bg-tile figcaption{
   position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,rgba(15,31,23,.08) 30%,rgba(15,31,23,.78) 100%);
+  background:linear-gradient(180deg,rgba(15,31,23,0) 60%,rgba(15,31,23,.55) 100%);
   display:flex;flex-direction:column;justify-content:flex-end;
-  padding:20px 22px;color:#fff;gap:6px;
-  transition:background .45s ease
+  padding:18px 20px;color:#fff;gap:6px;
+  opacity:0;transition:opacity .45s ease,background .45s ease
 }
-.bg-tile:hover figcaption{
-  background:linear-gradient(180deg,rgba(15,31,23,.15) 25%,rgba(15,31,23,.85) 100%)
+.bg-tile:hover figcaption,
+.bg-tile:focus-visible figcaption{
+  opacity:1;
+  background:linear-gradient(180deg,rgba(15,31,23,.15) 25%,rgba(15,31,23,.88) 100%)
 }
 .bg-tag{
   font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
@@ -1624,7 +1630,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- Loading Screen -->
 <div class="loader-screen" id="loader">
-  <img src="images/swamp%20fox%20green%20logo%20.png" alt="Swamp Fox" class="loader-logo" style="border-radius:16px;object-fit:contain">
+  <img decoding="async" src="images/swamp%20fox%20green%20logo%20.png" alt="Swamp Fox" class="loader-logo" style="border-radius:16px;object-fit:contain">
   <div class="loader-bar"><div class="loader-bar-fill"></div></div>
   <div class="loader-text">Swamp Fox Insurance Agency</div>
 </div>
@@ -1659,7 +1665,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
   <div class="wrap">
     <div class="nav-inner">
       <a class="nav-logo" @click.prevent="go('home')" href="#" style="cursor:pointer">
-        <img src="images/swamp%20fox%20top%20logo.webp" alt="Swamp Fox Insurance Agency">
+        <img decoding="async" src="images/swamp%20fox%20top%20logo.webp" alt="Swamp Fox Insurance Agency">
       </a>
       <div class="nav-links" @mouseleave="navDrop=null">
         <template x-for="item in nav.filter(n=>n.id!=='quote')" :key="item.id">
@@ -1702,7 +1708,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
 <div class="mobile-menu" :class="{open:menuOpen}">
   <div style="padding:24px">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:28px">
-      <img src="images/swamp%20fox%20top%20logo.webp" alt="Swamp Fox" style="height:40px;object-fit:contain">
+      <img decoding="async" src="images/swamp%20fox%20top%20logo.webp" alt="Swamp Fox" style="height:40px;object-fit:contain">
       <button @click="menuOpen=false" style="color:#fff;font-size:2rem;width:44px;height:44px;display:flex;align-items:center;justify-content:center">&times;</button>
     </div>
     <template x-for="item in nav" :key="item.id">
@@ -1768,10 +1774,10 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
     <div class="hero-right">
       <div>
         <div class="hero-logo-display">
-          <img src="images/swamp%20fox%20green%20logo%20.png" alt="Swamp Fox Insurance Agency Logo">
+          <img decoding="async" src="images/swamp%20fox%20green%20logo%20.png" alt="Swamp Fox Insurance Agency Logo">
         </div>
         <div class="hero-sctpa float-slow">
-          <img src="images/sctpa-logo.png" alt="SCTPA Logo">
+          <img decoding="async" src="images/sctpa-logo.png" alt="SCTPA Logo">
           <div>
             <div class="t1">SCTPA Endorsed</div>
             <div class="t2">The only endorsed insurance agency by the South Carolina Timber Producers Association</div>
@@ -1912,7 +1918,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
       </div>
     </div>
     <div class="reveal-right" style="position:relative">
-      <img src="images/team-photo.jpg" alt="Swamp Fox Insurance team" class="content-img" style="width:100%;box-shadow:var(--shadow-lg)">
+      <img decoding="async" src="images/team-photo.jpg" alt="Swamp Fox Insurance team" class="content-img" style="width:100%;box-shadow:var(--shadow-lg)">
       <div style="position:absolute;bottom:-12px;left:-12px;background:var(--forest);color:#fff;padding:16px 20px;border-radius:var(--r-lg);box-shadow:var(--shadow-md)">
         <div style="font-size:1.5rem;font-weight:800;font-family:'Playfair Display',serif;line-height:1">Since</div>
         <div style="font-size:1.8rem;font-weight:800;font-family:'Playfair Display',serif;line-height:1">1987</div>
@@ -2010,43 +2016,43 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
     </div>
     <div class="brand-gallery">
       <figure class="bg-tile bg-tile--wide reveal" @click="go('homeins')" style="cursor:pointer">
-        <img loading="lazy" src="images/brand-home-suv.jpg" alt="Swamp Fox home &amp; family insurance — South Carolina home with family and SUV">
+        <img decoding="async" loading="lazy" src="images/brand-home-suv.jpg" alt="Swamp Fox home &amp; family insurance — South Carolina home with family and SUV">
         <figcaption><span class="bg-tag">Home &amp; Family</span><span class="bg-title">Protecting your home &amp; family</span></figcaption>
       </figure>
       <figure class="bg-tile reveal" @click="go('services')" style="cursor:pointer">
-        <img loading="lazy" src="images/brand-truck-rain.jpg" alt="Swamp Fox commercial trucking insurance — log truck driving in the rain">
+        <img decoding="async" loading="lazy" src="images/brand-truck-rain.jpg" alt="Swamp Fox commercial trucking insurance — log truck driving in the rain">
         <figcaption><span class="bg-tag">Commercial Trucking</span><span class="bg-title">We're here when you need us most</span></figcaption>
       </figure>
       <figure class="bg-tile reveal" @click="go('services')" style="cursor:pointer">
-        <img loading="lazy" src="images/brand-forestry-family.jpg" alt="Swamp Fox forestry &amp; logging insurance — family at pickup truck in the woods">
+        <img decoding="async" loading="lazy" src="images/brand-forestry-family.jpg" alt="Swamp Fox forestry &amp; logging insurance — family at pickup truck in the woods">
         <figcaption><span class="bg-tag">Forestry &amp; Logging</span><span class="bg-title">Built for the woods. Built for the work.</span></figcaption>
       </figure>
       <figure class="bg-tile reveal" @click="go('services')" style="cursor:pointer">
-        <img loading="lazy" src="images/brand-fleet-silver.jpg" alt="Swamp Fox fleet and commercial auto insurance — row of silver log trucks in a timber yard">
+        <img decoding="async" loading="lazy" src="images/brand-fleet-silver.jpg" alt="Swamp Fox fleet and commercial auto insurance — row of silver log trucks in a timber yard">
         <figcaption><span class="bg-tag">Fleet Coverage</span><span class="bg-title">One fleet. One agent. Complete coverage.</span></figcaption>
       </figure>
       <figure class="bg-tile reveal" @click="go('homeins')" style="cursor:pointer">
-        <img loading="lazy" src="images/brand-sc-porch-pickup.jpg" alt="Rooted in South Carolina — Swamp Fox family insurance, porch and pickup truck">
+        <img decoding="async" loading="lazy" src="images/brand-sc-porch-pickup.jpg" alt="Rooted in South Carolina — Swamp Fox family insurance, porch and pickup truck">
         <figcaption><span class="bg-tag">Rooted in SC</span><span class="bg-title">Rooted in South Carolina. Protecting what's yours.</span></figcaption>
       </figure>
       <figure class="bg-tile reveal" @click="go('services')" style="cursor:pointer">
-        <img loading="lazy" src="images/brand-renters-office.jpg" alt="Swamp Fox renters insurance — affordable, easy, smart">
+        <img decoding="async" loading="lazy" src="images/brand-renters-office.jpg" alt="Swamp Fox renters insurance — affordable, easy, smart">
         <figcaption><span class="bg-tag">Renters</span><span class="bg-title">Affordable. Easy. Smart.</span></figcaption>
       </figure>
       <figure class="bg-tile reveal" @click="go('homeins')" style="cursor:pointer">
-        <img loading="lazy" src="images/brand-home-family-grill.jpg" alt="Swamp Fox home insurance — family grilling together in front yard">
+        <img decoding="async" loading="lazy" src="images/brand-home-family-grill.jpg" alt="Swamp Fox home insurance — family grilling together in front yard">
         <figcaption><span class="bg-tag">Home Insurance</span><span class="bg-title">Protecting your home &amp; family</span></figcaption>
       </figure>
       <figure class="bg-tile reveal" @click="go('homeins')" style="cursor:pointer">
-        <img loading="lazy" src="images/brand-family-plantation.jpg" alt="Swamp Fox family insurance — family smiling at Lowcountry plantation porch">
+        <img decoding="async" loading="lazy" src="images/brand-family-plantation.jpg" alt="Swamp Fox family insurance — family smiling at Lowcountry plantation porch">
         <figcaption><span class="bg-tag">Family</span><span class="bg-title">Protect what matters most</span></figcaption>
       </figure>
       <figure class="bg-tile reveal" @click="go('services')" style="cursor:pointer">
-        <img loading="lazy" src="images/brand-family-reading.jpg" alt="Swamp Fox life &amp; home insurance — grandmother and grandchildren reading in window seat">
+        <img decoding="async" loading="lazy" src="images/brand-family-reading.jpg" alt="Swamp Fox life &amp; home insurance — grandmother and grandchildren reading in window seat">
         <figcaption><span class="bg-tag">Life &amp; Legacy</span><span class="bg-title">Your family. Fully protected.</span></figcaption>
       </figure>
       <figure class="bg-tile reveal" @click="go('services')" style="cursor:pointer">
-        <img loading="lazy" src="images/brand-fleet-dusk.jpg" alt="Swamp Fox fleet and commercial auto insurance — fleet of trucks at dusk">
+        <img decoding="async" loading="lazy" src="images/brand-fleet-dusk.jpg" alt="Swamp Fox fleet and commercial auto insurance — fleet of trucks at dusk">
         <figcaption><span class="bg-tag">Fleet &amp; Auto</span><span class="bg-title">Coverage from sunrise to sundown</span></figcaption>
       </figure>
     </div>
@@ -2394,7 +2400,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <!-- Harvesting -->
         <div class="op-panel" x-show="opTab==='harvest'" x-transition>
           <div class="op-panel-grid">
-            <div class="op-photo"><img loading="lazy" src="images/premium_photo-1661917244769-a2f97a82ca22.avif" alt="Forestry grapple loader stacking freshly cut logs"></div>
+            <div class="op-photo"><img decoding="async" loading="lazy" src="images/premium_photo-1661917244769-a2f97a82ca22.avif" alt="Forestry grapple loader stacking freshly cut logs"></div>
             <div class="op-copy">
               <h3>Harvesting &amp; Felling</h3>
               <p>Protect skidders, feller-bunchers, chainsaws, and the crews that run them. Our <strong>Logger's Broad Form</strong> covers equipment in the woods, in transit, and at the landing — with optional fire, theft, and vandalism.</p>
@@ -2410,7 +2416,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <!-- Forwarding -->
         <div class="op-panel" x-show="opTab==='forward'" x-transition>
           <div class="op-panel-grid">
-            <div class="op-photo"><img loading="lazy" src="images/premium_photo-1661940407330-18d3d0b3d1d9.avif" alt="Blue forwarder machine loading cut logs in a pine forest"></div>
+            <div class="op-photo"><img decoding="async" loading="lazy" src="images/premium_photo-1661940407330-18d3d0b3d1d9.avif" alt="Blue forwarder machine loading cut logs in a pine forest"></div>
             <div class="op-copy">
               <h3>Forwarders &amp; In-Woods Transport</h3>
               <p>Forwarders, skidders, and bunchers work in brutal conditions. Our broad-form equipment policies anticipate stump damage, track failure, and off-road hazards the way generic commercial policies don't.</p>
@@ -2426,7 +2432,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <!-- Loading -->
         <div class="op-panel" x-show="opTab==='loading'" x-transition>
           <div class="op-panel-grid">
-            <div class="op-photo"><img loading="lazy" src="images/photo-1596628930480-540b65f6f0a6.avif" alt="Stacked cut logs at a landing ready for loading"></div>
+            <div class="op-photo"><img decoding="async" loading="lazy" src="images/photo-1596628930480-540b65f6f0a6.avif" alt="Stacked cut logs at a landing ready for loading"></div>
             <div class="op-copy">
               <h3>Loading &amp; Landings</h3>
               <p>Knuckleboom loaders, log-yard pickers, and landing operations carry unique pinch points. We structure policies around <strong>loader-specific</strong> physical damage, falling-log liability, and bystander coverage.</p>
@@ -2442,7 +2448,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <!-- Transport -->
         <div class="op-panel" x-show="opTab==='transport'" x-transition>
           <div class="op-panel-grid">
-            <div class="op-photo"><img loading="lazy" src="images/photo-1728586397166-d4273177b7f6.avif" alt="Orange Mack log truck loaded with timber on a rural road"></div>
+            <div class="op-photo"><img decoding="async" loading="lazy" src="images/photo-1728586397166-d4273177b7f6.avif" alt="Orange Mack log truck loaded with timber on a rural road"></div>
             <div class="op-copy">
               <h3>Log Truck Transport</h3>
               <p>From single owner-operators to fleets of 30+, we handle <strong>FMCSA filings</strong>, cargo coverage, trailer interchange, and physical damage — plus the UM/UIM terms that actually protect you when another driver's at fault.</p>
@@ -2458,7 +2464,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <!-- Timber Yards -->
         <div class="op-panel" x-show="opTab==='yard'" x-transition>
           <div class="op-panel-grid">
-            <div class="op-photo"><img loading="lazy" src="images/photo-1571035089306-e40c9289fe78.avif" alt="Log pile in a Southern pine forest"></div>
+            <div class="op-photo"><img decoding="async" loading="lazy" src="images/photo-1571035089306-e40c9289fe78.avif" alt="Log pile in a Southern pine forest"></div>
             <div class="op-copy">
               <h3>Timber Yards &amp; Storage</h3>
               <p>When logs leave the woods and sit at a yard, they're exposed to fire, theft, weather, and dispute. Our policies extend <strong>inland marine</strong> and stored-goods coverage to protect high-value timber before it hits the mill.</p>
@@ -2480,9 +2486,9 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
 <section style="padding:24px 0">
   <div class="wrap">
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
-      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img loading="lazy" src="images/trucks.jpg" alt="Swamp Fox trucks" style="width:100%;height:100%;object-fit:cover"></div>
-      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img loading="lazy" src="images/logs.png" alt="Logging operations" style="width:100%;height:100%;object-fit:cover"></div>
-      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img loading="lazy" src="images/full%20team%20cropped.png" alt="Swamp Fox team" style="width:100%;height:100%;object-fit:cover;object-position:center 30%"></div>
+      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img decoding="async" loading="lazy" src="images/trucks.jpg" alt="Swamp Fox trucks" style="width:100%;height:100%;object-fit:cover"></div>
+      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img decoding="async" loading="lazy" src="images/logs.png" alt="Logging operations" style="width:100%;height:100%;object-fit:cover"></div>
+      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img decoding="async" loading="lazy" src="images/full%20team%20cropped.png" alt="Swamp Fox team" style="width:100%;height:100%;object-fit:cover;object-position:center 30%"></div>
     </div>
   </div>
 </section>
@@ -2527,7 +2533,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         </div>
       </div>
       <div style="position:relative;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg)">
-        <img loading="lazy" src="images/logging%20truck.png" alt="Swamp Fox logging operations" style="width:100%;height:320px;object-fit:cover;object-position:center 40%">
+        <img decoding="async" loading="lazy" src="images/logging%20truck.png" alt="Swamp Fox logging operations" style="width:100%;height:320px;object-fit:cover;object-position:center 40%">
         <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,31,23,.25),rgba(0,99,91,.1))"></div>
         <div style="position:absolute;bottom:16px;left:16px;right:16px;text-align:center;z-index:2">
           <span style="background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);border-radius: 12px;padding:8px 20px;color:#fff;font-size:.82rem;font-weight:600">Protecting Fleets Since 1987</span>
@@ -2583,7 +2589,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
 <section class="sec" style="background:transparent;padding:20px 0 40px">
   <div class="wrap">
     <div style="border-radius:12px;overflow:hidden;height:500px;box-shadow:0 10px 36px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.1)">
-      <img loading="lazy" src="images/picture%20again.jpg" alt="Swamp Fox logging operations" style="width:100%;height:100%;object-fit:cover;object-position:center 85%">
+      <img decoding="async" loading="lazy" src="images/picture%20again.jpg" alt="Swamp Fox logging operations" style="width:100%;height:100%;object-fit:cover;object-position:center 85%">
     </div>
   </div>
 </section>
@@ -2603,7 +2609,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
     <div class="wrap">
       <!-- Title + Logo side by side -->
       <div style="display:flex;align-items:center;gap:24px;margin-bottom:24px;flex-wrap:wrap">
-        <div style="background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-radius:16px;padding:16px 20px;box-shadow:0 8px 32px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center"><img loading="lazy" src="images/summit%20logo.png" alt="Summit Logo" style="width:140px;height:auto;object-fit:contain"></div>
+        <div style="background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-radius:16px;padding:16px 20px;box-shadow:0 8px 32px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center"><img decoding="async" loading="lazy" src="images/summit%20logo.png" alt="Summit Logo" style="width:140px;height:auto;object-fit:contain"></div>
         <div>
           <h2 style="color:#fff;margin-bottom:8px;font-size:clamp(1.8rem,4vw,2.8rem)">4th Annual Loggers Technology Summit</h2>
           <p style="color:rgba(255,255,255,.7);font-size:1rem;margin:0">August 28–29, 2026 &bull; Barber Motorsports Park, Birmingham AL</p>
@@ -2625,7 +2631,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
           <!-- Lite embed: only loads YouTube iframe AFTER click -->
           <template x-if="!videoPlaying">
             <div class="summit-video-poster">
-              <img loading="lazy" src="images/photo%20to%20put%20on%20sommit%20page%20somewhere%20.png" alt="2026 Loggers Technology Summit — watch the video" style="width:100%;height:100%;object-fit:cover;object-position:center 40%">
+              <img decoding="async" loading="lazy" src="images/photo%20to%20put%20on%20sommit%20page%20somewhere%20.png" alt="2026 Loggers Technology Summit — watch the video" style="width:100%;height:100%;object-fit:cover;object-position:center 40%">
               <div class="summit-video-shade"></div>
               <div class="summit-video-meta">
                 <div style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-lt);margin-bottom:8px">4th Annual &bull; Birmingham, AL &bull; Aug 28–29</div>
@@ -2684,7 +2690,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <div>
           <!-- Summit photo -->
           <div style="border-radius:var(--r-lg);overflow:hidden;margin-bottom:16px;box-shadow:var(--shadow-lg)">
-            <img loading="lazy" src="images/photo%20to%20put%20on%20sommit%20page%20somewhere%20.png" alt="Equipment expo" style="width:100%;height:auto;max-height:280px;object-fit:cover;object-position:center 50%">
+            <img decoding="async" loading="lazy" src="images/photo%20to%20put%20on%20sommit%20page%20somewhere%20.png" alt="Equipment expo" style="width:100%;height:auto;max-height:280px;object-fit:cover;object-position:center 50%">
           </div>
           <!-- Schedule in transparent box -->
           <div style="background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);padding:24px" x-data="{scheduleOpen:null}">
@@ -2886,13 +2892,13 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
     </div><!-- end blog posts column -->
     <!-- Team Photo Column -->
     <div style="position:sticky;top:120px">
-      <img loading="lazy" src="images/full%20team%20cropped.png" alt="The Swamp Fox Insurance Agency Team" class="full-photo reveal" style="width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.15);box-shadow:0 12px 40px rgba(0,0,0,.25)">
+      <img decoding="async" loading="lazy" src="images/full%20team%20cropped.png" alt="The Swamp Fox Insurance Agency Team" class="full-photo reveal" style="width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.15);box-shadow:0 12px 40px rgba(0,0,0,.25)">
       <p style="font-size:.82rem;color:rgba(255,255,255,.65);margin-top:10px;font-style:italic;text-align:center;text-shadow:0 1px 4px rgba(0,0,0,.4)">The Swamp Fox Team</p>
       <div style="margin-top:16px;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1)">
-        <img loading="lazy" src="images/summerville%20office%20picture.png" alt="Swamp Fox Summerville office grand opening" style="width:100%;height:240px;object-fit:cover">
+        <img decoding="async" loading="lazy" src="images/summerville%20office%20picture.png" alt="Swamp Fox Summerville office grand opening" style="width:100%;height:240px;object-fit:cover">
       </div>
       <div style="margin-top:16px;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1)">
-        <img loading="lazy" src="images/Gemini_Generated_Image_9nep0s9nep0s9nep.png" alt="Swamp Fox logging truck" style="width:100%;height:240px;object-fit:cover">
+        <img decoding="async" loading="lazy" src="images/Gemini_Generated_Image_9nep0s9nep0s9nep.png" alt="Swamp Fox logging truck" style="width:100%;height:240px;object-fit:cover">
       </div>
     </div>
     </div><!-- end 2-col grid -->
@@ -2901,9 +2907,9 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
     <div style="margin-top:40px">
       <h3 style="text-align:center;margin-bottom:24px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,1),0 6px 28px rgba(0,0,0,.8),0 0 48px rgba(0,0,0,.4);font-size:1.4rem">Around Swamp Fox</h3>
       <div class="grid-3" style="gap:18px">
-        <div class="gallery-card"><img loading="lazy" src="images/full%20team%20cropped.png" alt="The Swamp Fox team"><div class="gallery-cap">The Swamp Fox Team</div></div>
-        <div class="gallery-card"><img loading="lazy" src="images/summerville%20office%20picture.png" alt="Summerville office"><div class="gallery-cap">Summerville Office</div></div>
-        <div class="gallery-card"><img loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Citadel scholarship program"><div class="gallery-cap">Citadel Scholarship</div></div>
+        <div class="gallery-card"><img decoding="async" loading="lazy" src="images/full%20team%20cropped.png" alt="The Swamp Fox team"><div class="gallery-cap">The Swamp Fox Team</div></div>
+        <div class="gallery-card"><img decoding="async" loading="lazy" src="images/summerville%20office%20picture.png" alt="Summerville office"><div class="gallery-cap">Summerville Office</div></div>
+        <div class="gallery-card"><img decoding="async" loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Citadel scholarship program"><div class="gallery-cap">Citadel Scholarship</div></div>
       </div>
     </div>
   </div>
@@ -2933,7 +2939,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
   <div class="wrap">
     <div class="grid-2" style="margin-bottom:36px;align-items:center">
       <div class="reveal-left">
-        <img loading="lazy" src="images/full%20team%20cropped.png" alt="Swamp Fox team" class="full-photo" style="width:100%">
+        <img decoding="async" loading="lazy" src="images/full%20team%20cropped.png" alt="Swamp Fox team" class="full-photo" style="width:100%">
       </div>
       <div class="reveal-right glass-box" style="padding:32px">
         <span class="label">Since 1987</span>
@@ -2947,7 +2953,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
     <!-- Photo banner + Mission & Pledge SIDE BY SIDE -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:40px;align-items:stretch">
       <div style="border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.3);min-height:280px" class="reveal-left">
-        <img loading="lazy" src="images/about%20us%20backgroujnd.jpg" alt="Swamp Fox Agency" style="width:100%;height:100%;object-fit:cover;object-position:center 40%">
+        <img decoding="async" loading="lazy" src="images/about%20us%20backgroujnd.jpg" alt="Swamp Fox Agency" style="width:100%;height:100%;object-fit:cover;object-position:center 40%">
       </div>
       <div class="glass-box reveal-right" style="padding:32px;margin-bottom:0;display:flex;flex-direction:column;justify-content:center">
         <span class="label">Our Mission &amp; Pledge</span>
@@ -2974,7 +2980,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
       <div class="grid-3" style="align-items:start" x-data="{openCard:null}">
         <div class="community-card reveal gradient-border" :style="openCard==='pinnacle'?'box-shadow:0 8px 24px rgba(0,99,91,.15);transform:translateY(-3px)':''" @click="openCard=openCard==='pinnacle'?null:'pinnacle'">
           <div style="position:relative;background:var(--forest2);display:flex;align-items:center;justify-content:center;height:200px">
-            <img loading="lazy" src="images/pinnacle%20award.png" alt="The Pinnacle Award 2026" style="height:160px;width:auto;object-fit:contain;filter:invert(1)">
+            <img decoding="async" loading="lazy" src="images/pinnacle%20award.png" alt="The Pinnacle Award 2026" style="height:160px;width:auto;object-fit:contain;filter:invert(1)">
             <div style="position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:.85rem;font-weight:600;display:flex;justify-content:space-between;align-items:center">The Pinnacle Award <svg :style="openCard==='pinnacle'?'transform:rotate(180deg)':''" style="transition:transform var(--t)" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
           </div>
           <div x-show="openCard==='pinnacle'" x-collapse class="card-expand">
@@ -2983,7 +2989,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         </div>
         <div class="community-card reveal gradient-border" :style="openCard==='scholarship'?'box-shadow:0 8px 24px rgba(0,99,91,.15);transform:translateY(-3px)':''" @click="openCard=openCard==='scholarship'?null:'scholarship'">
           <div style="position:relative">
-            <img loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Scholarship - Citadel cadets visiting Swamp Fox Agency" style="width:100%;height:200px;object-fit:cover;object-position:center 20%">
+            <img decoding="async" loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Scholarship - Citadel cadets visiting Swamp Fox Agency" style="width:100%;height:200px;object-fit:cover;object-position:center 20%">
             <div style="position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:.85rem;font-weight:600;display:flex;justify-content:space-between;align-items:center">Swamp Fox Scholarship <svg :style="openCard==='scholarship'?'transform:rotate(180deg)':''" style="transition:transform var(--t)" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
           </div>
           <div x-show="openCard==='scholarship'" x-collapse class="card-expand">
@@ -2992,7 +2998,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         </div>
         <div class="community-card reveal gradient-border" :style="openCard==='citadel'?'box-shadow:0 8px 24px rgba(0,99,91,.15);transform:translateY(-3px)':''" @click="openCard=openCard==='citadel'?null:'citadel'">
           <div style="position:relative">
-            <img loading="lazy" src="images/citadel.jpg" alt="Swamp Fox Citadel Program - Military community partnership" style="width:100%;height:200px;object-fit:cover">
+            <img decoding="async" loading="lazy" src="images/citadel.jpg" alt="Swamp Fox Citadel Program - Military community partnership" style="width:100%;height:200px;object-fit:cover">
             <div style="position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:.85rem;font-weight:600;display:flex;justify-content:space-between;align-items:center">Citadel Program <svg :style="openCard==='citadel'?'transform:rotate(180deg)':''" style="transition:transform var(--t)" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
           </div>
           <div x-show="openCard==='citadel'" x-collapse class="card-expand">
@@ -3016,23 +3022,23 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
       </div>
       <div class="job-strip">
         <figure class="job-card" @click="$root.go('services')">
-          <img loading="lazy" src="images/Swamp-Fox.jpg" alt="Swamp Fox Agency branded log truck on a rural South Carolina road">
+          <img decoding="async" loading="lazy" src="images/Swamp-Fox.jpg" alt="Swamp Fox Agency branded log truck on a rural South Carolina road">
           <figcaption>Log Truck on Route</figcaption>
         </figure>
         <figure class="job-card" @click="$root.go('summit')">
-          <img loading="lazy" src="images/Screenshot%202026-03-31%20161914.png" alt="Equipment expo at the SCTPA Loggers Summit — excavators and logging machinery">
+          <img decoding="async" loading="lazy" src="images/Screenshot%202026-03-31%20161914.png" alt="Equipment expo at the SCTPA Loggers Summit — excavators and logging machinery">
           <figcaption>Loggers Summit Expo</figcaption>
         </figure>
         <figure class="job-card" @click="$root.go('services')">
-          <img loading="lazy" src="images/Screenshot%202026-03-31%20162158.png" alt="White log truck unloading timber at a landing in the Lowcountry">
+          <img decoding="async" loading="lazy" src="images/Screenshot%202026-03-31%20162158.png" alt="White log truck unloading timber at a landing in the Lowcountry">
           <figcaption>Unloading at the Landing</figcaption>
         </figure>
         <figure class="job-card" @click="$root.go('services')">
-          <img loading="lazy" src="images/another%20pic.jpg" alt="Swamp Fox branded red log truck hauling timber down a highway at sunset">
+          <img decoding="async" loading="lazy" src="images/another%20pic.jpg" alt="Swamp Fox branded red log truck hauling timber down a highway at sunset">
           <figcaption>Hauling Highway Miles</figcaption>
         </figure>
         <figure class="job-card" @click="$root.go('losscontrol')">
-          <img loading="lazy" src="images/background%20of%20a%20tab.png" alt="Swamp Fox Agency — stacked timber in a Southern pine forest">
+          <img decoding="async" loading="lazy" src="images/background%20of%20a%20tab.png" alt="Swamp Fox Agency — stacked timber in a Southern pine forest">
           <figcaption>Timber in the Pines</figcaption>
         </figure>
       </div>
@@ -3061,7 +3067,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
     <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:28px;margin-bottom:40px;align-items:start">
       <!-- LEFT: Photo + Map stacked -->
       <div>
-        <img loading="lazy" src="images/summerville%20office%20picture.png" alt="Summerville office" class="full-photo reveal-left" style="width:100%;height:260px;object-fit:cover;border-radius:12px;margin-bottom:20px;box-shadow:0 8px 32px rgba(0,0,0,.3)">
+        <img decoding="async" loading="lazy" src="images/summerville%20office%20picture.png" alt="Summerville office" class="full-photo reveal-left" style="width:100%;height:260px;object-fit:cover;border-radius:12px;margin-bottom:20px;box-shadow:0 8px 32px rgba(0,0,0,.3)">
         <div id="sf-map" style="background:url('images/static-map.png') center/cover no-repeat;height:320px;border-radius:12px;border:1px solid rgba(255,255,255,.15);box-shadow:0 8px 32px rgba(0,0,0,.3)" class="reveal-left"></div>
       </div>
       <!-- RIGHT: 4 Location cards -->
@@ -3194,23 +3200,23 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
 <section x-show="!['home','services','losscontrol','about','locations','events'].includes(page)" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" style="padding:24px 0 8px;background:transparent;position:relative;z-index:10">
   <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;padding:0 24px">
     <a href="#" @click.prevent="go('services')" class="nav-card-link" style="position:relative;flex:0 0 220px;height:140px;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.3);cursor:pointer;display:block;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.4)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(0,0,0,.3)'">
-      <img loading="lazy" src="images/trucks.jpg" alt="Coverage" style="width:100%;height:100%;object-fit:cover">
+      <img decoding="async" loading="lazy" src="images/trucks.jpg" alt="Coverage" style="width:100%;height:100%;object-fit:cover">
       <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.75));display:flex;align-items:flex-end;padding:12px 14px"><span style="color:#fff;font-size:.82rem;font-weight:700;text-shadow:0 2px 8px rgba(0,0,0,.8)">Coverage &rarr;</span></div>
     </a>
     <a href="#" @click.prevent="go('losscontrol')" class="nav-card-link" style="position:relative;flex:0 0 220px;height:140px;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.3);cursor:pointer;display:block;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.4)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(0,0,0,.3)'">
-      <img loading="lazy" src="images/loss%20control%20background.avif" alt="Loss Control" style="width:100%;height:100%;object-fit:cover">
+      <img decoding="async" loading="lazy" src="images/loss%20control%20background.avif" alt="Loss Control" style="width:100%;height:100%;object-fit:cover">
       <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.75));display:flex;align-items:flex-end;padding:12px 14px"><span style="color:#fff;font-size:.82rem;font-weight:700;text-shadow:0 2px 8px rgba(0,0,0,.8)">Loss Control &rarr;</span></div>
     </a>
     <a href="#" @click.prevent="go('summit')" class="nav-card-link" style="position:relative;flex:0 0 220px;height:140px;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.3);cursor:pointer;display:block;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.4)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(0,0,0,.3)'">
-      <img loading="lazy" src="images/log%20picture.jpg" alt="Summit" style="width:100%;height:100%;object-fit:cover">
+      <img decoding="async" loading="lazy" src="images/log%20picture.jpg" alt="Summit" style="width:100%;height:100%;object-fit:cover">
       <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.75));display:flex;align-items:flex-end;padding:12px 14px"><span style="color:#fff;font-size:.82rem;font-weight:700;text-shadow:0 2px 8px rgba(0,0,0,.8)">Loggers Summit &rarr;</span></div>
     </a>
     <a href="#" @click.prevent="go('about')" class="nav-card-link" style="position:relative;flex:0 0 220px;height:140px;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.3);cursor:pointer;display:block;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.4)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(0,0,0,.3)'">
-      <img loading="lazy" src="images/full%20team%20cropped.png" alt="About" style="width:100%;height:100%;object-fit:cover">
+      <img decoding="async" loading="lazy" src="images/full%20team%20cropped.png" alt="About" style="width:100%;height:100%;object-fit:cover">
       <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.75));display:flex;align-items:flex-end;padding:12px 14px"><span style="color:#fff;font-size:.82rem;font-weight:700;text-shadow:0 2px 8px rgba(0,0,0,.8)">Our Story &rarr;</span></div>
     </a>
     <a href="#" @click.prevent="go('locations')" class="nav-card-link" style="position:relative;flex:0 0 220px;height:140px;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.3);cursor:pointer;display:block;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.4)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(0,0,0,.3)'">
-      <img loading="lazy" src="images/summerville%20office%20picture.png" alt="Locations" style="width:100%;height:100%;object-fit:cover">
+      <img decoding="async" loading="lazy" src="images/summerville%20office%20picture.png" alt="Locations" style="width:100%;height:100%;object-fit:cover">
       <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.75));display:flex;align-items:flex-end;padding:12px 14px"><span style="color:#fff;font-size:.82rem;font-weight:700;text-shadow:0 2px 8px rgba(0,0,0,.8)">Locations &rarr;</span></div>
     </a>
   </div>
@@ -3222,7 +3228,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
     <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap">
       <!-- Logo + tagline -->
       <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
-        <img loading="lazy" src="images/swamp%20fox%20green%20logo%20.png" alt="Swamp Fox" style="height:36px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3));border-radius:3px">
+        <img decoding="async" loading="lazy" src="images/swamp%20fox%20green%20logo%20.png" alt="Swamp Fox" style="height:36px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3));border-radius:3px">
         <div style="font-family:'Playfair Display',Georgia,serif;font-size:.82rem;font-weight:700;color:#fff;line-height:1.2">Swamp Fox Insurance<span style="display:block;font-size:.6rem;font-weight:400;color:rgba(255,255,255,.4);letter-spacing:.08em;text-transform:uppercase;margin-top:2px;font-family:'Inter',sans-serif">Est. 1987 &bull; SC's Only SCTPA-Endorsed Agency</span></div>
       </div>
       <!-- Quick links -->
