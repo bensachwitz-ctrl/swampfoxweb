@@ -63,8 +63,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="images/hero%20main.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- Leaflet is loaded on-demand by initMap() when the user visits #locations -->
+<link rel="dns-prefetch" href="https://unpkg.com">
+<link rel="dns-prefetch" href="https://i.ytimg.com">
+<link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
 <script defer src="https://unpkg.com/@alpinejs/collapse@3.14.3/dist/cdn.min.js"></script>
 <script defer src="https://unpkg.com/alpinejs@3.14.3/dist/cdn.min.js"></script>
 
@@ -1672,7 +1674,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- Loading Screen -->
 <div class="loader-screen" id="loader">
-  <img decoding="async" src="images/swamp%20fox%20green%20logo%20.png" alt="Swamp Fox" class="loader-logo" style="border-radius:16px;object-fit:contain">
+  <img decoding="async" fetchpriority="high" src="images/swamp%20fox%20top%20logo.webp" alt="Swamp Fox" class="loader-logo" style="border-radius:16px;object-fit:contain;background:#fff;padding:10px">
   <div class="loader-bar"><div class="loader-bar-fill"></div></div>
   <div class="loader-text">Swamp Fox Insurance Agency</div>
 </div>
@@ -1827,7 +1829,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
     <div class="hero-right">
       <div>
         <div class="hero-logo-display">
-          <img decoding="async" src="images/swamp%20fox%20green%20logo%20.png" alt="Swamp Fox Insurance Agency Logo">
+          <img decoding="async" loading="lazy" fetchpriority="low" src="images/swamp%20fox%20green%20logo%20.png" alt="Swamp Fox Insurance Agency Logo">
         </div>
         <div class="hero-sctpa float-slow">
           <img decoding="async" src="images/sctpa-logo.png" alt="SCTPA Logo">
@@ -3957,15 +3959,27 @@ function swampFox(){
     submitModal(kind){const f=this.mForm;const subj={register:'Summit 2026 Registration',losscontrol:'Loss Control Review Request',exitLC:'Loss Control Review (Exit Intent)',exitQ:'Quote Request (Exit Intent)'}[kind]||'New Lead — Swamp Fox';let body='Name: '+(f.name||'')+'\nCompany: '+(f.company||'')+'\nPhone: '+(f.phone||'')+'\nEmail: '+(f.email||'');if(f.coverage)body+='\nCoverage: '+f.coverage;if(f.message)body+='\n\nDetails:\n'+f.message;this.sendLead(subj,body);this.modalSent=true},
     submitNewsletter(email){if(!email)return false;this.sendLead('Newsletter Signup — Swamp Fox','Please add this address to the Swamp Fox newsletter.\n\nEmail: '+email);return true},
     submitQuote(){const q=this.qForm;const cov=this.selectedCoverage.join(', ')||'(none selected)';let body='Name: '+(q.firstName||'')+' '+(q.lastName||'')+'\nPhone: '+(q.phone||'')+'\nEmail: '+(q.email||'')+'\nBusiness: '+(q.business||'')+'\nState: '+(q.state||'')+'\nEmployees: '+(q.employees||'')+'\nCoverage: '+cov+'\nSource: '+(q.source||'');if(q.details)body+='\n\nDetails:\n'+q.details;this.sendLead('Quote Request — Swamp Fox',body);this.quoteSent=true},
+    loadLeaflet(){
+      if(window._leafletLoading)return window._leafletLoading;
+      if(typeof L!=='undefined')return Promise.resolve();
+      window._leafletLoading=new Promise((resolve,reject)=>{
+        const css=document.createElement('link');css.rel='stylesheet';css.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';document.head.appendChild(css);
+        const s=document.createElement('script');s.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';s.async=true;s.onload=resolve;s.onerror=reject;document.head.appendChild(s);
+      });
+      return window._leafletLoading;
+    },
     initMap(){
       const el=document.getElementById('sf-map');if(!el)return;
-      if(typeof L==='undefined'){el.innerHTML='<div style="padding:24px;text-align:center;color:var(--mid);font-size:.9rem">Interactive map unavailable &mdash; <a href="https://www.google.com/maps/search/?api=1&query=Swamp+Fox+Insurance+Agency+Moncks+Corner+SC" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600">view locations on Google Maps</a>.</div>';return}
+      const fallback=()=>{el.innerHTML='<div style="padding:24px;text-align:center;color:var(--mid);font-size:.9rem">Interactive map unavailable &mdash; <a href="https://www.google.com/maps/search/?api=1&query=Swamp+Fox+Insurance+Agency+Moncks+Corner+SC" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600">view locations on Google Maps</a>.</div>';};
       if(el._leaflet_id){try{el._leaflet_map&&el._leaflet_map.invalidateSize()}catch(e){}return}
-      const map=L.map('sf-map',{zoomControl:true}).setView([32.5,-80.3],7);el._leaflet_map=map;
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(map);
-      const icon=L.divIcon({className:'',html:'<div style="background:#00635B;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:3px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,.3)"><svg width="20" height="20" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>',iconSize:[40,40],iconAnchor:[20,20]});
-      [[33.2041,-80.0129,'Moncks Corner — Pinopolis Rd','1122 Pinopolis Rd, Moncks Corner SC 29461'],[33.1988,-79.9802,'Moncks Corner — Hwy 52','2822 Hwy 52 Ste 450, Moncks Corner SC 29461'],[32.9676,-80.1526,'Summerville — Nexton','1288 Nexton Pkwy Ste 402, Summerville SC 29483'],[31.2035,-82.3624,'Waycross, Georgia','960 S City Blvd Ste G, Waycross GA 31501']].forEach(([lat,lng,name,addr])=>{L.marker([lat,lng],{icon}).addTo(map).bindPopup('<strong style="font-family:Playfair Display,serif;color:#1E392A">'+name+'</strong><br><span style="color:#4A6070;font-size:.82rem">'+addr+'</span>',{maxWidth:230})});
-      setTimeout(()=>map.invalidateSize(),200);
+      this.loadLeaflet().then(()=>{
+        if(typeof L==='undefined'){fallback();return}
+        const map=L.map('sf-map',{zoomControl:true}).setView([32.5,-80.3],7);el._leaflet_map=map;
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(map);
+        const icon=L.divIcon({className:'',html:'<div style="background:#00635B;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:3px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,.3)"><svg width="20" height="20" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>',iconSize:[40,40],iconAnchor:[20,20]});
+        [[33.2041,-80.0129,'Moncks Corner — Pinopolis Rd','1122 Pinopolis Rd, Moncks Corner SC 29461'],[33.1988,-79.9802,'Moncks Corner — Hwy 52','2822 Hwy 52 Ste 450, Moncks Corner SC 29461'],[32.9676,-80.1526,'Summerville — Nexton','1288 Nexton Pkwy Ste 402, Summerville SC 29483'],[31.2035,-82.3624,'Waycross, Georgia','960 S City Blvd Ste G, Waycross GA 31501']].forEach(([lat,lng,name,addr])=>{L.marker([lat,lng],{icon}).addTo(map).bindPopup('<strong style="font-family:Playfair Display,serif;color:#1E392A">'+name+'</strong><br><span style="color:#4A6070;font-size:.82rem">'+addr+'</span>',{maxWidth:230})});
+        setTimeout(()=>map.invalidateSize(),200);
+      }).catch(fallback);
     },
     startCountdown(){
       const target=new Date('2026-08-28T09:00:00');
