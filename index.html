@@ -3015,23 +3015,23 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <p style="color:rgba(255,255,255,.88);max-width:620px;margin:0 auto;font-size:.92rem">Everyday moments from the operations we insure — timber yards, transport runs, equipment expos, and the fleets that keep the Southeast moving.</p>
       </div>
       <div class="job-strip">
-        <figure class="job-card">
+        <figure class="job-card" @click="$root.go('services')">
           <img loading="lazy" src="images/Swamp-Fox.jpg" alt="Swamp Fox Agency branded log truck on a rural South Carolina road">
           <figcaption>Log Truck on Route</figcaption>
         </figure>
-        <figure class="job-card">
+        <figure class="job-card" @click="$root.go('summit')">
           <img loading="lazy" src="images/Screenshot%202026-03-31%20161914.png" alt="Equipment expo at the SCTPA Loggers Summit — excavators and logging machinery">
           <figcaption>Loggers Summit Expo</figcaption>
         </figure>
-        <figure class="job-card">
+        <figure class="job-card" @click="$root.go('services')">
           <img loading="lazy" src="images/Screenshot%202026-03-31%20162158.png" alt="White log truck unloading timber at a landing in the Lowcountry">
           <figcaption>Unloading at the Landing</figcaption>
         </figure>
-        <figure class="job-card">
+        <figure class="job-card" @click="$root.go('services')">
           <img loading="lazy" src="images/another%20pic.jpg" alt="Swamp Fox branded red log truck hauling timber down a highway at sunset">
           <figcaption>Hauling Highway Miles</figcaption>
         </figure>
-        <figure class="job-card">
+        <figure class="job-card" @click="$root.go('losscontrol')">
           <img loading="lazy" src="images/background%20of%20a%20tab.png" alt="Swamp Fox Agency — stacked timber in a Southern pine forest">
           <figcaption>Timber in the Pines</figcaption>
         </figure>
@@ -3594,6 +3594,40 @@ function swampFox(){
         });
       });
     },
+    enhanceClickable(){
+      // Make every non-button element with @click act as a real button for
+      // keyboard & screen-reader users. Adds tabindex, role, and Enter/Space.
+      const selectors=[
+        '.bg-tile','.svc-card','.insure-card','.blog-card','.community-card',
+        '.gallery-card','.photo-card','.nav-card-link','.op-tab','.job-card',
+        '[data-clickable]'
+      ];
+      document.querySelectorAll(selectors.join(',')).forEach(el=>{
+        if(el.dataset.kbEnhanced)return;
+        // Skip true anchor/button — they already work
+        const tag=el.tagName.toLowerCase();
+        if(tag==='a'||tag==='button')return;
+        // Only attach if there's a click handler attribute (@click / onclick)
+        const hasClick=el.hasAttribute('@click')||el.hasAttribute('onclick')||
+                       el.getAttributeNames().some(a=>a.startsWith('x-on:click'))||
+                       el.getAttributeNames().some(a=>a.startsWith('@click'));
+        if(!hasClick&&!el.matches('.bg-tile,.svc-card,.insure-card,.job-card,.gallery-card'))return;
+        el.dataset.kbEnhanced='1';
+        if(!el.hasAttribute('tabindex'))el.setAttribute('tabindex','0');
+        if(!el.hasAttribute('role'))el.setAttribute('role','button');
+        if(!el.hasAttribute('aria-label')){
+          const cap=el.querySelector('.bg-title,figcaption,.gallery-cap,h3,h4,strong');
+          if(cap){const txt=cap.textContent.trim().replace(/\s+/g,' ');
+            if(txt)el.setAttribute('aria-label',txt)}
+        }
+        el.addEventListener('keydown',(e)=>{
+          if(e.key==='Enter'||e.key===' '){
+            e.preventDefault();
+            el.click();
+          }
+        });
+      });
+    },
     initParallax(){
       const slowEls=document.querySelectorAll('.parallax-slow');
       const fastEls=document.querySelectorAll('.parallax-fast');
@@ -3784,8 +3818,8 @@ function swampFox(){
       // Hide loader
       setTimeout(()=>{const loader=document.getElementById('loader');if(loader)loader.classList.add('hidden');setTimeout(()=>{if(loader)loader.remove()},400)},700);
       this.startCountdown();
-      this.$nextTick(()=>{this.initScrollReveal();this.initExitIntent();this.initParticles();this.initParallax();this.initCinematic();this.initTabKeyboard();
-        this.$watch('page',()=>this.$nextTick(()=>setTimeout(()=>this.initTabKeyboard(),120)));
+      this.$nextTick(()=>{this.initScrollReveal();this.initExitIntent();this.initParticles();this.initParallax();this.initCinematic();this.initTabKeyboard();this.enhanceClickable();
+        this.$watch('page',()=>this.$nextTick(()=>setTimeout(()=>{this.initTabKeyboard();this.enhanceClickable()},120)));
         window.addEventListener('scroll',()=>{
           this.scrolled=window.scrollY>20;
           // Scroll progress
