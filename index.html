@@ -416,12 +416,12 @@ textarea.form-input{resize:vertical}
 .svc-card::after{z-index:1}
 .svc-card>*{position:relative;z-index:2}
 /* Service card backgrounds — each matches its card title */
-.svc-card:nth-child(1)::before{background-image:url('images/yusuf-onuk-b-enaI7JBQ0-unsplash.jpg')} /* Forestry — grapple loader on logs */
-.svc-card:nth-child(2)::before{background-image:url('images/Screenshot%202026-03-31%20162158.png')} /* Commercial Trucking — log truck */
-.svc-card:nth-child(3)::before{background-image:url('images/trucks.jpg')} /* Cargo — loaded log truck */
-.svc-card:nth-child(4)::before{background-image:url('images/another%20photo.png')} /* General Liability — office/business */
-.svc-card:nth-child(5)::before{display:none} /* Homeowners — no matching photo; keep card clean */
-.svc-card:nth-child(6)::before{background-image:url('images/section-premium.jpg')} /* Auto — driver behind wheel */
+.svc-card:nth-child(1)::before{background-image:url('images/yusuf-onuk-b-enaI7JBQ0-unsplash.jpg')} /* Forestry — grapple loader */
+.svc-card:nth-child(2)::before{background-image:url('images/brand-truck-rain.jpg');opacity:.22} /* Commercial Trucking — log truck in rain */
+.svc-card:nth-child(3)::before{background-image:url('images/brand-fleet-silver.jpg');opacity:.22} /* Cargo — fleet of log trucks */
+.svc-card:nth-child(4)::before{background-image:url('images/another%20photo.png')} /* General Liability — office */
+.svc-card:nth-child(5)::before{background-image:url('images/brand-home-suv.jpg');opacity:.22} /* Homeowners — SC home + family */
+.svc-card:nth-child(6)::before{background-image:url('images/section-premium.jpg')} /* Auto — driver */
 .svc-card>*{position:relative;z-index:1}
 .insure-card::before{content:'';position:absolute;inset:0;background:url('images/background%20maybe.jpg') center/cover;opacity:.04;z-index:0;pointer-events:none;border-radius:var(--r-lg)}
 .insure-card>*{position:relative;z-index:1}
@@ -1350,6 +1350,74 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   .sec::after{display:none}
 }
 
+/* ══════════════════════════════════════════════════════
+   BRANDED PHOTO GALLERY — "Real Coverage. Real People."
+   ══════════════════════════════════════════════════════ */
+.brand-gallery{
+  display:grid;grid-template-columns:repeat(6,1fr);
+  grid-auto-rows:220px;gap:16px
+}
+.bg-tile{
+  position:relative;border-radius:16px;overflow:hidden;cursor:pointer;
+  box-shadow:0 6px 24px rgba(0,0,0,.1),0 2px 6px rgba(0,0,0,.06);
+  transition:transform .45s cubic-bezier(.2,.85,.3,1.05),box-shadow .45s ease;
+  grid-column:span 2;grid-row:span 1
+}
+.bg-tile--wide{grid-column:span 4;grid-row:span 2}
+.bg-tile img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .9s cubic-bezier(.16,1,.3,1),filter .5s ease;
+  filter:saturate(1.02) contrast(1.02)
+}
+.bg-tile:hover{
+  transform:translateY(-6px) scale(1.01);
+  box-shadow:0 16px 48px rgba(0,99,91,.18),0 6px 16px rgba(0,0,0,.12)
+}
+.bg-tile:hover img{transform:scale(1.06);filter:saturate(1.1) contrast(1.05)}
+.bg-tile figcaption{
+  position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(15,31,23,.08) 30%,rgba(15,31,23,.78) 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:20px 22px;color:#fff;gap:6px;
+  transition:background .45s ease
+}
+.bg-tile:hover figcaption{
+  background:linear-gradient(180deg,rgba(15,31,23,.15) 25%,rgba(15,31,23,.85) 100%)
+}
+.bg-tag{
+  font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal-lt);
+  background:rgba(45,138,126,.18);border:1px solid rgba(45,138,126,.4);
+  padding:4px 10px;border-radius:999px;width:max-content;
+  backdrop-filter:blur(8px);
+  text-shadow:0 1px 4px rgba(0,0,0,.6)
+}
+.bg-title{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:1.02rem;line-height:1.25;font-weight:600;
+  text-shadow:0 2px 10px rgba(0,0,0,1),0 4px 20px rgba(0,0,0,.7);
+  max-width:320px
+}
+.bg-tile--wide .bg-title{font-size:1.45rem;max-width:460px}
+
+/* Fine-grained responsive layout */
+@media(max-width:1024px){
+  .brand-gallery{grid-template-columns:repeat(4,1fr);grid-auto-rows:180px}
+  .bg-tile{grid-column:span 2}
+  .bg-tile--wide{grid-column:span 4;grid-row:span 2}
+}
+@media(max-width:640px){
+  .brand-gallery{grid-template-columns:1fr;grid-auto-rows:auto}
+  .bg-tile,.bg-tile--wide{grid-column:span 1;grid-row:auto;height:220px}
+  .bg-tile--wide{height:280px}
+  .bg-tile--wide .bg-title{font-size:1.15rem}
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .bg-tile,.bg-tile img{transition:none}
+}
+
 </style>
 </head>
 
@@ -1726,6 +1794,44 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <div class="carrier-tag">Travelers</div>
         <div class="carrier-tag">Auto-Owners</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDED GALLERY: authentic Swamp Fox coverage stories -->
+<section class="sec brand-gallery-sec" style="position:relative;overflow:hidden;background:linear-gradient(180deg,#f7faf8,#edf4f1)">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:32px" class="reveal">
+      <span class="label">Real Coverage. Real People.</span>
+      <h2>Protecting What Matters Across South Carolina</h2>
+      <div class="rule rule-c"></div>
+      <p style="max-width:640px;margin:0 auto">From Lowcountry porches to forestry work sites and interstate routes — one local agency, every coverage.</p>
+    </div>
+    <div class="brand-gallery">
+      <figure class="bg-tile bg-tile--wide reveal" @click="go('homeins')" style="cursor:pointer">
+        <img loading="lazy" src="images/brand-home-suv.jpg" alt="Swamp Fox home &amp; family insurance — South Carolina home with family and SUV">
+        <figcaption><span class="bg-tag">Home &amp; Family</span><span class="bg-title">Protecting your home &amp; family</span></figcaption>
+      </figure>
+      <figure class="bg-tile reveal" @click="go('services')" style="cursor:pointer">
+        <img loading="lazy" src="images/brand-truck-rain.jpg" alt="Swamp Fox commercial trucking insurance — log truck driving in the rain">
+        <figcaption><span class="bg-tag">Commercial Trucking</span><span class="bg-title">We're here when you need us most</span></figcaption>
+      </figure>
+      <figure class="bg-tile reveal" @click="go('services')" style="cursor:pointer">
+        <img loading="lazy" src="images/brand-forestry-family.jpg" alt="Swamp Fox forestry &amp; logging insurance — family at pickup truck in the woods">
+        <figcaption><span class="bg-tag">Forestry &amp; Logging</span><span class="bg-title">Built for the woods. Built for the work.</span></figcaption>
+      </figure>
+      <figure class="bg-tile reveal" @click="go('services')" style="cursor:pointer">
+        <img loading="lazy" src="images/brand-fleet-silver.jpg" alt="Swamp Fox fleet and commercial auto insurance — row of log trucks">
+        <figcaption><span class="bg-tag">Fleet Coverage</span><span class="bg-title">One fleet. One agent. Complete coverage.</span></figcaption>
+      </figure>
+      <figure class="bg-tile reveal" @click="go('homeins')" style="cursor:pointer">
+        <img loading="lazy" src="images/brand-sc-porch-pickup.jpg" alt="Rooted in South Carolina — Swamp Fox family insurance, porch and pickup truck">
+        <figcaption><span class="bg-tag">Rooted in SC</span><span class="bg-title">Rooted in South Carolina. Protecting what's yours.</span></figcaption>
+      </figure>
+      <figure class="bg-tile reveal" @click="go('services')" style="cursor:pointer">
+        <img loading="lazy" src="images/brand-renters-office.jpg" alt="Swamp Fox renters insurance — affordable, easy, smart">
+        <figcaption><span class="bg-tag">Renters</span><span class="bg-title">Affordable. Easy. Smart.</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -2669,7 +2775,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <!-- PAGE: HOME INSURANCE -->
 <!-- ══════════════════════════════════════════════════════════════════ -->
 <div class="page-section page-bg" data-page="homeins" x-show="page==='homeins'">
-<div class="page-bg-img" style="background-image:url('images/hero%20main.jpg')"></div>
+<div class="page-bg-img" style="background-image:url('images/brand-home-suv.jpg');background-position:center 30%"></div>
 <div class="page-bg-overlay"></div>
 <div class="page-bg-content">
   <div class="wrap">
