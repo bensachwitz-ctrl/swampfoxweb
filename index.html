@@ -2275,17 +2275,17 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
     </div>
     <div style="max-width:520px;margin:0 auto;padding-top:32px;border-top:1px solid rgba(255,255,255,.15)">
       <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-bottom:16px">Stay informed — get seasonal risk tips, policy updates & safety insights.</p>
-      <div class="newsletter-input-wrap" x-data="{nlEmail:'',nlSent:false}">
+      <form class="newsletter-input-wrap" x-data="{nlEmail:'',nlSent:false}" @submit.prevent="if($root.submitNewsletter(nlEmail)){nlSent=true}">
         <template x-if="!nlSent">
-          <input type="email" class="newsletter-input" placeholder="Enter your email address" x-model="nlEmail">
+          <input type="email" class="newsletter-input" placeholder="Enter your email address" x-model="nlEmail" required aria-label="Email address for newsletter">
         </template>
         <template x-if="!nlSent">
-          <button class="newsletter-btn" @click="if($root.submitNewsletter(nlEmail)){nlSent=true}">Subscribe</button>
+          <button type="submit" class="newsletter-btn">Subscribe</button>
         </template>
         <template x-if="nlSent">
           <div style="padding:16px 24px;background:rgba(255,255,255,.95);color:var(--forest);font-weight:600;width:100%;text-align:center;font-size:.92rem">Thank you for subscribing!</div>
         </template>
-      </div>
+      </form>
       <p style="color:rgba(255,255,255,.25);font-size:.7rem;margin-top:10px">No spam. Unsubscribe anytime.</p>
     </div>
   </div>
@@ -3357,6 +3357,252 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
   </div>
 </div></div>
 
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- PAGE: FORESTRY / LOGGING INSURANCE -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<div class="page-section page-bg" data-page="forestry" x-show="page==='forestry'">
+<div class="page-bg-img" style="background-image:url('images/brand-forestry-family.jpg');background-position:center 40%"></div>
+<div class="page-bg-overlay"></div>
+<div class="page-bg-content">
+  <div class="wrap">
+    <div class="page-header">
+      <span class="label" style="color:var(--teal-lt);border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.06)">SCTPA Endorsed</span>
+      <h2>Forestry &amp; Logging Insurance</h2>
+      <p>South Carolina's only SCTPA-endorsed forestry agency — coverage built by people who understand the woods.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="glass-box mag-glow" style="max-width:900px;margin:0 auto 28px">
+      <h2>Coverage Built for the Woods</h2>
+      <div class="rule"></div>
+      <p>From single-owner crews to multi-truck hauling fleets, we insure every stage of the timber supply chain. Because we work with multiple forestry-focused carriers, we tailor coverage to your specific operation — not a generic small-business template.</p>
+      <p style="margin-top:14px">Swamp Fox is the only SCTPA-endorsed insurance agency in South Carolina, trusted by the timber community for nearly four decades.</p>
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn btn-lg" @click="go('quote')">Get a Forestry Quote</button>
+        <a href="tel:8437613999" class="btn btn-outline">Call (843) 761-3999</a>
+      </div>
+    </div>
+    <div class="glass-box" style="max-width:900px;margin:0 auto;padding:28px 32px">
+      <h3 style="color:#fff;font-size:1.15rem;margin-bottom:14px">What's Typically Covered</h3>
+      <div class="rule" style="background:var(--teal-lt)"></div>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 24px;color:rgba(255,255,255,.92);font-size:.92rem;line-height:1.7">
+        <li>Logger's broad form &mdash; felled timber, logs on skids</li>
+        <li>Mobile equipment (skidders, chippers, forwarders, loaders)</li>
+        <li>Commercial general liability for job-site operations</li>
+        <li>Business auto &amp; trucking, including FMCSA filings</li>
+        <li>Motor truck cargo for tractor-trailers</li>
+        <li>Pollution liability (fuel &amp; hydraulic spills)</li>
+        <li>Workers' compensation for crews</li>
+        <li>Inland marine on owned &amp; leased equipment</li>
+      </ul>
+    </div>
+  </div>
+</div></div>
+
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- PAGE: COMMERCIAL TRUCKING INSURANCE -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<div class="page-section page-bg" data-page="trucking" x-show="page==='trucking'">
+<div class="page-bg-img" style="background-image:url('images/brand-truck-rain.jpg');background-position:center 50%"></div>
+<div class="page-bg-overlay"></div>
+<div class="page-bg-content">
+  <div class="wrap">
+    <div class="page-header">
+      <h2>Commercial Trucking Insurance</h2>
+      <p>From single owner-operators to multi-state fleets — we keep the trucks that move the Southeast on the road.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="glass-box mag-glow" style="max-width:900px;margin:0 auto 28px">
+      <h2>Fleet-Grade Coverage, Personal Service</h2>
+      <div class="rule"></div>
+      <p>Commercial trucking is one of the most regulated, highest-risk classes we insure. We handle MCS-90 and BMC-91 FMCSA filings, monitor CDL driver files, and make sure your cargo, trailers, and bobtail exposure are covered without costly overlap.</p>
+      <p style="margin-top:14px">Whether you run one truck or fifty, you'll work with a named agent who picks up the phone — not a 1-800 hotline.</p>
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn btn-lg" @click="go('quote')">Get a Trucking Quote</button>
+        <a href="tel:8437613999" class="btn btn-outline">Call (843) 761-3999</a>
+      </div>
+    </div>
+    <div class="glass-box" style="max-width:900px;margin:0 auto;padding:28px 32px">
+      <h3 style="color:#fff;font-size:1.15rem;margin-bottom:14px">What's Typically Covered</h3>
+      <div class="rule" style="background:var(--teal-lt)"></div>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 24px;color:rgba(255,255,255,.92);font-size:.92rem;line-height:1.7">
+        <li>Commercial auto liability (primary &amp; excess)</li>
+        <li>Physical damage on tractors &amp; trailers</li>
+        <li>Motor truck cargo &mdash; actual cash or agreed value</li>
+        <li>MCS-90 &amp; BMC-91 federal filings</li>
+        <li>Non-owned &amp; hired auto</li>
+        <li>Trailer interchange agreements</li>
+        <li>Bobtail &amp; deadhead coverage</li>
+        <li>Workers' comp for drivers &amp; mechanics</li>
+      </ul>
+    </div>
+  </div>
+</div></div>
+
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- PAGE: CARGO & PHYSICAL DAMAGE -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<div class="page-section page-bg" data-page="cargo" x-show="page==='cargo'">
+<div class="page-bg-img" style="background-image:url('images/brand-fleet-silver.jpg');background-position:center 40%"></div>
+<div class="page-bg-overlay"></div>
+<div class="page-bg-content">
+  <div class="wrap">
+    <div class="page-header">
+      <h2>Cargo &amp; Physical Damage</h2>
+      <p>The freight in your trailer is often worth more than the rig itself. Insure it like it.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="glass-box mag-glow" style="max-width:900px;margin:0 auto 28px">
+      <h2>Real Protection for What You Haul</h2>
+      <div class="rule"></div>
+      <p>A single cargo loss &mdash; a refrigeration failure, a load shift, a trailer fire &mdash; can wipe out a year of margin. We place cargo coverage with carriers that specialize in the freight you actually move, with limits that match real market values.</p>
+      <p style="margin-top:14px">Pair it with physical damage on your tractors and trailers and you're covered whether the rig is loaded, deadhead, or parked.</p>
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn btn-lg" @click="go('quote')">Get a Cargo Quote</button>
+        <a href="tel:8437613999" class="btn btn-outline">Call (843) 761-3999</a>
+      </div>
+    </div>
+    <div class="glass-box" style="max-width:900px;margin:0 auto;padding:28px 32px">
+      <h3 style="color:#fff;font-size:1.15rem;margin-bottom:14px">What's Typically Covered</h3>
+      <div class="rule" style="background:var(--teal-lt)"></div>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 24px;color:rgba(255,255,255,.92);font-size:.92rem;line-height:1.7">
+        <li>Motor truck cargo (ACV or agreed value)</li>
+        <li>Tractor &amp; trailer physical damage</li>
+        <li>Refrigeration breakdown for reefers</li>
+        <li>Trailer interchange</li>
+        <li>Loading &amp; unloading coverage</li>
+        <li>Earned freight &amp; debris removal</li>
+        <li>Specialty commodity add-ons (logs, produce, autos)</li>
+        <li>Replacement cost on new-model tractors</li>
+      </ul>
+    </div>
+  </div>
+</div></div>
+
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- PAGE: GENERAL LIABILITY -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<div class="page-section page-bg" data-page="gl" x-show="page==='gl'">
+<div class="page-bg-img" style="background-image:url('images/brand-renters-office.jpg');background-position:center 40%"></div>
+<div class="page-bg-overlay"></div>
+<div class="page-bg-content">
+  <div class="wrap">
+    <div class="page-header">
+      <h2>General Liability Insurance</h2>
+      <p>The foundation every business needs &mdash; protection against the claims you never see coming.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="glass-box mag-glow" style="max-width:900px;margin:0 auto 28px">
+      <h2>One Claim Away from Closing the Doors</h2>
+      <div class="rule"></div>
+      <p>A slip in the parking lot, a damaged customer property, a defective product &mdash; general liability is the layer that keeps a single claim from becoming a business-ending event. We structure coverage around your actual operations, not a generic SIC code.</p>
+      <p style="margin-top:14px">For contractors, we add blanket additional insured endorsements so you can bid the jobs you want. For retail and service, we make sure premises and products-completed ops are both covered.</p>
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn btn-lg" @click="go('quote')">Get a GL Quote</button>
+        <a href="tel:8437613999" class="btn btn-outline">Call (843) 761-3999</a>
+      </div>
+    </div>
+    <div class="glass-box" style="max-width:900px;margin:0 auto;padding:28px 32px">
+      <h3 style="color:#fff;font-size:1.15rem;margin-bottom:14px">What's Typically Covered</h3>
+      <div class="rule" style="background:var(--teal-lt)"></div>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 24px;color:rgba(255,255,255,.92);font-size:.92rem;line-height:1.7">
+        <li>Bodily injury &amp; property damage</li>
+        <li>Products &amp; completed operations</li>
+        <li>Personal &amp; advertising injury</li>
+        <li>Medical payments to third parties</li>
+        <li>Premises liability</li>
+        <li>Tenant's legal liability for leased space</li>
+        <li>Blanket additional insured endorsements</li>
+        <li>Defense costs inside or outside limits</li>
+      </ul>
+    </div>
+  </div>
+</div></div>
+
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- PAGE: LIFE & HEALTH -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<div class="page-section page-bg" data-page="life" x-show="page==='life'">
+<div class="page-bg-img" style="background-image:url('images/brand-family-reading.jpg');background-position:center 45%"></div>
+<div class="page-bg-overlay"></div>
+<div class="page-bg-content">
+  <div class="wrap">
+    <div class="page-header">
+      <h2>Life &amp; Health Insurance</h2>
+      <p>Protect the people you love &mdash; with plans that actually fit your life, not a corporate catalog.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="glass-box mag-glow" style="max-width:900px;margin:0 auto 28px">
+      <h2>Coverage for the Stages of Your Life</h2>
+      <div class="rule"></div>
+      <p>Life and health insurance isn't one-size-fits-all. A young family needs different protection than a business owner with key employees, and retirees have different needs again. We walk you through the options &mdash; term vs. whole life, major medical vs. supplemental &mdash; and help you pick what makes sense for your stage.</p>
+      <p style="margin-top:14px">Because we're independent, we quote multiple carriers side-by-side so you see real rate differences &mdash; not one company's pitch.</p>
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn btn-lg" @click="go('quote')">Get a Life / Health Quote</button>
+        <a href="tel:8437613999" class="btn btn-outline">Call (843) 761-3999</a>
+      </div>
+    </div>
+    <div class="glass-box" style="max-width:900px;margin:0 auto;padding:28px 32px">
+      <h3 style="color:#fff;font-size:1.15rem;margin-bottom:14px">What We Offer</h3>
+      <div class="rule" style="background:var(--teal-lt)"></div>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 24px;color:rgba(255,255,255,.92);font-size:.92rem;line-height:1.7">
+        <li>Term life (10-, 20-, 30-year)</li>
+        <li>Whole &amp; universal life</li>
+        <li>Final expense / burial policies</li>
+        <li>Individual major medical</li>
+        <li>Short-term &amp; long-term disability</li>
+        <li>Critical illness &amp; cancer plans</li>
+        <li>Long-term care</li>
+        <li>Key-person coverage for business owners</li>
+      </ul>
+    </div>
+  </div>
+</div></div>
+
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- PAGE: UMBRELLA & EXCESS -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<div class="page-section page-bg" data-page="umbrella" x-show="page==='umbrella'">
+<div class="page-bg-img" style="background-image:url('images/brand-family-plantation.jpg');background-position:center 40%"></div>
+<div class="page-bg-overlay"></div>
+<div class="page-bg-content">
+  <div class="wrap">
+    <div class="page-header">
+      <h2>Umbrella &amp; Excess Liability</h2>
+      <p>The layer that kicks in when primary limits aren't enough &mdash; and keeps a bad day from becoming a bankruptcy.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="glass-box mag-glow" style="max-width:900px;margin:0 auto 28px">
+      <h2>When the Primary Limit Runs Out</h2>
+      <div class="rule"></div>
+      <p>Jury awards keep climbing. A single large auto accident, a serious premises injury, or a products claim can easily exceed the limits of a primary policy. Umbrella and excess liability sit above your auto, general liability, and (sometimes) employers liability layers to protect personal and business assets that you've spent years building.</p>
+      <p style="margin-top:14px">We structure towers from $1M to $25M+ depending on exposure, and we review them every renewal so limits stay aligned with what you actually have to lose.</p>
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn btn-lg" @click="go('quote')">Get an Umbrella Quote</button>
+        <a href="tel:8437613999" class="btn btn-outline">Call (843) 761-3999</a>
+      </div>
+    </div>
+    <div class="glass-box" style="max-width:900px;margin:0 auto;padding:28px 32px">
+      <h3 style="color:#fff;font-size:1.15rem;margin-bottom:14px">What's Typically Covered</h3>
+      <div class="rule" style="background:var(--teal-lt)"></div>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 24px;color:rgba(255,255,255,.92);font-size:.92rem;line-height:1.7">
+        <li>Excess over commercial auto liability</li>
+        <li>Excess over general liability</li>
+        <li>Excess over employers liability (where permitted)</li>
+        <li>Personal umbrella over home &amp; auto</li>
+        <li>Blanket additional insured</li>
+        <li>Worldwide coverage territory</li>
+        <li>Defense costs outside limits</li>
+        <li>Towers structured from $1M to $25M+</li>
+      </ul>
+    </div>
+  </div>
+</div></div>
 
 </main>
 <!-- Quote page now handled as modal — see modalType==='quote' -->
@@ -3515,7 +3761,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
               <p style="font-size:.78rem;color:var(--mid);margin:0" x-show="selectedCoverage.length>0"><strong x-text="selectedCoverage.length"></strong> coverage type<span x-show="selectedCoverage.length>1">s</span> selected</p>
               <p style="font-size:.78rem;color:var(--mid);margin:0" x-show="selectedCoverage.length===0">Select at least one to continue</p>
             </div>
-            <button class="btn btn-lg btn-pulse" style="width:100%;justify-content:center;border-radius:10px;font-size:1rem;padding:14px 28px" @click="quoteStep=2" :disabled="selectedCoverage.length===0" :style="selectedCoverage.length===0?'opacity:.5;cursor:not-allowed':''">Continue <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            <button class="btn btn-lg btn-pulse" style="width:100%;justify-content:center;border-radius:10px;font-size:1rem;padding:14px 28px" @click="advanceQuoteStep(2)" :disabled="selectedCoverage.length===0" :style="selectedCoverage.length===0?'opacity:.5;cursor:not-allowed':''">Continue <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
           </div>
           <!-- Step 2 -->
           <div x-show="quoteStep===2">
@@ -3533,9 +3779,10 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
               <div class="form-group" style="margin-bottom:0"><label>State</label><select class="form-input" x-model="qForm.state"><option value="">Select</option><option>South Carolina</option><option>Georgia</option><option>North Carolina</option><option>Alabama</option><option>Florida</option><option>Mississippi</option><option>Virginia</option><option>Other</option></select></div>
               <div class="form-group" style="margin-bottom:0"><label># of Employees</label><select class="form-input" x-model="qForm.employees"><option value="">Select</option><option>1-5</option><option>6-25</option><option>26-50</option><option>51-100</option><option>100+</option></select></div>
             </div>
+            <p x-show="!quoteStep2Valid()" style="font-size:.78rem;color:#b15151;margin:10px 0 0">Please complete name, phone, and a valid email to continue.</p>
             <div style="display:flex;gap:10px;margin-top:8px">
               <button class="btn btn-outline" @click="quoteStep=1">Back</button>
-              <button class="btn btn-lg" style="flex:1;justify-content:center" @click="quoteStep=3">Continue</button>
+              <button class="btn btn-lg" style="flex:1;justify-content:center" @click="advanceQuoteStep(3)" :disabled="!quoteStep2Valid()" :style="!quoteStep2Valid()?'opacity:.55;cursor:not-allowed':''">Continue</button>
             </div>
           </div>
           <!-- Step 3 -->
@@ -3545,7 +3792,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
             <div class="form-group"><label>How did you hear about us?</label><select class="form-input" x-model="qForm.source"><option value="">Select one</option><option>SCTPA / Timber Association</option><option>Google Search</option><option>Referral</option><option>Social Media</option><option>Logger Summit</option><option>Other</option></select></div>
             <div style="display:flex;gap:10px;margin-top:8px">
               <button class="btn btn-outline" @click="quoteStep=2">Back</button>
-              <button class="btn btn-lg" style="flex:1;justify-content:center;background:var(--forest)" @click="submitQuote()">Submit Quote Request</button>
+              <button class="btn btn-lg" style="flex:1;justify-content:center;background:var(--forest)" @click="quoteStep2Valid()&&submitQuote()" :disabled="!quoteStep2Valid()" :style="!quoteStep2Valid()?'opacity:.55;cursor:not-allowed':''">Submit Quote Request</button>
             </div>
           </div>
         </div>
@@ -3674,14 +3921,14 @@ function swampFox(){
     nav:[
       {id:'home',label:'Home'},
       {id:'services',label:'Coverage',children:[
-        {id:'forestry',label:'Forestry / Logging',desc:"Logger's broad form, equipment, liability",target:'services',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 3L4 14h4l-3 7h14l-3-7h4L12 3z\"/></svg>'},
-        {id:'trucking',label:'Commercial Trucking',desc:'Auto, cargo, FMCSA filings, fleets',target:'services',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><rect x=\"1\" y=\"3\" width=\"15\" height=\"13\" rx=\"2\"/><path d=\"M16 8h4l3 3.5V16h-7V8z\"/><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"/><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"/></svg>'},
-        {id:'cargo',label:'Cargo & Physical Damage',desc:'Motor truck cargo, trailer interchange',target:'services',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z\"/></svg>'},
-        {id:'gl',label:'General Liability',desc:'Business liability & commercial property',target:'services',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>'},
+        {id:'forestry',label:'Forestry / Logging',desc:"Logger's broad form, equipment, liability",target:'forestry',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 3L4 14h4l-3 7h14l-3-7h4L12 3z\"/></svg>'},
+        {id:'trucking',label:'Commercial Trucking',desc:'Auto, cargo, FMCSA filings, fleets',target:'trucking',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><rect x=\"1\" y=\"3\" width=\"15\" height=\"13\" rx=\"2\"/><path d=\"M16 8h4l3 3.5V16h-7V8z\"/><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"/><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"/></svg>'},
+        {id:'cargo',label:'Cargo & Physical Damage',desc:'Motor truck cargo, trailer interchange',target:'cargo',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z\"/></svg>'},
+        {id:'gl',label:'General Liability',desc:'Business liability & commercial property',target:'gl',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>'},
         {id:'home',label:'Homeowners',desc:'Dwelling, contents, liability, flood',target:'homeins',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z\"/><path d=\"M9 22V12h6v10\"/></svg>'},
         {id:'auto',label:'Auto Insurance',desc:'Car, truck, motorcycle, boat, ATV',target:'autoins',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M5 17h14M5 17a2 2 0 01-2-2V9a2 2 0 012-2h1l2-3h8l2 3h1a2 2 0 012 2v6a2 2 0 01-2 2M5 17a2 2 0 100 4 2 2 0 000-4zM19 17a2 2 0 100 4 2 2 0 000-4z\"/></svg>'},
-        {id:'life',label:'Life & Health',desc:'Term, whole life, individual health',target:'services',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z\"/></svg>'},
-        {id:'umbrella',label:'Umbrella & Excess',desc:'Excess liability above primary limits',target:'services',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 2v2M12 22v-6M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M22 12h-2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41\"/><path d=\"M22 12a10 10 0 00-20 0h20z\"/></svg>'}
+        {id:'life',label:'Life & Health',desc:'Term, whole life, individual health',target:'life',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z\"/></svg>'},
+        {id:'umbrella',label:'Umbrella & Excess',desc:'Excess liability above primary limits',target:'umbrella',icon:'<svg width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 2v2M12 22v-6M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M22 12h-2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41\"/><path d=\"M22 12a10 10 0 00-20 0h20z\"/></svg>'}
       ]},
       {id:'losscontrol',label:'Loss Control'},
       {id:'summit',label:'Summit'},
@@ -3702,6 +3949,9 @@ function swampFox(){
       {id:'other',label:'Other',desc:'Something else — tell us in the details'}
     ],
     toggleCoverage(id){const i=this.selectedCoverage.indexOf(id);if(i===-1)this.selectedCoverage.push(id);else this.selectedCoverage.splice(i,1)},
+    validEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((v||'').trim())},
+    quoteStep2Valid(){const q=this.qForm;return !!(q.firstName&&q.lastName&&q.phone&&this.validEmail(q.email))},
+    advanceQuoteStep(to){if(to===2&&this.selectedCoverage.length===0)return;if(to===3&&!this.quoteStep2Valid())return;this.quoteStep=to},
     go(id){if(id==='quote'){this.showModal=true;this.modalType='quotefull';this.modalSent=false;this.quoteStep=1;this.selectedCoverage=[];this.quoteSent=false;this.menuOpen=false;return}this.page=id;this.menuOpen=false;window.scrollTo({top:0,behavior:'smooth'});if(id==='locations')this.$nextTick(()=>this.initMap())},
     sendLead(subject,body){try{const a=document.createElement('a');a.href='mailto:info@swampfoxagency.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}catch(e){}},
     submitModal(kind){const f=this.mForm;const subj={register:'Summit 2026 Registration',losscontrol:'Loss Control Review Request',exitLC:'Loss Control Review (Exit Intent)',exitQ:'Quote Request (Exit Intent)'}[kind]||'New Lead — Swamp Fox';let body='Name: '+(f.name||'')+'\nCompany: '+(f.company||'')+'\nPhone: '+(f.phone||'')+'\nEmail: '+(f.email||'');if(f.coverage)body+='\nCoverage: '+f.coverage;if(f.message)body+='\n\nDetails:\n'+f.message;this.sendLead(subj,body);this.modalSent=true},
@@ -3709,6 +3959,7 @@ function swampFox(){
     submitQuote(){const q=this.qForm;const cov=this.selectedCoverage.join(', ')||'(none selected)';let body='Name: '+(q.firstName||'')+' '+(q.lastName||'')+'\nPhone: '+(q.phone||'')+'\nEmail: '+(q.email||'')+'\nBusiness: '+(q.business||'')+'\nState: '+(q.state||'')+'\nEmployees: '+(q.employees||'')+'\nCoverage: '+cov+'\nSource: '+(q.source||'');if(q.details)body+='\n\nDetails:\n'+q.details;this.sendLead('Quote Request — Swamp Fox',body);this.quoteSent=true},
     initMap(){
       const el=document.getElementById('sf-map');if(!el)return;
+      if(typeof L==='undefined'){el.innerHTML='<div style="padding:24px;text-align:center;color:var(--mid);font-size:.9rem">Interactive map unavailable &mdash; <a href="https://www.google.com/maps/search/?api=1&query=Swamp+Fox+Insurance+Agency+Moncks+Corner+SC" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600">view locations on Google Maps</a>.</div>';return}
       if(el._leaflet_id){try{el._leaflet_map&&el._leaflet_map.invalidateSize()}catch(e){}return}
       const map=L.map('sf-map',{zoomControl:true}).setView([32.5,-80.3],7);el._leaflet_map=map;
       L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(map);
