@@ -1719,8 +1719,8 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
       </a>
       <div class="nav-links" @mouseleave="navDrop=null">
         <template x-for="item in nav.filter(n=>n.id!=='quote')" :key="item.id">
-          <div class="nav-link-wrap" @mouseenter="item.children?navDrop=item.id:navDrop=null">
-            <a class="nav-link" :class="{'active':page===item.id||(item.children&&item.children.some(c=>c.id===page))}" @click.prevent="item.children?(navDrop=navDrop===item.id?null:item.id):go(item.id)" href="#">
+          <div class="nav-link-wrap" @mouseenter="if(window.matchMedia('(hover:hover)').matches){item.children?(navDrop=item.id):(navDrop=null)}">
+            <a class="nav-link" :class="{'active':page===item.id||(item.children&&item.children.some(c=>(c.target||c.id)===page))}" @click.prevent="item.children?(navDrop=navDrop===item.id?null:item.id):go(item.id)" href="#">
               <span x-text="item.label"></span>
               <svg x-show="item.children" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="margin-left:4px;transition:transform .25s ease" :style="navDrop===item.id?'transform:rotate(180deg)':''"><path d="M6 9l6 6 6-6"/></svg>
             </a>
