@@ -1527,14 +1527,101 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 @media(max-width:960px){
   .job-strip{grid-template-columns:repeat(3,1fr)}
 }
-@media(max-width:520px){
-  .job-strip{grid-template-columns:repeat(2,1fr)}
+/* ══════════════════════════════════════════════════════
+   F100 RESTRAINT & ACCESSIBILITY PASS
+   ══════════════════════════════════════════════════════ */
+
+/* Accessibility: skip-to-content link */
+.skip-link{
+  position:fixed;top:-40px;left:12px;z-index:10000;
+  background:var(--forest);color:#fff;padding:10px 16px;border-radius:8px;
+  font-weight:600;font-size:.88rem;
+  transition:top .2s ease;box-shadow:0 6px 18px rgba(0,0,0,.22)
 }
+.skip-link:focus{top:12px;outline:2px solid var(--teal-lt);outline-offset:2px}
+
+/* Universal focus-visible — professional keyboard navigation */
+*:focus{outline:none}
+*:focus-visible{
+  outline:2px solid var(--teal-lt) !important;
+  outline-offset:3px;border-radius:6px
+}
+button:focus-visible, a:focus-visible, .nav-link:focus-visible,
+.bg-tile:focus-visible, .svc-card:focus-visible, .insure-card:focus-visible,
+.op-tab:focus-visible, .tab-btn:focus-visible, .blog-pill:focus-visible{
+  outline:2px solid var(--teal-lt) !important;
+  outline-offset:3px;
+  box-shadow:0 0 0 4px rgba(45,138,126,.18) !important
+}
+.nav-cta:focus-visible{
+  outline:2px solid #fff !important;outline-offset:3px;
+  box-shadow:0 0 0 4px rgba(45,138,126,.5) !important
+}
+
+/* Softer, unified text-shadow scale (replaces 3-stack shadows on dark surfaces) */
+.hero h1, .section-hero h2, .page-header h2{
+  text-shadow:0 2px 12px rgba(0,0,0,.72),0 4px 28px rgba(0,0,0,.45) !important
+}
+.hero-sub, .section-hero p, .page-header p{
+  text-shadow:0 1px 6px rgba(0,0,0,.6) !important
+}
+.page-bg h2, .page-bg h3, .page-bg h4{
+  text-shadow:0 1px 6px rgba(0,0,0,.6),0 3px 16px rgba(0,0,0,.35) !important
+}
+.page-bg p, .page-bg li{
+  text-shadow:0 1px 4px rgba(0,0,0,.45) !important
+}
+
+/* Restraint: remove flashy rotating conic halo on service icons */
+.svc-card:hover .svc-icon::before{opacity:0 !important}
+
+/* Restraint: quiet the trust bar auto-shimmer (only on hover) */
+.trustbar::after{animation:none !important;opacity:0;transition:opacity .4s ease !important}
+.trustbar:hover::after{opacity:1;animation:trustShine 1.6s ease forwards !important}
+
+/* Restraint: quiet the hero em gradient animation (subtle color only) */
+.hero h1 em, .hero h1 em .char{animation-duration:14s !important}
+
+/* Brand gallery tiles — keyboard accessible */
+.bg-tile[tabindex="0"],.svc-card[tabindex="0"],.insure-card[tabindex="0"]{cursor:pointer}
+
+/* Operations tab — refined F100 look with clear active state */
+.op-tab{min-height:42px;letter-spacing:.03em}
+.op-tab-active{letter-spacing:.04em}
+
+/* Ensure tab panels respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .hero-bg,.atmo-blob,.hero-haze,.text-shimmer,
+  .hero h1 em,.particle,.float-slow,.float-trust{animation:none !important}
+  .trustbar::after{display:none}
+}
+
+/* Tighter rhythm: consistent body line-height on light surfaces */
+.sec p, .glass-box p{line-height:1.7}
+.op-copy p{line-height:1.65}
+
+/* Button refinement — remove overlapping box-shadow stacks */
+.btn{
+  box-shadow:0 1px 2px rgba(0,0,0,.08),0 4px 12px rgba(0,99,91,.18) !important
+}
+.btn:hover{
+  box-shadow:0 3px 6px rgba(0,0,0,.1),0 12px 28px rgba(0,99,91,.28) !important
+}
+
+/* Reduce particle count visually on small screens (pref-reduced already off) */
+@media(max-width:768px){
+  .particles-container{display:none}
+}
+
+/* Subtle brand-gallery wide tile frame refinement */
+.bg-tile{border:1px solid rgba(255,255,255,.04)}
+.bg-tile:hover{border-color:rgba(45,138,126,.28)}
 
 </style>
 </head>
 
 <body x-data="swampFox()" x-init="init()" :class="{'modal-open':showModal}">
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- Loading Screen -->
 <div class="loader-screen" id="loader">
   <img src="images/swamp%20fox%20green%20logo%20.png" alt="Swamp Fox" class="loader-logo" style="border-radius:16px;object-fit:contain">
@@ -1649,6 +1736,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <!-- ══════════════════════════════════════════════════════════════════ -->
 <!-- PAGE: HOME -->
 <!-- ══════════════════════════════════════════════════════════════════ -->
+<main id="main-content">
 <div class="page-section" data-page="home" x-show="page==='home'">
 
 <!-- HERO -->
@@ -3096,6 +3184,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 </div></div>
 
 
+</main>
 <!-- Quote page now handled as modal — see modalType==='quote' -->
 <div class="page-section" data-page="quote" x-show="page==='quote'" x-init="$watch('page',v=>{if(v==='quote'){showModal=true;modalType='quotefull';modalSent=false;quoteStep=1;selectedCoverage=[];quoteSent=false;page='home'}})">
 </div><!-- end QUOTE -->
@@ -3475,15 +3564,35 @@ function swampFox(){
     },
     initParticles(){
       const container=document.getElementById('particles');if(!container)return;
-      const types=['teal','gold','white'];
-      for(let i=0;i<12;i++){
+      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+      if(window.innerWidth<900)return;
+      const types=['teal','white'];
+      for(let i=0;i<6;i++){
         const p=document.createElement('div');
-        const type=types[i%3];
-        const size=Math.random()*6+3;
+        const type=types[i%2];
+        const size=Math.random()*4+3;
         p.className='particle particle--'+type;
-        p.style.cssText='width:'+size+'px;height:'+size+'px;left:'+Math.random()*100+'%;animation-duration:'+(Math.random()*18+14)+'s;animation-delay:'+(Math.random()*-20)+'s;';
+        p.style.cssText='width:'+size+'px;height:'+size+'px;left:'+Math.random()*100+'%;animation-duration:'+(Math.random()*14+18)+'s;animation-delay:'+(Math.random()*-20)+'s;';
         container.appendChild(p);
       }
+    },
+    initTabKeyboard(){
+      document.querySelectorAll('.op-tabs').forEach(group=>{
+        if(group.dataset.kbDone)return;group.dataset.kbDone='1';
+        const tabs=[...group.querySelectorAll('.op-tab')];
+        tabs.forEach((t,i)=>{
+          t.setAttribute('tabindex','0');
+          t.setAttribute('role','tab');
+          t.addEventListener('keydown',(e)=>{
+            if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
+              e.preventDefault();
+              const dir=e.key==='ArrowRight'?1:-1;
+              const next=tabs[(i+dir+tabs.length)%tabs.length];
+              next.click();next.focus();
+            }
+          });
+        });
+      });
     },
     initParallax(){
       const slowEls=document.querySelectorAll('.parallax-slow');
@@ -3675,7 +3784,8 @@ function swampFox(){
       // Hide loader
       setTimeout(()=>{const loader=document.getElementById('loader');if(loader)loader.classList.add('hidden');setTimeout(()=>{if(loader)loader.remove()},400)},700);
       this.startCountdown();
-      this.$nextTick(()=>{this.initScrollReveal();this.initExitIntent();this.initParticles();this.initParallax();this.initCinematic();
+      this.$nextTick(()=>{this.initScrollReveal();this.initExitIntent();this.initParticles();this.initParallax();this.initCinematic();this.initTabKeyboard();
+        this.$watch('page',()=>this.$nextTick(()=>setTimeout(()=>this.initTabKeyboard(),120)));
         window.addEventListener('scroll',()=>{
           this.scrolled=window.scrollY>20;
           // Scroll progress
