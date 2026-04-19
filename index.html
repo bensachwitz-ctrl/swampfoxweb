@@ -2783,7 +2783,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
           </template>
           <template x-if="videoPlaying">
             <div style="position:absolute;inset:0;background:#000">
-              <iframe :src="'https://www.youtube.com/embed/'+summitVideoId+'?autoplay=1&rel=0&modestbranding=1'" style="width:100%;height:100%;border:0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+              <iframe :src="'https://www.youtube-nocookie.com/embed/'+summitVideoId+'?autoplay=1&rel=0&modestbranding=1&playsinline=1'" style="width:100%;height:100%;border:0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy" title="2026 Loggers Technology Summit"></iframe>
             </div>
           </template>
         </div>
@@ -3093,6 +3093,40 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <span class="label">Our Mission &amp; Pledge</span>
         <h3 style="color:#fff;font-size:1.2rem;margin-bottom:12px">Protecting What Matters Most</h3>
         <p style="font-size:.9rem;line-height:1.7;color:rgba(255,255,255,.9)">We provide risk transfer advice that protects your assets with the broadest coverage at the most affordable price. We listen, question, recommend, and execute — whether business or personal. We exhaust all avenues to find cost-effective insurance and back it up with genuine advocacy for you.</p>
+      </div>
+    </div>
+
+    <!-- MEET SWAMP FOX — Real YouTube video with lite-embed pattern -->
+    <div style="max-width:900px;margin:0 auto 40px" x-data="{vId:'Vf3Q-IEmWbA',playing:false}">
+      <div style="text-align:center;margin-bottom:20px">
+        <span class="label">Meet Swamp Fox</span>
+        <h3 style="color:#fff;font-size:clamp(1.3rem,2.4vw,1.8rem);margin:6px 0">Hear Our Story, Straight From the Team</h3>
+        <div class="rule rule-c" style="background:var(--teal-lt)"></div>
+      </div>
+      <div class="summit-video-wrap" @click="playing=true" @keydown.enter.prevent="playing=true" tabindex="0" role="button" aria-label="Play Meet Swamp Fox video">
+        <template x-if="!playing">
+          <div class="summit-video-poster">
+            <img decoding="async" loading="lazy" :src="'https://i.ytimg.com/vi/'+vId+'/hqdefault.jpg'" alt="Meet Swamp Fox Insurance Agency — watch the video" style="width:100%;height:100%;object-fit:cover">
+            <div class="summit-video-shade"></div>
+            <div class="summit-video-meta">
+              <div style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-lt);margin-bottom:8px">Our Story &bull; Since 1987</div>
+              <h3 style="color:#fff;font-size:clamp(1.25rem,2.4vw,1.7rem);margin-bottom:6px;text-shadow:0 2px 12px rgba(0,0,0,.9)">Who We Are. Who We Protect.</h3>
+              <p style="color:rgba(255,255,255,.85);font-size:.9rem;max-width:580px;margin:0;text-shadow:0 2px 8px rgba(0,0,0,.85)">A quick look at why loggers, truckers, and families across the Southeast trust Swamp Fox.</p>
+            </div>
+            <button class="summit-video-play" aria-hidden="true" tabindex="-1">
+              <svg width="40" height="40" fill="#fff" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <div class="summit-video-yt-badge">
+              <svg width="16" height="16" fill="#fff" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <span>Click to play</span>
+            </div>
+          </div>
+        </template>
+        <template x-if="playing">
+          <div style="position:absolute;inset:0;background:#000">
+            <iframe :src="'https://www.youtube-nocookie.com/embed/'+vId+'?autoplay=1&rel=0&modestbranding=1&playsinline=1'" style="width:100%;height:100%;border:0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy" title="Meet Swamp Fox Insurance Agency"></iframe>
+          </div>
+        </template>
       </div>
     </div>
 
