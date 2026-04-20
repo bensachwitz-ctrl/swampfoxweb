@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Swamp Fox Insurance Agency | Logging, Forestry & Commercial Insurance | Moncks Corner, SC</title>
@@ -842,6 +845,12 @@ footer{box-shadow:0 -6px 24px rgba(0,0,0,.08),0 -1px 0 rgba(0,0,0,.04)}
 .page-bg-content>.wrap{overflow:visible}
 .page-bg .sec{background:transparent!important;padding:8px 0 20px;margin:0}
 .page-bg .sec:first-of-type{padding-top:0;margin-top:0}
+/* Nuclear override: force zero vertical space between .page-header and the first content section on .page-bg pages. This is deliberately high-specificity + !important to defeat any inline margin/padding or later rule. */
+.page-bg-content>.wrap:first-child{margin:0!important;padding:0!important}
+.page-bg .page-header{padding:20px 32px 8px!important;margin:0!important}
+.page-bg-content>section:nth-of-type(1){margin-top:0!important;padding-top:0!important}
+.page-bg-content>section:nth-of-type(1)>.wrap{padding-top:0!important;margin-top:0!important}
+.page-bg-content>section:nth-of-type(1)>.wrap>*:first-child{margin-top:0!important}
 .page-bg .sec::before{display:none}
 .page-bg .sec::after{display:none}
 /* Page header (no box — text directly on bg) */
