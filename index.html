@@ -624,7 +624,16 @@ textarea.form-input{resize:vertical}
 /* === COVERAGE DROPDOWN === */
 .nav-link-wrap{position:relative;display:flex;align-items:center}
 .nav-link-wrap .nav-link{display:flex;align-items:center}
-.nav-dropdown{position:absolute;top:100%;left:0;margin-top:8px;min-width:340px;background:#fff;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.12),0 2px 8px rgba(0,0,0,.06),0 0 0 1px rgba(0,99,91,.06);padding:10px;z-index:250;display:grid;grid-template-columns:1fr;gap:2px}
+.nav-dropdown{position:absolute;top:100%;left:0;margin-top:8px;min-width:340px;background:#fff;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.12),0 2px 8px rgba(0,0,0,.06),0 0 0 1px rgba(0,99,91,.06);padding:10px;z-index:250;display:grid;grid-template-columns:1fr;gap:2px;transform-origin:top left}
+.nd-enter{transition:opacity .22s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.34,1.56,.64,1)}
+.nd-enter-start{opacity:0;transform:translateY(-8px) scale(.96)}
+.nd-enter-end{opacity:1;transform:translateY(0) scale(1)}
+.nd-leave{transition:opacity .14s ease,transform .14s ease}
+.nd-leave-start{opacity:1;transform:translateY(0)}
+.nd-leave-end{opacity:0;transform:translateY(-4px)}
+.nav-dropdown-item{animation:ndItemIn .32s cubic-bezier(.25,1,.5,1) both;animation-delay:calc(var(--nd-i,0) * 35ms + 80ms)}
+@keyframes ndItemIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.nd-enter,.nd-leave,.nav-dropdown-item{animation:none!important;transition:none!important}}
 .nav-dropdown::before{content:'';position:absolute;top:-6px;left:24px;width:12px;height:12px;background:#fff;transform:rotate(45deg);box-shadow:-1px -1px 0 rgba(0,99,91,.06)}
 .nav-dropdown-item{display:flex;gap:12px;padding:10px 12px;border-radius:9px;cursor:pointer;transition:background .2s ease,transform .2s ease;align-items:flex-start}
 .nav-dropdown-item:hover{background:var(--sage-lt);transform:translateX(2px)}
@@ -1717,16 +1726,22 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
       <a class="nav-logo" @click.prevent="go('home')" href="#" style="cursor:pointer">
         <img decoding="async" src="images/swamp%20fox%20top%20logo.webp" alt="Swamp Fox Insurance Agency">
       </a>
-      <div class="nav-links" @keydown.escape.window="navDrop=null">
+      <div class="nav-links" @mouseleave="navDrop=null" @keydown.escape.window="navDrop=null">
         <template x-for="item in nav.filter(n=>n.id!=='quote')" :key="item.id">
-          <div class="nav-link-wrap">
-            <a class="nav-link" :class="{'active':page===item.id||(item.children&&item.children.some(c=>(c.target||c.id)===page))}" :aria-expanded="item.children?(navDrop===item.id?'true':'false'):null" :aria-haspopup="item.children?'true':null" @click.prevent.stop="item.children?(navDrop=navDrop===item.id?null:item.id):go(item.id)" href="#">
+          <div class="nav-link-wrap" @mouseenter="if(item.children&&window.matchMedia('(hover:hover)').matches)navDrop=item.id">
+            <a class="nav-link" :class="{'active':page===item.id||(item.children&&item.children.some(c=>(c.target||c.id)===page))}" :aria-expanded="item.children?(navDrop===item.id?'true':'false'):null" :aria-haspopup="item.children?'true':null" @click.prevent.stop="item.children?(window.matchMedia('(hover:hover)').matches?navDrop=item.id:navDrop=(navDrop===item.id?null:item.id)):go(item.id)" href="#">
               <span x-text="item.label"></span>
               <svg x-show="item.children" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="margin-left:4px;transition:transform .25s ease" :style="navDrop===item.id?'transform:rotate(180deg)':''"><path d="M6 9l6 6 6-6"/></svg>
             </a>
-            <div class="nav-dropdown" x-show="item.children&&navDrop===item.id" x-cloak>
-              <template x-for="child in item.children||[]" :key="child.id">
-                <a class="nav-dropdown-item" @click.prevent.stop="go(child.target||'services');navDrop=null" href="#">
+            <div class="nav-dropdown" x-show="item.children&&navDrop===item.id" x-cloak
+              x-transition:enter="nd-enter"
+              x-transition:enter-start="nd-enter-start"
+              x-transition:enter-end="nd-enter-end"
+              x-transition:leave="nd-leave"
+              x-transition:leave-start="nd-leave-start"
+              x-transition:leave-end="nd-leave-end">
+              <template x-for="(child,ci) in item.children||[]" :key="child.id">
+                <a class="nav-dropdown-item" @click.prevent.stop="go(child.target||'services');navDrop=null" href="#" :style="'--nd-i:'+ci">
                   <div class="nav-dd-icon" x-html="child.icon"></div>
                   <div>
                     <div class="nav-dd-label" x-text="child.label"></div>
