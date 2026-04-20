@@ -343,7 +343,7 @@ p{color:var(--mid);line-height:1.75}
 .svc-icon svg{color:var(--teal);transition:color var(--t)}
 .svc-card h3{color:var(--forest);margin-bottom:8px;font-size:1.05rem}
 .svc-card p{font-size:.88rem;color:var(--mid);line-height:1.55}
-.svc-card .learn{font-size:.78rem;font-weight:600;color:var(--teal);margin-top:14px;display:inline-flex;align-items:center;gap:5px;border:1.5px solid var(--teal);border-radius:20px;padding:6px 16px;transition:all var(--t)}.svc-card .learn:hover{background:var(--teal);color:#fff}
+.svc-card .learn{font-size:.82rem;font-weight:700;color:var(--forest);margin-top:14px;display:inline-flex;align-items:center;gap:6px;background:var(--teal-bg);border:1.5px solid var(--teal);border-radius:20px;padding:8px 18px;transition:all var(--t);letter-spacing:.01em}.svc-card .learn:hover{background:var(--teal);color:#fff;transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,99,91,.25)}
 
 /* === SECTION HEROES === */
 .section-hero{position:relative;padding:72px 0 56px;background-size:cover;background-position:center 40%;overflow:hidden;min-height:360px;display:flex;align-items:center}
@@ -877,7 +877,7 @@ footer{box-shadow:0 -6px 24px rgba(0,0,0,.08),0 -1px 0 rgba(0,0,0,.04)}
 .page-bg .svc-card::after{display:none}
 .page-bg .svc-card h3{color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.8),0 4px 16px rgba(0,0,0,.4)}
 .page-bg .svc-card p{color:rgba(255,255,255,.88);text-shadow:0 1px 4px rgba(0,0,0,.6)}
-.page-bg .svc-card .learn{color:#fff;border-color:rgba(255,255,255,.5)}.page-bg .svc-card .learn:hover{background:rgba(255,255,255,.15);border-color:#fff;color:#fff}
+.page-bg .svc-card .learn{color:#fff;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.7)}.page-bg .svc-card .learn:hover{background:#fff;border-color:#fff;color:var(--forest)}
 .page-bg .svc-icon{background:rgba(45,138,126,.2)}
 .page-bg .svc-icon svg{color:var(--teal-lt)}
 /* Blog posts on page-bg */
@@ -1729,7 +1729,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
       <div class="nav-links" @mouseleave="navDrop=null" @keydown.escape.window="navDrop=null">
         <template x-for="item in nav.filter(n=>n.id!=='quote')" :key="item.id">
           <div class="nav-link-wrap" @mouseenter="if(item.children&&window.matchMedia('(hover:hover)').matches)navDrop=item.id">
-            <a class="nav-link" :class="{'active':page===item.id||(item.children&&item.children.some(c=>(c.target||c.id)===page))}" :aria-expanded="item.children?(navDrop===item.id?'true':'false'):null" :aria-haspopup="item.children?'true':null" @click.prevent.stop="item.children?(window.matchMedia('(hover:hover)').matches?navDrop=item.id:navDrop=(navDrop===item.id?null:item.id)):go(item.id)" href="#">
+            <a class="nav-link" :class="{'active':page===item.id||(item.children&&item.children.some(c=>(c.target||c.id)===page))}" :aria-expanded="item.children?(navDrop===item.id?'true':'false'):null" :aria-haspopup="item.children?'true':null" @click.prevent.stop="item.children?(navDrop=navDrop===item.id?null:item.id,go('services')):go(item.id)" href="#">
               <span x-text="item.label"></span>
               <svg x-show="item.children" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="margin-left:4px;transition:transform .25s ease" :style="navDrop===item.id?'transform:rotate(180deg)':''"><path d="M6 9l6 6 6-6"/></svg>
             </a>
@@ -1837,7 +1837,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
       <div class="hero-trust">
         <div class="hero-trust-item"><span data-count="1987" data-prefix="">1987</span><span>Protecting SC Since</span></div>
         <div class="hero-trust-item"><span data-count="4">4</span><span>Office Locations</span></div>
-        <div class="hero-trust-item"><span>7+DC</span><span>States Served</span></div>
+        <div class="hero-trust-item"><span>8</span><span>States &amp; D.C.</span></div>
         <div class="hero-trust-item"><span>Only</span><span>SCTPA Endorsed</span></div>
       </div>
     </div>
@@ -1926,28 +1926,28 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
     </div>
     <div class="grid-3" style="margin-bottom:20px">
       <!-- Forestry -->
-      <div class="svc-card reveal tilt-card" @click="go('services')">
+      <div class="svc-card reveal tilt-card" @click="go('forestry')">
         <div class="svc-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3L4 14h4l-3 7h14l-3-7h4L12 3z"/><path d="M12 22v-3"/></svg></div>
         <h3>Forestry Insurance</h3>
         <p>Logger's broad form, equipment, liability, and specialized coverage for timber operations across the Southeast.</p>
         <div class="learn">Learn More <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
       <!-- Commercial -->
-      <div class="svc-card reveal tilt-card" @click="go('services')">
+      <div class="svc-card reveal tilt-card" @click="go('trucking')">
         <div class="svc-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3.5V16h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
         <h3>Commercial Trucking</h3>
         <p>Commercial auto, cargo coverage, FMCSA filings, and fleet solutions for contract haulers and trucking companies.</p>
         <div class="learn">Learn More <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
       <!-- Cargo & Physical Damage -->
-      <div class="svc-card reveal tilt-card" @click="go('services')">
+      <div class="svc-card reveal tilt-card" @click="go('cargo')">
         <div class="svc-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg></div>
         <h3>Cargo &amp; Physical Damage</h3>
         <p>Motor truck cargo, trailer interchange, physical damage, and freight protection for haulers and fleet operators.</p>
         <div class="learn">Learn More <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
       <!-- General Liability -->
-      <div class="svc-card reveal tilt-card" @click="go('services')">
+      <div class="svc-card reveal tilt-card" @click="go('gl')">
         <div class="svc-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <h3>General Liability</h3>
         <p>Business liability and commercial property protection for your operation, with limits tailored to your exposure.</p>
@@ -2700,7 +2700,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
       <span class="label">How It Works</span>
       <h2 style="font-size:clamp(1.5rem,3vw,2.2rem)">Loss Control That Works</h2>
       <div class="rule" style="background:var(--teal-lt)"></div>
-      <p style="font-size:.95rem;line-height:1.75;color:rgba(255,255,255,.95)">Loss control helps soften the financial burden when your company suffers unfortunate fate. Our goal is to help you manage your fleet in a way that provides DOT-compliant safe transportation and helps your company become profitable.</p>
+      <p style="font-size:.95rem;line-height:1.75;color:rgba(255,255,255,.95)">Loss control helps you absorb incidents before they become claims, and recover faster when they do. Our goal is to help you run a fleet that's DOT-compliant, safer on the road, and more profitable at the end of the quarter.</p>
       <p style="margin-top:14px;font-size:.95rem;line-height:1.75;color:rgba(255,255,255,.95)">An Alirics Specialist can assist you with your concerns whether or not you are a current client.</p>
       <h3 style="margin-top:24px;margin-bottom:12px;color:#fff">Our Principles</h3>
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
@@ -2767,40 +2767,37 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         </div>
       </div>
 
-      <!-- ══ FEATURED VIDEO — 2026 Summit ══
-           To embed a specific YouTube video, set summitVideoId='YOUR_VIDEO_ID' below.
-           Without an ID, the module links to the YouTube channel as a fallback. -->
-      <div x-data="{summitVideoId:'',videoPlaying:false}" style="margin-bottom:32px">
+      <!-- ══ FEATURED VIDEO — Summit ══ real YouTube ID; lite-embed pattern -->
+      <div x-data="{summitVideoId:'4jY3WiAxDHU',videoPlaying:false}" style="margin-bottom:32px">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
           <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,68,68,.18);border:1px solid rgba(255,80,80,.35);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:999px;backdrop-filter:blur(8px)">
             <span style="width:8px;height:8px;border-radius:50%;background:#ff3030;box-shadow:0 0 8px rgba(255,48,48,.8);animation:livePulse 1.6s ease-in-out infinite"></span>
-            2026 Summit Video
+            Where Logging Meets Technology
           </span>
-          <span style="color:rgba(255,255,255,.55);font-size:.78rem">Watch the announcement &amp; what to expect this year</span>
+          <span style="color:rgba(255,255,255,.55);font-size:.78rem">Watch the 4th Loggers Technology Summit intro</span>
         </div>
-        <div class="summit-video-wrap" @click="summitVideoId?videoPlaying=true:window.open('https://www.youtube.com/@swampfoxagency','_blank')">
-          <!-- Lite embed: only loads YouTube iframe AFTER click -->
+        <div class="summit-video-wrap" @click="videoPlaying=true" @keydown.enter.prevent="videoPlaying=true" tabindex="0" role="button" aria-label="Play Loggers Technology Summit video">
           <template x-if="!videoPlaying">
             <div class="summit-video-poster">
-              <img decoding="async" loading="lazy" src="images/photo%20to%20put%20on%20sommit%20page%20somewhere%20.jpg" alt="2026 Loggers Technology Summit — watch the video" style="width:100%;height:100%;object-fit:cover;object-position:center 40%">
+              <img decoding="async" loading="lazy" :src="'https://i.ytimg.com/vi/'+summitVideoId+'/maxresdefault.jpg'" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/'+this.closest('[x-data]').getAttribute('data-vid')+'/hqdefault.jpg'" :data-vid="summitVideoId" alt="Where Logging Meets Technology — 4th Loggers Technology Summit" style="width:100%;height:100%;object-fit:cover;object-position:center">
               <div class="summit-video-shade"></div>
               <div class="summit-video-meta">
-                <div style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-lt);margin-bottom:8px">4th Annual &bull; Birmingham, AL &bull; Aug 28–29</div>
+                <div style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-lt);margin-bottom:8px">4th Annual &bull; Birmingham, AL &bull; Aug 28–29, 2026</div>
                 <h3 style="color:#fff;font-size:clamp(1.4rem,3vw,2.1rem);margin-bottom:6px;text-shadow:0 2px 12px rgba(0,0,0,.9)">Built for Loggers. Powered by Innovation.</h3>
-                <p style="color:rgba(255,255,255,.85);font-size:.92rem;max-width:620px;margin:0;text-shadow:0 2px 8px rgba(0,0,0,.85)">Two days of field demos, telematics workshops, and the Pinnacle Award ceremony — at Barber Motorsports Park.</p>
+                <p style="color:rgba(255,255,255,.85);font-size:.92rem;max-width:620px;margin:0;text-shadow:0 2px 8px rgba(0,0,0,.85)">Two days of field demos, telematics workshops, and the Pinnacle Award ceremony &mdash; at Barber Motorsports Park.</p>
               </div>
-              <button class="summit-video-play" aria-label="Play 2026 Summit video">
+              <button class="summit-video-play" aria-hidden="true" tabindex="-1">
                 <svg width="40" height="40" fill="#fff" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               </button>
               <div class="summit-video-yt-badge">
                 <svg width="16" height="16" fill="#fff" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                <span x-text="summitVideoId?'Click to play':'Watch on YouTube'"></span>
+                <span>Click to play</span>
               </div>
             </div>
           </template>
           <template x-if="videoPlaying">
             <div style="position:absolute;inset:0;background:#000">
-              <iframe :src="'https://www.youtube-nocookie.com/embed/'+summitVideoId+'?autoplay=1&rel=0&modestbranding=1&playsinline=1'" style="width:100%;height:100%;border:0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy" title="2026 Loggers Technology Summit"></iframe>
+              <iframe :src="'https://www.youtube-nocookie.com/embed/'+summitVideoId+'?autoplay=1&rel=0&modestbranding=1&playsinline=1'" style="width:100%;height:100%;border:0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy" title="Where Logging Meets Technology — 4th Loggers Technology Summit"></iframe>
             </div>
           </template>
         </div>
@@ -3334,15 +3331,29 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
     </div>
   </div>
   <div class="wrap">
-    <div class="glass-box mag-glow" style="max-width:800px;margin:0 auto">
+    <div class="glass-box mag-glow" style="max-width:900px;margin:0 auto 28px">
       <h2>Your Home Deserves the Right Coverage</h2>
       <div class="rule"></div>
-      <p>Homeowners' insurance provides financial protection in the event of damages or losses to your property. We shop multiple carriers to find you the best coverage at the best rate.</p>
-      <p style="margin-top:14px">Our homeowners coverage includes dwelling protection, personal property, liability, additional living expenses, and optional flood coverage. Whether you're in the Lowcountry or the Upstate, we tailor your policy to your specific home and location.</p>
+      <p>From the Lowcountry marsh to the Upstate ridges, Southern homes face real weather. We shop multiple carriers to build a policy that protects the dwelling, everything inside, and the people who live there &mdash; at the right price.</p>
+      <p style="margin-top:14px">Whether you're a first-time homeowner in Moncks Corner, retired on a golf course in Summerville, or managing a second home on the coast, we tailor coverage to the exact property, build quality, and exposure.</p>
       <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
         <button class="btn btn-lg" @click="go('quote')">Get a Home Insurance Quote</button>
-        <button class="btn btn-outline" @click="go('services')">All Coverage Options</button>
+        <a href="tel:8437613999" class="btn btn-outline">Call (843) 761-3999</a>
       </div>
+    </div>
+    <div class="glass-box" style="max-width:900px;margin:0 auto;padding:28px 32px">
+      <h3 style="color:#fff;font-size:1.15rem;margin-bottom:14px">What's Typically Covered</h3>
+      <div class="rule" style="background:var(--teal-lt)"></div>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 24px;color:rgba(255,255,255,.92);font-size:.92rem;line-height:1.7">
+        <li>Dwelling &amp; attached structures</li>
+        <li>Other structures (garages, sheds, fences)</li>
+        <li>Personal property (replacement cost available)</li>
+        <li>Personal liability &amp; medical to others</li>
+        <li>Additional living expenses if displaced</li>
+        <li>Optional flood &amp; windstorm coverage</li>
+        <li>Scheduled items (jewelry, firearms, art)</li>
+        <li>Service-line &amp; equipment-breakdown add-ons</li>
+      </ul>
     </div>
   </div>
 </div></div>
@@ -3361,15 +3372,29 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
     </div>
   </div>
   <div class="wrap">
-    <div class="glass-box mag-glow" style="max-width:800px;margin:0 auto">
+    <div class="glass-box mag-glow" style="max-width:900px;margin:0 auto 28px">
       <h2>Drive with Confidence</h2>
       <div class="rule"></div>
-      <p>Automotive insurance provides financial protection to vehicle owners in case of accidents, theft, or other damages. We compare rates from multiple carriers so you get the best protection at the best price.</p>
-      <p style="margin-top:14px">Coverage options include liability, collision, comprehensive, uninsured/underinsured motorist, medical payments, and roadside assistance. We cover cars, trucks, motorcycles, boats, ATVs, and RVs.</p>
+      <p>Whether you commute I-26 every day, tow a boat to Lake Marion on weekends, or put your teenager on the policy for the first time &mdash; we shop multiple carriers to get you real coverage at a fair rate, not a stripped-down minimum-limits policy.</p>
+      <p style="margin-top:14px">SC's minimum liability (25/50/25) is almost never enough. We'll show you what higher limits actually cost and why UM/UIM matching your liability limits matters when 1 in 8 SC drivers carry no insurance.</p>
       <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
         <button class="btn btn-lg" @click="go('quote')">Get an Auto Insurance Quote</button>
-        <button class="btn btn-outline" @click="go('services')">All Coverage Options</button>
+        <a href="tel:8437613999" class="btn btn-outline">Call (843) 761-3999</a>
       </div>
+    </div>
+    <div class="glass-box" style="max-width:900px;margin:0 auto;padding:28px 32px">
+      <h3 style="color:#fff;font-size:1.15rem;margin-bottom:14px">What's Typically Covered</h3>
+      <div class="rule" style="background:var(--teal-lt)"></div>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 24px;color:rgba(255,255,255,.92);font-size:.92rem;line-height:1.7">
+        <li>Bodily injury &amp; property damage liability</li>
+        <li>Collision (at-fault damage to your car)</li>
+        <li>Comprehensive (theft, weather, animal strikes)</li>
+        <li>Uninsured &amp; underinsured motorist (UM/UIM)</li>
+        <li>Medical payments (MedPay)</li>
+        <li>Rental reimbursement &amp; roadside</li>
+        <li>Motorcycle, boat, ATV, RV &amp; golf-cart</li>
+        <li>Multi-vehicle &amp; bundle-with-home discounts</li>
+      </ul>
     </div>
   </div>
 </div></div>
