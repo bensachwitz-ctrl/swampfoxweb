@@ -1717,10 +1717,10 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
       <a class="nav-logo" @click.prevent="go('home')" href="#" style="cursor:pointer">
         <img decoding="async" src="images/swamp%20fox%20top%20logo.webp" alt="Swamp Fox Insurance Agency">
       </a>
-      <div class="nav-links" @mouseleave="navDrop=null" @keydown.escape.window="navDrop=null" @click.outside="navDrop=null">
+      <div class="nav-links" @mouseleave="navDrop=null" @keydown.escape.window="navDrop=null">
         <template x-for="item in nav.filter(n=>n.id!=='quote')" :key="item.id">
           <div class="nav-link-wrap" @mouseenter="if(window.matchMedia('(hover:hover)').matches){item.children?(navDrop=item.id):(navDrop=null)}">
-            <a class="nav-link" :class="{'active':page===item.id||(item.children&&item.children.some(c=>(c.target||c.id)===page))}" :aria-expanded="item.children?(navDrop===item.id?'true':'false'):null" :aria-haspopup="item.children?'true':null" @click.prevent="item.children?(navDrop=navDrop===item.id?null:item.id):go(item.id)" href="#">
+            <a class="nav-link" :class="{'active':page===item.id||(item.children&&item.children.some(c=>(c.target||c.id)===page))}" :aria-expanded="item.children?(navDrop===item.id?'true':'false'):null" :aria-haspopup="item.children?'true':null" @click.stop.prevent="item.children?(navDrop=item.id):go(item.id)" href="#">
               <span x-text="item.label"></span>
               <svg x-show="item.children" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="margin-left:4px;transition:transform .25s ease" :style="navDrop===item.id?'transform:rotate(180deg)':''"><path d="M6 9l6 6 6-6"/></svg>
             </a>
@@ -3992,6 +3992,12 @@ function swampFox(){
       observe();this.$watch('page',()=>this.$nextTick(()=>{setTimeout(observe,50);setTimeout(observe,200);setTimeout(observe,500);if(this.page==='locations')this.initMap()}));
     },
     exitShown:false,
+    initNavClose(){
+      document.addEventListener('click',(e)=>{
+        if(this.navDrop===null)return;
+        if(!e.target.closest('.nav-links'))this.navDrop=null;
+      });
+    },
     initExitIntent(){
       let triggered=false;let ready=false;
       setTimeout(()=>{ready=true},45000);
@@ -4258,7 +4264,7 @@ function swampFox(){
       // Hide loader
       setTimeout(()=>{const loader=document.getElementById('loader');if(loader)loader.classList.add('hidden');setTimeout(()=>{if(loader)loader.remove()},400)},700);
       this.startCountdown();
-      this.$nextTick(()=>{this.initScrollReveal();this.initExitIntent();this.initParticles();this.initParallax();this.initCinematic();this.initTabKeyboard();this.enhanceClickable();
+      this.$nextTick(()=>{this.initScrollReveal();this.initExitIntent();this.initNavClose();this.initParticles();this.initParallax();this.initCinematic();this.initTabKeyboard();this.enhanceClickable();
         this.$watch('page',()=>this.$nextTick(()=>setTimeout(()=>{this.initTabKeyboard();this.enhanceClickable()},120)));
         window.addEventListener('scroll',()=>{
           this.scrolled=window.scrollY>20;
