@@ -835,7 +835,7 @@ footer{box-shadow:0 -6px 24px rgba(0,0,0,.08),0 -1px 0 rgba(0,0,0,.04)}
 .page-bg{position:relative;min-height:100vh;background:var(--forest2);overflow:hidden}
 .page-bg-img{position:absolute;inset:0;background-size:cover;background-position:center 40%;z-index:0}
 .page-bg-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,18,14,.28),rgba(0,60,55,.15));z-index:1}
-.page-bg-content{position:relative;z-index:2;padding:40px 0 60px;overflow:hidden}
+.page-bg-content{position:relative;z-index:2;padding:28px 0 40px;overflow:hidden}
 .page-bg-content>.wrap{overflow:visible}
 .page-bg .sec{background:transparent!important;padding:24px 0}
 .page-bg .sec::before{display:none}
@@ -3727,7 +3727,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
 
 
 <!-- ══════════ NAVIGATION CAROUSEL (conditional — floats over page imagery, Citadel-style) ══════════ -->
-<section x-show="!['home','services','losscontrol','about','locations','events'].includes(page)" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" style="padding:0 0 40px;background:transparent;position:relative;z-index:10;margin-top:-110px">
+<section x-show="!['home','services','losscontrol','about','locations','events'].includes(page)" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" style="padding:0 0 24px;background:transparent;position:relative;z-index:10;margin-top:-96px">
   <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;padding:0 24px">
     <a href="#" @click.prevent="go('services')" class="nav-card-link" style="position:relative;flex:0 0 220px;height:140px;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.3);cursor:pointer;display:block;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.4)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(0,0,0,.3)'">
       <img decoding="async" loading="lazy" src="images/trucks.jpg" alt="Coverage" style="width:100%;height:100%;object-fit:cover">
@@ -4104,7 +4104,7 @@ function swampFox(){
       const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.08,rootMargin:'0px 0px -5% 0px'});
       const observe=()=>{document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,.reveal-header,.reveal-card').forEach(el=>{if(!el.classList.contains('visible'))obs.observe(el)})};
       // Safety net: after a page change, force-reveal anything in the top 1.5 viewports so nothing stays blank below the hero
-      const forceReveal=()=>{const vh=window.innerHeight*1.5;document.querySelectorAll('.page-section:not([style*="display: none"]) .reveal,.page-section:not([style*="display: none"]) .reveal-left,.page-section:not([style*="display: none"]) .reveal-right,.page-section:not([style*="display: none"]) .reveal-scale').forEach(el=>{if(!el.classList.contains('visible')){const r=el.getBoundingClientRect();if(r.top<vh)el.classList.add('visible')}})};
+      const forceReveal=()=>{const vh=window.innerHeight*2.5;document.querySelectorAll('.page-section:not([style*="display: none"]) .reveal,.page-section:not([style*="display: none"]) .reveal-left,.page-section:not([style*="display: none"]) .reveal-right,.page-section:not([style*="display: none"]) .reveal-scale').forEach(el=>{if(!el.classList.contains('visible')){const r=el.getBoundingClientRect();if(r.top<vh)el.classList.add('visible')}})};
       observe();forceReveal();
       this.$watch('page',()=>this.$nextTick(()=>{setTimeout(()=>{observe();forceReveal()},60);setTimeout(forceReveal,250);setTimeout(forceReveal,600);if(this.page==='locations')this.initMap()}));
     },
