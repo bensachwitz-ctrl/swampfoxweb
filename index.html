@@ -1717,16 +1717,16 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
       <a class="nav-logo" @click.prevent="go('home')" href="#" style="cursor:pointer">
         <img decoding="async" src="images/swamp%20fox%20top%20logo.webp" alt="Swamp Fox Insurance Agency">
       </a>
-      <div class="nav-links" @mouseleave="navDrop=null" @keydown.escape.window="navDrop=null">
+      <div class="nav-links" @keydown.escape.window="navDrop=null">
         <template x-for="item in nav.filter(n=>n.id!=='quote')" :key="item.id">
-          <div class="nav-link-wrap" @mouseenter="if(window.matchMedia('(hover:hover)').matches){item.children?(navDrop=item.id):(navDrop=null)}">
-            <a class="nav-link" :class="{'active':page===item.id||(item.children&&item.children.some(c=>(c.target||c.id)===page))}" :aria-expanded="item.children?(navDrop===item.id?'true':'false'):null" :aria-haspopup="item.children?'true':null" @click.stop.prevent="item.children?(navDrop=item.id):go(item.id)" href="#">
+          <div class="nav-link-wrap">
+            <a class="nav-link" :class="{'active':page===item.id||(item.children&&item.children.some(c=>(c.target||c.id)===page))}" :aria-expanded="item.children?(navDrop===item.id?'true':'false'):null" :aria-haspopup="item.children?'true':null" @click.prevent.stop="item.children?(navDrop=navDrop===item.id?null:item.id):go(item.id)" href="#">
               <span x-text="item.label"></span>
               <svg x-show="item.children" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="margin-left:4px;transition:transform .25s ease" :style="navDrop===item.id?'transform:rotate(180deg)':''"><path d="M6 9l6 6 6-6"/></svg>
             </a>
-            <div class="nav-dropdown" x-show="item.children&&navDrop===item.id" x-transition x-cloak>
+            <div class="nav-dropdown" x-show="item.children&&navDrop===item.id" x-cloak>
               <template x-for="child in item.children||[]" :key="child.id">
-                <a class="nav-dropdown-item" @click.prevent="go(child.target||'services');navDrop=null" href="#">
+                <a class="nav-dropdown-item" @click.prevent.stop="go(child.target||'services');navDrop=null" href="#">
                   <div class="nav-dd-icon" x-html="child.icon"></div>
                   <div>
                     <div class="nav-dd-label" x-text="child.label"></div>
