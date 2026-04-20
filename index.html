@@ -2436,7 +2436,10 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <div x-show="openCom==='equip'" x-collapse>
           <div style="padding:0 24px 20px;border-top:1px solid var(--border)">
             <p style="font-size:.88rem;margin:16px 0 12px">Protect your valuable equipment wherever it goes. We cover skidders, feller bunchers, knuckle-boom loaders, chippers, trailers, and all mobile forestry and construction equipment with specialized inland marine policies.</p>
-            <button class="btn" @click="go('quote')" style="margin-top:8px">Request Coverage <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+              <button class="btn" @click="go('quote')">Request Coverage <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+              <button class="btn btn-outline" @click="go('equipment')">Learn More</button>
+            </div>
           </div>
         </div>
       </div>
@@ -2538,7 +2541,10 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <div x-show="openPer==='camper'" x-collapse>
           <div style="padding:0 24px 20px;border-top:1px solid var(--border)">
             <p style="font-size:.88rem;margin:16px 0 12px">Whether you're a weekend warrior or full-time RVer, we provide specialized camper and RV insurance that covers your home on wheels. Includes collision, comprehensive, personal effects, and emergency expenses.</p>
-            <button class="btn" @click="go('quote')" style="margin-top:8px">Request Coverage <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+              <button class="btn" @click="go('quote')">Request Coverage <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+              <button class="btn btn-outline" @click="go('camper')">Learn More</button>
+            </div>
           </div>
         </div>
       </div>
@@ -2870,10 +2876,10 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
                 <svg :style="scheduleOpen==='day1'?'transform:rotate(180deg)':''" style="transition:transform var(--t)" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
               </button>
               <div x-show="scheduleOpen==='day1'" x-collapse style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-top:none;border-radius:0 0 10px 10px;padding:16px 18px">
-                <div style="display:flex;gap:12px;margin-bottom:10px;align-items:flex-start"><span style="color:var(--teal-lt);font-weight:800;font-size:.82rem;min-width:70px;text-shadow:0 1px 2px rgba(0,0,0,.4)">5:00 PM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Registration &amp; Check-in</span></div>
-                <div style="display:flex;gap:12px;margin-bottom:10px;align-items:flex-start"><span style="color:var(--teal-lt);font-weight:800;font-size:.82rem;min-width:70px;text-shadow:0 1px 2px rgba(0,0,0,.4)">6:00 PM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Welcome Reception &mdash; Alabama Sports Hall of Fame</span></div>
-                <div style="display:flex;gap:12px;margin-bottom:10px;align-items:flex-start"><span style="color:var(--teal-lt);font-weight:800;font-size:.82rem;min-width:70px;text-shadow:0 1px 2px rgba(0,0,0,.4)">7:00 PM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Networking with carriers, agents, vendors &amp; logging leaders</span></div>
-                <div style="display:flex;gap:12px;align-items:flex-start"><span style="color:var(--teal-lt);font-weight:800;font-size:.82rem;min-width:70px;text-shadow:0 1px 2px rgba(0,0,0,.4)">8:00 PM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Pinnacle Award Recognition Ceremony</span></div>
+                <div style="display:flex;gap:12px;margin-bottom:10px;align-items:flex-start"><span style="background:var(--teal);color:#fff;font-weight:800;font-size:.78rem;padding:4px 10px;border-radius:6px;min-width:78px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.35);letter-spacing:.02em">5:00 PM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Registration &amp; Check-in</span></div>
+                <div style="display:flex;gap:12px;margin-bottom:10px;align-items:flex-start"><span style="background:var(--teal);color:#fff;font-weight:800;font-size:.78rem;padding:4px 10px;border-radius:6px;min-width:78px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.35);letter-spacing:.02em">6:00 PM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Welcome Reception &mdash; Alabama Sports Hall of Fame</span></div>
+                <div style="display:flex;gap:12px;margin-bottom:10px;align-items:flex-start"><span style="background:var(--teal);color:#fff;font-weight:800;font-size:.78rem;padding:4px 10px;border-radius:6px;min-width:78px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.35);letter-spacing:.02em">7:00 PM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Networking with carriers, agents, vendors &amp; logging leaders</span></div>
+                <div style="display:flex;gap:12px;align-items:flex-start"><span style="background:var(--teal);color:#fff;font-weight:800;font-size:.78rem;padding:4px 10px;border-radius:6px;min-width:78px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.35);letter-spacing:.02em">8:00 PM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Pinnacle Award Recognition Ceremony</span></div>
               </div>
             </div>
             <div>
@@ -2882,12 +2888,12 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
                 <svg :style="scheduleOpen==='day2'?'transform:rotate(180deg)':''" style="transition:transform var(--t)" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
               </button>
               <div x-show="scheduleOpen==='day2'" x-collapse style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-top:none;border-radius:0 0 10px 10px;padding:16px 18px">
-                <div style="display:flex;gap:12px;margin-bottom:10px;align-items:flex-start"><span style="color:var(--teal-lt);font-weight:800;font-size:.82rem;min-width:70px;text-shadow:0 1px 2px rgba(0,0,0,.4)">8:00 AM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Registration &amp; Breakfast at Barber Motorsports Park</span></div>
-                <div style="display:flex;gap:12px;margin-bottom:10px;align-items:flex-start"><span style="color:var(--teal-lt);font-weight:800;font-size:.82rem;min-width:70px;text-shadow:0 1px 2px rgba(0,0,0,.4)">9:00 AM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Opening Keynote &mdash; Technology in Logging</span></div>
-                <div style="display:flex;gap:12px;margin-bottom:10px;align-items:flex-start"><span style="color:var(--teal-lt);font-weight:800;font-size:.82rem;min-width:70px;text-shadow:0 1px 2px rgba(0,0,0,.4)">10:30 AM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Driver Safety &amp; Telematics Sessions</span></div>
-                <div style="display:flex;gap:12px;margin-bottom:10px;align-items:flex-start"><span style="color:var(--teal-lt);font-weight:800;font-size:.82rem;min-width:70px;text-shadow:0 1px 2px rgba(0,0,0,.4)">12:00 PM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Lunch &amp; Vendor Demonstrations</span></div>
-                <div style="display:flex;gap:12px;margin-bottom:10px;align-items:flex-start"><span style="color:var(--teal-lt);font-weight:800;font-size:.82rem;min-width:70px;text-shadow:0 1px 2px rgba(0,0,0,.4)">1:30 PM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Fleet Management &amp; Insurance Risk Panels</span></div>
-                <div style="display:flex;gap:12px;align-items:flex-start"><span style="color:var(--teal-lt);font-weight:800;font-size:.82rem;min-width:70px;text-shadow:0 1px 2px rgba(0,0,0,.4)">3:30 PM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Closing Remarks &amp; Networking</span></div>
+                <div style="display:flex;gap:12px;margin-bottom:10px;align-items:flex-start"><span style="background:var(--teal);color:#fff;font-weight:800;font-size:.78rem;padding:4px 10px;border-radius:6px;min-width:78px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.35);letter-spacing:.02em">8:00 AM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Registration &amp; Breakfast at Barber Motorsports Park</span></div>
+                <div style="display:flex;gap:12px;margin-bottom:10px;align-items:flex-start"><span style="background:var(--teal);color:#fff;font-weight:800;font-size:.78rem;padding:4px 10px;border-radius:6px;min-width:78px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.35);letter-spacing:.02em">9:00 AM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Opening Keynote &mdash; Technology in Logging</span></div>
+                <div style="display:flex;gap:12px;margin-bottom:10px;align-items:flex-start"><span style="background:var(--teal);color:#fff;font-weight:800;font-size:.78rem;padding:4px 10px;border-radius:6px;min-width:78px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.35);letter-spacing:.02em">10:30 AM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Driver Safety &amp; Telematics Sessions</span></div>
+                <div style="display:flex;gap:12px;margin-bottom:10px;align-items:flex-start"><span style="background:var(--teal);color:#fff;font-weight:800;font-size:.78rem;padding:4px 10px;border-radius:6px;min-width:78px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.35);letter-spacing:.02em">12:00 PM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Lunch &amp; Vendor Demonstrations</span></div>
+                <div style="display:flex;gap:12px;margin-bottom:10px;align-items:flex-start"><span style="background:var(--teal);color:#fff;font-weight:800;font-size:.78rem;padding:4px 10px;border-radius:6px;min-width:78px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.35);letter-spacing:.02em">1:30 PM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Fleet Management &amp; Insurance Risk Panels</span></div>
+                <div style="display:flex;gap:12px;align-items:flex-start"><span style="background:var(--teal);color:#fff;font-weight:800;font-size:.78rem;padding:4px 10px;border-radius:6px;min-width:78px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.35);letter-spacing:.02em">3:30 PM</span><span style="color:rgba(255,255,255,.95);font-size:.88rem;line-height:1.5">Closing Remarks &amp; Networking</span></div>
               </div>
             </div>
           </div>
@@ -3662,6 +3668,88 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <li>Worldwide coverage territory</li>
         <li>Defense costs outside limits</li>
         <li>Towers structured from $1M to $25M+</li>
+      </ul>
+    </div>
+  </div>
+</div></div>
+
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- PAGE: EQUIPMENT & INLAND MARINE -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<div class="page-section page-bg" data-page="equipment" x-show="page==='equipment'">
+<div class="page-bg-img" style="background-image:url('images/logs.jpg');background-position:center 45%"></div>
+<div class="page-bg-overlay"></div>
+<div class="page-bg-content">
+  <div class="wrap">
+    <div class="page-header">
+      <h2>Equipment &amp; Inland Marine</h2>
+      <p>Skidders, feller bunchers, loaders, trailers &mdash; insured wherever they're working.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="glass-box mag-glow" style="max-width:900px;margin:0 auto 28px">
+      <h2>Coverage That Moves With Your Equipment</h2>
+      <div class="rule"></div>
+      <p>A standard commercial property policy only covers equipment while it's at a fixed location. Inland marine fills the gap: it covers mobile equipment in transit, on a job site, rented, borrowed, or loaned &mdash; exactly how logging and construction equipment actually gets used.</p>
+      <p style="margin-top:14px">We schedule skidders, feller bunchers, knuckleboom loaders, chippers, excavators, service trucks, and trailers on inland marine floaters with replacement cost, broad perils, and the right deductible for your operation.</p>
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn btn-lg" @click="go('quote')">Get an Equipment Quote</button>
+        <a href="tel:8437613999" class="btn btn-outline">Call (843) 761-3999</a>
+      </div>
+    </div>
+    <div class="glass-box" style="max-width:900px;margin:0 auto;padding:28px 32px">
+      <h3 style="color:#fff;font-size:1.15rem;margin-bottom:14px">What's Typically Covered</h3>
+      <div class="rule" style="background:var(--teal-lt)"></div>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 24px;color:rgba(255,255,255,.92);font-size:.92rem;line-height:1.7">
+        <li>Skidders, feller bunchers &amp; forwarders</li>
+        <li>Knuckleboom &amp; log loaders</li>
+        <li>Chippers, grinders &amp; stump grinders</li>
+        <li>Excavators, dozers &amp; graders</li>
+        <li>Mobile generators &amp; light towers</li>
+        <li>Tools &amp; attachments on floaters</li>
+        <li>Rented, leased &amp; borrowed equipment</li>
+        <li>Transit, job-site &amp; overnight storage</li>
+      </ul>
+    </div>
+  </div>
+</div></div>
+
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- PAGE: CAMPER / RV INSURANCE -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<div class="page-section page-bg" data-page="camper" x-show="page==='camper'">
+<div class="page-bg-img" style="background-image:url('images/brand-family-plantation.jpg');background-position:center 40%"></div>
+<div class="page-bg-overlay"></div>
+<div class="page-bg-content">
+  <div class="wrap">
+    <div class="page-header">
+      <h2>Camper &amp; RV Insurance</h2>
+      <p>Weekend trips, full-time living, or anywhere in between &mdash; we insure the home you travel in.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="glass-box mag-glow" style="max-width:900px;margin:0 auto 28px">
+      <h2>More Than Just Auto Coverage</h2>
+      <div class="rule"></div>
+      <p>A camper or RV isn't covered by your auto policy when it's detached, and it's not covered by homeowners once it leaves the driveway. A dedicated camper/RV policy covers the vehicle, the contents, and personal liability at the campsite &mdash; whether you're a weekend traveler or a full-timer living on the road.</p>
+      <p style="margin-top:14px">We quote travel trailers, fifth wheels, Class A/B/C motorhomes, pop-ups, and toy haulers. For full-timers, we structure full-timer coverage that mirrors a homeowners policy with replacement-cost contents and vacation liability.</p>
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn btn-lg" @click="go('quote')">Get a Camper / RV Quote</button>
+        <a href="tel:8437613999" class="btn btn-outline">Call (843) 761-3999</a>
+      </div>
+    </div>
+    <div class="glass-box" style="max-width:900px;margin:0 auto;padding:28px 32px">
+      <h3 style="color:#fff;font-size:1.15rem;margin-bottom:14px">What's Typically Covered</h3>
+      <div class="rule" style="background:var(--teal-lt)"></div>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 24px;color:rgba(255,255,255,.92);font-size:.92rem;line-height:1.7">
+        <li>Physical damage (collision &amp; comprehensive)</li>
+        <li>Liability while towing or driving</li>
+        <li>Personal contents &amp; awnings</li>
+        <li>Vacation / campsite liability</li>
+        <li>Full-timer package (mirrors homeowners)</li>
+        <li>Emergency expense if RV is uninhabitable</li>
+        <li>Roadside assistance &amp; towing</li>
+        <li>Travel trailers, 5th wheels, Class A/B/C, pop-ups</li>
       </ul>
     </div>
   </div>
