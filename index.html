@@ -895,6 +895,9 @@ footer{box-shadow:0 -6px 24px rgba(0,0,0,.08),0 -1px 0 rgba(0,0,0,.04)}
 .page-bg .label{color:var(--teal-lt);border-color:rgba(45,138,126,.3);background:rgba(45,138,126,.12)}
 .page-bg .btn-outline{color:#fff;border-color:rgba(255,255,255,.4)}
 .page-bg .btn-outline:hover{background:rgba(255,255,255,.1)}
+/* Accordion panels render on white — force readable teal-on-white Learn More inside them. */
+.cov-accordion .btn-outline,.cov-accordion .btn-outline:link,.cov-accordion .btn-outline:visited{background:#fff!important;color:var(--teal)!important;border:1.5px solid var(--teal)!important;font-weight:700!important}
+.cov-accordion .btn-outline:hover{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important;transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,99,91,.25)}
 /* Reset dark text for white-background cards inside page-bg */
 .page-bg [style*="background:#fff"] h3,.page-bg [style*="background:#fff"] h4,.page-bg [style*="background:#fff"] strong{color:var(--forest);text-shadow:none}
 .page-bg [style*="background:#fff"] p,.page-bg [style*="background:#fff"] span,.page-bg [style*="background:#fff"] li{color:var(--mid);text-shadow:none}
@@ -2357,7 +2360,10 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <div x-show="openCom==='logging'" x-collapse>
           <div style="padding:0 24px 20px;border-top:1px solid var(--border)">
             <p style="font-size:.88rem;margin:16px 0 12px">We are the only SCTPA-endorsed insurance agency in South Carolina, specializing in full-spectrum forestry coverage including logger's broad form policies, equipment floaters, inland marine, timber harvesting liability, and environmental protection.</p>
-            <button class="btn" @click="go('quote')" style="margin-top:8px">Request Coverage <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+              <button class="btn" @click="go('quote')">Request Coverage <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+              <button class="btn btn-outline" @click="go('forestry')">Learn More</button>
+            </div>
           </div>
         </div>
       </div>
@@ -2373,7 +2379,10 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <div x-show="openCom==='trucking'" x-collapse>
           <div style="padding:0 24px 20px;border-top:1px solid var(--border)">
             <p style="font-size:.88rem;margin:16px 0 12px">Full commercial auto coverage for logging trucks, flatbeds, chip vans, and contract haulers. We handle FMCSA filings, MCS-90 endorsements, cargo insurance, non-trucking liability, and fleet programs across the Southeast.</p>
-            <button class="btn" @click="go('quote')" style="margin-top:8px">Request Coverage <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+              <button class="btn" @click="go('quote')">Request Coverage <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+              <button class="btn btn-outline" @click="go('trucking')">Learn More</button>
+            </div>
           </div>
         </div>
       </div>
@@ -2389,7 +2398,10 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <div x-show="openCom==='cargo'" x-collapse>
           <div style="padding:0 24px 20px;border-top:1px solid var(--border)">
             <p style="font-size:.88rem;margin:16px 0 12px">Protect the freight you haul with motor truck cargo coverage, trailer interchange agreements, and physical damage policies for your fleet. We specialize in coverage for contract haulers, owner-operators, and fleet operators across the Southeast.</p>
-            <button class="btn" @click="go('quote')" style="margin-top:8px">Request Coverage <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+              <button class="btn" @click="go('quote')">Request Coverage <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+              <button class="btn btn-outline" @click="go('cargo')">Learn More</button>
+            </div>
           </div>
         </div>
       </div>
@@ -2405,7 +2417,10 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <div x-show="openCom==='gl'" x-collapse>
           <div style="padding:0 24px 20px;border-top:1px solid var(--border)">
             <p style="font-size:.88rem;margin:16px 0 12px">Comprehensive general liability and commercial property coverage for businesses of all sizes. We also offer umbrella and excess liability policies for additional protection above your primary limits.</p>
-            <button class="btn" @click="go('quote')" style="margin-top:8px">Request Coverage <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+              <button class="btn" @click="go('quote')">Request Coverage <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+              <button class="btn btn-outline" @click="go('gl')">Learn More</button>
+            </div>
           </div>
         </div>
       </div>
@@ -2485,7 +2500,10 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <div x-show="openPer==='life'" x-collapse>
           <div style="padding:0 24px 20px;border-top:1px solid var(--border)">
             <p style="font-size:.88rem;margin:16px 0 12px">Protect your family's financial future with term life, whole life, and individual health insurance plans. We compare options from multiple carriers to find the right coverage at the right price.</p>
-            <button class="btn" @click="go('quote')" style="margin-top:8px">Request Coverage <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+              <button class="btn" @click="go('quote')">Request Coverage <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+              <button class="btn btn-outline" @click="go('life')">Learn More</button>
+            </div>
           </div>
         </div>
       </div>
@@ -2501,7 +2519,10 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <div x-show="openPer==='umbrella'" x-collapse>
           <div style="padding:0 24px 20px;border-top:1px solid var(--border)">
             <p style="font-size:.88rem;margin:16px 0 12px">Umbrella and excess liability policies provide an additional layer of protection above your primary insurance limits — essential for high-net-worth individuals and anyone wanting extra peace of mind.</p>
-            <button class="btn" @click="go('quote')" style="margin-top:8px">Request Coverage <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+              <button class="btn" @click="go('quote')">Request Coverage <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+              <button class="btn btn-outline" @click="go('umbrella')">Learn More</button>
+            </div>
           </div>
         </div>
       </div>
