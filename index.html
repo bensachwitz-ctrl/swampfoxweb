@@ -110,7 +110,7 @@ p{color:var(--mid);line-height:1.75}
 
 /* === LAYOUT === */
 .wrap{max-width:var(--max-w);margin:0 auto;padding:0 clamp(20px,3vw,48px)}
-.sec{padding:64px 0}
+.sec{padding:40px 0}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -135,8 +135,8 @@ p{color:var(--mid);line-height:1.75}
 .mag-glow:hover::before{opacity:1}
 
 /* === TILT CARD EFFECT === */
-.tilt-card{transition:transform .3s ease,box-shadow .3s ease}
-.tilt-card:hover{transform:perspective(600px) rotateX(2deg) rotateY(-2deg) translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.15),0 0 0 1px rgba(45,138,126,.1)}
+.tilt-card{transition:box-shadow .3s ease,border-color .3s ease}
+.tilt-card:hover{box-shadow:0 20px 40px rgba(0,0,0,.15),0 0 0 1px rgba(45,138,126,.1)}
 
 /* === ANIMATED GRADIENT BORDER === */
 @keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
@@ -160,8 +160,8 @@ p{color:var(--mid);line-height:1.75}
 .parallax-fast{transition:transform .1s linear}
 
 /* === HOVER LIFT WITH 3D SHADOW === */
-.lift-3d{transition:transform .3s ease,box-shadow .3s ease}
-.lift-3d:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 20px 60px rgba(0,0,0,.12),0 8px 20px rgba(0,99,91,.08)}
+.lift-3d{transition:box-shadow .3s ease,border-color .3s ease}
+.lift-3d:hover{box-shadow:0 20px 60px rgba(0,0,0,.12),0 8px 20px rgba(0,99,91,.08)}
 
 /* === SCROLLBAR === */
 ::-webkit-scrollbar{width:5px}
@@ -314,7 +314,7 @@ p{color:var(--mid);line-height:1.75}
 .faq-a p + p{margin-top:10px}
 
 /* Sticky desktop quote CTA — hidden on mobile (mobile has phone bar) */
-.sticky-quote{position:fixed;right:48px;bottom:40px;z-index:90;display:none;align-items:center;gap:8px;padding:14px 22px;background:linear-gradient(135deg,var(--teal),var(--teal-lt));color:#fff;border-radius:999px;font-weight:700;font-size:.92rem;letter-spacing:.01em;box-shadow:0 10px 28px rgba(0,99,91,.35),0 2px 8px rgba(0,0,0,.12);transform:translateY(24px) scale(.92);opacity:0;pointer-events:none;transition:transform .35s cubic-bezier(.34,1.56,.64,1),opacity .25s ease,box-shadow .3s ease}
+.sticky-quote{position:fixed;right:88px;bottom:40px;z-index:90;display:none;align-items:center;gap:8px;padding:14px 22px;background:linear-gradient(135deg,var(--teal),var(--teal-lt));color:#fff;border-radius:999px;font-weight:700;font-size:.92rem;letter-spacing:.01em;box-shadow:0 10px 28px rgba(0,99,91,.35),0 2px 8px rgba(0,0,0,.12);transform:translateY(24px) scale(.92);opacity:0;pointer-events:none;transition:transform .35s cubic-bezier(.34,1.56,.64,1),opacity .25s ease,box-shadow .3s ease}
 .sticky-quote.is-visible{transform:translateY(0) scale(1);opacity:1;pointer-events:auto}
 .sticky-quote:hover{box-shadow:0 14px 38px rgba(0,99,91,.45),0 4px 14px rgba(0,0,0,.18);transform:translateY(-2px) scale(1.02)}
 .sticky-quote svg{flex-shrink:0}
@@ -344,7 +344,7 @@ p{color:var(--mid);line-height:1.75}
 /* === SERVICE CARDS === */
 .svc-card{background:rgba(255,255,255,.72);border:1px solid var(--border);border-radius:var(--r-lg);padding:30px 28px;min-height:220px;transition:transform var(--t),box-shadow var(--t);cursor:pointer;position:relative;overflow:hidden;background-size:cover;background-position:center;backdrop-filter:blur(6px)}
 /* svc-card ::before used for photo bg - see glassmorphism section */
-.svc-card:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 8px 16px rgba(0,0,0,.08),0 20px 48px rgba(0,0,0,.12)}
+.svc-card:hover{box-shadow:0 8px 16px rgba(0,0,0,.08),0 20px 48px rgba(0,0,0,.12);border-color:rgba(0,99,91,.25)}
 .svc-icon{width:52px;height:52px;background:var(--teal-bg);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:background var(--t),box-shadow var(--t);box-shadow:0 2px 8px rgba(0,99,91,.06)}
 .svc-card:hover .svc-icon{background:var(--teal);box-shadow:0 6px 16px rgba(0,99,91,.2)}
 .svc-card:hover .svc-icon svg{color:#fff}
@@ -367,7 +367,7 @@ p{color:var(--mid);line-height:1.75}
 
 /* === WHO WE INSURE === */
 .insure-card{background:rgba(255,255,255,.88);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px;text-align:center;transition:transform var(--t),box-shadow var(--t);backdrop-filter:blur(10px)}
-.insure-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.insure-card:hover{box-shadow:var(--shadow-lg);border-color:rgba(0,99,91,.25)}
 .insure-card .ic-icon{width:56px;height:56px;border-radius:50%;background:var(--teal-bg);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;transition:all var(--t);box-shadow:0 2px 8px rgba(0,99,91,.06)}
 .insure-card h3{margin-bottom:6px;font-size:1.05rem}
 .insure-card p{font-size:.82rem}
@@ -399,9 +399,9 @@ textarea.form-input{resize:vertical}
 .tab-btn.active{background:var(--teal);color:#fff;box-shadow:0 2px 8px rgba(0,99,91,.25)}
 
 /* === GALLERY === */
-.gallery-card{position:relative;overflow:hidden;border-radius:6px;cursor:pointer;transition:all var(--t)}
-.gallery-card img{width:100%;height:200px;object-fit:cover;object-position:center 30%;transition:transform var(--t)}
-.gallery-card:hover img{transform:scale(1.05)}
+.gallery-card{position:relative;overflow:hidden;border-radius:8px;cursor:pointer;transition:box-shadow var(--t);aspect-ratio:4/3;background:#0f1f17}
+.gallery-card img{width:100%;height:100%;object-fit:cover;object-position:center;transition:opacity var(--t);display:block}
+.gallery-card:hover img{opacity:.92}
 .gallery-cap{position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:.82rem;font-weight:600}
 
 /* === COUNTDOWN === */
@@ -419,6 +419,10 @@ textarea.form-input{resize:vertical}
 
 /* === MAP === */
 #sf-map{height:400px;border-radius:var(--r-lg);border:1px solid var(--border)}
+.sf-pin{background:transparent!important;border:none!important}
+.leaflet-div-icon.sf-pin{background:transparent;border:0}
+.leaflet-popup-content-wrapper{border-radius:10px!important}
+.leaflet-popup-content{margin:10px 14px!important;line-height:1.5!important}
 
 /* === QUOTE FORM === */
 
@@ -499,7 +503,7 @@ textarea.form-input{resize:vertical}
 .footer-col a:hover{color:#fff;transform:translateX(3px)}
 
 /* === TEXTURE OVERLAYS FOR BLANK SECTIONS === */
-.sec{position:relative;padding:64px 0}
+.sec{position:relative;padding:40px 0}
 .sec::before{content:'';position:absolute;inset:0;background:radial-gradient(circle,rgba(0,99,91,.03) 1px,transparent 1px);background-size:20px 20px;opacity:1;pointer-events:none;z-index:0}
 .sec>*{position:relative;z-index:1}
 .section-hero+.sec{background:linear-gradient(175deg,var(--cream) 0%,#f0f5f2 40%,var(--sage-lt) 100%) !important}
@@ -903,6 +907,14 @@ footer{box-shadow:0 -6px 24px rgba(0,0,0,.08),0 -1px 0 rgba(0,0,0,.04)}
 .page-bg h2{color:#fff;text-shadow:0 2px 10px rgba(0,0,0,1),0 6px 32px rgba(0,0,0,.9),0 0 56px rgba(0,0,0,.5)}
 .page-bg h3,.page-bg h4{color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.9),0 4px 20px rgba(0,0,0,.6)}
 .page-bg p,.page-bg li{color:rgba(255,255,255,.92);text-shadow:0 1px 6px rgba(0,0,0,.7),0 3px 16px rgba(0,0,0,.4)}
+/* FAQ cards on dark pages: white card, dark text */
+.page-bg .faq-item{background:#fff;border-color:rgba(255,255,255,.22)}
+.page-bg .faq-q{color:var(--forest)!important;text-shadow:none!important}
+.page-bg .faq-q span{color:var(--forest)!important;text-shadow:none!important}
+.page-bg .faq-a{color:var(--mid)!important;text-shadow:none!important}
+.page-bg .faq-a p,.page-bg .faq-a li{color:var(--mid)!important;text-shadow:none!important}
+.page-bg .faq-a strong{color:var(--forest)!important}
+.page-bg .faq-chev{color:var(--teal)!important}
 .page-bg .label{color:var(--teal-lt);border-color:rgba(45,138,126,.3);background:rgba(45,138,126,.12)}
 .page-bg .btn-outline{color:#fff;border-color:rgba(255,255,255,.4)}
 .page-bg .btn-outline:hover{background:rgba(255,255,255,.1)}
@@ -975,9 +987,9 @@ footer{box-shadow:0 -6px 24px rgba(0,0,0,.08),0 -1px 0 rgba(0,0,0,.04)}
 .community-card .card-expand{padding:18px 20px;text-align:left;background:linear-gradient(180deg,#f8faf9,#fff);border-top:1px solid var(--border)}
 
 /* === COVERAGE ACCORDION ENHANCEMENT === */
-.cov-accordion{background:rgba(255,255,255,.88)!important;backdrop-filter:blur(16px);border:1px solid rgba(0,99,91,.12)!important;border-radius:12px!important;margin-bottom:14px;overflow:hidden;transition:all .35s cubic-bezier(.34,1.56,.64,1);box-shadow:0 2px 8px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.06);border-left:3px solid transparent}
+.cov-accordion{background:rgba(255,255,255,.88)!important;backdrop-filter:blur(16px);border:1px solid rgba(0,99,91,.12)!important;border-radius:12px!important;margin-bottom:14px;overflow:hidden;transition:box-shadow .3s ease,border-color .3s ease;box-shadow:0 2px 8px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.06);border-left:3px solid transparent}
 .cov-accordion:has([style*="rotate(180deg)"]){border-left-color:var(--teal)}
-.cov-accordion:hover{box-shadow:0 4px 16px rgba(0,99,91,.1),0 12px 32px rgba(0,0,0,.08);transform:translateY(-2px)}
+.cov-accordion:hover{box-shadow:0 4px 16px rgba(0,99,91,.1),0 12px 32px rgba(0,0,0,.08)}
 .cov-accordion strong{color:var(--forest)!important;text-shadow:none!important}
 .cov-accordion span{color:var(--mid)!important;text-shadow:none!important}
 .cov-accordion p{color:var(--mid)!important;text-shadow:none!important;line-height:1.7}
@@ -1144,7 +1156,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold),var(--teal-lt));z-index:9998;transition:width .1s linear;box-shadow:0 0 8px rgba(0,99,91,.4)}
 
 /* === BACK TO TOP === */
-.back-to-top{position:fixed;bottom:104px;right:52px;width:44px;height:44px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;z-index:100;cursor:pointer;box-shadow:0 4px 16px rgba(0,99,91,.3);transition:all .3s ease;opacity:0;transform:translateY(20px);pointer-events:none;border:2px solid rgba(255,255,255,.2)}
+.back-to-top{position:fixed;bottom:104px;right:92px;width:44px;height:44px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;z-index:100;cursor:pointer;box-shadow:0 4px 16px rgba(0,99,91,.3);transition:all .3s ease;opacity:0;transform:translateY(20px);pointer-events:none;border:2px solid rgba(255,255,255,.2)}
 .back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
 .back-to-top:hover{background:var(--forest);transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,99,91,.4)}
 
@@ -3168,8 +3180,8 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
       <p style="max-width:640px;margin:0 auto 28px">Beyond insurance, we invest in our communities through scholarships, Citadel partnerships, fire safety initiatives, youth sports sponsorships, and the annual Pinnacle Award recognizing excellence in the logging industry.</p>
       <div class="grid-3" style="align-items:start" x-data="{openCard:null}">
         <div class="community-card reveal gradient-border" :style="openCard==='pinnacle'?'box-shadow:0 8px 24px rgba(0,99,91,.15);transform:translateY(-3px)':''" @click="openCard=openCard==='pinnacle'?null:'pinnacle'">
-          <div style="position:relative;background:var(--forest2);display:flex;align-items:center;justify-content:center;height:200px">
-            <img decoding="async" loading="lazy" src="images/pinnacle%20award.png" alt="The Pinnacle Award 2026" style="height:160px;width:auto;object-fit:contain;filter:invert(1)">
+          <div style="position:relative;background:var(--forest2);display:flex;align-items:center;justify-content:center;height:220px">
+            <img decoding="async" loading="lazy" src="images/pinnacle%20award.png" alt="The Pinnacle Award 2026" style="height:170px;width:auto;object-fit:contain;filter:invert(1)">
             <div style="position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:.85rem;font-weight:600;display:flex;justify-content:space-between;align-items:center">The Pinnacle Award <svg :style="openCard==='pinnacle'?'transform:rotate(180deg)':''" style="transition:transform var(--t)" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
           </div>
           <div x-show="openCard==='pinnacle'" x-collapse class="card-expand">
@@ -3178,7 +3190,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         </div>
         <div class="community-card reveal gradient-border" :style="openCard==='scholarship'?'box-shadow:0 8px 24px rgba(0,99,91,.15);transform:translateY(-3px)':''" @click="openCard=openCard==='scholarship'?null:'scholarship'">
           <div style="position:relative">
-            <img decoding="async" loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Scholarship - Citadel cadets visiting Swamp Fox Agency" style="width:100%;height:200px;object-fit:cover;object-position:center 20%">
+            <img decoding="async" loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Scholarship - Citadel cadets visiting Swamp Fox Agency" style="width:100%;height:220px;object-fit:cover;object-position:center center">
             <div style="position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:.85rem;font-weight:600;display:flex;justify-content:space-between;align-items:center">Swamp Fox Scholarship <svg :style="openCard==='scholarship'?'transform:rotate(180deg)':''" style="transition:transform var(--t)" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
           </div>
           <div x-show="openCard==='scholarship'" x-collapse class="card-expand">
@@ -3187,7 +3199,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         </div>
         <div class="community-card reveal gradient-border" :style="openCard==='citadel'?'box-shadow:0 8px 24px rgba(0,99,91,.15);transform:translateY(-3px)':''" @click="openCard=openCard==='citadel'?null:'citadel'">
           <div style="position:relative">
-            <img decoding="async" loading="lazy" src="images/citadel.jpg" alt="Swamp Fox Citadel Program - Military community partnership" style="width:100%;height:200px;object-fit:cover">
+            <img decoding="async" loading="lazy" src="images/citadel.jpg" alt="Swamp Fox Citadel Program - Military community partnership" style="width:100%;height:220px;object-fit:cover;object-position:center">
             <div style="position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:.85rem;font-weight:600;display:flex;justify-content:space-between;align-items:center">Citadel Program <svg :style="openCard==='citadel'?'transform:rotate(180deg)':''" style="transition:transform var(--t)" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
           </div>
           <div x-show="openCard==='citadel'" x-collapse class="card-expand">
@@ -3222,7 +3234,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
       <!-- LEFT: Photo + Map stacked -->
       <div>
         <img decoding="async" loading="lazy" src="images/summerville%20office%20picture.png" alt="Summerville office" class="full-photo reveal-left" style="width:100%;height:260px;object-fit:cover;border-radius:12px;margin-bottom:20px;box-shadow:0 8px 32px rgba(0,0,0,.3)">
-        <div id="sf-map" style="background:url('images/static-map.png') center/cover no-repeat;height:320px;border-radius:12px;border:1px solid rgba(255,255,255,.15);box-shadow:0 8px 32px rgba(0,0,0,.3)" class="reveal-left"></div>
+        <div id="sf-map" style="background:#0f1f17;height:360px;border-radius:12px;border:1px solid rgba(255,255,255,.15);box-shadow:0 8px 32px rgba(0,0,0,.3);position:relative;overflow:hidden"></div>
       </div>
       <!-- RIGHT: 4 Location cards -->
       <div>
@@ -4273,15 +4285,18 @@ function swampFox(){
     },
     initMap(){
       const el=document.getElementById('sf-map');if(!el)return;
-      const fallback=()=>{el.innerHTML='<div style="padding:24px;text-align:center;color:var(--mid);font-size:.9rem">Interactive map unavailable &mdash; <a href="https://www.google.com/maps/search/?api=1&query=Swamp+Fox+Insurance+Agency+Moncks+Corner+SC" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600">view locations on Google Maps</a>.</div>';};
+      const fallback=()=>{el.innerHTML='<div style="padding:24px;text-align:center;color:rgba(255,255,255,.9);font-size:.9rem;display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;gap:10px"><div style="font-weight:700">Interactive map unavailable</div><a href="https://www.google.com/maps/search/?api=1&query=Swamp+Fox+Insurance+Agency+Moncks+Corner+SC" target="_blank" rel="noopener" style="color:var(--teal-lt);font-weight:600;text-decoration:underline">View our 4 offices on Google Maps &rarr;</a></div>';};
       if(el._leaflet_id){try{el._leaflet_map&&el._leaflet_map.invalidateSize()}catch(e){}return}
+      const locations=[[33.2041,-80.0129,'Moncks Corner — Pinopolis Rd','1122 Pinopolis Rd, Moncks Corner SC 29461'],[33.1988,-79.9802,'Moncks Corner — Hwy 52','2822 Hwy 52 Ste 450, Moncks Corner SC 29461'],[32.9676,-80.1526,'Summerville — Nexton','1288 Nexton Pkwy Ste 402, Summerville SC 29483'],[31.2035,-82.3624,'Waycross, Georgia','960 S City Blvd Ste G, Waycross GA 31501']];
       this.loadLeaflet().then(()=>{
         if(typeof L==='undefined'){fallback();return}
-        const map=L.map('sf-map',{zoomControl:true}).setView([32.5,-80.3],7);el._leaflet_map=map;
+        const map=L.map('sf-map',{zoomControl:true,scrollWheelZoom:false}).setView([32.5,-80.3],7);el._leaflet_map=map;
         L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(map);
-        const icon=L.divIcon({className:'',html:'<div style="background:#00635B;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:3px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,.3)"><svg width="20" height="20" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>',iconSize:[40,40],iconAnchor:[20,20]});
-        [[33.2041,-80.0129,'Moncks Corner — Pinopolis Rd','1122 Pinopolis Rd, Moncks Corner SC 29461'],[33.1988,-79.9802,'Moncks Corner — Hwy 52','2822 Hwy 52 Ste 450, Moncks Corner SC 29461'],[32.9676,-80.1526,'Summerville — Nexton','1288 Nexton Pkwy Ste 402, Summerville SC 29483'],[31.2035,-82.3624,'Waycross, Georgia','960 S City Blvd Ste G, Waycross GA 31501']].forEach(([lat,lng,name,addr])=>{L.marker([lat,lng],{icon}).addTo(map).bindPopup('<strong style="font-family:Playfair Display,serif;color:#1E392A">'+name+'</strong><br><span style="color:#4A6070;font-size:.82rem">'+addr+'</span>',{maxWidth:230})});
+        const icon=L.divIcon({className:'sf-pin',html:'<div style="background:#00635B;border-radius:50% 50% 50% 0;transform:rotate(-45deg);width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:3px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,.4)"><svg width="16" height="16" fill="#fff" stroke="#fff" stroke-width="0" viewBox="0 0 24 24" style="transform:rotate(45deg)"><circle cx="12" cy="12" r="5"/></svg></div>',iconSize:[34,34],iconAnchor:[17,34],popupAnchor:[0,-30]});
+        const markers=locations.map(([lat,lng,name,addr])=>L.marker([lat,lng],{icon}).addTo(map).bindPopup('<strong style="font-family:Playfair Display,serif;color:#1E392A">'+name+'</strong><br><span style="color:#4A6070;font-size:.82rem">'+addr+'</span>',{maxWidth:240}));
+        try{const group=L.featureGroup(markers);map.fitBounds(group.getBounds().pad(0.25))}catch(e){}
         setTimeout(()=>map.invalidateSize(),200);
+        setTimeout(()=>map.invalidateSize(),700);
       }).catch(fallback);
     },
     startCountdown(){
