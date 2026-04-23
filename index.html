@@ -110,7 +110,7 @@ p{color:var(--mid);line-height:1.75}
 
 /* === LAYOUT === */
 .wrap{max-width:var(--max-w);margin:0 auto;padding:0 clamp(20px,3vw,48px)}
-.sec{padding:40px 0}
+.sec{padding:32px 0}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -497,7 +497,7 @@ textarea.form-input{resize:vertical}
 .footer-col a:hover{color:#fff;transform:translateX(3px)}
 
 /* === TEXTURE OVERLAYS FOR BLANK SECTIONS === */
-.sec{position:relative;padding:40px 0}
+.sec{position:relative;padding:32px 0}
 .sec::before{content:'';position:absolute;inset:0;background:radial-gradient(circle,rgba(0,99,91,.03) 1px,transparent 1px);background-size:20px 20px;opacity:1;pointer-events:none;z-index:0}
 .sec>*{position:relative;z-index:1}
 .section-hero+.sec{background:linear-gradient(175deg,var(--cream) 0%,#f0f5f2 40%,var(--sage-lt) 100%) !important}
@@ -745,12 +745,8 @@ textarea.form-input{resize:vertical}
 /* sec-divider removed */
 
 /* === ANIMATIONS (fast & snappy) === */
-.reveal-left{opacity:0;transform:translateX(-16px);transition:opacity var(--t),transform var(--t)}
-.reveal-left.visible{opacity:1;transform:translateX(0)}
-.reveal-right{opacity:0;transform:translateX(16px);transition:opacity var(--t),transform var(--t)}
-.reveal-right.visible{opacity:1;transform:translateX(0)}
-.reveal-scale{opacity:0;transform:scale(.95);transition:opacity var(--t),transform var(--t)}
-.reveal-scale.visible{opacity:1;transform:scale(1)}
+.reveal-left,.reveal-right,.reveal-scale{opacity:1;transform:none;transition:opacity var(--t),transform var(--t)}
+.reveal-left.visible,.reveal-right.visible,.reveal-scale.visible{opacity:1;transform:none}
 
 /* === DEPTH & 3D DIMENSION SYSTEM === */
 .depth-card{position:relative;overflow:hidden;transition:all var(--t)}
@@ -1049,9 +1045,11 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   .footer-grid{grid-template-columns:1fr 1fr}
   [style*="grid-template-columns:1fr 1.2fr"]{grid-template-columns:1fr!important}
   .wrap{padding:0 20px}
-  .sec{padding:48px 0}
+  .sec{padding:32px 0}
   /* Tighter gap above the About ("Insurance the Way It Should Be") section */
-  .sec.bg-diagonal[style*="padding-top:18px"]{padding-top:24px!important}
+  .sec.bg-diagonal[style*="padding-top:18px"]{padding-top:18px!important}
+  /* Prevent reveal-left/right from holding empty vertical space if they never get .visible */
+  .reveal-left,.reveal-right,.reveal-scale{opacity:1!important;transform:none!important}
 }
 @media(max-width:768px){
   [style*="grid-template-columns:1fr 1fr;gap:32px"]{grid-template-columns:1fr!important}
@@ -1688,7 +1686,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
       <div class="nav-links" @mouseleave="navDrop=null" @keydown.escape.window="navDrop=null">
         <template x-for="item in nav.filter(n=>n.id!=='quote')" :key="item.id">
           <div class="nav-link-wrap" @mouseenter="if(item.children&&window.matchMedia('(hover:hover)').matches)navDrop=item.id">
-            <a class="nav-link" :class="{'active':page===item.id||(item.children&&item.children.some(c=>(c.target||c.id)===page))}" :aria-expanded="item.children?(navDrop===item.id?'true':'false'):null" :aria-haspopup="item.children?'true':null" @click.prevent.stop="item.children?(navDrop=navDrop===item.id?null:item.id,go('services')):go(item.id)" href="#">
+            <a class="nav-link" :class="{'active':page===item.id||(item.children&&item.children.some(c=>(c.target||c.id)===page))}" :aria-expanded="item.children?(navDrop===item.id?'true':'false'):null" :aria-haspopup="item.children?'true':null" @click.prevent.stop="item.children?(navDrop=navDrop===item.id?null:item.id,go('services')):(item.href?(window.location.href=item.href):go(item.id))" :href="item.href||'#'">
               <span x-text="item.label"></span>
               <svg x-show="item.children" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="margin-left:4px;transition:transform .25s ease" :style="navDrop===item.id?'transform:rotate(180deg)':''"><path d="M6 9l6 6 6-6"/></svg>
             </a>
@@ -1737,7 +1735,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
     </div>
     <template x-for="item in nav" :key="item.id">
       <div>
-        <a class="mob-link" @click.prevent="item.children?(mobileSubOpen=mobileSubOpen===item.id?null:item.id):go(item.id)" href="#" style="display:flex;justify-content:space-between;align-items:center">
+        <a class="mob-link" @click.prevent="item.children?(mobileSubOpen=mobileSubOpen===item.id?null:item.id):(item.href?(window.location.href=item.href):go(item.id))" :href="item.href||'#'" style="display:flex;justify-content:space-between;align-items:center">
           <span x-text="item.label"></span>
           <svg x-show="item.children" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" :style="mobileSubOpen===item.id?'transform:rotate(180deg);transition:transform .25s':'transition:transform .25s'"><path d="M6 9l6 6 6-6"/></svg>
         </a>
@@ -3891,7 +3889,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <a href="#" @click.prevent="go('services')" style="font-size:.72rem;color:rgba(255,255,255,.5);transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Coverage</a>
         <a href="#" @click.prevent="go('summit')" style="font-size:.72rem;color:rgba(255,255,255,.5);transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Summit</a>
         <a href="#" @click.prevent="go('locations')" style="font-size:.72rem;color:rgba(255,255,255,.5);transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Locations</a>
-        <a href="#" @click.prevent="go('events')" style="font-size:.72rem;color:rgba(255,255,255,.5);transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Blog</a>
+        <a href="blog/" style="font-size:.72rem;color:rgba(255,255,255,.5);transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Blog</a>
         <a href="https://portal.csr24.com/mvc/7613999" target="_blank" rel="noopener" style="font-size:.72rem;color:rgba(255,255,255,.5);transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Client Portal</a>
         <a href="#" @click.prevent="go('faq')" style="font-size:.72rem;color:rgba(255,255,255,.5);transition:color .2s;cursor:pointer" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">FAQ</a>
         <a href="https://www.linkedin.com/company/swamp-fox-agency/jobs/" target="_blank" rel="noopener" style="font-size:.72rem;color:rgba(255,255,255,.5);transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Careers</a>
@@ -4172,7 +4170,7 @@ function swampFox(){
       ]},
       {id:'losscontrol',label:'Loss Control'},
       {id:'summit',label:'Summit'},
-      {id:'events',label:'Blog'},
+      {id:'events',label:'Blog',href:'blog/'},
       {id:'about',label:'About'},
       {id:'locations',label:'Locations'},
       {id:'quote',label:'Get a Quote'}
