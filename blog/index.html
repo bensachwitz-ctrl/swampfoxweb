@@ -43,7 +43,7 @@
       <a href="../#services">Coverage</a>
       <a href="../#losscontrol">Loss Control</a>
       <a href="../#summit">Summit</a>
-      <a href="index.html" aria-current="page" style="color:var(--teal);font-weight:700">Blog</a>
+      <a href="index.html" class="is-active">Blog</a>
       <a href="../#about">About</a>
       <a href="../#locations">Locations</a>
       <a href="../#quote" class="cta">Get a Quote</a>
@@ -114,6 +114,8 @@
 <script src="posts.js"></script>
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+  // header-scroll-shadow: match main site behavior
+  (function(){var h=document.querySelector('.site-header');if(!h)return;var f=function(){h.classList.toggle('scrolled',window.scrollY>20)};window.addEventListener('scroll',f,{passive:true});f()})();
 
   const grid = document.getElementById('listing-grid');
   const controls = document.getElementById('cat-controls');

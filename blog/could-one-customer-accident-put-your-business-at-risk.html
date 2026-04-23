@@ -47,7 +47,7 @@
       <a href="../#services">Coverage</a>
       <a href="../#losscontrol">Loss Control</a>
       <a href="../#summit">Summit</a>
-      <a href="index.html">Blog</a>
+      <a href="index.html" class="is-active">Blog</a>
       <a href="../#about">About</a>
       <a href="../#locations">Locations</a>
       <a href="../#quote" class="cta">Get a Quote</a>
@@ -218,6 +218,8 @@
 <script src="posts.js"></script>
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+  // header-scroll-shadow: match main site behavior
+  (function(){var h=document.querySelector('.site-header');if(!h)return;var f=function(){h.classList.toggle('scrolled',window.scrollY>20)};window.addEventListener('scroll',f,{passive:true});f()})();
   const here = 'could-one-customer-accident-put-your-business-at-risk';
   const related = window.SF_POSTS.filter(p => p.slug !== here && (p.category === 'General Liability' || p.category === 'Commercial')).slice(0, 3);
   const fill = window.SF_POSTS.filter(p => p.slug !== here && !related.includes(p)).slice(0, 3 - related.length);

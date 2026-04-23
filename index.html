@@ -1050,6 +1050,8 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   [style*="grid-template-columns:1fr 1.2fr"]{grid-template-columns:1fr!important}
   .wrap{padding:0 20px}
   .sec{padding:48px 0}
+  /* Tighter gap above the About ("Insurance the Way It Should Be") section */
+  .sec.bg-diagonal[style*="padding-top:18px"]{padding-top:24px!important}
 }
 @media(max-width:768px){
   [style*="grid-template-columns:1fr 1fr;gap:32px"]{grid-template-columns:1fr!important}
@@ -1929,7 +1931,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
 </section>
 
 <!-- ABOUT SECTION -->
-<section class="sec bg-diagonal" style="position:relative;overflow:hidden">
+<section class="sec bg-diagonal" style="position:relative;overflow:hidden;padding-top:18px">
   <div style="position:absolute;inset:0;background:url('images/background%20maybe.jpg') center/cover;opacity:.04;pointer-events:none"></div>
   <div class="accent-circle accent-circle-lg" style="top:-80px;left:-120px;opacity:.3"></div>
   <div class="wrap grid-2" style="align-items:center;gap:40px">
@@ -4190,7 +4192,22 @@ function swampFox(){
     validEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((v||'').trim())},
     quoteStep2Valid(){const q=this.qForm;return !!(q.firstName&&q.lastName&&q.phone&&this.validEmail(q.email))},
     advanceQuoteStep(to){if(to===2&&this.selectedCoverage.length===0)return;if(to===3&&!this.quoteStep2Valid())return;this.quoteStep=to},
-    go(id){if(id==='quote'){this.showModal=true;this.modalType='quotefull';this.modalSent=false;this.quoteStep=1;this.selectedCoverage=[];this.quoteSent=false;this.menuOpen=false;return}this.page=id;this.menuOpen=false;window.scrollTo({top:0,behavior:'smooth'});if(id==='locations')this.$nextTick(()=>this.initMap())},
+    go(id){if(id==='quote'){this.showModal=true;this.modalType='quotefull';this.modalSent=false;this.quoteStep=1;this.selectedCoverage=[];this.quoteSent=false;this.menuOpen=false;return}this.page=id;this.menuOpen=false;window.scrollTo({top:0,behavior:'smooth'});if(id==='locations')this.$nextTick(()=>this.initMap());try{if(id==='home'){history.replaceState(null,'',window.location.pathname)}else{history.replaceState(null,'','#'+id)}}catch(e){}},
+    syncFromHash(){
+      const raw=(window.location.hash||'').replace(/^#/,'').trim();
+      if(!raw)return;
+      const valid=new Set();
+      this.nav.forEach(n=>{valid.add(n.id);if(n.children)n.children.forEach(c=>valid.add(c.target||c.id))});
+      ['forestry','trucking','cargo','gl','homeins','autoins','life','umbrella','equipment','camper','faq','services','about','locations','losscontrol','summit','events','quote','home'].forEach(id=>valid.add(id));
+      if(!valid.has(raw))return;
+      if(raw==='quote'){this.go('quote');return}
+      if(raw==='home'){this.page='home';window.scrollTo({top:0});return}
+      if(raw!==this.page){
+        this.page=raw;
+        window.scrollTo({top:0});
+        if(raw==='locations')this.$nextTick(()=>this.initMap&&this.initMap());
+      }
+    },
     sendLead(subject,body){try{const a=document.createElement('a');a.href='mailto:info@swampfoxagency.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}catch(e){}},
     submitModal(kind){const f=this.mForm;const subj={register:'Summit 2026 Registration',losscontrol:'Loss Control Review Request',exitLC:'Loss Control Review (Exit Intent)',exitQ:'Quote Request (Exit Intent)'}[kind]||'New Lead — Swamp Fox';let body='Name: '+(f.name||'')+'\nCompany: '+(f.company||'')+'\nPhone: '+(f.phone||'')+'\nEmail: '+(f.email||'');if(f.coverage)body+='\nCoverage: '+f.coverage;if(f.message)body+='\n\nDetails:\n'+f.message;this.sendLead(subj,body);this.modalSent=true},
     submitNewsletter(email){if(!email)return false;this.sendLead('Newsletter Signup — Swamp Fox','Please add this address to the Swamp Fox newsletter.\n\nEmail: '+email);return true},
@@ -4503,6 +4520,9 @@ function swampFox(){
     },
     init(){
       document.body.classList.add('alpine-ready');
+      // Deep-link from hash so links from /blog/ pages (e.g. ../#services) land on the right SPA page
+      this.syncFromHash();
+      window.addEventListener('hashchange',()=>this.syncFromHash());
       // Hide loader
       setTimeout(()=>{const loader=document.getElementById('loader');if(loader)loader.classList.add('hidden');setTimeout(()=>{if(loader)loader.remove()},400)},700);
       this.startCountdown();
