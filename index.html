@@ -2178,25 +2178,6 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
   </div>
 </section>
 
-<!-- NEWSLETTER strip (lighter, no duplicate CTA) -->
-<section style="padding:28px 0 32px;background:var(--forest2)">
-  <div class="wrap" style="max-width:560px;text-align:center">
-    <p style="color:rgba(255,255,255,.72);font-size:.9rem;margin-bottom:14px">Stay informed — seasonal risk tips, policy updates &amp; safety insights.</p>
-    <form class="newsletter-input-wrap" x-data="{nlEmail:'',nlSent:false}" @submit.prevent="if($root.submitNewsletter(nlEmail)){nlSent=true}">
-      <template x-if="!nlSent">
-        <input type="email" class="newsletter-input" placeholder="Enter your email address" x-model="nlEmail" required aria-label="Email address for newsletter">
-      </template>
-      <template x-if="!nlSent">
-        <button type="submit" class="newsletter-btn">Subscribe</button>
-      </template>
-      <template x-if="nlSent">
-        <div style="padding:16px 24px;background:rgba(255,255,255,.95);color:var(--forest);font-weight:600;width:100%;text-align:center;font-size:.92rem">Thank you for subscribing!</div>
-      </template>
-    </form>
-    <p style="color:rgba(255,255,255,.25);font-size:.7rem;margin-top:10px">No spam. Unsubscribe anytime.</p>
-  </div>
-</section>
-
 </div><!-- end HOME page -->
 
 
@@ -2611,10 +2592,11 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
   <div class="wrap grid-2">
     <div class="glass-box" style="padding:36px">
       <span class="label">How It Works</span>
-      <h2 style="font-size:clamp(1.5rem,3vw,2.2rem)">Loss Control That Works</h2>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.2rem)">Stop losses before they start.</h2>
       <div class="rule" style="background:var(--teal-lt)"></div>
-      <p style="font-size:.95rem;line-height:1.75;color:rgba(255,255,255,.95)">Loss control helps you absorb incidents before they become claims, and recover faster when they do. Our goal is to help you run a fleet that's DOT-compliant, safer on the road, and more profitable at the end of the quarter.</p>
-      <p style="margin-top:14px;font-size:.95rem;line-height:1.75;color:rgba(255,255,255,.95)">An Alirics Specialist can assist you with your concerns whether or not you are a current client.</p>
+      <p style="font-size:.98rem;line-height:1.75;color:rgba(255,255,255,.95)"><strong style="color:var(--gold-lt)">Alirics</strong> is Swamp Fox's in-house safety and risk-mitigation team — and the single best thing we do for our clients. Every incident you avoid is a claim that never happens, a premium that doesn't spike, a driver who gets home, a crew that stays on the clock.</p>
+      <p style="margin-top:14px;font-size:.95rem;line-height:1.75;color:rgba(255,255,255,.95)">We don't wait for claims to teach us what's wrong with your operation. An Alirics Specialist walks the yard with you, reviews your driver files, audits your DOT paperwork, and tells you exactly where the next loss is likely to come from — and how to cut that risk before it costs you.</p>
+      <p style="margin-top:14px;font-size:.95rem;line-height:1.75;color:rgba(255,255,255,.95)"><strong style="color:#fff">Free, no obligation, open to anyone</strong> — current Swamp Fox client or not. Because the safest operation on the road is good for everyone, and that's the point.</p>
       <h3 style="margin-top:24px;margin-bottom:12px;color:#fff">Our Principles</h3>
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
         <span style="background:rgba(45,138,126,.2);color:var(--teal-lt);padding:6px 14px;border-radius: 12px;font-size:.82rem;font-weight:600;border:1px solid rgba(45,138,126,.3)">Prevention</span>
@@ -3854,7 +3836,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
 <!-- ══════════════════════════════════════════════════════════════════ -->
 <!-- HANDSHAKE: three things we do differently (with forest BG image)    -->
 <!-- ══════════════════════════════════════════════════════════════════ -->
-<section style="padding:48px 0 56px;position:relative;overflow:hidden">
+<section x-show="page==='home'" style="padding:48px 0 56px;position:relative;overflow:hidden">
   <div style="position:absolute;inset:0;background:url('images/premium_photo-1661963106864-40a0b6eddc80.avif') center/cover" aria-hidden="true"></div>
   <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,31,23,.85),rgba(0,99,91,.72))" aria-hidden="true"></div>
   <div class="wrap" style="max-width:960px;position:relative;z-index:2">
@@ -3893,6 +3875,17 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
       <button class="btn btn-white btn-lg" @click="go('quote')">Request a Quote</button>
       &nbsp;
       <a class="btn btn-lg" href="tel:8437613999" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.35);color:#fff"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call (843) 761-3999</a>
+    </div>
+
+    <!-- Newsletter, integrated into handshake section below CTAs -->
+    <div style="max-width:520px;margin:36px auto 0;padding-top:28px;border-top:1px solid rgba(255,255,255,.2);text-align:center">
+      <p style="color:rgba(255,255,255,.85);font-size:.9rem;margin-bottom:14px">Stay informed — seasonal risk tips, policy updates &amp; safety insights.</p>
+      <form class="newsletter-input-wrap" x-data="{nlEmail:'',nlSent:false}" @submit.prevent="if($root.submitNewsletter(nlEmail)){nlSent=true}">
+        <template x-if="!nlSent"><input type="email" class="newsletter-input" placeholder="Enter your email address" x-model="nlEmail" required aria-label="Email address for newsletter"></template>
+        <template x-if="!nlSent"><button type="submit" class="newsletter-btn">Subscribe</button></template>
+        <template x-if="nlSent"><div style="padding:16px 24px;background:rgba(255,255,255,.95);color:var(--forest);font-weight:600;width:100%;text-align:center;font-size:.92rem">Thank you for subscribing!</div></template>
+      </form>
+      <p style="color:rgba(255,255,255,.4);font-size:.7rem;margin-top:10px">No spam. Unsubscribe anytime.</p>
     </div>
   </div>
 </section>
