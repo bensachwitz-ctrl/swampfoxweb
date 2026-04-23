@@ -26,7 +26,7 @@
 
 <div class="topbar"><div class="topbar-inner"><span><strong>Forestry / Commercial:</strong> <a href="tel:8437613999">(843) 761-3999</a></span><span><strong>Personal:</strong> <a href="tel:8436280280">(843) 628-0280</a></span><span class="topbar-spacer"></span><span>Mon–Fri 8 am – 5 pm</span><a href="../#faq">FAQ</a><a href="https://portal.csr24.com/mvc/7613999" target="_blank" rel="noopener">Client Portal</a></div></div>
 
-<header class="site-header"><div class="site-header-inner"><a href="../" class="site-header-logo"><img src="../images/swamp%20fox%20top%20logo.webp" alt="Swamp Fox Insurance Agency"></a><nav class="site-nav" aria-label="Primary"><a href="../">Home</a><a href="../#services">Coverage</a><a href="../#losscontrol">Loss Control</a><a href="../#summit">Summit</a><a href="index.html">Blog</a><a href="../#about">About</a><a href="../#locations">Locations</a><a href="../#quote" class="cta">Get a Quote</a></nav></div></header>
+<header class="site-header"><div class="site-header-inner"><a href="../" class="site-header-logo"><img src="../images/swamp%20fox%20top%20logo.webp" alt="Swamp Fox Insurance Agency"></a><nav class="site-nav" aria-label="Primary"><a href="../">Home</a><a href="../#services">Coverage</a><a href="../#losscontrol">Loss Control</a><a href="../#summit">Summit</a><a href="index.html" class="is-active">Blog</a><a href="../#about">About</a><a href="../#locations">Locations</a><a href="../#quote" class="cta">Get a Quote</a></nav></div></header>
 
 <section class="article-hero"><div class="article-hero-inner">
   <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg><a href="index.html">Blog</a><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg><span>Camper / RV</span></nav>
@@ -119,6 +119,8 @@
 <script src="posts.js"></script>
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+  // header-scroll-shadow: match main site behavior
+  (function(){var h=document.querySelector('.site-header');if(!h)return;var f=function(){h.classList.toggle('scrolled',window.scrollY>20)};window.addEventListener('scroll',f,{passive:true});f()})();
   const here = 'full-time-rving-coverage-gaps-to-watch-for';
   const related = window.SF_POSTS.filter(p => p.slug !== here && p.category === 'Camper / RV').slice(0, 3);
   const fill = window.SF_POSTS.filter(p => p.slug !== here && !related.includes(p)).slice(0, 3 - related.length);

@@ -40,7 +40,7 @@
   <div class="site-header-inner">
     <a href="../" class="site-header-logo" aria-label="Swamp Fox Insurance Agency — Home"><img src="../images/swamp%20fox%20top%20logo.webp" alt="Swamp Fox Insurance Agency"></a>
     <nav class="site-nav" aria-label="Primary">
-      <a href="../">Home</a><a href="../#services">Coverage</a><a href="../#losscontrol">Loss Control</a><a href="../#summit">Summit</a><a href="index.html">Blog</a><a href="../#about">About</a><a href="../#locations">Locations</a><a href="../#quote" class="cta">Get a Quote</a>
+      <a href="../">Home</a><a href="../#services">Coverage</a><a href="../#losscontrol">Loss Control</a><a href="../#summit">Summit</a><a href="index.html" class="is-active">Blog</a><a href="../#about">About</a><a href="../#locations">Locations</a><a href="../#quote" class="cta">Get a Quote</a>
     </nav>
   </div>
 </header>
@@ -194,6 +194,8 @@
 <script src="posts.js"></script>
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+  // header-scroll-shadow: match main site behavior
+  (function(){var h=document.querySelector('.site-header');if(!h)return;var f=function(){h.classList.toggle('scrolled',window.scrollY>20)};window.addEventListener('scroll',f,{passive:true});f()})();
   const here = 'black-ice-accidents-what-auto-insurance-really-covers';
   const related = window.SF_POSTS.filter(p => p.slug !== here && p.category === 'Auto').slice(0, 3);
   const fill = window.SF_POSTS.filter(p => p.slug !== here && !related.includes(p)).slice(0, 3 - related.length);
