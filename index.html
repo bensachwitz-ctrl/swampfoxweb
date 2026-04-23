@@ -37,7 +37,7 @@
   "address":[
     {"@type":"PostalAddress","streetAddress":"1122 Pinopolis Road","addressLocality":"Moncks Corner","addressRegion":"SC","postalCode":"29461"},
     {"@type":"PostalAddress","streetAddress":"2822 HWY 52 Ste. 450","addressLocality":"Moncks Corner","addressRegion":"SC","postalCode":"29461"},
-    {"@type":"PostalAddress","streetAddress":"1288 Nexton Pkwy Suite 402","addressLocality":"Summerville","addressRegion":"SC","postalCode":"29483"},
+    {"@type":"PostalAddress","streetAddress":"1288 Nexton Pkwy Suite 402","addressLocality":"Summerville","addressRegion":"SC","postalCode":"29486"},
     {"@type":"PostalAddress","streetAddress":"960 S City Blvd G","addressLocality":"Waycross","addressRegion":"GA","postalCode":"31501"}
   ],
   "sameAs":["https://www.facebook.com/SFOXAGENCY/","https://www.instagram.com/swampfoxagency/","https://www.linkedin.com/company/swamp-fox-agency","https://www.youtube.com/@swampfoxagency"]
@@ -68,6 +68,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <!-- Leaflet is loaded on-demand by initMap() when the user visits #locations -->
 <link rel="dns-prefetch" href="https://unpkg.com">
+<!-- SEO / crawlability: if JS is disabled, every section is revealed so
+     all copy, links, and structured data remain fully discoverable. -->
+<noscript><style>.page-section{display:block!important}[x-cloak]{display:initial!important}.nav-dropdown{display:block!important;position:static}.mobile-menu{position:static;transform:none;visibility:visible;pointer-events:auto}</style></noscript>
 <link rel="dns-prefetch" href="https://i.ytimg.com">
 <link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
 <script defer src="https://unpkg.com/@alpinejs/collapse@3.14.3/dist/cdn.min.js"></script>
@@ -3167,10 +3170,10 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
             <span style="font-size:.72rem;color:var(--teal);display:flex;align-items:center;gap:4px">Open in Maps <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></span>
           </div>
         </a>
-        <a href="https://www.google.com/maps/search/?api=1&query=1288+Nexton+Pkwy+Suite+402+Summerville+SC+29483" target="_blank" rel="noopener" style="display:block;background:rgba(255,255,255,.82);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);border-radius:var(--r-lg);padding:20px;margin-bottom:14px;transition:all var(--t-spring);text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.15)" class="reveal lift-3d" onmouseover="this.style.borderColor='var(--teal)'" onmouseout="this.style.borderColor=''">
+        <a href="https://www.google.com/maps/search/?api=1&query=1288+Nexton+Pkwy+Suite+402+Summerville+SC+29486" target="_blank" rel="noopener" style="display:block;background:rgba(255,255,255,.82);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);border-radius:var(--r-lg);padding:20px;margin-bottom:14px;transition:all var(--t-spring);text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.15)" class="reveal lift-3d" onmouseover="this.style.borderColor='var(--teal)'" onmouseout="this.style.borderColor=''">
           <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
             <div style="width:36px;height:36px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="18" height="18" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <div><strong style="color:var(--forest)">Summerville — Nexton</strong><br><span style="font-size:.68rem;font-weight:600;color:var(--gold);letter-spacing:.04em;text-transform:uppercase">Personal &amp; Small Commercial</span><br><span style="font-size:.82rem;color:var(--mid)">1288 Nexton Pkwy, Suite 402, Summerville, SC 29483</span></div>
+            <div><strong style="color:var(--forest)">Summerville — Nexton</strong><br><span style="font-size:.68rem;font-weight:600;color:var(--gold);letter-spacing:.04em;text-transform:uppercase">Personal &amp; Small Commercial</span><br><span style="font-size:.82rem;color:var(--mid)">1288 Nexton Pkwy, Suite 402, Summerville, SC 29486</span></div>
           </div>
           <div style="display:flex;align-items:center;justify-content:space-between">
             <span style="font-size:.85rem;color:var(--teal);font-weight:600">(843) 636-8709</span>
@@ -4063,7 +4066,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
               <label>State</label>
               <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:6px">
                 <template x-for="st in ['South Carolina','Georgia','North Carolina','Alabama','Florida','Mississippi','Virginia','Other']" :key="st">
-                  <button type="button" @click="qForm.state=st" :style="qForm.state===st?'background:var(--teal);color:#fff;border-color:var(--teal);box-shadow:0 4px 12px rgba(0,99,91,.25)':'background:#fff;color:var(--mid);border-color:var(--border)'" style="padding:8px 14px;border:1.5px solid;border-radius:999px;font-size:.84rem;font-weight:600;cursor:pointer;transition:all .2s ease;font-family:inherit" x-text="st"></button>
+                  <button type="button" @click="qForm.state=st" :style="qForm.state===st?'background:var(--teal);color:#fff;border-color:var(--forest);box-shadow:0 0 0 3px rgba(45,138,126,.25),0 6px 16px rgba(0,99,91,.28);transform:translateY(-1px)':'background:#fff;color:var(--mid);border-color:var(--border)'" style="padding:9px 16px;border:2px solid;border-radius:999px;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s ease;font-family:inherit" x-text="st"></button>
                 </template>
               </div>
             </div>
@@ -4072,7 +4075,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
               <label># of Employees</label>
               <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:6px">
                 <template x-for="n in ['1-5','6-25','26-50','51-100','100+']" :key="n">
-                  <button type="button" @click="qForm.employees=n" :style="qForm.employees===n?'background:var(--teal);color:#fff;border-color:var(--teal);box-shadow:0 4px 12px rgba(0,99,91,.25)':'background:#fff;color:var(--mid);border-color:var(--border)'" style="padding:8px 16px;border:1.5px solid;border-radius:999px;font-size:.84rem;font-weight:600;cursor:pointer;transition:all .2s ease;font-family:inherit" x-text="n"></button>
+                  <button type="button" @click="qForm.employees=n" :style="qForm.employees===n?'background:var(--teal);color:#fff;border-color:var(--forest);box-shadow:0 0 0 3px rgba(45,138,126,.25),0 6px 16px rgba(0,99,91,.28);transform:translateY(-1px)':'background:#fff;color:var(--mid);border-color:var(--border)'" style="padding:9px 18px;border:2px solid;border-radius:999px;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s ease;font-family:inherit" x-text="n"></button>
                 </template>
               </div>
             </div>
@@ -4091,7 +4094,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
               <label>How did you hear about us?</label>
               <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:6px">
                 <template x-for="src in ['SCTPA / Timber Association','Google Search','Referral','Social Media','Logger Summit','Other']" :key="src">
-                  <button type="button" @click="qForm.source=src" :style="qForm.source===src?'background:var(--teal);color:#fff;border-color:var(--teal);box-shadow:0 4px 12px rgba(0,99,91,.25)':'background:#fff;color:var(--mid);border-color:var(--border)'" style="padding:8px 14px;border:1.5px solid;border-radius:999px;font-size:.84rem;font-weight:600;cursor:pointer;transition:all .2s ease;font-family:inherit" x-text="src"></button>
+                  <button type="button" @click="qForm.source=src" :style="qForm.source===src?'background:var(--teal);color:#fff;border-color:var(--forest);box-shadow:0 0 0 3px rgba(45,138,126,.25),0 6px 16px rgba(0,99,91,.28);transform:translateY(-1px)':'background:#fff;color:var(--mid);border-color:var(--border)'" style="padding:9px 16px;border:2px solid;border-radius:999px;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s ease;font-family:inherit" x-text="src"></button>
                 </template>
               </div>
             </div>
@@ -4308,7 +4311,7 @@ function swampFox(){
       const el=document.getElementById('sf-map');if(!el)return;
       const fallback=()=>{el.innerHTML='<div style="padding:24px;text-align:center;color:rgba(255,255,255,.9);font-size:.9rem;display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;gap:10px"><div style="font-weight:700">Interactive map unavailable</div><a href="https://www.google.com/maps/search/?api=1&query=Swamp+Fox+Insurance+Agency+Moncks+Corner+SC" target="_blank" rel="noopener" style="color:var(--teal-lt);font-weight:600;text-decoration:underline">View our 4 offices on Google Maps &rarr;</a></div>';};
       if(el._leaflet_id){try{el._leaflet_map&&el._leaflet_map.invalidateSize()}catch(e){}return}
-      const locations=[[33.1992,-80.0321,'Moncks Corner — Pinopolis Rd','1122 Pinopolis Rd, Moncks Corner SC 29461'],[33.1826,-79.9489,'Moncks Corner — Hwy 52','2822 Hwy 52 Ste 450, Moncks Corner SC 29461'],[33.0373,-80.2228,'Summerville — Nexton','1288 Nexton Pkwy Ste 402, Summerville SC 29483'],[31.2163,-82.3515,'Waycross, Georgia','960 S City Blvd Ste G, Waycross GA 31501']];
+      const locations=[[33.1979,-80.0326,'Moncks Corner — Pinopolis Rd','1122 Pinopolis Rd, Moncks Corner SC 29461'],[33.1951,-79.9964,'Moncks Corner — Hwy 52','2822 Highway 52 Ste 450, Moncks Corner SC 29461'],[33.0680,-80.2162,'Summerville — Nexton','1288 Nexton Pkwy Ste 402, Summerville SC 29486'],[31.2127,-82.3517,'Waycross, Georgia','960 S City Blvd Ste G, Waycross GA 31501']];
       this.loadLeaflet().then(()=>{
         if(typeof L==='undefined'){fallback();return}
         const map=L.map('sf-map',{zoomControl:true,scrollWheelZoom:false}).setView([32.5,-80.3],7);el._leaflet_map=map;
@@ -4651,7 +4654,7 @@ function swampFox(){
 <h2>Our Services</h2>
 <p>Commercial Insurance: Logging and Forestry, Commercial Auto and Trucking, Cargo and Physical Damage, General Liability, Equipment and Inland Marine. Personal Insurance: Homeowners, Auto, Life and Health, Umbrella and Excess Liability.</p>
 <h2>Locations</h2>
-<p>1122 Pinopolis Road, Moncks Corner, SC 29461 — (843) 761-3999. 2822 HWY 52 Ste. 450, Moncks Corner, SC 29461. 1288 Nexton Pkwy Suite 402, Summerville, SC 29483. 960 S City Blvd G, Waycross, GA 31501.</p>
+<p>1122 Pinopolis Road, Moncks Corner, SC 29461 — (843) 761-3999. 2822 HWY 52 Ste. 450, Moncks Corner, SC 29461. 1288 Nexton Pkwy Suite 402, Summerville, SC 29486. 960 S City Blvd G, Waycross, GA 31501.</p>
 <h2>About Us</h2>
 <p>Founded in 1987, Swamp Fox Insurance Agency has been protecting Lowcountry families and businesses for nearly four decades. As an independent agency, we shop multiple carriers to find you the best coverage at the right price. Contact us at info@swampfoxagency.com or call (843) 761-3999.</p>
 <h2>Loss Control Program</h2>
