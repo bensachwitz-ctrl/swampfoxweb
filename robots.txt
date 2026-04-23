@@ -1,3 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /wordpress/
+
+# Sitemap
 Sitemap: https://bensachwitz-ctrl.github.io/swampfoxweb/sitemap.xml
+
+# Primary content (Coverage sections, About, FAQ, Locations, Summit,
+# Alirics / Loss Control) is present in index.html and rendered by
+# Alpine.js — all fully indexable. Blog posts are standalone static
+# HTML pages at /blog/*.html for maximum SEO reach.
