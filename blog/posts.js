@@ -98,7 +98,7 @@ window.SF_POSTS = [
     title: 'Understanding Uninsured & Underinsured Motorist Coverage',
     excerpt: "When the other driver doesn't have enough insurance, your UM/UIM is what stands between you and financial ruin.",
     date: 'October 21, 2025', dateISO: '2025-10-21',
-    image: '../images/brand-fleet-silver.jpg',
+    image: '../images/section-premium.jpg',
     readTime: '7 min read'
   }
 ];
