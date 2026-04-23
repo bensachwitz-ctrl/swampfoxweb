@@ -478,8 +478,8 @@ textarea.form-input{resize:vertical}
 .tab-btn.active{background:var(--teal);color:#fff;box-shadow:0 2px 8px rgba(0,99,91,.25)}
 
 /* === GALLERY === */
-.gallery-card{position:relative;overflow:hidden;border-radius:8px;cursor:pointer;transition:box-shadow var(--t);aspect-ratio:4/3;background:#0f1f17}
-.gallery-card img{width:100%;height:100%;object-fit:cover;object-position:center;transition:opacity var(--t);display:block}
+.gallery-card{position:relative;overflow:hidden;border-radius:8px;cursor:pointer;transition:box-shadow var(--t);aspect-ratio:1/1;background:#0f1f17}
+.gallery-card img{width:100%;height:100%;object-fit:contain;object-position:center;transition:opacity var(--t);display:block;background:#0f1f17}
 .gallery-card:hover img{opacity:.92}
 .gallery-cap{display:none}
 
@@ -4398,25 +4398,37 @@ function swampFox(){
     loadLeaflet(){
       if(window._leafletLoading)return window._leafletLoading;
       if(typeof L!=='undefined')return Promise.resolve();
-      window._leafletLoading=new Promise((resolve,reject)=>{
-        const css=document.createElement('link');css.rel='stylesheet';css.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';document.head.appendChild(css);
-        const s=document.createElement('script');s.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';s.async=true;s.onload=resolve;s.onerror=reject;document.head.appendChild(s);
+      const tryLoad=(jsUrl,cssUrl)=>new Promise((resolve,reject)=>{
+        const css=document.createElement('link');css.rel='stylesheet';css.href=cssUrl;document.head.appendChild(css);
+        const s=document.createElement('script');s.src=jsUrl;s.async=true;s.onload=resolve;s.onerror=reject;document.head.appendChild(s);
       });
+      // Try jsdelivr first (most reliable), fall back to unpkg, then cdnjs.
+      window._leafletLoading=tryLoad('https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js','https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css')
+        .catch(()=>tryLoad('https://unpkg.com/leaflet@1.9.4/dist/leaflet.js','https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'))
+        .catch(()=>tryLoad('https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js','https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css'));
       return window._leafletLoading;
     },
     initMap(){
       const el=document.getElementById('sf-map');if(!el)return;
-      const fallback=()=>{el.innerHTML='<div style="padding:24px;text-align:center;color:rgba(255,255,255,.9);font-size:.9rem;display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;gap:10px"><div style="font-weight:700">Interactive map unavailable</div><a href="https://www.google.com/maps/search/?api=1&query=Swamp+Fox+Insurance+Agency+Moncks+Corner+SC" target="_blank" rel="noopener" style="color:var(--teal-lt);font-weight:600;text-decoration:underline">View our 4 offices on Google Maps &rarr;</a></div>';};
-      if(el._leaflet_id){try{el._leaflet_map&&el._leaflet_map.invalidateSize()}catch(e){}return}
       // Coordinates geocoded directly from each exact street address (verified April 2026).
-      // We also send users to Google Maps via the full address string for turn-by-turn
-      // directions — the pin is informational; the "Directions" link is authoritative.
       const locations=[
-        [33.20091,-80.03356,'Moncks Corner — Pinopolis Rd','1122 Pinopolis Road, Moncks Corner, SC 29461'],
-        [33.20836,-79.99038,'Moncks Corner — Hwy 52','2822 Highway 52, Ste 450, Moncks Corner, SC 29461'],
-        [33.04585,-80.19680,'Summerville — Nexton','1288 Nexton Parkway, Ste 402, Summerville, SC 29486'],
-        [31.20380,-82.35940,'Waycross, Georgia','960 S City Blvd, Ste G, Waycross, GA 31501']
+        [33.20091,-80.03356,'Moncks Corner — Pinopolis Rd','1122 Pinopolis Road, Moncks Corner, SC 29461','Forestry &amp; Commercial'],
+        [33.20836,-79.99038,'Moncks Corner — Hwy 52','2822 Highway 52, Ste 450, Moncks Corner, SC 29461','Personal &amp; Small Commercial'],
+        [33.04585,-80.19680,'Summerville — Nexton','1288 Nexton Parkway, Ste 402, Summerville, SC 29486','Personal &amp; Small Commercial'],
+        [31.20380,-82.35940,'Waycross, Georgia','960 S City Blvd, Ste G, Waycross, GA 31501','Forestry &amp; Commercial']
       ];
+      // Rich fallback: 4 mini-cards with Get Directions buttons — works with zero JS dependencies.
+      const fallback=()=>{
+        const cards=locations.map(([lat,lng,name,addr,tag])=>{
+          const q=encodeURIComponent(addr);
+          return '<a href="https://www.google.com/maps/search/?api=1&query='+q+'" target="_blank" rel="noopener" style="display:block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:14px 16px;text-decoration:none;color:#fff;transition:all .2s" onmouseover="this.style.background=\'rgba(255,255,255,.1)\';this.style.borderColor=\'var(--teal-lt)\'" onmouseout="this.style.background=\'rgba(255,255,255,.06)\';this.style.borderColor=\'rgba(255,255,255,.12)\'"><div style="font-weight:700;font-size:.92rem;margin-bottom:2px">'+name+'</div><div style="font-size:.72rem;color:var(--teal-lt);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px">'+tag+'</div><div style="font-size:.8rem;color:rgba(255,255,255,.75);line-height:1.4">'+addr+'</div><div style="font-size:.76rem;color:var(--teal-lt);font-weight:600;margin-top:8px">Get Directions &rarr;</div></a>';
+        }).join('');
+        el.innerHTML='<div style="padding:20px;height:100%;overflow-y:auto"><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">'+cards+'</div></div>';
+      };
+      // Show the fallback immediately so users always see the 4 offices,
+      // then progressively upgrade to the interactive map once Leaflet loads.
+      fallback();
+      if(el._leaflet_id){try{el._leaflet_map&&el._leaflet_map.invalidateSize()}catch(e){}return}
       this.loadLeaflet().then(()=>{
         if(typeof L==='undefined'){fallback();return}
         const map=L.map('sf-map',{zoomControl:true,scrollWheelZoom:false}).setView([32.5,-80.3],7);el._leaflet_map=map;
