@@ -1,0 +1,968 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- WordPress eXtended RSS export for Swamp Fox Insurance Agency blog.
+     Import via WP Admin → Tools → Import → WordPress. -->
+<rss version="2.0"
+     xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:wp="http://wordpress.org/export/1.2/">
+<channel>
+  <title>Swamp Fox Insurance Agency</title>
+  <link>https://bensachwitz-ctrl.github.io/swampfoxweb</link>
+  <description>Insurance blog — forestry, commercial, personal lines.</description>
+  <pubDate>Thu, 23 Apr 2026 16:06:17 -0000</pubDate>
+  <language>en-US</language>
+  <wp:wxr_version>1.2</wp:wxr_version>
+  <wp:base_site_url>https://bensachwitz-ctrl.github.io/swampfoxweb</wp:base_site_url>
+  <wp:base_blog_url>https://bensachwitz-ctrl.github.io/swampfoxweb</wp:base_blog_url>
+  <wp:author>
+    <wp:author_id>1</wp:author_id>
+    <wp:author_login><![CDATA[swampfox]]></wp:author_login>
+    <wp:author_email><![CDATA[info@swampfoxagency.com]]></wp:author_email>
+    <wp:author_display_name><![CDATA[Swamp Fox Insurance Agency]]></wp:author_display_name>
+    <wp:author_first_name><![CDATA[Swamp]]></wp:author_first_name>
+    <wp:author_last_name><![CDATA[Fox]]></wp:author_last_name>
+  </wp:author>
+  <wp:category><wp:term_id>10</wp:term_id><wp:category_nicename><![CDATA[auto]]></wp:category_nicename><wp:category_parent><![CDATA[]]></wp:category_parent><wp:cat_name><![CDATA[Auto]]></wp:cat_name></wp:category>
+  <wp:category><wp:term_id>11</wp:term_id><wp:category_nicename><![CDATA[camper-rv]]></wp:category_nicename><wp:category_parent><![CDATA[]]></wp:category_parent><wp:cat_name><![CDATA[Camper / RV]]></wp:cat_name></wp:category>
+  <wp:category><wp:term_id>12</wp:term_id><wp:category_nicename><![CDATA[commercial]]></wp:category_nicename><wp:category_parent><![CDATA[]]></wp:category_parent><wp:cat_name><![CDATA[Commercial]]></wp:cat_name></wp:category>
+  <wp:category><wp:term_id>13</wp:term_id><wp:category_nicename><![CDATA[commercial-auto]]></wp:category_nicename><wp:category_parent><![CDATA[]]></wp:category_parent><wp:cat_name><![CDATA[Commercial Auto]]></wp:cat_name></wp:category>
+  <wp:category><wp:term_id>14</wp:term_id><wp:category_nicename><![CDATA[forestry-equipment]]></wp:category_nicename><wp:category_parent><![CDATA[]]></wp:category_parent><wp:cat_name><![CDATA[Forestry Equipment]]></wp:cat_name></wp:category>
+  <wp:category><wp:term_id>15</wp:term_id><wp:category_nicename><![CDATA[general-liability]]></wp:category_nicename><wp:category_parent><![CDATA[]]></wp:category_parent><wp:cat_name><![CDATA[General Liability]]></wp:cat_name></wp:category>
+  <wp:category><wp:term_id>16</wp:term_id><wp:category_nicename><![CDATA[homeowners]]></wp:category_nicename><wp:category_parent><![CDATA[]]></wp:category_parent><wp:cat_name><![CDATA[Homeowners]]></wp:cat_name></wp:category>
+  <item>
+    <title><![CDATA[Could One Customer Accident Put Your Business at Risk?]]></title>
+    <link>https://bensachwitz-ctrl.github.io/swampfoxweb/blog/could-one-customer-accident-put-your-business-at-risk.html</link>
+    <pubDate>Thu, 09 Apr 2026 00:00:00 -0000</pubDate>
+    <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
+    <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=100</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/brand-renters-office.jpg" alt="Could One Customer Accident Put Your Business at Risk?" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
+<p class="lede">If you own a small business in Berkeley County — a coffee shop on Red Bank Road, a contractor based out of Goose Creek, a boutique on St. James Avenue — one customer accident can be the difference between an annual policy premium and bankruptcy. General liability insurance exists for that exact moment.</p>
+
+  <h2>What general liability actually covers</h2>
+  <p>"General liability" is a deceptively simple name for one of the most important policies a business buys. It is the coverage that responds when <strong>your operations cause harm to a third party</strong> — a customer, a vendor, a passerby, anyone who isn't an employee or you. It pays for four distinct categories of loss:</p>
+  <ul>
+    <li><strong>Bodily injury</strong> — medical bills, ambulance charges, surgery, rehab, and pain-and-suffering settlements when someone is physically hurt by your business.</li>
+    <li><strong>Property damage</strong> — repair or replacement when your work damages a customer's home, vehicle, or possessions.</li>
+    <li><strong>Personal &amp; advertising injury</strong> — the lesser-known piece. Libel, slander, copyright infringement in your ads, false-arrest claims tied to a shoplifting incident.</li>
+    <li><strong>Legal defense costs</strong> — attorneys, court fees, expert witnesses, and depositions, paid <em>in addition to</em> the limit on most policies.</li>
+  </ul>
+
+  <h2>What a "small" claim really costs</h2>
+  <p>A slip-and-fall in a wet entryway sounds minor. The numbers say otherwise. The average general-liability slip-and-fall claim that goes to trial settles for <strong>$30,000 – $50,000</strong>, and that's before legal defense. Add a broken hip, a back surgery, or six months of physical therapy and you are easily into six figures. We see these claims monthly.</p>
+
+  <div class="callout">
+    <div class="callout-title">
+      
+      A real Lowcountry example
+    </div>
+    <p>A Berkeley County coffee shop owner called us after a customer tripped on a curled floor mat. Initial ER visit: $4,200. Plaintiff's attorney sent a demand letter six weeks later: $187,000. The carrier's defense team negotiated a $42,000 settlement and absorbed roughly $18,000 in legal fees. Total out-of-pocket for the owner: <strong>the policy deductible</strong>.</p>
+  </div>
+
+  <h2>Three exposures most owners forget</h2>
+
+  <h3>1. Off-premises operations</h3>
+  <p>If you do any work outside your storefront — a caterer dropping off platters, an HVAC tech in a customer's house, a fitness instructor running an outdoor class — that work is covered too, but only if the policy is written correctly. Make sure the application reflects every job site, not just your business address.</p>
+
+  <h3>2. Product liability</h3>
+  <p>Anything you make, sell, distribute, or even just resell carries product-liability exposure. A bakery that sells gluten-free cookies and accidentally cross-contaminates with peanut oil has product-liability exposure. Most general liability policies fold this in under "products and completed operations" — verify that the limit is adequate and not sublimited.</p>
+
+  <h3>3. Hired and non-owned auto</h3>
+  <p>This isn't general liability per se, but it lives next door to it. If an employee runs to the bank in their personal car for you, and they cause a wreck, your business can be named in the lawsuit. A simple endorsement closes that gap for under $200/year on most policies.</p>
+
+  <h2>How much coverage do you actually need?</h2>
+  <table class="coverage-table">
+    <thead>
+      <tr><th>Business type</th><th>Recommended limit</th><th>Why</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Solo service business</strong> (consultant, freelancer)</td><td>$1M / $2M</td><td>Standard contract requirement; covers most professional-services exposure.</td></tr>
+      <tr><td><strong>Retail / restaurant</strong> with foot traffic</td><td>$1M / $2M minimum</td><td>Slip-and-fall and product exposure; many landlords require $2M.</td></tr>
+      <tr><td><strong>Contractor</strong> (residential or light commercial)</td><td>$1M / $2M plus umbrella</td><td>Property damage at job sites and completed-operations claims years after the work is done.</td></tr>
+      <tr><td><strong>Bar / restaurant serving alcohol</strong></td><td>$1M GL + $1M liquor liability</td><td>Standard GL excludes liquor — you need a separate policy. <a href="protect-your-bar-with-liquor-liability-and-more.html">More on liquor liability →</a></td></tr>
+      <tr><td><strong>Manufacturer or distributor</strong></td><td>$2M+ with product carve-out</td><td>Product recall and bodily-injury claims can scale fast.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>The umbrella conversation</h2>
+  <p>Once your business has assets — equipment, inventory, real estate, accounts receivable, a brand worth protecting — a $1M general-liability limit can be exhausted in a single bad claim. A commercial umbrella sits on top of GL, commercial auto, and employer's liability and adds $1M, $2M, or $5M of additional protection for a few hundred to a few thousand dollars a year. For most small businesses, it is the cheapest seven figures of coverage you will ever buy.</p>
+
+  <div class="callout callout--gold">
+    <div class="callout-title">
+      
+      Quick gut-check
+    </div>
+    <p>If a customer sued your business tomorrow for $1.2M, would your current policy cover it — and would you still own your home, your vehicles, and your savings when the dust settled? If you hesitate, that's the conversation we want to have.</p>
+  </div>
+
+  <h2>What to do this week</h2>
+  <ol>
+    <li><strong>Pull your declarations page.</strong> Look at "Each Occurrence" and "General Aggregate." Are they at least $1M / $2M?</li>
+    <li><strong>Check the schedule of operations.</strong> Make sure every service you actually perform is listed and rated.</li>
+    <li><strong>Verify the additional-insured endorsements.</strong> Landlords, prime contractors, and event venues should be listed if your contracts require it.</li>
+    <li><strong>Ask about an umbrella.</strong> If you don't have one, get a quote — they are usually cheaper than expected.</li>
+  </ol>]]></content:encoded>
+    <excerpt:encoded><![CDATA[A single customer slip-and-fall can drain reserves and shut a small business down. Here's how general liability insurance protects Goose Creek, SC operators from six-figure claims.]]></excerpt:encoded>
+    <wp:post_id>100</wp:post_id>
+    <wp:post_date><![CDATA[2026-04-09 00:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-04-09 00:00:00]]></wp:post_date_gmt>
+    <wp:post_modified><![CDATA[2026-04-09 00:00:00]]></wp:post_modified>
+    <wp:post_modified_gmt><![CDATA[2026-04-09 00:00:00]]></wp:post_modified_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[could-one-customer-accident-put-your-business-at-risk]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="category" nicename="general-liability"><![CDATA[General Liability]]></category>
+  </item>
+  <item>
+    <title><![CDATA[How to Insure Service Vans Without Costly Coverage Gaps]]></title>
+    <link>https://bensachwitz-ctrl.github.io/swampfoxweb/blog/how-to-insure-service-vans-without-costly-coverage-gaps.html</link>
+    <pubDate>Thu, 02 Apr 2026 00:00:00 -0000</pubDate>
+    <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
+    <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=101</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/brand-truck-rain.jpg" alt="How to Insure Service Vans Without Costly Coverage Gaps" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
+<p class="lede">Most service-business owners we meet started with a personal auto policy on their first work van. It was cheaper, the agent let it slide, and nothing ever happened. Then something does happen — a wreck, a stolen tool box, an employee crash in their own car — and they discover their policy was never built to respond.</p>
+
+  <h2>Why personal auto fails the second you start working out of the van</h2>
+  <p>Every personal auto policy on the market contains a "business use" exclusion. The fine print varies, but the intent is identical: <strong>the carrier did not price the policy for commercial risk and will deny the claim</strong> if the vehicle was being used for a business purpose at the time of loss. Driving to a job site, hauling tools, transporting a coworker — that's commercial use.</p>
+  <p>The exclusion isn't theoretical. We have watched it deny totaled-vehicle claims, third-party injury claims, and stolen-tool claims. The deck is stacked against the personal-policy holder the moment the claim notes mention "the customer."</p>
+
+  <h2>The four-policy stack a service business actually needs</h2>
+
+  <h3>1. Commercial auto on the van itself</h3>
+  <p>This is the foundation. It covers liability to other people, physical damage to your van (collision and comprehensive), medical payments, and uninsured-motorist coverage at limits priced for commercial use. Liability limits should start at <strong>$1M combined single limit</strong> for a single van — anything less and you risk being out-protected by the other driver's lawyer.</p>
+
+  <h3>2. Hired &amp; non-owned auto (HNOA)</h3>
+  <p>The single most-overlooked endorsement in the service trades. HNOA covers the business when an employee is driving:</p>
+  <ul>
+    <li><strong>Their own personal vehicle</strong> on company business — running for parts, picking up materials, driving between job sites.</li>
+    <li><strong>A rented vehicle</strong> — the U-Haul rented for the day, the rental car after a wreck.</li>
+  </ul>
+  <p>Without HNOA, a wreck in an employee's personal car becomes a wreck where the <em>business</em> is named in the lawsuit and the business has no coverage. HNOA usually adds $150 – $400/year to a commercial auto policy.</p>
+
+  <h3>3. Inland marine for tools and equipment</h3>
+  <p>Standard commercial auto pays for the van. It does not pay for the $40,000 of tools, ladders, copper, and diagnostic equipment <em>inside</em> the van. That is "contractor's tools and equipment" coverage, written on an inland marine form. Get it scheduled (high-value items listed individually) plus a blanket limit for everything else.</p>
+
+  <h3>4. General liability</h3>
+  <p>This responds when the work itself causes harm — a misinstalled water heater that floods a customer's basement, an electrician who burns down a garage. Auto liability won't pay for that. <a href="could-one-customer-accident-put-your-business-at-risk.html">More on general liability →</a></p>
+
+  <div class="callout">
+    <div class="callout-title">
+      
+      A real Goose Creek claim
+    </div>
+    <p>An HVAC contractor's helper drove his own truck to a job after a service van broke down. He rear-ended a sedan on Red Bank Road. The sedan driver sued the contractor for $185,000 in injuries. The contractor's commercial auto policy didn't apply (employee's vehicle), and the helper's personal auto carried only $50,000 in liability. <strong>Without HNOA, the contractor was personally exposed for $135,000 over and above the helper's limit.</strong></p>
+  </div>
+
+  <h2>What gets vans denied most often</h2>
+  <table class="coverage-table">
+    <thead>
+      <tr><th>Mistake</th><th>What happens</th><th>Fix</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Vehicle titled to LLC, insured personally</strong></td><td>Carrier may void the policy at first claim — you're not the named insured.</td><td>Match the title and the policy. If the LLC owns the van, the LLC needs to be the named insured.</td></tr>
+      <tr><td><strong>Lettering / wraps without disclosure</strong></td><td>Personal carriers can deny on inspection alone — visible commercial use.</td><td>Move to commercial auto before the wrap goes on.</td></tr>
+      <tr><td><strong>Adding a driver mid-term without notice</strong></td><td>New employee unrated, claim denied for material misrepresentation.</td><td>Driver schedule updates within 30 days; we file them for you.</td></tr>
+      <tr><td><strong>Tools left overnight without inland marine</strong></td><td>Standard commercial auto excludes contents — total loss on the equipment.</td><td>Schedule inland marine; blanket limit for unscheduled items.</td></tr>
+      <tr><td><strong>Hired-vehicle gap during van repair</strong></td><td>Rental car liability uncovered.</td><td>Confirm HNOA includes hired auto liability and physical damage.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>How much does the right policy actually cost?</h2>
+  <p>For a single service van in Berkeley County with a clean MVR and $1M liability, expect <strong>$1,800 – $3,200/year</strong> for commercial auto, plus $150 – $400 for HNOA, plus $400 – $900 for $25,000 of contractor's tools coverage. That's roughly $2,400 – $4,500/year for the full stack. The first denied claim would cost more than five years of premium.</p>
+
+  <div class="callout callout--gold">
+    <div class="callout-title">
+      
+      Bundling tip
+    </div>
+    <p>If you carry a Business Owner's Policy (BOP) for general liability and property, most carriers will write the commercial auto on the same account at a 5 – 12% multi-policy discount and consolidate billing. Always worth asking.</p>
+  </div>
+
+  <h2>This week's checklist</h2>
+  <ol>
+    <li>Confirm every work vehicle is on a <strong>commercial</strong> auto policy, not a personal one.</li>
+    <li>Verify <strong>HNOA</strong> is endorsed if any employee ever drives a personal or rented vehicle for work.</li>
+    <li>Inventory your tools and equipment — write down brand, model, and replacement value. Schedule anything over $2,500 individually.</li>
+    <li>Match titles, named insureds, and DBA names across every policy. One mismatch will burn you.</li>
+  </ol>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Service vans need more than personal auto. Here's how to structure commercial auto, hired & non-owned, and inland marine so a single claim doesn't shut you down — Goose Creek, SC.]]></excerpt:encoded>
+    <wp:post_id>101</wp:post_id>
+    <wp:post_date><![CDATA[2026-04-02 00:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-04-02 00:00:00]]></wp:post_date_gmt>
+    <wp:post_modified><![CDATA[2026-04-02 00:00:00]]></wp:post_modified>
+    <wp:post_modified_gmt><![CDATA[2026-04-02 00:00:00]]></wp:post_modified_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[how-to-insure-service-vans-without-costly-coverage-gaps]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="category" nicename="commercial-auto"><![CDATA[Commercial Auto]]></category>
+  </item>
+  <item>
+    <title><![CDATA[Black Ice Accidents: What Auto Insurance Really Covers]]></title>
+    <link>https://bensachwitz-ctrl.github.io/swampfoxweb/blog/black-ice-accidents-what-auto-insurance-really-covers.html</link>
+    <pubDate>Thu, 26 Mar 2026 00:00:00 -0000</pubDate>
+    <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
+    <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=102</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/brand-home-suv.jpg" alt="Black Ice Accidents: What Auto Insurance Really Covers" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
+<p class="lede">Black ice doesn't look like ice. That's the whole problem. The film is thin enough that the asphalt shows through, and a driver hits it at highway speed without ever touching the brakes. The wreck that follows is almost always single-vehicle, almost always at night or just before sunrise, and almost always on a bridge.</p>
+
+  <h2>The "single-vehicle slide" — collision, not comprehensive</h2>
+  <p>Drivers assume that because there was no other car involved, comprehensive should pay. It does not. <strong>Comprehensive covers losses that <em>aren't</em> the result of impact</strong> — theft, vandalism, hail, fire, glass, animal strikes. The moment your vehicle hits the guardrail, the median, or anything else, it becomes a collision claim.</p>
+  <p>This matters for two reasons:</p>
+  <ul>
+    <li><strong>Deductibles often differ.</strong> Comprehensive deductibles are typically lower ($250 – $500). Collision deductibles run higher ($500 – $1,000). Black ice triggers the higher one.</li>
+    <li><strong>Surcharges are different.</strong> A comprehensive claim usually doesn't raise rates. A collision claim — even when the road is the obvious cause — can.</li>
+  </ul>
+
+  <h2>What each coverage on your policy actually does</h2>
+  <table class="coverage-table">
+    <thead>
+      <tr><th>Coverage</th><th>What it pays for</th><th>Black-ice scenario</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Liability — bodily injury</strong></td><td>Other people's medical bills when you're at fault.</td><td>Pays if you slid into another car and they were hurt.</td></tr>
+      <tr><td><strong>Liability — property damage</strong></td><td>Other people's property when you're at fault.</td><td>Pays for the guardrail (the state will bill you), or the other vehicle.</td></tr>
+      <tr><td><strong>Collision</strong></td><td>Damage to <em>your</em> vehicle from any impact.</td><td>Pays for your wrecked car, minus deductible.</td></tr>
+      <tr><td><strong>Comprehensive</strong></td><td>Non-impact damage — hail, theft, fire, deer.</td><td>Does <em>not</em> apply to a slide-and-impact event.</td></tr>
+      <tr><td><strong>Medical Payments / PIP</strong></td><td>Medical bills for you and your passengers regardless of fault.</td><td>Pays for ER visit, ambulance, follow-ups.</td></tr>
+      <tr><td><strong>Uninsured Motorist (UM)</strong></td><td>If <em>another</em> driver hits you on ice and has no insurance.</td><td>Critical: ~12% of SC drivers have zero insurance.</td></tr>
+      <tr><td><strong>Underinsured Motorist (UIM)</strong></td><td>If <em>another</em> driver hits you on ice and their limits run out.</td><td>Often the difference between covered and bankrupted.</td></tr>
+      <tr><td><strong>Towing &amp; Roadside</strong></td><td>Tow off the bridge.</td><td>Pays the wrecker. Adds about $20/year.</td></tr>
+      <tr><td><strong>Rental Reimbursement</strong></td><td>Rental car while yours is in the shop.</td><td>$30 – $50/day during repair window.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-title">
+      
+      A real Lowcountry slide
+    </div>
+    <p>A Summerville driver hit black ice on the Ashley River bridge at 5:50 a.m. and slid into the concrete barrier. Vehicle damage: $14,800. Medical: $3,400. Guardrail repair billed by SCDOT: $4,200. The driver's collision coverage with $1,000 deductible paid the vehicle, MedPay covered the ER visit, and liability paid the state. <strong>Total out-of-pocket: $1,000.</strong> Without collision coverage, that number would have been $14,800.</p>
+  </div>
+
+  <h2>The "phantom vehicle" loophole</h2>
+  <p>If another driver caused you to swerve onto black ice — they cut you off, brake-checked you, ran you into a barrier — and they fled the scene, you may have a <strong>phantom-vehicle UM claim</strong>. South Carolina allows UM coverage to apply even without contact between vehicles, provided the incident is reported within 48 hours and there is independent corroboration (witness, dashcam, traffic-cam footage). This converts a "your fault" collision into a "covered by UM" loss with a different deductible structure.</p>
+
+  <h2>What to do in the first 30 minutes</h2>
+  <ol>
+    <li><strong>Get out of the lane safely.</strong> Lowcountry bridges have minimal shoulder. Hazard lights on, exit the vehicle on the side away from traffic.</li>
+    <li><strong>Call 911 even for a single-vehicle slide.</strong> A police report is the difference between a fast claim and a months-long argument.</li>
+    <li><strong>Photograph everything.</strong> Vehicle, road surface, the bridge, weather conditions. Black ice will be gone in two hours and there will be no other proof it existed.</li>
+    <li><strong>Call us, not the 800 number.</strong> If you're a Swamp Fox client, call the office. We open the claim with the carrier, stay in the loop, and advocate when the adjuster tries to apply the wrong deductible.</li>
+  </ol>
+
+  <div class="callout callout--warn">
+    <div class="callout-title">
+      
+      Don't admit fault at the scene
+    </div>
+    <p>Telling the responding officer "I was going too fast" can lock you into a comparative-negligence finding that hurts a UM claim later. Stick to facts: speed, lane, what you observed. Your insurance company decides fault, not you.</p>
+  </div>
+
+  <h2>The policy review we recommend before next winter</h2>
+  <ul>
+    <li><strong>Carry collision and comprehensive</strong> if your vehicle is worth more than ~$3,500. Without them, a black-ice slide is a total out-of-pocket loss.</li>
+    <li><strong>Match your UM/UIM limits to your liability limits.</strong> If you have $100/300 BI liability, carry $100/300 UM/UIM. <a href="understanding-uninsured-and-underinsured-motorist-coverage.html">More on UM/UIM →</a></li>
+    <li><strong>Add roadside and rental reimbursement.</strong> Combined cost is usually under $80/year and they pay for themselves the first time.</li>
+    <li><strong>Consider raising your collision deductible</strong> to $1,000 if you have $1,000+ in savings. The premium savings often beat the deductible difference within 18 months.</li>
+  </ul>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Invisible ice on Lowcountry bridges sends drivers into ditches every winter. Here's exactly which coverage pays — collision, comprehensive, liability, UM/UIM — and what doesn't.]]></excerpt:encoded>
+    <wp:post_id>102</wp:post_id>
+    <wp:post_date><![CDATA[2026-03-26 00:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-03-26 00:00:00]]></wp:post_date_gmt>
+    <wp:post_modified><![CDATA[2026-03-26 00:00:00]]></wp:post_modified>
+    <wp:post_modified_gmt><![CDATA[2026-03-26 00:00:00]]></wp:post_modified_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[black-ice-accidents-what-auto-insurance-really-covers]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="category" nicename="auto"><![CDATA[Auto]]></category>
+  </item>
+  <item>
+    <title><![CDATA[Ice, Wind, & Leaks: Will Your Home Insurance Pay Out?]]></title>
+    <link>https://bensachwitz-ctrl.github.io/swampfoxweb/blog/ice-wind-leaks-will-your-home-insurance-pay-out.html</link>
+    <pubDate>Thu, 19 Mar 2026 00:00:00 -0000</pubDate>
+    <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
+    <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=103</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/brand-home-family-grill.jpg" alt="Ice, Wind, &amp; Leaks: Will Your Home Insurance Pay Out?" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
+<p class="lede">Standard homeowners policies are written on what's called an HO-3 form, which covers your home on an "open perils" basis and your contents on a "named perils" basis. Translation: nearly anything can hit your house and be covered, but only specific things can hit your stuff. The pattern of what's in and out matters most after a storm.</p>
+
+  <h2>What standard HO-3 covers, plain English</h2>
+  <ul>
+    <li><strong>Wind damage to the roof, siding, gutters, and structure.</strong> Including shingles peeled by a 50 mph gust.</li>
+    <li><strong>Fallen-tree damage</strong> — even your own tree falling on your own house. Removal of the tree from the structure is included; removal from the yard alone is usually not.</li>
+    <li><strong>Sudden &amp; accidental water damage</strong> — a burst pipe, a failed washing-machine hose, a frozen line that splits.</li>
+    <li><strong>Fire, lightning, smoke, hail, and explosion.</strong></li>
+    <li><strong>Theft and vandalism.</strong></li>
+    <li><strong>Personal property</strong> at typically 50 – 70% of the dwelling limit.</li>
+    <li><strong>Loss of use</strong> — hotel, meals, additional living expenses while your home is unlivable.</li>
+    <li><strong>Personal liability</strong> — if a guest is injured at your home or your dog bites someone off-property.</li>
+  </ul>
+
+  <h2>What standard HO-3 does <em>not</em> cover</h2>
+  <table class="coverage-table">
+    <thead>
+      <tr><th>Loss</th><th>Why it's excluded</th><th>How to cover it</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Flood</strong> (rising water, storm surge, river)</td><td>Federally excluded from all standard HO policies.</td><td>Separate NFIP or private flood policy. <strong>30-day waiting period</strong> — buy before storm season.</td></tr>
+      <tr><td><strong>Earthquake</strong></td><td>Excluded.</td><td>Separate endorsement — affordable in SC.</td></tr>
+      <tr><td><strong>Gradual leaks &amp; seepage</strong></td><td>Maintenance issue, not a sudden event.</td><td>No coverage available — fix at first sign.</td></tr>
+      <tr><td><strong>Mold</strong> from poor maintenance</td><td>Symptom of unaddressed water issue.</td><td>Mold endorsement covers mold from a covered loss; nothing covers neglect-mold.</td></tr>
+      <tr><td><strong>Sewer / drain backup</strong></td><td>Excluded by default.</td><td>Sewer-backup endorsement, $50 – $150/year, $5K–$25K limit.</td></tr>
+      <tr><td><strong>Sinkhole / earth movement</strong></td><td>Excluded.</td><td>Separate sinkhole endorsement (where available).</td></tr>
+      <tr><td><strong>Damage to a vacant home</strong> (60+ days unoccupied)</td><td>Most policies suspend coverage after vacancy.</td><td>Vacant-home endorsement or DP-3 dwelling-fire policy.</td></tr>
+      <tr><td><strong>Pool, fence, detached structures</strong> over coverage limit</td><td>"Other Structures" coverage caps at 10% of dwelling.</td><td>Increase Coverage B specifically.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>The hurricane-deductible trap</h2>
+  <p>South Carolina coastal counties — Charleston, Berkeley, Dorchester, and others — almost always have a separate <strong>named-storm or hurricane deductible</strong>, expressed as a percentage of dwelling coverage rather than a flat dollar amount. On a $400,000 home, a 2% hurricane deductible is <strong>$8,000</strong> before the policy pays a dime.</p>
+
+  <div class="callout callout--warn">
+    <div class="callout-title">
+      
+      Read your declarations page now
+    </div>
+    <p>Look for "Wind/Hail Deductible" or "Named Storm Deductible." If it's expressed as a percentage (1%, 2%, 5%), multiply by your dwelling coverage to know your real out-of-pocket. Some homeowners save up an emergency fund just to cover this.</p>
+  </div>
+
+  <h2>The first 24 hours after damage</h2>
+  <ol>
+    <li><strong>Photograph everything before cleanup.</strong> Wide shots, close-ups, every room. The carrier needs proof of pre-mitigation condition.</li>
+    <li><strong>Mitigate further damage.</strong> Tarp the roof, board the windows, dry the floors. The policy <em>requires</em> you to limit additional damage — and pays for reasonable mitigation expenses.</li>
+    <li><strong>Save receipts.</strong> Tarps, fans, dehumidifier rentals, hotel nights. All reimbursable under loss-of-use and mitigation provisions.</li>
+    <li><strong>Call us, not the carrier directly.</strong> We open the claim with the right adjuster team and stay involved through settlement.</li>
+    <li><strong>Don't sign anything from a "public adjuster"</strong> who knocks on your door. Read it carefully or call us before signing.</li>
+  </ol>
+
+  <h2>Three endorsements most Lowcountry homes need</h2>
+  <h3>1. Service-line coverage</h3>
+  <p>Buried water, sewer, gas, and electrical lines from the street to your house. A tree root cracks the line and the repair excavation alone is $4,000 – $10,000. Endorsement runs $30 – $50/year. Worth it.</p>
+
+  <h3>2. Equipment-breakdown coverage</h3>
+  <p>HVAC, well pump, water heater, electrical panel — fails on its own (not from a covered peril). Standard policy excludes. Endorsement runs $25 – $50/year and pays for the unit and installation. Pays for itself the first time.</p>
+
+  <h3>3. Replacement cost on contents</h3>
+  <p>Without this, your 8-year-old TV is reimbursed at depreciated value (~$120 instead of the $800 to replace it). Replacement-cost endorsement on personal property typically adds 5 – 10% to premium and is one of the biggest claims-day differences you can buy.</p>
+
+  <div class="callout callout--gold">
+    <div class="callout-title">
+      
+      Annual review checklist
+    </div>
+    <p>Once a year, check three things: (1) is your dwelling limit at least <strong>replacement cost</strong> per current local construction estimates? (2) have you added contents (jewelry, art, tools) that need scheduling? (3) when was the last roof inspection — many carriers will non-renew on roofs older than 20 years.</p>
+  </div>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Lowcountry storms hit hard. A clear breakdown of which damage your homeowners policy actually pays — and the gaps you need a separate policy or endorsement to close.]]></excerpt:encoded>
+    <wp:post_id>103</wp:post_id>
+    <wp:post_date><![CDATA[2026-03-19 00:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-03-19 00:00:00]]></wp:post_date_gmt>
+    <wp:post_modified><![CDATA[2026-03-19 00:00:00]]></wp:post_modified>
+    <wp:post_modified_gmt><![CDATA[2026-03-19 00:00:00]]></wp:post_modified_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[ice-wind-leaks-will-your-home-insurance-pay-out]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="category" nicename="homeowners"><![CDATA[Homeowners]]></category>
+  </item>
+  <item>
+    <title><![CDATA[Full-Time RVing: Coverage Gaps to Watch For]]></title>
+    <link>https://bensachwitz-ctrl.github.io/swampfoxweb/blog/full-time-rving-coverage-gaps-to-watch-for.html</link>
+    <pubDate>Thu, 19 Feb 2026 00:00:00 -0000</pubDate>
+    <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
+    <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=104</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/brand-family-plantation.jpg" alt="Full-Time RVing: Coverage Gaps to Watch For" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
+<p class="lede">A standard RV policy is priced and underwritten on the assumption that the rig is parked in your driveway 50 weeks a year and used for a couple of long weekends and one big summer trip. If you're full-timing — six months a year or more — that math falls apart, and the policy quietly stops covering things you assume it does.</p>
+
+  <h2>What a "weekend" RV policy actually covers</h2>
+  <ul>
+    <li>Liability while driving (motorhomes) or while attached to a tow vehicle (trailers).</li>
+    <li>Collision and comprehensive on the rig.</li>
+    <li>A small contents limit — typically <strong>$3,000 to $5,000</strong>.</li>
+    <li>Roadside assistance and emergency expenses (capped low — usually $750).</li>
+    <li>Limited liability while parked at a campsite (usually requires the unit to be set up).</li>
+  </ul>
+
+  <h2>What a full-timer endorsement adds</h2>
+  <p>Full-timer coverage rewrites the policy to function like a homeowners policy when the rig is your residence:</p>
+  <table class="coverage-table">
+    <thead><tr><th>Coverage</th><th>Standard RV</th><th>Full-Timer</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Personal liability when parked</strong></td><td>Limited / excluded after extended stays.</td><td>$300K – $500K like a homeowners liability limit.</td></tr>
+      <tr><td><strong>Personal property</strong></td><td>$3K – $5K, actual cash value</td><td>$25K – $100K, replacement cost</td></tr>
+      <tr><td><strong>Loss of use / additional living expense</strong></td><td>~$750 emergency expenses</td><td>$25K – $50K (hotel, meals while rig is in shop)</td></tr>
+      <tr><td><strong>Vacation liability</strong></td><td>Often excluded after 30+ days at one site</td><td>Year-round</td></tr>
+      <tr><td><strong>Medical payments to others</strong></td><td>Low or excluded</td><td>$1K – $5K per person</td></tr>
+      <tr><td><strong>Storage shed / awning damage</strong></td><td>Excluded or sublimited</td><td>Included as "other structures"</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-title">A real coverage gap</div>
+    <p>A retired couple sold their Summerville home and moved into a 38' Class A. Two months later a guest tripped over their patio mat at the campsite and broke a wrist. The claim — $34,000 — was denied because the standard policy excluded liability for "extended stays" beyond 30 days at one site. A full-timer endorsement at $180/year would have covered it in full.</p>
+  </div>
+
+  <h2>Three traps full-timers walk into</h2>
+
+  <h3>1. Domicile vs. residence confusion</h3>
+  <p>Where you "live" for tax and license purposes (your domicile state) often differs from where you're parked. Insurance follows the registration state. Pick a domicile state with reasonable RV rates (SC, FL, TX are common) and keep registration, driver's license, and policy aligned.</p>
+
+  <h3>2. Toad / tow-vehicle coverage</h3>
+  <p>If you flat-tow a Jeep behind your motorhome, the Jeep needs its own auto policy with liability while being towed and physical damage coverage that doesn't exclude towed-vehicle damage. Many auto policies do.</p>
+
+  <h3>3. Inland-marine for "the stuff that lives in there"</h3>
+  <p>Cameras, laptops, e-bikes, fishing gear, jewelry — the high-value items inside a full-timer's rig often exceed the personal-property sublimits. Schedule them on an inland-marine endorsement (or your separate homeowners contents floater if you've kept a sticks-and-bricks).</p>
+
+  <div class="callout callout--gold">
+    <div class="callout-title">Disclose full-time use</div>
+    <p>If you tell your carrier "occasional use" and they later discover you've been full-timing, they can deny the claim or rescind the policy from inception. Be honest at application — it's a $150 – $300/year difference in premium and a five-figure difference at claim time.</p>
+  </div>
+
+  <h2>Endorsements worth the cost</h2>
+  <ul>
+    <li><strong>Total-loss replacement</strong> — for the first 5 years, totaled rig is replaced with a new comparable model, no depreciation. Common on units under $200K.</li>
+    <li><strong>Mexico coverage</strong> — if you're snowbirding to Baja, this is non-optional.</li>
+    <li><strong>Pet injury coverage</strong> — pays for vet bills if your dog is hurt in a covered accident.</li>
+    <li><strong>Roadside with RV-specific service</strong> — most auto roadside services don't cover anything over 10,000 lbs. Get RV-specific.</li>
+  </ul>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Standard camper policies are written for weekend use. Full-timers need a homeowners-style policy structure. Here's what's missing and how to close every gap — Moncks Corner, SC.]]></excerpt:encoded>
+    <wp:post_id>104</wp:post_id>
+    <wp:post_date><![CDATA[2026-02-19 00:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-02-19 00:00:00]]></wp:post_date_gmt>
+    <wp:post_modified><![CDATA[2026-02-19 00:00:00]]></wp:post_modified>
+    <wp:post_modified_gmt><![CDATA[2026-02-19 00:00:00]]></wp:post_modified_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[full-time-rving-coverage-gaps-to-watch-for]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="category" nicename="camper-rv"><![CDATA[Camper / RV]]></category>
+  </item>
+  <item>
+    <title><![CDATA[Fleet vs. Single Work Truck: Coverage Differences]]></title>
+    <link>https://bensachwitz-ctrl.github.io/swampfoxweb/blog/fleet-vs-single-work-truck-coverage-differences.html</link>
+    <pubDate>Thu, 12 Feb 2026 00:00:00 -0000</pubDate>
+    <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
+    <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=105</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/brand-fleet-dusk.jpg" alt="Fleet vs. Single Work Truck: Coverage Differences" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
+<p class="lede">The first work truck a small contractor buys usually lands on a basic commercial auto policy with a single named driver — the owner. Five trucks later, the policy that was perfect for a one-man shop is wasting money, slowing down hires, and creating coverage gaps every time a new employee gets behind the wheel.</p>
+
+  <h2>The four-stage progression of commercial auto</h2>
+
+  <h3>Stage 1: Single vehicle, named-driver policy</h3>
+  <p>One truck, one or two drivers explicitly listed on the schedule. Cheapest premium per vehicle. Every driver change requires a midterm endorsement. <strong>Best for: solo operators, sole-prop tradespeople with a stable driver list.</strong></p>
+
+  <h3>Stage 2: 2–4 vehicles, scheduled fleet</h3>
+  <p>Each vehicle individually rated, drivers still scheduled, but priced as a multi-unit account. Eligible for safe-driver discounts and small multi-vehicle credits. <strong>Best for: contractors who haven't crossed the fleet threshold but need consolidated billing and one renewal.</strong></p>
+
+  <h3>Stage 3: 5+ vehicles, fleet policy with blanket drivers</h3>
+  <p>Most carriers consider 5 or more "power units" a fleet. This unlocks meaningful changes:</p>
+  <ul>
+    <li><strong>Any-driver authorization</strong> — anyone with a valid CDL (or appropriate license) can operate any unit. New hire on Monday is covered Tuesday.</li>
+    <li><strong>Fleet-rated premium</strong> — based on aggregate experience modifier rather than per-driver MVRs.</li>
+    <li><strong>Fleet safety discounts</strong> — telematics, dashcams, written safety program, in-house training.</li>
+    <li><strong>Consolidated claims handling</strong> — one adjuster team, one loss-run report, easier renewal underwriting.</li>
+  </ul>
+
+  <h3>Stage 4: 10+ vehicles, fleet symbol coverage</h3>
+  <p>"Fleet symbols" (numbers 1–9 on a commercial auto policy) replace the schedule of vehicles with categories:</p>
+  <ul>
+    <li><strong>Symbol 1</strong> — any auto (broadest)</li>
+    <li><strong>Symbol 2</strong> — owned autos only</li>
+    <li><strong>Symbol 7</strong> — specifically described autos</li>
+    <li><strong>Symbol 8</strong> — hired autos</li>
+    <li><strong>Symbol 9</strong> — non-owned autos</li>
+  </ul>
+  <p>With Symbol 1 or 2, you can add and remove vehicles mid-term without endorsements — the policy adjusts at audit. For a growing fleet, this saves hours of back-and-forth and prevents uncovered vehicles.</p>
+
+  <table class="coverage-table">
+    <thead><tr><th>Feature</th><th>1 truck</th><th>5 trucks</th><th>20+ trucks</th></tr></thead>
+    <tbody>
+      <tr><td>Driver authorization</td><td>Named</td><td>Blanket</td><td>Blanket + telematics</td></tr>
+      <tr><td>Adding a new vehicle</td><td>Endorsement, may be charged</td><td>Endorsement, simple</td><td>Audit-rated, no mid-term action</td></tr>
+      <tr><td>Premium basis</td><td>Per vehicle</td><td>Per vehicle, fleet credit</td><td>Composite, experience-mod driven</td></tr>
+      <tr><td>Loss runs / safety reporting</td><td>Optional</td><td>Recommended</td><td>Required for renewal</td></tr>
+      <tr><td>Telematics / dashcam credit</td><td>Rare</td><td>Available</td><td>Standard, 5–15% discount</td></tr>
+      <tr><td>Hired &amp; non-owned auto</td><td>Endorsement</td><td>Endorsement</td><td>Often included via Symbol 8/9</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-title">What "any auto" really means</div>
+    <p>A general contractor in Berkeley County had a 12-truck fleet on Symbol 7 (specifically described autos). He bought a used skid-steer trailer at auction, hooked it to his pickup, and drove it home. Trailer was uncovered for 11 days because no one called the agent. Symbol 1 ("any auto") would have closed the gap automatically. Cost difference: about $400/year.</p>
+  </div>
+
+  <h2>Where fleets save money</h2>
+  <ul>
+    <li><strong>Telematics &amp; dashcams</strong> — most carriers offer 5 – 15% off for fleet-wide installations. Lytx, Samsara, Motive, and KeepTruckin are all eligible.</li>
+    <li><strong>Driver-screening discounts</strong> — written hiring criteria (MVR, CDL, age, experience) verified at renewal can knock 3 – 8% off.</li>
+    <li><strong>Loss-control program</strong> — Swamp Fox includes a free loss-control review for fleet clients. Documented programs lower mod factors.</li>
+    <li><strong>Higher deductibles</strong> — a fleet with cash flow can take a $5K or $10K physical-damage deductible and save 15 – 25% on premium.</li>
+  </ul>
+
+  <h2>Where fleets get stung</h2>
+  <ul>
+    <li><strong>Inadequate UM/UIM limits across the fleet</strong> — easy to overlook, expensive at claim time.</li>
+    <li><strong>Failing to schedule trailers</strong> — many fleet schedules cover power units but require trailers to be listed separately.</li>
+    <li><strong>Hauling for hire vs. private carriage</strong> — if any unit is operating under USDOT authority, MCS-90 endorsement and federal filings are required. Mixing creates compliance issues.</li>
+    <li><strong>Forgetting cargo coverage</strong> — auto liability doesn't pay for damaged freight.</li>
+  </ul>
+
+  <div class="callout callout--gold">
+    <div class="callout-title">Plan the transition before you cross the threshold</div>
+    <p>If you're at 4 trucks and growing, talk to us before the 5th unit goes on the road. Restructuring at fleet onset is faster, cleaner, and cheaper than retrofitting at renewal six months later.</p>
+  </div>]]></content:encoded>
+    <excerpt:encoded><![CDATA[One truck or twenty — the policy structure changes everything. How blanket coverage, fleet symbols, and any-driver authorization work in commercial auto for SC operators.]]></excerpt:encoded>
+    <wp:post_id>105</wp:post_id>
+    <wp:post_date><![CDATA[2026-02-12 00:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-02-12 00:00:00]]></wp:post_date_gmt>
+    <wp:post_modified><![CDATA[2026-02-12 00:00:00]]></wp:post_modified>
+    <wp:post_modified_gmt><![CDATA[2026-02-12 00:00:00]]></wp:post_modified_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[fleet-vs-single-work-truck-coverage-differences]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="category" nicename="commercial-auto"><![CDATA[Commercial Auto]]></category>
+  </item>
+  <item>
+    <title><![CDATA[Top Reasons You Need Camper Insurance Today]]></title>
+    <link>https://bensachwitz-ctrl.github.io/swampfoxweb/blog/top-reasons-you-need-camper-insurance-today.html</link>
+    <pubDate>Tue, 20 Jan 2026 00:00:00 -0000</pubDate>
+    <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
+    <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=106</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/brand-sc-porch-pickup.jpg" alt="Top Reasons You Need Camper Insurance Today" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
+<p class="lede">"My truck's policy covers the trailer, right?" It's the most common assumption we hear, and it is wrong about 80% of the time. Here's exactly when your auto policy covers a camper, when it doesn't, and what a real camper policy adds.</p>
+
+  <h2>What your auto policy actually does</h2>
+  <p>Most personal auto policies extend <strong>liability only</strong> to a trailer while it's attached to the towing vehicle. That means: if the trailer comes unhitched and rolls into another car, the auto liability pays for the other car. <strong>Physical damage to the trailer itself is excluded</strong> on virtually every standard auto policy.</p>
+  <p>The moment you unhitch — at the campsite, in the storage lot, anywhere — even the liability extension stops. Now the trailer is uncovered.</p>
+
+  <h2>Five things only a camper policy covers</h2>
+
+  <h3>1. Comprehensive on the trailer itself</h3>
+  <p>Hail, theft, fire, vandalism, fallen trees at the campsite, deer collisions while towing, water damage from a roof leak. These are the most common camper losses and none of them are covered by your auto policy.</p>
+
+  <h3>2. Collision on the trailer</h3>
+  <p>Backed it into a tree at the campground? Took a corner too sharp and scraped a fence? Hit by an uninsured pickup in a parking lot? Collision pays. Auto policies don't cover this damage to the camper.</p>
+
+  <h3>3. Personal property inside</h3>
+  <p>Camping gear, kitchenware, bedding, electronics, tools, fishing equipment — typically $3,000 – $20,000 of contents coverage at replacement cost. Your homeowners covers personal property "anywhere in the world," but with a low off-premises sublimit (often 10%) and your homeowners deductible.</p>
+
+  <h3>4. Personal liability while parked</h3>
+  <p>Once the trailer is set up at a campsite, your auto liability is gone. If a guest trips on your awning rope, you have no commercial-style liability coverage unless you have a camper policy with vacation-liability included.</p>
+
+  <h3>5. Roadside assistance for trailers</h3>
+  <p>Most auto roadside services explicitly exclude trailers. RV-specific roadside (typically $25 – $50/year) covers trailer tire changes, flatbed tows, and on-site mechanical service.</p>
+
+  <table class="coverage-table">
+    <thead><tr><th>Trailer type</th><th>Typical annual premium</th><th>Recommended coverage</th></tr></thead>
+    <tbody>
+      <tr><td>Pop-up / tent trailer</td><td>$125 – $200</td><td>Liability + comprehensive + collision, $3K contents</td></tr>
+      <tr><td>Travel trailer (under 28')</td><td>$200 – $400</td><td>Above + replacement cost on the trailer for first 5 years</td></tr>
+      <tr><td>Fifth wheel</td><td>$300 – $600</td><td>Above + emergency expense $1K, vacation liability $300K</td></tr>
+      <tr><td>Toy hauler</td><td>$350 – $700</td><td>Above + scheduled coverage on ATVs / motorcycles inside</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-title">A real claim from last summer</div>
+    <p>A Berkeley County family parked a 24' travel trailer behind their house for the off-season. A pine limb came through the roof during a thunderstorm. Damage: $7,400. Their homeowners denied because the trailer was titled separately and not on the schedule. Their auto policy denied because the trailer was unhitched. <strong>The dedicated camper policy they wished they had would have cost $260/year.</strong></p>
+  </div>
+
+  <h2>Endorsements that punch above their weight</h2>
+  <ul>
+    <li><strong>Total-loss replacement</strong> — first 5 model years, totaled trailer replaced new with the same model. Adds 5 – 10% to premium.</li>
+    <li><strong>Permanent attachments</strong> — awnings, satellite dishes, solar panels, slide-toppers. Without this, they're depreciated heavily at claim time.</li>
+    <li><strong>Vacation liability</strong> — covers personal liability while parked at any campsite, not just designated ones.</li>
+    <li><strong>Emergency expense</strong> — pays for hotel, food, transportation if your trailer is uninhabitable mid-trip.</li>
+  </ul>
+
+  <div class="callout callout--gold">
+    <div class="callout-title">Bundle for the discount</div>
+    <p>Most carriers offer a 5 – 10% multi-policy discount when the camper sits on the same account as your home and auto. Worth asking — you usually pay back the cost of the camper policy in bundle savings on the others.</p>
+  </div>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Your camper isn't covered by your auto policy or your homeowners. Here's why a dedicated camper or travel-trailer policy is worth the cost — Summerville, SC.]]></excerpt:encoded>
+    <wp:post_id>106</wp:post_id>
+    <wp:post_date><![CDATA[2026-01-20 00:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-01-20 00:00:00]]></wp:post_date_gmt>
+    <wp:post_modified><![CDATA[2026-01-20 00:00:00]]></wp:post_modified>
+    <wp:post_modified_gmt><![CDATA[2026-01-20 00:00:00]]></wp:post_modified_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[top-reasons-you-need-camper-insurance-today]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="category" nicename="camper-rv"><![CDATA[Camper / RV]]></category>
+  </item>
+  <item>
+    <title><![CDATA[Common Auto Insurance Mistakes That Cost Drivers Money]]></title>
+    <link>https://bensachwitz-ctrl.github.io/swampfoxweb/blog/common-auto-insurance-mistakes-that-cost-drivers-money.html</link>
+    <pubDate>Tue, 13 Jan 2026 00:00:00 -0000</pubDate>
+    <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
+    <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=107</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/brand-fleet-silver.jpg" alt="Common Auto Insurance Mistakes That Cost Drivers Money" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
+<p class="lede">South Carolina's auto insurance market is one of the most competitive in the country, which means most drivers can save money by shopping. But the more expensive mistake isn't paying too much premium — it's paying too little, in the wrong places, and discovering it the night of a bad wreck.</p>
+
+  <h2>Mistake #1 — Carrying state-minimum liability</h2>
+  <p>South Carolina's minimum required liability is <strong>25/50/25</strong>: $25,000 per person for bodily injury, $50,000 per accident, $25,000 for property damage. It's enough to keep your license. It is nowhere near enough for an actual accident.</p>
+  <p>Average ER visit for a single broken bone in 2026: $11,000. Average ICU night: $4,000+. A modest two-vehicle wreck with two passengers in the other car will burn through $50,000 in property damage and medical bills before lunch. The injured parties' attorneys will then sue you personally for the difference — wages garnished, bank accounts levied, home liens filed.</p>
+
+  <table class="coverage-table">
+    <thead><tr><th>Liability limit</th><th>Typical annual premium (clean MVR, 1 vehicle)</th><th>Risk profile</th></tr></thead>
+    <tbody>
+      <tr><td><strong>25 / 50 / 25</strong> (state minimum)</td><td>$680 – $850</td><td>Personal assets unprotected past first claim</td></tr>
+      <tr><td><strong>100 / 300 / 100</strong> (recommended)</td><td>$780 – $980</td><td>Covers ~95% of moderate-injury wrecks</td></tr>
+      <tr><td><strong>250 / 500 / 250</strong></td><td>$880 – $1,100</td><td>Pairs cleanly with a $1M umbrella for full asset protection</td></tr>
+      <tr><td><strong>500 / 500 / 500 + $1M umbrella</strong></td><td>$1,150 – $1,450 total</td><td>Cheapest seven figures of liability you'll ever buy</td></tr>
+    </tbody>
+  </table>
+
+  <p>The jump from minimum to 100/300/100 is usually <strong>$10 – $15 per month</strong>. The difference at claim time can be your house.</p>
+
+  <h2>Mistake #2 — Skipping uninsured / underinsured motorist coverage</h2>
+  <p>South Carolina is one of the worst states in the country for uninsured drivers. The Insurance Information Institute estimates roughly <strong>1 in 8 SC drivers</strong> carries no insurance at all, and a much higher share carries only the minimum. When one of them hits you, your only protection is your own UM/UIM coverage.</p>
+  <ul>
+    <li><strong>Uninsured Motorist (UM)</strong> pays your medical bills, lost wages, and pain &amp; suffering when the at-fault driver has no insurance.</li>
+    <li><strong>Underinsured Motorist (UIM)</strong> pays the difference when the at-fault driver carries low limits.</li>
+  </ul>
+  <p>Match your UM/UIM limits to your liability limits. If you carry 100/300/100 in liability and only 25/50/25 in UM, you've left a 75/250/75 gap on the inbound side. <a href="understanding-uninsured-and-underinsured-motorist-coverage.html">Deeper read on UM/UIM →</a></p>
+
+  <h2>Mistake #3 — Never reviewing the policy</h2>
+  <p>Most auto policies on the market today are auto-renewing on the same coverage they were originally bound with — sometimes a decade ago. Life changes faster than that:</p>
+  <ul>
+    <li>You paid off the loan — you can drop GAP coverage and possibly raise deductibles.</li>
+    <li>You added a teen driver — you need to add them to the policy and consider raising limits.</li>
+    <li>You moved across town — your rate likely changed and you may not even know.</li>
+    <li>You started working from home — annual mileage drop can save 10 – 25%.</li>
+    <li>You bought a second vehicle — multi-vehicle discount, possibly bundle with home.</li>
+    <li>You got married, retired, or your credit improved — all rating factors.</li>
+  </ul>
+
+  <div class="callout">
+    <div class="callout-title">The 10-minute annual review</div>
+    <p>Once a year, send us your declarations page. We'll cross-check it against your current life situation, your home and umbrella policies, and the carriers we represent. About 60% of these reviews uncover savings, an underinsured exposure, or both. No charge, no commitment.</p>
+  </div>
+
+  <h2>Three smaller mistakes that add up</h2>
+  <ol>
+    <li><strong>Cancelling and re-binding mid-term.</strong> Many carriers charge short-rate cancellation fees and most run a credit hit at re-bind. Time the switch with your renewal whenever possible.</li>
+    <li><strong>Letting a teen drive on a parent's policy without disclosing.</strong> Permitting an unlisted regular operator violates the policy and can void coverage at the first claim.</li>
+    <li><strong>Carrying low deductibles you'd never actually file.</strong> A $250 collision deductible vs. $1,000 saves $250 instantly the day of a claim — but most drivers wouldn't file a $400 claim anyway. The premium difference often beats that math within 18 months.</li>
+  </ol>
+
+  <div class="callout callout--gold">
+    <div class="callout-title">Quick wins to ask about</div>
+    <p>Multi-policy discount, multi-vehicle discount, telematics or safe-driver tracking, paid-in-full discount, electronic-funds-transfer discount, paperless billing discount, AAA / military / professional-association discounts. Stacking three or four of these typically knocks 15 – 30% off the bottom line.</p>
+  </div>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Three policy errors quietly cost SC drivers thousands every year. Minimum liability, no UM coverage, and skipped reviews — all fixable in one phone call. Goose Creek, SC.]]></excerpt:encoded>
+    <wp:post_id>107</wp:post_id>
+    <wp:post_date><![CDATA[2026-01-13 00:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-01-13 00:00:00]]></wp:post_date_gmt>
+    <wp:post_modified><![CDATA[2026-01-13 00:00:00]]></wp:post_modified>
+    <wp:post_modified_gmt><![CDATA[2026-01-13 00:00:00]]></wp:post_modified_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[common-auto-insurance-mistakes-that-cost-drivers-money]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="category" nicename="auto"><![CDATA[Auto]]></category>
+  </item>
+  <item>
+    <title><![CDATA[Protect Your Bar with Liquor Liability and More]]></title>
+    <link>https://bensachwitz-ctrl.github.io/swampfoxweb/blog/protect-your-bar-with-liquor-liability-and-more.html</link>
+    <pubDate>Wed, 17 Dec 2025 00:00:00 -0000</pubDate>
+    <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
+    <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=108</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/another%20photo.jpg" alt="Protect Your Bar with Liquor Liability and More" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
+<p class="lede">South Carolina is a "dram shop" state. That means a bar, restaurant, or event host who serves alcohol to a visibly intoxicated person — or to anyone underage — can be held legally responsible for what that person does after they leave. Drunk-driving deaths, assaults, property damage. The lawsuit names the establishment, and the standard general-liability policy explicitly excludes the entire category.</p>
+
+  <h2>The exclusion that bites</h2>
+  <p>Open any commercial general-liability policy and find the section labeled "Liquor Liability Exclusion." It typically reads: <em>"This insurance does not apply to bodily injury or property damage for which any insured may be held liable by reason of: causing or contributing to the intoxication of any person; the furnishing of alcoholic beverages to a person under the legal drinking age or under the influence of alcohol..."</em></p>
+  <p>If your business is "in the business of" serving, manufacturing, distributing, or selling alcohol, that exclusion eliminates coverage for the largest single category of claims you face.</p>
+
+  <h2>The four-policy stack for alcohol-serving businesses</h2>
+
+  <h3>1. Commercial General Liability (GL) — $1M / $2M minimum</h3>
+  <p>Slip-and-falls, property damage, premises liability — all the non-alcohol exposures.</p>
+
+  <h3>2. Liquor Liability — $1M minimum</h3>
+  <p>Responds when an intoxicated patron causes harm to themselves or a third party after being over-served. Required for any business that serves alcohol on-premises. Typical premium: $800 – $4,000/year depending on revenue mix and licensing.</p>
+
+  <h3>3. Assault &amp; Battery coverage</h3>
+  <p>Often <em>excluded</em> from standard GL and liquor liability. Bar fights, parking-lot incidents, security-staff use of force — A&amp;B coverage adds it back. For any establishment open past 11 p.m., this is non-negotiable. Limits typically sublimit at $50K – $500K per occurrence.</p>
+
+  <h3>4. Commercial Property + Business Income</h3>
+  <p>Building, contents, liquor inventory (which has its own valuation rules — replacement value of a wine cellar can run six figures), and business income to keep payroll going during a covered shutdown.</p>
+
+  <table class="coverage-table">
+    <thead><tr><th>Establishment type</th><th>Recommended liquor limit</th><th>A&amp;B needed?</th></tr></thead>
+    <tbody>
+      <tr><td>Restaurant, alcohol &lt; 30% of sales</td><td>$500K – $1M</td><td>Recommended</td></tr>
+      <tr><td>Restaurant, alcohol 30 – 60% of sales</td><td>$1M</td><td>Yes</td></tr>
+      <tr><td>Bar / tavern, alcohol &gt; 60% of sales</td><td>$1M – $2M</td><td>Required</td></tr>
+      <tr><td>Nightclub / live music venue</td><td>$1M – $5M</td><td>Required, higher limit</td></tr>
+      <tr><td>Brewery / distillery / winery</td><td>$1M – $2M + product liability</td><td>Recommended</td></tr>
+      <tr><td>Caterer with bar service</td><td>$1M</td><td>Recommended</td></tr>
+      <tr><td>One-time event host (wedding)</td><td>$500K – $1M short-term</td><td>Optional</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout--warn">
+    <div class="callout-title">Real liability under SC dram-shop case law</div>
+    <p>South Carolina courts have repeatedly held bars and restaurants liable for the actions of patrons who were over-served. Recent settlements and verdicts in the Charleston area have ranged from <strong>$300,000 for a single-vehicle DUI fatality involving a patron</strong> up to <strong>$2.4M for a multi-victim crash</strong>. Without liquor liability, those numbers come straight out of business assets and personal guarantees.</p>
+  </div>
+
+  <h2>Loss-prevention practices that lower premium</h2>
+  <ul>
+    <li><strong>TIPS or ServSafe Alcohol training</strong> for every server and bartender, documented and dated. Most carriers will give a 5 – 15% credit for full-staff certification.</li>
+    <li><strong>Written cut-off policy</strong> with documented procedures for refusing service and cab/rideshare assistance.</li>
+    <li><strong>Camera coverage</strong> over service areas, parking lot, and entrances. Footage often defeats fraudulent claims.</li>
+    <li><strong>ID-scanner at the door</strong> for any establishment that admits guests under 30. Provable due diligence on age verification is a powerful defense.</li>
+    <li><strong>Posted "no last-minute" rule</strong> — typically no shots in the last 30 minutes before closing.</li>
+  </ul>
+
+  <h2>Less-obvious exposures bars and restaurants miss</h2>
+  <ul>
+    <li><strong>Liquor inventory valuation</strong> — high-end wine and spirits should be scheduled. Standard contents coverage may pay actual cash value rather than replacement cost.</li>
+    <li><strong>Spoilage coverage</strong> — power outage takes out walk-in coolers; food and draft beer loss adds up fast.</li>
+    <li><strong>Equipment breakdown</strong> — ice machines, walk-ins, exhaust hoods, draft systems.</li>
+    <li><strong>Employment Practices Liability (EPLI)</strong> — restaurants and bars are statistically among the most frequent EPLI claimants, especially around hiring, harassment, and tip-pooling disputes.</li>
+    <li><strong>Cyber liability</strong> — POS breaches in hospitality are common; coverage is now affordable for small operators.</li>
+  </ul>
+
+  <div class="callout callout--gold">
+    <div class="callout-title">One-time event hosts: don't skip this</div>
+    <p>Hosting a wedding, fundraiser, or company party where alcohol is served? Even a one-night event creates dram-shop exposure. <strong>Special-event liquor liability</strong> policies cost $200 – $600 for the night and are required by most reputable venues.</p>
+  </div>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Serving alcohol means specialized liability exposure. Standard general liability won't cut it — here's what bars, restaurants, and event hosts in Charleston, SC actually need.]]></excerpt:encoded>
+    <wp:post_id>108</wp:post_id>
+    <wp:post_date><![CDATA[2025-12-17 00:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2025-12-17 00:00:00]]></wp:post_date_gmt>
+    <wp:post_modified><![CDATA[2025-12-17 00:00:00]]></wp:post_modified>
+    <wp:post_modified_gmt><![CDATA[2025-12-17 00:00:00]]></wp:post_modified_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[protect-your-bar-with-liquor-liability-and-more]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="category" nicename="commercial"><![CDATA[Commercial]]></category>
+  </item>
+  <item>
+    <title><![CDATA[Claim Lessons from Storm Season in the Timber Belt]]></title>
+    <link>https://bensachwitz-ctrl.github.io/swampfoxweb/blog/claim-lessons-from-storm-season-in-the-timber-belt.html</link>
+    <pubDate>Wed, 10 Dec 2025 00:00:00 -0000</pubDate>
+    <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
+    <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=109</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/logging%20truck.jpg" alt="Claim Lessons from Storm Season in the Timber Belt" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
+<p class="lede">Storm season in the Timber Belt — the swath of pine and hardwood country running from coastal Carolina inland — has produced a remarkably consistent claims pattern over the last several years. Skidders parked under tree cover get crushed. Lowboys and trailers blow over when not lowered. Tools and laptops left in service trucks get water-damaged. Below: what the policies actually paid, where they fell short, and the loss-prevention steps that move the needle.</p>
+
+  <h2>Lesson 1 — Where you park matters more than what you parked</h2>
+  <p>The single largest equipment loss we've seen in the last three years was a $480,000 grapple skidder destroyed by a 70-foot loblolly pine. The skidder had been moved to "shelter" under tree cover ahead of the storm. The shelter became the projectile.</p>
+  <p>What the policy paid: full replacement under the inland-marine schedule, less the $5,000 deductible. The carrier did not contest the claim, but a structured loss-prevention program would have moved the equipment to open ground 200 feet from the tree line.</p>
+
+  <div class="callout">
+    <div class="callout-title">Pre-storm equipment placement</div>
+    <p>Move heavy equipment to designated open-ground staging at least 200 feet from any tree line. Park in a tight cluster, oriented nose into the wind. Lower booms, blades, and grapples. Disconnect batteries on units that won't run for several days.</p>
+  </div>
+
+  <h2>Lesson 2 — Lowboys and float trailers blow over</h2>
+  <p>A surprising number of forestry equipment losses involve trailers — not the equipment loaded on them. Empty lowboys with their decks at standard height present a sail surface to crosswind. We've seen multiple total losses where a 50' lowboy flipped onto its side overnight, taking out chains, binders, and side rails.</p>
+  <p>Pre-storm protocol: drop the deck to the lowest setting, chock all wheels, and where possible, load a heavy item (a stack of mats, a bin of chains) to lower the center of gravity.</p>
+
+  <h2>Lesson 3 — The contents-of-truck claim everyone overlooks</h2>
+  <p>Service trucks often hold $15,000 – $40,000 of tools, diagnostic equipment, parts inventory, and a laptop. Standard commercial auto covers the truck. It does <strong>not</strong> cover the contents.</p>
+  <p>After a storm with broken windows and roof leaks, we routinely see contents losses ignored because the operator assumed they weren't covered. A properly endorsed <strong>contractor's tools and equipment</strong> coverage (inland marine) pays for these — but only if the policy carries it. Confirm now, not after the storm.</p>
+
+  <table class="coverage-table">
+    <thead><tr><th>Loss type</th><th>Pays from</th><th>Common limit</th><th>Common exclusion to fix</th></tr></thead>
+    <tbody>
+      <tr><td>Skidder / loader crushed by tree</td><td>Inland marine — equipment schedule</td><td>Replacement cost or actual cash value</td><td>Some policies exclude unattended equipment outside owned premises overnight</td></tr>
+      <tr><td>Lowboy / float trailer rollover</td><td>Inland marine or commercial auto physical damage</td><td>Stated value or ACV</td><td>Trailers must be specifically scheduled — many policies miss this</td></tr>
+      <tr><td>Tools &amp; small equipment in truck</td><td>Contractor's tools (inland marine)</td><td>Blanket $10K–$50K + scheduled items</td><td>Default policies often have $1K–$2.5K sublimit only</td></tr>
+      <tr><td>Yard-stored mats, chains, rigging</td><td>Commercial property — yard contents</td><td>Scheduled or blanket</td><td>Often excluded as "outdoor property"</td></tr>
+      <tr><td>Lost work / business income</td><td>Business interruption</td><td>12 months gross earnings typical</td><td>Forestry-specific BI requires waiting period &lt; 72 hrs</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Lesson 4 — The 72-hour business-interruption waiting period</h2>
+  <p>Standard business interruption coverage carries a 72-hour deductible — meaning the carrier pays for lost income only after the third day of suspended operations. After a major storm, most logging operations are down for one to two weeks. The first three days are out of pocket.</p>
+  <p>For forestry-specific operations, we can often negotiate this down to 48 or 24 hours. Worth asking — the per-day cost of a downed crew can run into thousands.</p>
+
+  <h2>Lesson 5 — Documentation wins claims</h2>
+  <p>The single biggest difference between fast claims and slow claims is pre-loss documentation. Operators who have:</p>
+  <ul>
+    <li>An updated equipment schedule with serial numbers, year, hours, and current market value</li>
+    <li>Photos of each piece of equipment from multiple angles, dated within 12 months</li>
+    <li>A digital copy of every purchase invoice and finance contract</li>
+    <li>An inventory of small tools and equipment by truck</li>
+  </ul>
+  <p>...settle their claims in days, not months. Operators who can't document tend to fight the carrier's adjuster on every line.</p>
+
+  <div class="callout callout--gold">
+    <div class="callout-title">Free pre-storm review</div>
+    <p>Swamp Fox is endorsed by the South Carolina Timber Producers Association (SCTPA) and offers a free pre-storm policy and loss-control review for any forestry operator in our service territory. We come to your shop, walk the equipment, and document the schedule before the wind picks up.</p>
+  </div>
+
+  <h2>The storm-season checklist</h2>
+  <ol>
+    <li>Pull the equipment schedule. Add anything missing. Update values.</li>
+    <li>Photograph every unit and every loaded trailer. Email the photos to yourself.</li>
+    <li>Identify open-ground staging at every job site at least 200 feet from tree lines.</li>
+    <li>Confirm contractor's tools coverage on every service truck.</li>
+    <li>Confirm trailer schedules (lowboys, floats, chip vans) are listed and rated.</li>
+    <li>Confirm business-interruption waiting period and limit.</li>
+    <li>Save claim hotline numbers and your agent's direct cell in your phone.</li>
+  </ol>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Real claims from real storms — what loggers learned, what their forestry equipment policies paid, and where coverage came up short. Lessons from a hurricane-active season.]]></excerpt:encoded>
+    <wp:post_id>109</wp:post_id>
+    <wp:post_date><![CDATA[2025-12-10 00:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2025-12-10 00:00:00]]></wp:post_date_gmt>
+    <wp:post_modified><![CDATA[2025-12-10 00:00:00]]></wp:post_modified>
+    <wp:post_modified_gmt><![CDATA[2025-12-10 00:00:00]]></wp:post_modified_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[claim-lessons-from-storm-season-in-the-timber-belt]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="category" nicename="forestry-equipment"><![CDATA[Forestry Equipment]]></category>
+  </item>
+  <item>
+    <title><![CDATA[Understanding Uninsured & Underinsured Motorist Coverage]]></title>
+    <link>https://bensachwitz-ctrl.github.io/swampfoxweb/blog/understanding-uninsured-and-underinsured-motorist-coverage.html</link>
+    <pubDate>Tue, 21 Oct 2025 00:00:00 -0000</pubDate>
+    <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
+    <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=110</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/brand-fleet-silver.jpg" alt="Understanding Uninsured &amp; Underinsured Motorist Coverage" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
+<p class="lede">South Carolina is among the worst states in the country for uninsured drivers. Estimates put about 1 in 8 drivers carrying zero insurance, and a much larger share carrying only the state minimum of 25/50/25 — barely enough to cover an emergency-room visit. When one of them hits you, your protection comes from your own policy.</p>
+
+  <h2>Two coverages, one purpose</h2>
+  <p><strong>Uninsured Motorist (UM)</strong> pays your bodily injury and property damage when the at-fault driver has no insurance, fled the scene (hit and run), or was driving a stolen vehicle. SC requires every auto policy to carry at least 25/50/25 in UM unless the insured signs a written rejection.</p>
+  <p><strong>Underinsured Motorist (UIM)</strong> pays the gap when the at-fault driver has insurance but not enough to cover your damages. UIM is optional in SC but inexpensive, and it's where most large claims actually land.</p>
+
+  <h2>How they pay — a real-world example</h2>
+  <div class="callout">
+    <div class="callout-title">Scenario: rear-ended on I-26</div>
+    <p>You're rear-ended at a stop on I-26. ER visit, two surgeries, six weeks of lost wages. Total damages: <strong>$210,000</strong>. The at-fault driver carries SC minimum 25/50/25 — their insurance pays $25,000. <strong>You're left with a $185,000 gap.</strong></p>
+    <p style="margin-top:8px">If you carry $250,000 UIM, your own policy pays the remaining $185,000 (because their $25K + your UIM up to $250K = $275K total available).</p>
+    <p>If you carry only minimum 25/25 UIM, your policy pays nothing extra (the at-fault driver already met your floor) and the $185,000 comes out of your savings, your wages, and your home equity.</p>
+  </div>
+
+  <h2>South Carolina's "stacking" rule</h2>
+  <p>SC is a "stacking" state. If you have multiple vehicles on a single policy or multiple policies in the same household, your UM/UIM limits can stack — multiplying your effective coverage:</p>
+  <ul>
+    <li><strong>Two vehicles, $100K UIM each, stacking</strong> = $200K available per claim.</li>
+    <li><strong>Three vehicles, $100K UIM each, stacking</strong> = $300K available per claim.</li>
+  </ul>
+  <p>Stacking typically costs an extra 10 – 25% on the UM/UIM line — usually $30 – $80/year per vehicle — and the math is overwhelming for households with two or more cars. Always ask whether your policy is stacked.</p>
+
+  <h2>The "phantom vehicle" rule</h2>
+  <p>South Carolina UM coverage applies even without contact between vehicles, provided three conditions are met:</p>
+  <ol>
+    <li>You report the incident to police within 48 hours.</li>
+    <li>You file a sworn statement that an unidentified vehicle caused the loss.</li>
+    <li>An independent witness corroborates the phantom vehicle (dashcam, traffic camera, third-party witness).</li>
+  </ol>
+  <p>This converts what would otherwise be a single-vehicle "your fault" loss into a UM-covered claim. Worth knowing the next time someone runs you off Highway 17.</p>
+
+  <table class="coverage-table">
+    <thead><tr><th>Liability limit</th><th>Recommended UM/UIM</th><th>Approx annual premium impact</th></tr></thead>
+    <tbody>
+      <tr><td>25 / 50 / 25 (state minimum)</td><td>25 / 50 / 25 minimum</td><td>—</td></tr>
+      <tr><td>100 / 300 / 100 (recommended baseline)</td><td>100 / 300 / 100 to match</td><td>+$80 – $130/year</td></tr>
+      <tr><td>250 / 500 / 250</td><td>250 / 500 / 250</td><td>+$140 – $220/year</td></tr>
+      <tr><td>500 / 500 / 500 + $1M umbrella</td><td>500 / 500 + $1M umbrella UIM endorsement</td><td>+$200 – $350/year</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Three details that change a claim</h2>
+
+  <h3>1. UM/UIM follows the person, not the car</h3>
+  <p>If you're injured as a pedestrian, on a bicycle, or as a passenger in someone else's car, your UM/UIM still applies. This is one of the most underused features of personal auto insurance.</p>
+
+  <h3>2. UM/UIM is paid by your own carrier — but it's adversarial</h3>
+  <p>Even though it's "your" coverage, your carrier will negotiate your UM/UIM claim like any third-party claim. Have an attorney review any settlement offer above $25K. Most personal-injury lawyers handle UM/UIM cases on contingency.</p>
+
+  <h3>3. Don't sign a release before exhausting all coverage</h3>
+  <p>If the at-fault driver's carrier offers a quick settlement at their policy limit, get a written consent-to-settle from your own UIM carrier <strong>before</strong> signing. Settling without consent can void the UIM coverage entirely.</p>
+
+  <div class="callout callout--gold">
+    <div class="callout-title">The single-line policy review</div>
+    <p>Pull your declarations page. Find the "UIM" line. Compare it to the "Bodily Injury Liability" line just above. If UIM is lower than your liability, you've out-protected the other driver from causing harm to you. Match them. It's almost always worth it.</p>
+  </div>]]></content:encoded>
+    <excerpt:encoded><![CDATA[When the other driver doesn't have enough insurance, your UM/UIM is the only thing between you and financial ruin. A clear guide for South Carolina drivers.]]></excerpt:encoded>
+    <wp:post_id>110</wp:post_id>
+    <wp:post_date><![CDATA[2025-10-21 00:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2025-10-21 00:00:00]]></wp:post_date_gmt>
+    <wp:post_modified><![CDATA[2025-10-21 00:00:00]]></wp:post_modified>
+    <wp:post_modified_gmt><![CDATA[2025-10-21 00:00:00]]></wp:post_modified_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[understanding-uninsured-and-underinsured-motorist-coverage]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="category" nicename="auto"><![CDATA[Auto]]></category>
+  </item>
+</channel>
+</rss>
