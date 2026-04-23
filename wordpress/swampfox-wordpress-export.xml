@@ -12,7 +12,7 @@
   <title>Swamp Fox Insurance Agency</title>
   <link>https://bensachwitz-ctrl.github.io/swampfoxweb</link>
   <description>SCTPA-endorsed independent insurance agency since 1987.</description>
-  <pubDate>Thu, 23 Apr 2026 16:20:40 -0000</pubDate>
+  <pubDate>Thu, 23 Apr 2026 16:35:45 -0000</pubDate>
   <language>en-US</language>
   <wp:wxr_version>1.2</wp:wxr_version>
   <wp:base_site_url>https://bensachwitz-ctrl.github.io/swampfoxweb</wp:base_site_url>
@@ -145,15 +145,15 @@
 </section>
 
 <!-- SERVICE CARDS -->
-<section class="sec" style="background:var(--cream)">
+<section class="sec" style="background:var(--cream);padding-bottom:18px">
   <div class="wrap">
-    <div style="text-align:center;margin-bottom:28px">
+    <div style="text-align:center;margin-bottom:20px">
       <span class="label">What We Cover</span>
       <h2>Insurance Solutions for <em>Every</em> Need</h2>
       <div class="rule rule-c"></div>
       <p style="max-width:640px;margin:0 auto">From commercial forestry operations to your family home — we build custom coverage plans that actually fit.</p>
     </div>
-    <div class="grid-3" style="margin-bottom:20px">
+    <div class="grid-3" style="margin-bottom:0">
       <!-- Forestry -->
       <div class="svc-card reveal tilt-card">
         <div class="svc-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3L4 14h4l-3 7h14l-3-7h4L12 3z"/><path d="M12 22v-3"/></svg></div>
@@ -201,7 +201,7 @@
 </section>
 
 <!-- ABOUT SECTION -->
-<section class="sec bg-diagonal" style="position:relative;overflow:hidden;padding-top:18px">
+<section class="sec bg-diagonal" style="position:relative;overflow:hidden;padding-top:12px">
   <div style="position:absolute;inset:0;background:url('images/background%20maybe.jpg') center/cover;opacity:.04;pointer-events:none"></div>
   <div class="accent-circle accent-circle-lg" style="top:-80px;left:-120px;opacity:.3"></div>
   <div class="wrap grid-2" style="align-items:center;gap:40px">
@@ -3270,7 +3270,7 @@
     <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
     <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=128</guid>
     <description></description>
-    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/brand-fleet-silver.jpg" alt="Understanding Uninsured &amp; Underinsured Motorist Coverage" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
+    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/section-premium.jpg" alt="Understanding Uninsured &amp; Underinsured Motorist Coverage" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
 <p class="lede">South Carolina is among the worst states in the country for uninsured drivers. Estimates put about 1 in 8 drivers carrying zero insurance, and a much larger share carrying only the state minimum of 25/50/25 — barely enough to cover an emergency-room visit. When one of them hits you, your protection comes from your own policy.</p>
 
   <h2>Two coverages, one purpose</h2>

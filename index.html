@@ -1454,6 +1454,8 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   box-shadow:0 4px 14px rgba(0,99,91,.35),inset 0 1px 0 rgba(255,255,255,.18)
 }
 .op-panels{position:relative;min-height:440px}
+.op-panel{position:absolute;top:0;left:0;right:0;width:100%}
+@media(max-width:820px){.op-panels{min-height:560px}.op-panel{position:relative}}
 .op-panel-grid{
   display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:start
 }
@@ -1873,15 +1875,15 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
 </section>
 
 <!-- SERVICE CARDS -->
-<section class="sec" style="background:var(--cream)">
+<section class="sec" style="background:var(--cream);padding-bottom:18px">
   <div class="wrap">
-    <div style="text-align:center;margin-bottom:28px">
+    <div style="text-align:center;margin-bottom:20px">
       <span class="label">What We Cover</span>
       <h2>Insurance Solutions for <em>Every</em> Need</h2>
       <div class="rule rule-c"></div>
       <p style="max-width:640px;margin:0 auto">From commercial forestry operations to your family home — we build custom coverage plans that actually fit.</p>
     </div>
-    <div class="grid-3" style="margin-bottom:20px">
+    <div class="grid-3" style="margin-bottom:0">
       <!-- Forestry -->
       <div class="svc-card reveal tilt-card" @click="go('forestry')">
         <div class="svc-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3L4 14h4l-3 7h14l-3-7h4L12 3z"/><path d="M12 22v-3"/></svg></div>
@@ -1929,7 +1931,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
 </section>
 
 <!-- ABOUT SECTION -->
-<section class="sec bg-diagonal" style="position:relative;overflow:hidden;padding-top:18px">
+<section class="sec bg-diagonal" style="position:relative;overflow:hidden;padding-top:12px">
   <div style="position:absolute;inset:0;background:url('images/background%20maybe.jpg') center/cover;opacity:.04;pointer-events:none"></div>
   <div class="accent-circle accent-circle-lg" style="top:-80px;left:-120px;opacity:.3"></div>
   <div class="wrap grid-2" style="align-items:center;gap:40px">
@@ -2477,7 +2479,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
 
       <div class="op-panels">
         <!-- Harvesting -->
-        <div class="op-panel" x-show="opTab==='harvest'" x-transition>
+        <div class="op-panel" x-show="opTab==='harvest'">
           <div class="op-panel-grid">
             <div class="op-photo"><img decoding="async" loading="lazy" src="images/premium_photo-1661963106864-40a0b6eddc80.avif" alt="Harvester machine working a pine stand — freshly felled logs beside it"></div>
             <div class="op-copy">
@@ -2493,7 +2495,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
           </div>
         </div>
         <!-- Forwarding -->
-        <div class="op-panel" x-show="opTab==='forward'" x-transition>
+        <div class="op-panel" x-show="opTab==='forward'">
           <div class="op-panel-grid">
             <div class="op-photo"><img decoding="async" loading="lazy" src="images/premium_photo-1661940407330-18d3d0b3d1d9.avif" alt="Forwarder hauling a full load of cut logs through a working pine forest"></div>
             <div class="op-copy">
@@ -2509,7 +2511,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
           </div>
         </div>
         <!-- Loading -->
-        <div class="op-panel" x-show="opTab==='loading'" x-transition>
+        <div class="op-panel" x-show="opTab==='loading'">
           <div class="op-panel-grid">
             <div class="op-photo"><img decoding="async" loading="lazy" src="images/yusuf-onuk-b-enaI7JBQ0-unsplash.jpg" alt="Red knuckleboom loader grabbing a bundle of cut logs at a forest landing"></div>
             <div class="op-copy">
@@ -2525,7 +2527,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
           </div>
         </div>
         <!-- Transport -->
-        <div class="op-panel" x-show="opTab==='transport'" x-transition>
+        <div class="op-panel" x-show="opTab==='transport'">
           <div class="op-panel-grid">
             <div class="op-photo"><img decoding="async" loading="lazy" src="images/photo-1728586397166-d4273177b7f6.avif" alt="Classic Mack log truck loaded with timber rolling down a rural road"></div>
             <div class="op-copy">
@@ -2541,7 +2543,7 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
           </div>
         </div>
         <!-- Timber Yards -->
-        <div class="op-panel" x-show="opTab==='yard'" x-transition>
+        <div class="op-panel" x-show="opTab==='yard'">
           <div class="op-panel-grid">
             <div class="op-photo"><img decoding="async" loading="lazy" src="images/photo-1596628930480-540b65f6f0a6.avif" alt="Stacked timber logs stored cross-sections-out at a log yard"></div>
             <div class="op-copy">
