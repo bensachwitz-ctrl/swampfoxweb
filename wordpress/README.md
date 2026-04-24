@@ -47,7 +47,7 @@ then activate via `WP Admin → Appearance → Themes`.
 
 `WP Admin → Appearance → Customize → Site Identity → Select logo`.
 
-Upload the Swamp Fox logo (`images/swamp fox top logo.webp` from this repo) and
+Upload the Swamp Fox logo (`images/logo-swamp-fox-nav.webp` from this repo) and
 the theme's `header.php` / `footer.php` will use `the_custom_logo()` automatically.
 
 ### 4. Import content

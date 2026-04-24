@@ -73,10 +73,10 @@
     <div class="hero-right">
       <div>
         <div class="hero-logo-display">
-          <img decoding="async" fetchpriority="low" src="images/swamp-fox-full-logo.webp" alt="Swamp Fox Insurance Agency — we're here when you need us the most" width="1200" height="1028">
+          <img decoding="async" fetchpriority="low" src="images/logo-swamp-fox-full.webp" alt="Swamp Fox Insurance Agency — we're here when you need us the most" width="1200" height="1028">
         </div>
         <div class="hero-sctpa float-slow">
-          <img decoding="async" src="images/sctpa-logo.png" alt="SCTPA Logo">
+          <img decoding="async" src="images/logo-sctpa.png" alt="SCTPA Logo">
           <div>
             <div class="t1">SCTPA Endorsed</div>
             <div class="t2">Endorsed by the South Carolina Timber Producers Association</div>
@@ -111,7 +111,7 @@
 
 <!-- OUR APPROACH -->
 <section class="sec bg-topo" style="background:var(--sage-lt);position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background:url('images/photos.jpg') center/cover;opacity:.04;pointer-events:none"></div>
+  <div style="position:absolute;inset:0;background:url('images/home-handshake-texture.jpg') center/cover;opacity:.04;pointer-events:none"></div>
   <div class="wrap">
     <div style="text-align:center;margin-bottom:28px" class="reveal">
       <span class="label">Our Approach</span>
@@ -202,7 +202,7 @@
 
 <!-- ABOUT SECTION -->
 <section class="sec bg-diagonal" style="position:relative;overflow:hidden;padding-top:12px">
-  <div style="position:absolute;inset:0;background:url('images/background%20maybe.jpg') center/cover;opacity:.04;pointer-events:none"></div>
+  <div style="position:absolute;inset:0;background:url('images/home-cards-texture.jpg') center/cover;opacity:.04;pointer-events:none"></div>
   <div class="accent-circle accent-circle-lg" style="top:-80px;left:-120px;opacity:.3"></div>
   <div class="wrap grid-2" style="align-items:center;gap:40px">
     <div class="reveal-left">
@@ -216,7 +216,7 @@
       </div>
     </div>
     <div class="reveal-right" style="position:relative">
-      <img decoding="async" src="images/team-photo.jpg" alt="Swamp Fox Insurance team" class="content-img" style="width:100%;height:380px;object-fit:cover;object-position:center;box-shadow:var(--shadow-lg);margin:0">
+      <img decoding="async" src="images/home-team-photo.jpg" alt="Swamp Fox Insurance team" class="content-img" style="width:100%;height:380px;object-fit:cover;object-position:center;box-shadow:var(--shadow-lg);margin:0">
       <div style="position:absolute;bottom:-12px;left:-12px;background:var(--forest);color:#fff;padding:14px 18px;border-radius:var(--r-lg);box-shadow:var(--shadow-md)">
         <div style="font-size:1.4rem;font-weight:800;font-family:'Playfair Display',serif;line-height:1">Since</div>
         <div style="font-size:1.7rem;font-weight:800;font-family:'Playfair Display',serif;line-height:1">1987</div>
@@ -228,7 +228,7 @@
 
 <!-- WHO WE INSURE -->
 <section class="sec bg-dots" style="position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background:url('images/trucks.jpg') center/cover;opacity:.05;pointer-events:none"></div>
+  <div style="position:absolute;inset:0;background:url('images/home-trucks-texture.jpg') center/cover;opacity:.05;pointer-events:none"></div>
   <div class="wrap">
     <div style="text-align:center;margin-bottom:40px">
       <span class="label">Who We Insure</span>
@@ -306,7 +306,7 @@
 
 <!-- WHAT MAKES US GREAT -->
 <section class="sec bg-diagonal" style="position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background:url('images/logs.jpg') center/cover;opacity:.04;pointer-events:none"></div>
+  <div style="position:absolute;inset:0;background:url('images/home-logs-texture.jpg') center/cover;opacity:.04;pointer-events:none"></div>
   <div class="wrap">
     <div style="text-align:center;margin-bottom:28px">
       <span class="label">Why Choose Us</span>
@@ -456,7 +456,7 @@
 
 <!-- CTA + NEWSLETTER COMBINED -->
 <section style="padding:80px 0;position:relative;overflow:hidden;display:flex;align-items:center">
-  <div style="position:absolute;inset:0;background:url('images/premium_photo-1661963106864-40a0b6eddc80.avif') center/cover"></div>
+  <div style="position:absolute;inset:0;background:url('images/operations-harvester-pine.avif') center/cover"></div>
   <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,99,91,.68),rgba(15,31,23,.60))"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(circle,rgba(0,99,91,.03) 1px,transparent 1px);background-size:20px 20px;pointer-events:none"></div>
   <div class="wrap" style="position:relative;z-index:2;text-align:center">
@@ -513,7 +513,7 @@
     <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
     <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=101</guid>
     <description></description>
-    <content:encoded><![CDATA[<div class="page-bg-img" style="background-image:url('images/good%20photo%20somewhere.jpg')"></div>
+    <content:encoded><![CDATA[<div class="page-bg-img" style="background-image:url('images/home-coverage-bg.jpg')"></div>
 <div class="page-bg-overlay"></div>
 <div class="page-bg-content">
   <div class="wrap">
@@ -773,7 +773,7 @@
         <!-- Harvesting -->
         <div class="op-panel">
           <div class="op-panel-grid">
-            <div class="op-photo"><img decoding="async" loading="lazy" src="images/premium_photo-1661963106864-40a0b6eddc80.avif" alt="Harvester machine working a pine stand — freshly felled logs beside it"></div>
+            <div class="op-photo"><img decoding="async" loading="lazy" src="images/operations-harvester-pine.avif" alt="Harvester machine working a pine stand — freshly felled logs beside it"></div>
             <div class="op-copy">
               <h3>Harvesting &amp; Felling</h3>
               <p>Protect skidders, feller-bunchers, chainsaws, and the crews that run them. Our <strong>Logger's Broad Form</strong> covers equipment in the woods, in transit, and at the landing — with optional fire, theft, and vandalism.</p>
@@ -789,7 +789,7 @@
         <!-- Forwarding -->
         <div class="op-panel">
           <div class="op-panel-grid">
-            <div class="op-photo"><img decoding="async" loading="lazy" src="images/premium_photo-1661940407330-18d3d0b3d1d9.avif" alt="Forwarder hauling a full load of cut logs through a working pine forest"></div>
+            <div class="op-photo"><img decoding="async" loading="lazy" src="images/operations-forwarder-forest.avif" alt="Forwarder hauling a full load of cut logs through a working pine forest"></div>
             <div class="op-copy">
               <h3>Forwarders &amp; In-Woods Transport</h3>
               <p>Forwarders, skidders, and bunchers work in brutal conditions. Our broad-form equipment policies anticipate stump damage, track failure, and off-road hazards the way generic commercial policies don't.</p>
@@ -805,7 +805,7 @@
         <!-- Loading -->
         <div class="op-panel">
           <div class="op-panel-grid">
-            <div class="op-photo"><img decoding="async" loading="lazy" src="images/yusuf-onuk-b-enaI7JBQ0-unsplash.jpg" alt="Red knuckleboom loader grabbing a bundle of cut logs at a forest landing"></div>
+            <div class="op-photo"><img decoding="async" loading="lazy" src="images/coverage-forestry-loader.jpg" alt="Red knuckleboom loader grabbing a bundle of cut logs at a forest landing"></div>
             <div class="op-copy">
               <h3>Loading &amp; Landings</h3>
               <p>Knuckleboom loaders, log-yard pickers, and landing operations carry unique pinch points. We structure policies around <strong>loader-specific</strong> physical damage, falling-log liability, and bystander coverage.</p>
@@ -821,7 +821,7 @@
         <!-- Transport -->
         <div class="op-panel">
           <div class="op-panel-grid">
-            <div class="op-photo"><img decoding="async" loading="lazy" src="images/photo-1728586397166-d4273177b7f6.avif" alt="Classic Mack log truck loaded with timber rolling down a rural road"></div>
+            <div class="op-photo"><img decoding="async" loading="lazy" src="images/operations-mack-log-truck.avif" alt="Classic Mack log truck loaded with timber rolling down a rural road"></div>
             <div class="op-copy">
               <h3>Log Truck Transport</h3>
               <p>From single owner-operators to fleets of 30+, we handle <strong>FMCSA filings</strong>, cargo coverage, trailer interchange, and physical damage — plus the UM/UIM terms that actually protect you when another driver's at fault.</p>
@@ -837,7 +837,7 @@
         <!-- Timber Yards -->
         <div class="op-panel">
           <div class="op-panel-grid">
-            <div class="op-photo"><img decoding="async" loading="lazy" src="images/photo-1596628930480-540b65f6f0a6.avif" alt="Stacked timber logs stored cross-sections-out at a log yard"></div>
+            <div class="op-photo"><img decoding="async" loading="lazy" src="images/operations-log-yard-stacked.avif" alt="Stacked timber logs stored cross-sections-out at a log yard"></div>
             <div class="op-copy">
               <h3>Timber Yards &amp; Storage</h3>
               <p>When logs leave the woods and sit at a yard, they're exposed to fire, theft, weather, and dispute. Our policies extend <strong>inland marine</strong> and stored-goods coverage to protect high-value timber before it hits the mill.</p>
@@ -859,9 +859,9 @@
 <section style="padding:24px 0">
   <div class="wrap">
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
-      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img decoding="async" loading="lazy" src="images/trucks.jpg" alt="Swamp Fox trucks" style="width:100%;height:100%;object-fit:cover"></div>
-      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img decoding="async" loading="lazy" src="images/logs.jpg" alt="Logging operations" style="width:100%;height:100%;object-fit:cover"></div>
-      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img decoding="async" loading="lazy" src="images/full%20team%20cropped.png" alt="Swamp Fox team" style="width:100%;height:100%;object-fit:cover;object-position:center 30%"></div>
+      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img decoding="async" loading="lazy" src="images/home-trucks-texture.jpg" alt="Swamp Fox trucks" style="width:100%;height:100%;object-fit:cover"></div>
+      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img decoding="async" loading="lazy" src="images/home-logs-texture.jpg" alt="Logging operations" style="width:100%;height:100%;object-fit:cover"></div>
+      <div style="border-radius:10px;overflow:hidden;height:180px;box-shadow:0 6px 20px rgba(0,0,0,.3)"><img decoding="async" loading="lazy" src="images/about-team-full.png" alt="Swamp Fox team" style="width:100%;height:100%;object-fit:cover;object-position:center 30%"></div>
     </div>
   </div>
 </section>
@@ -1225,7 +1225,7 @@
     <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
     <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=107</guid>
     <description></description>
-    <content:encoded><![CDATA[<div class="page-bg-img" style="background-image:url('images/section-premium.jpg')"></div>
+    <content:encoded><![CDATA[<div class="page-bg-img" style="background-image:url('images/coverage-auto-driver.jpg')"></div>
 <div class="page-bg-overlay"></div>
 <div class="page-bg-content">
   <div class="wrap">
@@ -1414,7 +1414,7 @@
     <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
     <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=110</guid>
     <description></description>
-    <content:encoded><![CDATA[<div class="page-bg-img" style="background-image:url('images/logs.jpg');background-position:center 45%"></div>
+    <content:encoded><![CDATA[<div class="page-bg-img" style="background-image:url('images/home-logs-texture.jpg');background-position:center 45%"></div>
 <div class="page-bg-overlay"></div>
 <div class="page-bg-content">
   <div class="wrap">
@@ -1540,7 +1540,7 @@
     <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
     <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=112</guid>
     <description></description>
-    <content:encoded><![CDATA[<div class="page-bg-img" style="background-image:url('images/loss%20control%20background.avif')"></div>
+    <content:encoded><![CDATA[<div class="page-bg-img" style="background-image:url('images/losscontrol-page-bg.avif')"></div>
 <div class="page-bg-overlay"></div>
 <div class="page-bg-content">
 
@@ -1559,7 +1559,7 @@
         </div>
       </div>
       <div style="position:relative;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg)">
-        <img decoding="async" loading="lazy" src="images/logging%20truck.jpg" alt="Swamp Fox logging operations" style="width:100%;height:320px;object-fit:cover;object-position:center 40%">
+        <img decoding="async" loading="lazy" src="images/about-logging-truck.jpg" alt="Swamp Fox logging operations" style="width:100%;height:320px;object-fit:cover;object-position:center 40%">
         <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,31,23,.25),rgba(0,99,91,.1))"></div>
         <div style="position:absolute;bottom:16px;left:16px;right:16px;text-align:center;z-index:2">
           <span style="background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);border-radius: 12px;padding:8px 20px;color:#fff;font-size:.82rem;font-weight:600">Protecting Fleets Since 1987</span>
@@ -1615,7 +1615,7 @@
 <section class="sec" style="background:transparent;padding:20px 0 40px">
   <div class="wrap">
     <div style="border-radius:12px;overflow:hidden;height:500px;box-shadow:0 10px 36px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.1)">
-      <img decoding="async" loading="lazy" src="images/picture%20again.jpg" alt="Swamp Fox logging operations" style="width:100%;height:100%;object-fit:cover;object-position:center 85%">
+      <img decoding="async" loading="lazy" src="images/wp-logging-hero.jpg" alt="Swamp Fox logging operations" style="width:100%;height:100%;object-fit:cover;object-position:center 85%">
     </div>
   </div>
 </section>
@@ -1650,13 +1650,13 @@
     <description></description>
     <content:encoded><![CDATA[<!-- Full-page photo background -->
 <div style="position:relative;min-height:100vh">
-  <div style="position:absolute;inset:0;background:url('images/log%20picture.jpg') center/cover;z-index:0"></div>
+  <div style="position:absolute;inset:0;background:url('images/summit-hero-logs.jpg') center/cover;z-index:0"></div>
   <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,31,23,.38),rgba(0,99,91,.20));z-index:1"></div>
   <div style="position:relative;z-index:2;padding:48px 0">
     <div class="wrap">
       <!-- Title + Logo side by side -->
       <div style="display:flex;align-items:center;gap:24px;margin-bottom:24px;flex-wrap:wrap">
-        <div style="background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-radius:16px;padding:16px 20px;box-shadow:0 8px 32px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center"><img decoding="async" loading="lazy" src="images/summit%20logo.png" alt="Summit Logo" style="width:140px;height:auto;object-fit:contain"></div>
+        <div style="background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-radius:16px;padding:16px 20px;box-shadow:0 8px 32px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center"><img decoding="async" loading="lazy" src="images/logo-summit.png" alt="Summit Logo" style="width:140px;height:auto;object-fit:contain"></div>
         <div>
           <h2 style="color:#fff;margin-bottom:8px;font-size:clamp(1.8rem,4vw,2.8rem)">4th Annual Loggers Technology Summit</h2>
           <p style="color:rgba(255,255,255,.7);font-size:1rem;margin:0">August 28–29, 2026 &bull; Barber Motorsports Park, Birmingham AL</p>
@@ -1734,7 +1734,7 @@
         <div>
           <!-- Summit photo -->
           <div style="border-radius:var(--r-lg);overflow:hidden;margin-bottom:16px;box-shadow:var(--shadow-lg)">
-            <img decoding="async" loading="lazy" src="images/photo%20to%20put%20on%20sommit%20page%20somewhere%20.jpg" alt="Equipment expo" style="width:100%;height:auto;max-height:280px;object-fit:cover;object-position:center 50%">
+            <img decoding="async" loading="lazy" src="images/summit-equipment-expo.jpg" alt="Equipment expo" style="width:100%;height:auto;max-height:280px;object-fit:cover;object-position:center 50%">
           </div>
           <!-- Schedule in transparent box -->
           <div style="background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);padding:24px">
@@ -1898,7 +1898,7 @@
     <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
     <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=114</guid>
     <description></description>
-    <content:encoded><![CDATA[<div class="page-bg-img" style="background-image:url('images/another%20background.jpg')"></div>
+    <content:encoded><![CDATA[<div class="page-bg-img" style="background-image:url('images/about-page-bg.jpg')"></div>
 <div class="page-bg-overlay"></div>
 <div class="page-bg-content">
   <div class="wrap">
@@ -1910,7 +1910,7 @@
   <div class="wrap">
     <div class="grid-2" style="margin-bottom:36px;align-items:center">
       <div class="reveal-left">
-        <img decoding="async" loading="lazy" src="images/full%20team%20cropped.png" alt="Swamp Fox team" class="full-photo" style="width:100%">
+        <img decoding="async" loading="lazy" src="images/about-team-full.png" alt="Swamp Fox team" class="full-photo" style="width:100%">
       </div>
       <div class="reveal-right glass-box" style="padding:32px">
         <span class="label">Since 1987</span>
@@ -1924,7 +1924,7 @@
     <!-- Photo banner + Mission & Pledge SIDE BY SIDE -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:40px;align-items:stretch">
       <div style="border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.3);min-height:280px" class="reveal-left">
-        <img decoding="async" loading="lazy" src="images/about%20us%20backgroujnd.jpg" alt="Swamp Fox Agency" style="width:100%;height:100%;object-fit:cover;object-position:center 40%">
+        <img decoding="async" loading="lazy" src="images/about-section-bg.jpg" alt="Swamp Fox Agency" style="width:100%;height:100%;object-fit:cover;object-position:center 40%">
       </div>
       <div class="glass-box reveal-right" style="padding:32px;margin-bottom:0;display:flex;flex-direction:column;justify-content:center">
         <span class="label">Our Mission &amp; Pledge</span>
@@ -1998,7 +1998,7 @@
       <div class="grid-3" style="align-items:start">
         <div class="community-card reveal gradient-border">
           <div style="position:relative;background:var(--forest2);display:flex;align-items:center;justify-content:center;height:220px">
-            <img decoding="async" loading="lazy" src="images/pinnacle%20award.png" alt="The Pinnacle Award 2026" style="height:170px;width:auto;object-fit:contain;filter:invert(1)">
+            <img decoding="async" loading="lazy" src="images/about-pinnacle-award.png" alt="The Pinnacle Award 2026" style="height:170px;width:auto;object-fit:contain;filter:invert(1)">
             <div style="position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:.85rem;font-weight:600;display:flex;justify-content:space-between;align-items:center">The Pinnacle Award <svg style="transition:transform var(--t)" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
           </div>
           <div class="card-expand">
@@ -2007,7 +2007,7 @@
         </div>
         <div class="community-card reveal gradient-border">
           <div style="position:relative">
-            <img decoding="async" loading="lazy" src="images/scholarship%20picture%20remember%20to%20zoom%20out.png" alt="Swamp Fox Scholarship - Citadel cadets visiting Swamp Fox Agency" style="width:100%;height:220px;object-fit:cover;object-position:center center">
+            <img decoding="async" loading="lazy" src="images/about-citadel-scholarship.png" alt="Swamp Fox Scholarship - Citadel cadets visiting Swamp Fox Agency" style="width:100%;height:220px;object-fit:cover;object-position:center center">
             <div style="position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:.85rem;font-weight:600;display:flex;justify-content:space-between;align-items:center">Swamp Fox Scholarship <svg style="transition:transform var(--t)" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
           </div>
           <div class="card-expand">
@@ -2016,7 +2016,7 @@
         </div>
         <div class="community-card reveal gradient-border">
           <div style="position:relative">
-            <img decoding="async" loading="lazy" src="images/citadel.jpg" alt="Swamp Fox Citadel Program - Military community partnership" style="width:100%;height:220px;object-fit:cover;object-position:center">
+            <img decoding="async" loading="lazy" src="images/about-citadel-program.jpg" alt="Swamp Fox Citadel Program - Military community partnership" style="width:100%;height:220px;object-fit:cover;object-position:center">
             <div style="position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:.85rem;font-weight:600;display:flex;justify-content:space-between;align-items:center">Citadel Program <svg style="transition:transform var(--t)" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
           </div>
           <div class="card-expand">
@@ -2057,7 +2057,7 @@
     <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
     <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=115</guid>
     <description></description>
-    <content:encoded><![CDATA[<div class="page-bg-img" style="background-image:url('images/location%20background.avif');opacity:.85"></div>
+    <content:encoded><![CDATA[<div class="page-bg-img" style="background-image:url('images/locations-page-bg.avif');opacity:.85"></div>
 <div class="page-bg-overlay" style="background:linear-gradient(135deg,rgba(10,18,14,.25),rgba(0,60,55,.12))"></div>
 <div class="page-bg-content">
   <div class="wrap">
@@ -2072,7 +2072,7 @@
     <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:28px;margin-bottom:40px;align-items:start">
       <!-- LEFT: Photo + Map stacked -->
       <div>
-        <img decoding="async" loading="lazy" src="images/summerville%20office%20picture.png" alt="Summerville office" class="full-photo reveal-left" style="width:100%;height:260px;object-fit:cover;border-radius:12px;margin-bottom:20px;box-shadow:0 8px 32px rgba(0,0,0,.3)">
+        <img decoding="async" loading="lazy" src="images/about-summerville-office.png" alt="Summerville office" class="full-photo reveal-left" style="width:100%;height:260px;object-fit:cover;border-radius:12px;margin-bottom:20px;box-shadow:0 8px 32px rgba(0,0,0,.3)">
         <div id="sf-map" style="background:#0f1f17;height:360px;border-radius:12px;border:1px solid rgba(255,255,255,.15);box-shadow:0 8px 32px rgba(0,0,0,.3);position:relative;overflow:hidden"></div>
       </div>
       <!-- RIGHT: 4 Location cards -->
@@ -2166,7 +2166,7 @@
     <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
     <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=116</guid>
     <description></description>
-    <content:encoded><![CDATA[<div class="page-bg-img" style="background-image:url('images/another%20background.jpg')"></div>
+    <content:encoded><![CDATA[<div class="page-bg-img" style="background-image:url('images/about-page-bg.jpg')"></div>
 <div class="page-bg-overlay"></div>
 <div class="page-bg-content">
   <div class="wrap">
@@ -2322,7 +2322,7 @@
     <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
     <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=117</guid>
     <description></description>
-    <content:encoded><![CDATA[<div class="page-bg-img" style="background-image:url('images/another%20background.jpg')"></div>
+    <content:encoded><![CDATA[<div class="page-bg-img" style="background-image:url('images/about-page-bg.jpg')"></div>
 <div class="page-bg-overlay"></div>
 <div class="page-bg-content">
   <div class="wrap">
@@ -3101,7 +3101,7 @@
     <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
     <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=126</guid>
     <description></description>
-    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/another%20photo.jpg" alt="Protect Your Bar with Liquor Liability and More" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
+    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/coverage-gl-office.jpg" alt="Protect Your Bar with Liquor Liability and More" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
 <p class="lede">South Carolina is a "dram shop" state. That means a bar, restaurant, or event host who serves alcohol to a visibly intoxicated person — or to anyone underage — can be held legally responsible for what that person does after they leave. Drunk-driving deaths, assaults, property damage. The lawsuit names the establishment, and the standard general-liability policy explicitly excludes the entire category.</p>
 
   <h2>The exclusion that bites</h2>
@@ -3186,7 +3186,7 @@
     <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
     <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=127</guid>
     <description></description>
-    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/logging%20truck.jpg" alt="Claim Lessons from Storm Season in the Timber Belt" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
+    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/about-logging-truck.jpg" alt="Claim Lessons from Storm Season in the Timber Belt" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
 <p class="lede">Storm season in the Timber Belt — the swath of pine and hardwood country running from coastal Carolina inland — has produced a remarkably consistent claims pattern over the last several years. Skidders parked under tree cover get crushed. Lowboys and trailers blow over when not lowered. Tools and laptops left in service trucks get water-damaged. Below: what the policies actually paid, where they fell short, and the loss-prevention steps that move the needle.</p>
 
   <h2>Lesson 1 — Where you park matters more than what you parked</h2>
@@ -3270,7 +3270,7 @@
     <dc:creator><![CDATA[Swamp Fox Insurance Agency]]></dc:creator>
     <guid isPermaLink="false">https://bensachwitz-ctrl.github.io/swampfoxweb/?p=128</guid>
     <description></description>
-    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/section-premium.jpg" alt="Understanding Uninsured &amp; Underinsured Motorist Coverage" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
+    <content:encoded><![CDATA[<p><img src="https://bensachwitz-ctrl.github.io/swampfoxweb/images/coverage-auto-driver.jpg" alt="Understanding Uninsured &amp; Underinsured Motorist Coverage" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px"/></p>
 <p class="lede">South Carolina is among the worst states in the country for uninsured drivers. Estimates put about 1 in 8 drivers carrying zero insurance, and a much larger share carrying only the state minimum of 25/50/25 — barely enough to cover an emergency-room visit. When one of them hits you, your protection comes from your own policy.</p>
 
   <h2>Two coverages, one purpose</h2>
