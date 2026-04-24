@@ -80,7 +80,7 @@ window.SF_POSTS = [
     title: 'Protect Your Bar with Liquor Liability and More',
     excerpt: "Serving alcohol means specialized liability exposure. Standard general liability won't cut it.",
     date: 'December 17, 2025', dateISO: '2025-12-17',
-    image: '../images/another%20photo.jpg',
+    image: '../images/coverage-gl-office.jpg',
     readTime: '7 min read'
   },
   {
@@ -89,7 +89,7 @@ window.SF_POSTS = [
     title: 'Claim Lessons from Storm Season in the Timber Belt',
     excerpt: 'Real claims from real storms — what loggers learned, what their policies paid, and where coverage came up short.',
     date: 'December 10, 2025', dateISO: '2025-12-10',
-    image: '../images/logging%20truck.jpg',
+    image: '../images/about-logging-truck.jpg',
     readTime: '8 min read'
   },
   {
@@ -98,7 +98,7 @@ window.SF_POSTS = [
     title: 'Understanding Uninsured & Underinsured Motorist Coverage',
     excerpt: "When the other driver doesn't have enough insurance, your UM/UIM is what stands between you and financial ruin.",
     date: 'October 21, 2025', dateISO: '2025-10-21',
-    image: '../images/section-premium.jpg',
+    image: '../images/coverage-auto-driver.jpg',
     readTime: '7 min read'
   }
 ];

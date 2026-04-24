@@ -3,6 +3,7 @@ Allow: /
 Allow: /blog/
 Allow: /images/
 Disallow: /wordpress/
+Disallow: /dashboard/
 
 User-agent: Googlebot
 Allow: /

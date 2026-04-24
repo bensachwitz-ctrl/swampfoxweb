@@ -211,7 +211,7 @@ p{color:#34474f;line-height:1.78;margin:0 0 16px;font-size:1.02rem}
 
 /* ── Blog listing page ───────────────────────────────────────────── */
 .listing-hero{position:relative;background:var(--forest2);color:#fff;padding:80px 0 64px;min-height:360px;display:flex;align-items:center;text-align:center;overflow:hidden}
-.listing-hero-bg{position:absolute;inset:0;background-image:url('../images/hero%20main.jpg');background-size:cover;background-position:center 40%;background-repeat:no-repeat;opacity:.78;filter:saturate(1.05);z-index:0}
+.listing-hero-bg{position:absolute;inset:0;background-image:url('../images/home-hero-bg.jpg');background-size:cover;background-position:center 40%;background-repeat:no-repeat;opacity:.78;filter:saturate(1.05);z-index:0}
 .listing-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,18,14,.72) 0%,rgba(30,57,42,.55) 55%,rgba(0,99,91,.38) 100%);z-index:1;pointer-events:none}
 .listing-hero::after{content:"";position:absolute;bottom:0;left:0;right:0;height:96px;background:linear-gradient(to top,rgba(15,31,23,.85),transparent);z-index:1;pointer-events:none}
 .listing-hero-inner{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 clamp(20px,3vw,40px);width:100%}
