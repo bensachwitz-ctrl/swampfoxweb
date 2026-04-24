@@ -1786,6 +1786,10 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
     <span class="nav-topbar-div nav-topbar-spacer"></span>
     <span class="nav-info-item"><a href="https://portal.csr24.com/mvc/7613999" target="_blank" rel="noopener"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg> Client&nbsp;Portal</a></span>
     <span class="nav-topbar-div"></span>
+    <span class="nav-info-item"><a href="/dashboard/" rel="noopener"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg> Agency&nbsp;Portal</a></span>
+    <span class="nav-topbar-div"></span>
+    <span class="nav-info-item"><a href="#" @click.prevent="openAccidentModal()"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Report&nbsp;Accident</a></span>
+    <span class="nav-topbar-div"></span>
     <span class="nav-info-item"><a href="#" @click.prevent="go('faq')"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/></svg> FAQ</a></span>
     <span class="nav-topbar-div"></span>
     <span class="nav-info-item"><a href="https://www.linkedin.com/company/swamp-fox-agency/jobs/" target="_blank" rel="noopener"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11h-6M19 8v6"/></svg> Careers</a></span>
@@ -1869,8 +1873,10 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
       <p style="color:rgba(255,255,255,.5);font-size:.78rem;margin-bottom:16px">Mon–Fri 8am–5pm</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
         <a href="https://portal.csr24.com/mvc/7613999" target="_blank" rel="noopener" style="background:rgba(255,255,255,.06);padding:10px 12px;border-radius:8px;color:rgba(255,255,255,.85);font-size:.78rem;font-weight:600;text-align:center;border:1px solid rgba(255,255,255,.08)">Client Portal</a>
+        <a href="/dashboard/" rel="noopener" style="background:rgba(255,255,255,.06);padding:10px 12px;border-radius:8px;color:rgba(255,255,255,.85);font-size:.78rem;font-weight:600;text-align:center;border:1px solid rgba(255,255,255,.08)">Agency Portal</a>
+        <a href="#" @click.prevent="openAccidentModal();menuOpen=false" style="grid-column:span 2;background:rgba(255,255,255,.06);padding:10px 12px;border-radius:8px;color:rgba(255,255,255,.85);font-size:.78rem;font-weight:600;text-align:center;border:1px solid rgba(255,255,255,.08)">Report Accident</a>
         <a href="#" @click.prevent="go('faq');menuOpen=false" style="background:rgba(255,255,255,.06);padding:10px 12px;border-radius:8px;color:rgba(255,255,255,.85);font-size:.78rem;font-weight:600;text-align:center;border:1px solid rgba(255,255,255,.08)">FAQ</a>
-        <a href="https://www.linkedin.com/company/swamp-fox-agency/jobs/" target="_blank" rel="noopener" style="grid-column:span 2;background:rgba(255,255,255,.06);padding:10px 12px;border-radius:8px;color:rgba(255,255,255,.85);font-size:.78rem;font-weight:600;text-align:center;border:1px solid rgba(255,255,255,.08)">Careers</a>
+        <a href="https://www.linkedin.com/company/swamp-fox-agency/jobs/" target="_blank" rel="noopener" style="background:rgba(255,255,255,.06);padding:10px 12px;border-radius:8px;color:rgba(255,255,255,.85);font-size:.78rem;font-weight:600;text-align:center;border:1px solid rgba(255,255,255,.08)">Careers</a>
       </div>
       <button @click="go('quote');menuOpen=false" style="background:var(--teal);color:#fff;padding:14px 20px;border-radius:var(--r-lg);font-weight:600;width:100%;text-align:center;border:none;cursor:pointer">Get a Free Quote</button>
     </div>
@@ -4036,6 +4042,8 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
         <a href="#" @click.prevent="go('locations')" style="font-size:.72rem;color:rgba(255,255,255,.5);transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Locations</a>
         <a href="blog/" style="font-size:.72rem;color:rgba(255,255,255,.5);transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Blog</a>
         <a href="https://portal.csr24.com/mvc/7613999" target="_blank" rel="noopener" style="font-size:.72rem;color:rgba(255,255,255,.5);transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Client Portal</a>
+        <a href="/dashboard/" rel="noopener" style="font-size:.72rem;color:rgba(255,255,255,.5);transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Dashboard</a>
+        <a href="#" @click.prevent="openAccidentModal()" style="font-size:.72rem;color:rgba(255,255,255,.5);transition:color .2s;cursor:pointer" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Report Accident</a>
         <a href="#" @click.prevent="go('faq')" style="font-size:.72rem;color:rgba(255,255,255,.5);transition:color .2s;cursor:pointer" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">FAQ</a>
         <a href="https://www.linkedin.com/company/swamp-fox-agency/jobs/" target="_blank" rel="noopener" style="font-size:.72rem;color:rgba(255,255,255,.5);transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Careers</a>
       </div>
@@ -4108,6 +4116,36 @@ button:focus-visible, a:focus-visible, .nav-link:focus-visible,
           <h3 style="color:var(--forest);margin-bottom:8px">Request Received!</h3>
           <p style="margin-bottom:24px">We'll contact <strong x-text="mForm.name"></strong> within one business day.</p>
           <button @click="showModal=false" class="btn">Done</button>
+        </div>
+      </div>
+    </template>
+    <template x-if="modalType==='accident'">
+      <div>
+        <div class="modal-header"><div><h3>Report an Accident</h3><p>Tell us what happened — we'll start your claim and follow up within the hour during business hours.</p></div><button @click="showModal=false;aForm.open=false" class="modal-close"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
+        <div class="modal-body" x-show="!modalSent">
+          <form @submit.prevent="submitAccident()">
+            <div class="grid-2" style="gap:14px;margin-bottom:14px">
+              <div class="form-group" style="margin-bottom:0"><label>Your Name *</label><input class="form-input" x-model="aForm.name" required placeholder="Mike Lawson"></div>
+              <div class="form-group" style="margin-bottom:0"><label>Policy # (if known)</label><input class="form-input" x-model="aForm.policy" placeholder="SF-XXXXXX"></div>
+            </div>
+            <div class="grid-2" style="gap:14px;margin-bottom:14px">
+              <div class="form-group" style="margin-bottom:0"><label>Phone *</label><input class="form-input" type="tel" x-model="aForm.phone" required placeholder="(843) 555-0100"></div>
+              <div class="form-group" style="margin-bottom:0"><label>Email *</label><input class="form-input" type="email" x-model="aForm.email" required placeholder="mike@email.com"></div>
+            </div>
+            <div class="grid-2" style="gap:14px;margin-bottom:14px">
+              <div class="form-group" style="margin-bottom:0"><label>When did it happen? *</label><input class="form-input" type="datetime-local" x-model="aForm.occurredAt" required></div>
+              <div class="form-group" style="margin-bottom:0"><label>Anyone injured?</label><select class="form-input" x-model="aForm.injuries"><option value="no">No</option><option value="yes">Yes</option><option value="unknown">Unsure</option></select></div>
+            </div>
+            <div class="form-group"><label>Where did it happen?</label><input class="form-input" x-model="aForm.location" placeholder="Address, road, job site, or GPS"></div>
+            <div class="form-group"><label>What happened? *</label><textarea class="form-input" x-model="aForm.description" rows="4" required placeholder="Describe the accident in your own words..."></textarea></div>
+            <button type="submit" class="btn btn-lg" style="width:100%;justify-content:center">Submit Accident Report</button>
+          </form>
+        </div>
+        <div class="modal-success" x-show="modalSent">
+          <div class="modal-success-icon"><svg width="28" height="28" fill="none" stroke="var(--teal)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <h3 style="color:var(--forest);margin-bottom:8px">Report Received</h3>
+          <p style="margin-bottom:24px">A claims specialist will contact <strong x-text="aForm.name"></strong> shortly. If this is an emergency, call <a href="tel:8437613999" style="color:var(--teal);font-weight:600">(843) 761-3999</a>.</p>
+          <button @click="showModal=false;aForm.open=false" class="btn">Done</button>
         </div>
       </div>
     </template>
@@ -4340,6 +4378,15 @@ function swampFox(){
     selectedCoverage:[], showModal:false, modalType:'', modalSent:false,
     qForm:{firstName:'',lastName:'',phone:'',email:'',business:'',state:'',employees:'',details:'',source:''},
     mForm:{name:'',company:'',phone:'',email:'',coverage:'',message:''},
+    aForm:{open:false,name:'',phone:'',email:'',policy:'',occurredAt:'',location:'',injuries:'no',description:''},
+    openAccidentModal(){this.aForm.open=true;this.aForm.occurredAt=new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,16);this.showModal=true;this.modalType='accident';this.modalSent=false;this.menuOpen=false},
+    submitAccident(){
+      const a=this.aForm;
+      const fields={type:'Accident Report',name:a.name||'',phone:a.phone||'',email:a.email||'',policy:a.policy||'',occurredAt:a.occurredAt||'',location:a.location||'',injuries:a.injuries||'',description:a.description||''};
+      let body='Accident Report\n\nName: '+(a.name||'')+'\nPhone: '+(a.phone||'')+'\nEmail: '+(a.email||'')+'\nPolicy #: '+(a.policy||'')+'\nWhen: '+(a.occurredAt||'')+'\nWhere: '+(a.location||'')+'\nInjuries: '+(a.injuries||'')+'\n\nDetails:\n'+(a.description||'');
+      this.sendLead('Accident Report — Swamp Fox',body,fields);
+      this.modalSent=true;
+    },
     cd:{d:'--',h:'--',m:'--',s:'--'},
     nav:[
       {id:'home',label:'Home'},
@@ -4838,6 +4885,33 @@ function swampFox(){
 <div style="max-width:900px;margin:40px auto;padding:20px;font-family:sans-serif;color:#1C2B2E">
 <h1>Swamp Fox Insurance Agency — Logging, Forestry & Commercial Insurance Since 1987</h1>
 <p>SCTPA-endorsed forestry and logging insurance agency. We specialize in logger's broad form policies, commercial trucking, cargo insurance, fleet coverage, general liability, homeowners, personal auto, life and health insurance. Serving SC, GA, NC, AL, FL, MS, VA and DC.</p>
+<h2>Site Map</h2>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/#services">Coverage &amp; Services</a></li>
+<li><a href="/#forestry">Forestry / Logging Insurance</a></li>
+<li><a href="/#trucking">Commercial Trucking</a></li>
+<li><a href="/#cargo">Cargo &amp; Physical Damage</a></li>
+<li><a href="/#gl">General Liability</a></li>
+<li><a href="/#homeins">Homeowners Insurance</a></li>
+<li><a href="/#autoins">Auto Insurance</a></li>
+<li><a href="/#life">Life &amp; Health</a></li>
+<li><a href="/#umbrella">Umbrella &amp; Excess</a></li>
+<li><a href="/#equipment">Equipment / Inland Marine</a></li>
+<li><a href="/#camper">Camper / RV</a></li>
+<li><a href="/#losscontrol">Alirics Loss Control</a></li>
+<li><a href="/#summit">Loggers Technology Summit</a></li>
+<li><a href="/#events">Blog &amp; Events</a></li>
+<li><a href="/#about">About</a></li>
+<li><a href="/#locations">Locations</a></li>
+<li><a href="/#faq">FAQ</a></li>
+<li><a href="/#quote">Get a Quote</a></li>
+<li><a href="/#privacy">Privacy Policy</a></li>
+<li><a href="/blog/">Blog Index</a></li>
+<li><a href="/dashboard/">Agency Dashboard (Internal Portal)</a></li>
+<li><a href="/learningtool/">Learning Tool (Staff Training)</a></li>
+<li><a href="https://portal.csr24.com/mvc/7613999" rel="noopener">Client Portal (CSR24)</a></li>
+</ul>
 <h2>Our Services</h2>
 <p>Commercial Insurance: Logging and Forestry, Commercial Auto and Trucking, Cargo and Physical Damage, General Liability, Equipment and Inland Marine. Personal Insurance: Homeowners, Auto, Life and Health, Umbrella and Excess Liability.</p>
 <h2>Locations</h2>
