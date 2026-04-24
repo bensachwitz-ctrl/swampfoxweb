@@ -4391,10 +4391,76 @@ function swampFox(){
         if(raw==='locations')this.$nextTick(()=>this.initMap&&this.initMap());
       }
     },
-    sendLead(subject,body){try{const a=document.createElement('a');a.href='mailto:info@swampfoxagency.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}catch(e){}},
-    submitModal(kind){const f=this.mForm;const subj={register:'Summit 2026 Registration',losscontrol:'Loss Control Review Request',exitLC:'Loss Control Review (Exit Intent)',exitQ:'Quote Request (Exit Intent)'}[kind]||'New Lead — Swamp Fox';let body='Name: '+(f.name||'')+'\nCompany: '+(f.company||'')+'\nPhone: '+(f.phone||'')+'\nEmail: '+(f.email||'');if(f.coverage)body+='\nCoverage: '+f.coverage;if(f.message)body+='\n\nDetails:\n'+f.message;this.sendLead(subj,body);this.modalSent=true},
-    submitNewsletter(email){if(!email)return false;this.sendLead('Newsletter Signup — Swamp Fox','Please add this address to the Swamp Fox newsletter.\n\nEmail: '+email);return true},
-    submitQuote(){const q=this.qForm;const cov=this.selectedCoverage.join(', ')||'(none selected)';let body='Name: '+(q.firstName||'')+' '+(q.lastName||'')+'\nPhone: '+(q.phone||'')+'\nEmail: '+(q.email||'')+'\nBusiness: '+(q.business||'')+'\nState: '+(q.state||'')+'\nEmployees: '+(q.employees||'')+'\nCoverage: '+cov+'\nSource: '+(q.source||'');if(q.details)body+='\n\nDetails:\n'+q.details;this.sendLead('Quote Request — Swamp Fox',body);this.quoteSent=true},
+    // Every form submission is (1) POSTed to Benjamin@swampfoxagency.com via
+    // FormSubmit.co so Benjamin gets a structured email summary, (2) archived
+    // to localStorage so the user keeps a local copy, and (3) falls back to a
+    // mailto: handoff if the network POST fails. FormSubmit.co requires a
+    // one-time confirmation click the first time Benjamin receives a message —
+    // standard for any transactional form service.
+    sendLead(subject,body,fields){
+      const payload=Object.assign({
+        _subject:subject,
+        _template:'table',
+        _captcha:'false',
+        _cc:'info@swampfoxagency.com',
+        _replyto:(fields&&fields.email)||'info@swampfoxagency.com',
+        page:(typeof window!=='undefined'&&window.location?window.location.href:''),
+        submittedAt:new Date().toISOString(),
+        message:body
+      },fields||{});
+      try{
+        const key='sf_leads';
+        const archive=JSON.parse(localStorage.getItem(key)||'[]');
+        archive.push({ts:new Date().toISOString(),subject,fields:fields||{},body});
+        localStorage.setItem(key,JSON.stringify(archive.slice(-100)));
+      }catch(e){}
+      const endpoint='https://formsubmit.co/ajax/Benjamin@swampfoxagency.com';
+      const submit=()=>fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)}).then(r=>r&&r.ok).catch(()=>false);
+      const p=submit().then(ok=>{
+        if(ok)return true;
+        // Last-resort fallback: open the user's mail client prefilled.
+        try{
+          const a=document.createElement('a');
+          a.href='mailto:Benjamin@swampfoxagency.com?cc=info@swampfoxagency.com&subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+          a.rel='noopener';document.body.appendChild(a);a.click();a.remove();
+        }catch(e){}
+        return false;
+      });
+      return p;
+    },
+    submitModal(kind){
+      const f=this.mForm;
+      const subj={register:'Summit 2026 Registration',losscontrol:'Loss Control Review Request',exitLC:'Loss Control Review (Exit Intent)',exitQ:'Quote Request (Exit Intent)'}[kind]||'New Lead — Swamp Fox';
+      const fields={type:subj,name:f.name||'',company:f.company||'',phone:f.phone||'',email:f.email||''};
+      if(f.coverage)fields.coverage=f.coverage;
+      if(f.message)fields.message=f.message;
+      let body='Name: '+(f.name||'')+'\nCompany: '+(f.company||'')+'\nPhone: '+(f.phone||'')+'\nEmail: '+(f.email||'');
+      if(f.coverage)body+='\nCoverage: '+f.coverage;
+      if(f.message)body+='\n\nDetails:\n'+f.message;
+      this.sendLead(subj,body,fields);
+      this.modalSent=true;
+    },
+    submitNewsletter(email){
+      if(!email)return false;
+      this.sendLead('Newsletter Signup — Swamp Fox','Please add this address to the Swamp Fox newsletter.\n\nEmail: '+email,{type:'Newsletter Signup',email:email});
+      return true;
+    },
+    submitQuote(){
+      const q=this.qForm;
+      const cov=this.selectedCoverage.join(', ')||'(none selected)';
+      const fields={
+        type:'Quote Request',
+        firstName:q.firstName||'',lastName:q.lastName||'',
+        name:((q.firstName||'')+' '+(q.lastName||'')).trim(),
+        phone:q.phone||'',email:q.email||'',business:q.business||'',
+        state:q.state||'',employees:q.employees||'',coverage:cov,source:q.source||''
+      };
+      if(q.details)fields.details=q.details;
+      let body='Name: '+(q.firstName||'')+' '+(q.lastName||'')+'\nPhone: '+(q.phone||'')+'\nEmail: '+(q.email||'')+'\nBusiness: '+(q.business||'')+'\nState: '+(q.state||'')+'\nEmployees: '+(q.employees||'')+'\nCoverage: '+cov+'\nSource: '+(q.source||'');
+      if(q.details)body+='\n\nDetails:\n'+q.details;
+      this.sendLead('Quote Request — Swamp Fox',body,fields);
+      this.quoteSent=true;
+    },
     loadLeaflet(){
       if(window._leafletLoading)return window._leafletLoading;
       if(typeof L!=='undefined')return Promise.resolve();
